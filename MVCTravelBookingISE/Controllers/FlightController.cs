@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using MVCTravelBookingISE.Models;
 
 namespace MVCTravelBookingISE.Controllers
 {
@@ -8,5 +9,7 @@ namespace MVCTravelBookingISE.Controllers
         {
             return View();
         }
+
+      
     }
 }
