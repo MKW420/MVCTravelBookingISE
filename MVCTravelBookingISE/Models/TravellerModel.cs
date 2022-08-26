@@ -5,7 +5,7 @@ namespace MVCTravelBookingISE.Models
     public class TravellerModel
     {
         [Key]
-        public int Traveller_ID { get; set; }
+        public int Traveller_Id { get; set; }
 
         public string First_Name { get; set; }
         
