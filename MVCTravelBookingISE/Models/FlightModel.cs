@@ -15,6 +15,9 @@ namespace MVCTravelBookingISE.Models
         [ForeignKey("FlightRules")]
         public int Flight_Rules_ID { get; set; }
 
-      
+        //Reltionships with other Models
+        public List<FlightRulesModel> FlightRules { get; set; }
+
+
     }
 }
