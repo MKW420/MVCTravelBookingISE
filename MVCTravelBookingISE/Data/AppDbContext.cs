@@ -13,15 +13,19 @@ namespace MVCTravelBookingISE.Data
         //for the many to many reltionships between the tables
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Booking_Flight>().HasKey(am => new
-            {
-                am.BookingId,
-                am.FlightId
+          //  modelBuilder.Entity<BookingModel>().HasKey(am => new
+          //  {
+           //     am.Flight_Id,
+             //   am.Traveller_Id,
+            //    am.Acco_Id
 
-            });
 
-           // modelBuilder.Entity<Booking_Flight>().HasOne(m => m.Booking).WithMany(am => am.Bookings_Flights).HasForeignKeey(m => m.BookingId);
+           // });
+
+           // modelBuilder.Entity<BookingModel>().HasOne(m => m.Travellers).WithMany(am => am.Bookings).HasForeignKey(m => m.Traveller_Id);
            // base.OnModelCreating(modelBuilder);
+          //  modelBuilder.Entity<BookingModel>().HasOne(m => m.Flights).WithMany(am => am.).HasForeignKey(m => m.Flights_Id);
+         //  base.OnModelCreating(modelBuilder);
         }
 
         public DbSet<BookingModel> Bookings { get; set; }
@@ -30,7 +34,7 @@ namespace MVCTravelBookingISE.Data
         public DbSet<AccomodationModel> Accomodations { get; set; }
         public DbSet<TravellerModel> Travellers { get; set; }
         public DbSet<TransportModel> transports { get; set; }
-        public DbSet<Booking_Flight> Bookings_Flights { get; set; }
+        
 
     }
 }

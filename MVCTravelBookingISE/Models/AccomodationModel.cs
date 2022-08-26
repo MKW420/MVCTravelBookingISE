@@ -5,7 +5,7 @@ namespace MVCTravelBookingISE.Models
     public class AccomodationModel
     {
         [Key]
-        public int Acco_ID { get; set; }
+        public int Acco_Id { get; set; }
         public string Acco_Name { get; set; }
         public string Acco_Destination { get; set; }
         public int Acco_Rooms { get; set; }

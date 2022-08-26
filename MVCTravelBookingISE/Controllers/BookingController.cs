@@ -21,7 +21,7 @@ namespace MVCTravelBookingISE.Controllers
         [HttpPost]
         public ActionResult Index(BookingModel booking)
         {
-            int Booking_Id = booking.Booking_ID;
+            int Booking_Id = booking.Booking_Id;
             string Booking_Name = booking.Booking_Name;
             DateTime Booking_DateTime = booking.Booking_date;
 

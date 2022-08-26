@@ -5,7 +5,7 @@ namespace MVCTravelBookingISE.Models
     public class FlightRulesModel
     {
         [Key]
-        public int Flight_RulesId { get; set; }
+        public int FlightRules_Id { get; set; }
         public string Flight_Descrip { get; set; }
         public string Flight_Name { get; set; }
 
