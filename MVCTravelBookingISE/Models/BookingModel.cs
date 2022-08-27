@@ -7,7 +7,11 @@ namespace MVCTravelBookingISE.Models
     {
         [Key]
         public int Booking_Id { get; set; }
+
+        [Required(ErrorMessage = "Booking Name required")]
         public string Booking_Name { get; set; }
+
+        [Required(ErrorMessage = "Booking Date required")]
         public DateTime Booking_date{ get; set; }
 
         [ForeignKey("Flight_Id")]
@@ -24,6 +28,8 @@ namespace MVCTravelBookingISE.Models
         public List<FlightModel> Flights { get; set; }
         public List<AccomodationModel> Accomodations { get; set; }
         public List<TravellerModel> Travellers { get; set; }
+
+        public virtual ICollection<TravellerBooking> TravellerBookings { get; set; }
        
         
     }

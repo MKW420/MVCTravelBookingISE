@@ -15,8 +15,84 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\keitu\source\repos\MVCTravelBookingISE\MVCTravelBookingISE
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/keitu/source/repos/MVCTravelBookingISE/MVCTravelBookingISE/Views/Booking/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va2luZ1xJbmRleC5jc2h0bWw=
+[C:/Users/keitu/source/repos/MVCTravelBookingISE/MVCTravelBookingISE/Views/AccomodationModels/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb21vZGF0aW9uTW9kZWxzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/keitu/source/repos/MVCTravelBookingISE/MVCTravelBookingISE/Views/AccomodationModels/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb21vZGF0aW9uTW9kZWxzXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/keitu/source/repos/MVCTravelBookingISE/MVCTravelBookingISE/Views/AccomodationModels/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb21vZGF0aW9uTW9kZWxzXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/keitu/source/repos/MVCTravelBookingISE/MVCTravelBookingISE/Views/AccomodationModels/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb21vZGF0aW9uTW9kZWxzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/keitu/source/repos/MVCTravelBookingISE/MVCTravelBookingISE/Views/AccomodationModels/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb21vZGF0aW9uTW9kZWxzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/keitu/source/repos/MVCTravelBookingISE/MVCTravelBookingISE/Views/BookingModels/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va2luZ01vZGVsc1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/keitu/source/repos/MVCTravelBookingISE/MVCTravelBookingISE/Views/BookingModels/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va2luZ01vZGVsc1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/keitu/source/repos/MVCTravelBookingISE/MVCTravelBookingISE/Views/BookingModels/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va2luZ01vZGVsc1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/keitu/source/repos/MVCTravelBookingISE/MVCTravelBookingISE/Views/BookingModels/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va2luZ01vZGVsc1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/keitu/source/repos/MVCTravelBookingISE/MVCTravelBookingISE/Views/BookingModels/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va2luZ01vZGVsc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/keitu/source/repos/MVCTravelBookingISE/MVCTravelBookingISE/Views/FlightModels/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmxpZ2h0TW9kZWxzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/keitu/source/repos/MVCTravelBookingISE/MVCTravelBookingISE/Views/FlightModels/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmxpZ2h0TW9kZWxzXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/keitu/source/repos/MVCTravelBookingISE/MVCTravelBookingISE/Views/FlightModels/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmxpZ2h0TW9kZWxzXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/keitu/source/repos/MVCTravelBookingISE/MVCTravelBookingISE/Views/FlightModels/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmxpZ2h0TW9kZWxzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/keitu/source/repos/MVCTravelBookingISE/MVCTravelBookingISE/Views/FlightModels/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmxpZ2h0TW9kZWxzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/keitu/source/repos/MVCTravelBookingISE/MVCTravelBookingISE/Views/FlightRulesModels/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmxpZ2h0UnVsZXNNb2RlbHNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/keitu/source/repos/MVCTravelBookingISE/MVCTravelBookingISE/Views/FlightRulesModels/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmxpZ2h0UnVsZXNNb2RlbHNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/keitu/source/repos/MVCTravelBookingISE/MVCTravelBookingISE/Views/FlightRulesModels/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmxpZ2h0UnVsZXNNb2RlbHNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/keitu/source/repos/MVCTravelBookingISE/MVCTravelBookingISE/Views/FlightRulesModels/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmxpZ2h0UnVsZXNNb2RlbHNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/keitu/source/repos/MVCTravelBookingISE/MVCTravelBookingISE/Views/FlightRulesModels/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmxpZ2h0UnVsZXNNb2RlbHNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/keitu/source/repos/MVCTravelBookingISE/MVCTravelBookingISE/Views/Home/Index.cshtml]
@@ -33,6 +109,26 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/keitu/source/repos/MVCTravelBookingISE/MVCTravelBookingISE/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/keitu/source/repos/MVCTravelBookingISE/MVCTravelBookingISE/Views/TravellerModels/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJhdmVsbGVyTW9kZWxzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/keitu/source/repos/MVCTravelBookingISE/MVCTravelBookingISE/Views/TravellerModels/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJhdmVsbGVyTW9kZWxzXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/keitu/source/repos/MVCTravelBookingISE/MVCTravelBookingISE/Views/TravellerModels/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJhdmVsbGVyTW9kZWxzXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/keitu/source/repos/MVCTravelBookingISE/MVCTravelBookingISE/Views/TravellerModels/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJhdmVsbGVyTW9kZWxzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/keitu/source/repos/MVCTravelBookingISE/MVCTravelBookingISE/Views/TravellerModels/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJhdmVsbGVyTW9kZWxzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/keitu/source/repos/MVCTravelBookingISE/MVCTravelBookingISE/Views/_ViewImports.cshtml]
