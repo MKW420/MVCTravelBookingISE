@@ -18,12 +18,12 @@ namespace MVCTravelBookingISE.Data
             modelBuilder.Entity<TravellerBooking>().HasKey(tb => new { tb.Traveller_Id, tb.Booking_Id });
 
             modelBuilder.Entity<TravellerBooking>()
-                .HasOne(tb => tb.Traveller)
+                .HasOne(tb => tb.Travellers)
                 .WithMany( t => t.TravellerBookings)
                 .HasForeignKey(tb => tb.Traveller_Id);
 
             modelBuilder.Entity<TravellerBooking>()
-               .HasOne(tb => tb.Booking)
+               .HasOne(tb => tb.Bookings)
                .WithMany(b => b.TravellerBookings)
                .HasForeignKey(tb => tb.Booking_Id);
 
