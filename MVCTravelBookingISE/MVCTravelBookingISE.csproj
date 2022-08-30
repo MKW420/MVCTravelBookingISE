@@ -7,18 +7,25 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Data\Enums\**" />
+    <Compile Remove="Models\Account\**" />
+    <Content Remove="Data\Enums\**" />
+    <Content Remove="Models\Account\**" />
+    <EmbeddedResource Remove="Data\Enums\**" />
+    <EmbeddedResource Remove="Models\Account\**" />
+    <None Remove="Data\Enums\**" />
+    <None Remove="Models\Account\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.8" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.8" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.8">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="Microsoft.SqlServer.SqlManagementObjects" Version="161.47027.0" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.8" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Data\Enums\" />
-    <Folder Include="Models\Account\" />
   </ItemGroup>
 
 </Project>
