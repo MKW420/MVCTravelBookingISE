@@ -12,6 +12,7 @@ namespace MVCTravelBookingISE.Models
         [Required(ErrorMessage = "Booking Name required")]
         public string Booking_Name { get; set; }
 
+        [Display(Name = "The date of the booking")]
         [Required(ErrorMessage = "Booking Date required")]
         public DateTime Booking_date{ get; set; }
 
