@@ -8,6 +8,7 @@ namespace MVCTravelBookingISE.Models
         [Key]
         public int Booking_Id { get; set; }
 
+        [Display(Name ="The name of the Booking")]
         [Required(ErrorMessage = "Booking Name required")]
         public string Booking_Name { get; set; }
 
