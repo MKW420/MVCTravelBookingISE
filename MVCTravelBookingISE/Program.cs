@@ -1,5 +1,10 @@
 using Microsoft.EntityFrameworkCore;
 using MVCTravelBookingISE.Data;
+<<<<<<< Updated upstream
+=======
+using Microsoft.AspNetCore.Identity;
+//using MVCTravelBookingISE.Areas.Identity.Data;
+>>>>>>> Stashed changes
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -32,7 +37,20 @@ builder.Services.AddControllersWithViews();
 
 //DB context configiration
 builder.Services.AddDbContext<AppDbContext>(options =>
+<<<<<<< Updated upstream
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnectionString")));
+=======
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultconnectionString")));
+
+//AuthDB Contexr configuration
+//builder.Services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = true)
+  //  .AddEntityFrameworkStores<AuthDbContext>();
+
+builder.Services.AddControllersWithViews();
+builder.Services.AddRazorPages();
+>>>>>>> Stashed changes
+
+//builder.Services.AddTransient<ICheckout, Checkout>();
 
 var app = builder.Build();
 
