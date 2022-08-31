@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MVCTravelBookingISE.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20220827185559_Add-Migration Initial")]
-    partial class AddMigrationInitial
+    [Migration("20220831182308_FirstMigration")]
+    partial class FirstMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -40,14 +40,14 @@ namespace MVCTravelBookingISE.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<decimal>("Acco_Distance")
-                        .HasColumnType("decimal(10,2");
+                        .HasColumnType("decimal(10,2)");
 
                     b.Property<string>("Acco_Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<decimal>("Acco_Price")
-                        .HasColumnType("decimal(10,2");
+                        .HasColumnType("decimal(10,2)");
 
                     b.Property<int>("Acco_Rate")
                         .HasColumnType("int");
@@ -127,7 +127,7 @@ namespace MVCTravelBookingISE.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<decimal>("Flight_Price")
-                        .HasColumnType("decimal(10,2");
+                        .HasColumnType("decimal(10,2)");
 
                     b.Property<int>("Flight_Rules_Id")
                         .HasColumnType("int");

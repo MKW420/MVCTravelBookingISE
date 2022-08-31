@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
@@ -8,7 +9,6 @@ namespace MVCTravelBookingISE.Migrations
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-
             migrationBuilder.CreateTable(
                 name: "Bookings",
                 columns: table => new
@@ -52,10 +52,10 @@ namespace MVCTravelBookingISE.Migrations
                     Acco_Destination = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Acco_Rooms = table.Column<int>(type: "int", nullable: false),
                     Acco_Bathrooms = table.Column<int>(type: "int", nullable: false),
-                    Acco_Distance = table.Column<decimal>(type: "decimal(10,2", nullable: false),
+                    Acco_Distance = table.Column<decimal>(type: "decimal(10,2)", nullable: false),
                     Acco_Rate = table.Column<int>(type: "int", nullable: false),
                     Acco_Type = table.Column<string>(type: "nvarchar(1)", nullable: false),
-                    Acco_Price = table.Column<decimal>(type: "decimal(10,2", nullable: false),
+                    Acco_Price = table.Column<decimal>(type: "decimal(10,2)", nullable: false),
                     BookingModelBooking_Id = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
@@ -78,7 +78,7 @@ namespace MVCTravelBookingISE.Migrations
                     Flight_Departure = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Flight_Date = table.Column<DateTime>(type: "datetime2", nullable: false),
                     Flight_Class = table.Column<string>(type: "nvarchar(1)", nullable: false),
-                    Flight_Price = table.Column<decimal>(type: "decimal(10,2", nullable: false),
+                    Flight_Price = table.Column<decimal>(type: "decimal(10,2)", nullable: false),
                     Flight_Rules_Id = table.Column<int>(type: "int", nullable: false),
                     BookingModelBooking_Id = table.Column<int>(type: "int", nullable: true)
                 },

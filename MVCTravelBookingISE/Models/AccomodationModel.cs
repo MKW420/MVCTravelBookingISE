@@ -21,7 +21,7 @@ namespace MVCTravelBookingISE.Models
         public int Acco_Bathrooms { get; set; }
 
         [Required(ErrorMessage = "Distance from airport required")]
-        [Column(TypeName ="decimal(10,2")]
+        [Column(TypeName ="decimal(10,2)")]
         public decimal Acco_Distance { get; set; }
        
         public int Acco_Rate { get; set; }
@@ -30,7 +30,7 @@ namespace MVCTravelBookingISE.Models
         public char Acco_Type { get; set; }
 
         [Required(ErrorMessage = "Price of Accomodation required")]
-        [Column(TypeName = "decimal(10,2")]
+        [Column(TypeName = "decimal(10,2)")]
         public decimal Acco_Price { get; set; }
 
 

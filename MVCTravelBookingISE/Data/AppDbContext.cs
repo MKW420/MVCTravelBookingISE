@@ -30,18 +30,18 @@ namespace MVCTravelBookingISE.Data
             base.OnModelCreating(modelBuilder);
             modelBuilder.Entity<AccomodationModel>()
                 .Property(p => p.Acco_Distance)
-                .HasColumnType("decimal(10,2");
+                .HasColumnType("decimal(10,2)");
 
             base.OnModelCreating(modelBuilder);
             modelBuilder.Entity<AccomodationModel>()
                 .Property(p => p.Acco_Price)
-                .HasColumnType("decimal(10,2");
+                .HasColumnType("decimal(10,2)");
 
 
             base.OnModelCreating(modelBuilder);
             modelBuilder.Entity<FlightModel>()
                 .Property(p => p.Flight_Price)
-                .HasColumnType("decimal(10,2");
+                .HasColumnType("decimal(10,2)");
 
 
 
