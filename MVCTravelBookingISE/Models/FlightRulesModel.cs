@@ -13,5 +13,9 @@ namespace MVCTravelBookingISE.Models
         [Required(ErrorMessage = "Flight Name required")]
         public string Flight_Name { get; set; }
 
+        //Reltionships with other models
+
+        public virtual ICollection<FlightModel> Flights { get; set; }
+        public virtual ICollection<BookingModel> Bookings { get; set; }
     }
 }

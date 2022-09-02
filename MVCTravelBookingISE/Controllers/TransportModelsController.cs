@@ -22,20 +22,20 @@ namespace MVCTravelBookingISE.Controllers
         // GET: TransportModels
         public async Task<IActionResult> Index()
         {
-              return _context.transports != null ? 
-                          View(await _context.transports.ToListAsync()) :
+              return _context.Transports != null ? 
+                          View(await _context.Transports.ToListAsync()) :
                           Problem("Entity set 'AppDbContext.transports'  is null.");
         }
 
         // GET: TransportModels/Details/5
         public async Task<IActionResult> Details(int? id)
         {
-            if (id == null || _context.transports == null)
+            if (id == null || _context.Transports == null)
             {
                 return NotFound();
             }
 
-            var transportModel = await _context.transports
+            var transportModel = await _context.Transports
                 .FirstOrDefaultAsync(m => m.Transport_Id == id);
             if (transportModel == null)
             {
@@ -70,12 +70,12 @@ namespace MVCTravelBookingISE.Controllers
         // GET: TransportModels/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
-            if (id == null || _context.transports == null)
+            if (id == null || _context.Transports == null)
             {
                 return NotFound();
             }
 
-            var transportModel = await _context.transports.FindAsync(id);
+            var transportModel = await _context.Transports.FindAsync(id);
             if (transportModel == null)
             {
                 return NotFound();
@@ -121,12 +121,12 @@ namespace MVCTravelBookingISE.Controllers
         // GET: TransportModels/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
-            if (id == null || _context.transports == null)
+            if (id == null || _context.Transports == null)
             {
                 return NotFound();
             }
 
-            var transportModel = await _context.transports
+            var transportModel = await _context.Transports
                 .FirstOrDefaultAsync(m => m.Transport_Id == id);
             if (transportModel == null)
             {
@@ -141,14 +141,14 @@ namespace MVCTravelBookingISE.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            if (_context.transports == null)
+            if (_context.Transports == null)
             {
                 return Problem("Entity set 'AppDbContext.transports'  is null.");
             }
-            var transportModel = await _context.transports.FindAsync(id);
+            var transportModel = await _context.Transports.FindAsync(id);
             if (transportModel != null)
             {
-                _context.transports.Remove(transportModel);
+                _context.Transports.Remove(transportModel);
             }
             
             await _context.SaveChangesAsync();
@@ -157,7 +157,7 @@ namespace MVCTravelBookingISE.Controllers
 
         private bool TransportModelExists(int id)
         {
-          return (_context.transports?.Any(e => e.Transport_Id == id)).GetValueOrDefault();
+          return (_context.Transports?.Any(e => e.Transport_Id == id)).GetValueOrDefault();
         }
     }
 }
