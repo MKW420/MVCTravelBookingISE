@@ -6,7 +6,6 @@ C:\Users\keitu\source\repos\MVCTravelBookingISE\MVCTravelBookingISE\obj\Debug\ne
 C:\Users\keitu\source\repos\MVCTravelBookingISE\MVCTravelBookingISE\obj\Debug\net6.0\MVCTravelBookingISE.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\keitu\source\repos\MVCTravelBookingISE\MVCTravelBookingISE\obj\Debug\net6.0\MVCTravelBookingISE.RazorAssemblyInfo.cache
 C:\Users\keitu\source\repos\MVCTravelBookingISE\MVCTravelBookingISE\obj\Debug\net6.0\MVCTravelBookingISE.RazorAssemblyInfo.cs
-C:\Users\keitu\source\repos\MVCTravelBookingISE\MVCTravelBookingISE\bin\Debug\net6.0\appsettings.Development.json
 C:\Users\keitu\source\repos\MVCTravelBookingISE\MVCTravelBookingISE\bin\Debug\net6.0\appsettings.json
 C:\Users\keitu\source\repos\MVCTravelBookingISE\MVCTravelBookingISE\bin\Debug\net6.0\MVCTravelBookingISE.staticwebassets.runtime.json
 C:\Users\keitu\source\repos\MVCTravelBookingISE\MVCTravelBookingISE\bin\Debug\net6.0\MVCTravelBookingISE.exe

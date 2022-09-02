@@ -16,22 +16,30 @@ namespace MVCTravelBookingISE.Models
         [Required(ErrorMessage = "Booking Date required")]
         public DateTime Booking_date{ get; set; }
 
+        //flight
+        public int Flight_Id { get; set; }
         [ForeignKey("Flight_Id")]
-        public string Flight_Id { get; set; }
+        public  FlightModel Flight { get; set; }
 
+        //accomodation
+        public int Acco_Id { get; set; }
         [ForeignKey("Acco_Id")]
-        public string Acco_Id { get; set; }
+        public AccomodationModel Accomodation { get; set; }
 
-        [ForeignKey("Traveller_Id")]
+        //travellers
         public  int Traveller_Id { get; set; }
+        [ForeignKey("Traveller_Id")]
+        public TravellerModel Traveller { get; set; }   
 
-       //Reltionships
+
+        
+
+       //Reltionships : joining table
+
+       public List<TravellerBooking> travellerBookings { get; set; }
        
-        public List<FlightModel> Flights { get; set; }
-        public List<AccomodationModel> Accomodations { get; set; }
-        public List<TravellerModel> Travellers { get; set; }
 
-        public virtual ICollection<TravellerBooking> TravellerBookings { get; set; }
+    
        
         
     }

@@ -33,7 +33,7 @@ namespace MVCTravelBookingISE.Models
         [Column(TypeName = "decimal(10,2)")]
         public decimal Acco_Price { get; set; }
 
-
+        
 
 
 
