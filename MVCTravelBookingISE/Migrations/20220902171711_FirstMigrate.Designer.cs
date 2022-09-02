@@ -4,6 +4,7 @@ using MVCTravelBookingISE.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MVCTravelBookingISE.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220902171711_FirstMigrate")]
+    partial class FirstMigrate
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -38,14 +40,14 @@ namespace MVCTravelBookingISE.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<decimal>("Acco_Distance")
-                        .HasColumnType("decimal(10,2)");
+                        .HasColumnType("decimal(10,2");
 
                     b.Property<string>("Acco_Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<decimal>("Acco_Price")
-                        .HasColumnType("decimal(10,2)");
+                        .HasColumnType("decimal(10,2");
 
                     b.Property<int>("Acco_Rate")
                         .HasColumnType("int");
@@ -125,7 +127,7 @@ namespace MVCTravelBookingISE.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<decimal>("Flight_Price")
-                        .HasColumnType("decimal(10,2)");
+                        .HasColumnType("decimal(10,2");
 
                     b.Property<int>("Flight_Rules_Id")
                         .HasColumnType("int");
