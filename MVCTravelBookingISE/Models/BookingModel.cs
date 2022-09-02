@@ -21,6 +21,7 @@ namespace MVCTravelBookingISE.Models
         public string Acco_Id { get; set; }
 
         [ForeignKey("Traveller_Id")]
+
         public  int Traveller_Id { get; set; }
 
        //Reltionships
