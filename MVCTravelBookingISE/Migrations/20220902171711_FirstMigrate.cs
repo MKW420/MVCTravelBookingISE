@@ -19,7 +19,7 @@ namespace MVCTravelBookingISE.Migrations
             migrationBuilder.AlterColumn<decimal>(
                 name: "Acco_Price",
                 table: "Accomodations",
-                type: "decimal(10,2",
+                type: "decimal(10,2)",
                 nullable: false,
                 oldClrType: typeof(decimal),
                 oldType: "decimal(10,2)");

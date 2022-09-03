@@ -44,7 +44,7 @@ namespace MVCTravelBookingISE.Models
 
 
         public virtual ICollection<BookingModel> Bookings { get; set; }
-
+        
 
 
     }

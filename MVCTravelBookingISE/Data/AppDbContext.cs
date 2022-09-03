@@ -19,12 +19,12 @@ namespace MVCTravelBookingISE.Data
             modelBuilder.Entity<TravellerBooking>().HasKey(tb => new { tb.Traveller_Id, tb.Booking_Id });
 
             modelBuilder.Entity<TravellerBooking>()
-                .HasOne(tb => tb.traveller)
+                .HasOne(tb => tb.Traveller)
                 .WithMany( t => t.TravellerBookings)
                 .HasForeignKey(tb => tb.Traveller_Id);
 
             modelBuilder.Entity<TravellerBooking>()
-               .HasOne(tb => tb.Bookings)
+               .HasOne(tb => tb.Booking)
                .WithMany(b => b.TravellerBookings)
                .HasForeignKey(tb => tb.Booking_Id)
                .OnDelete(DeleteBehavior.Cascade)
@@ -42,11 +42,11 @@ namespace MVCTravelBookingISE.Data
 
             //booking table has one to many reltionships with accomodation, flights,
 
-            modelBuilder.Entity<BookingModel>().HasKey(a => new { a.Transport_Id,a.Acco_Id,a.Flight_Id});
+           modelBuilder.Entity<BookingModel>().HasKey(x => new { x.Transport_Id,x.Acco_Id,x.Flight_Id});
 
 
             modelBuilder.Entity<BookingModel>()
-                .HasOne(a => a.Accomodation)
+                .HasOne(x => x.Accomodation)
                 .WithMany(b => b.Bookings)
                 .HasForeignKey(a => a.Acco_Id)
                 .OnDelete(DeleteBehavior.Cascade)
@@ -54,16 +54,16 @@ namespace MVCTravelBookingISE.Data
 
 
             modelBuilder.Entity<BookingModel>()
-               .HasOne(f => f.Flight)
+               .HasOne(x => x.Flight)
                .WithMany(b => b.Bookings)
-               .HasForeignKey(x => x.Flight_Id)
+               .HasForeignKey(f => f.Flight_Id)
                .OnDelete(DeleteBehavior.Cascade)
                .IsRequired();
 
             modelBuilder.Entity<BookingModel>()
-                 .HasOne(t => t.Transport)
+                 .HasOne(x => x.Transport)
                  .WithMany(b => b.Bookings)
-                 .HasForeignKey(x => x.Transport_Id)
+                 .HasForeignKey(t => t.Transport_Id)
                  .OnDelete(DeleteBehavior.Cascade)
                  .IsRequired();
 
@@ -87,7 +87,7 @@ namespace MVCTravelBookingISE.Data
                 .HasColumnType("decimal(10,2)");
 
             base.OnModelCreating(modelBuilder);
-            modelBuilder.Entity<TravellerBooking>()
+            modelBuilder.Entity<BookingModel>()
                 .Property(x => x.Booking_TotalPrice)
                 .HasColumnType("decimal(10,2)");
 

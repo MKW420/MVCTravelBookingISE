@@ -16,13 +16,19 @@ namespace MVCTravelBookingISE.Models
         [Required(ErrorMessage = "Booking Date required")]
         public DateTime Booking_date{ get; set; }
 
+        [Display(Name = "Approved Y/N")]
+        public string Booking_Approved { get; set; }
+
+        [Display(Name = "Total price of the booking")]
+        public decimal Booking_TotalPrice { get; set; }
+
         //foreign key of Flight_ID
-        
-        public string Flight_Id { get; set; }
+
+        public int Flight_Id { get; set; }
         public FlightModel flight { get; set; }
 
         //Foreign key of Accomodation_ID
-        public string Acco_Id { get; set; }
+        public int Acco_Id { get; set; }
         public AccomodationModel accomodation { get; set; }
   
         //foreign key of transport

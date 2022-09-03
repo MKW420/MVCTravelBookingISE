@@ -8,7 +8,6 @@ namespace MVCTravelBookingISE.Models
         public int Transport_Id { get; set; }
 
         [Display(Name = "Pick up point")]
-
         [Required(ErrorMessage = "Pick point required")]
         public string Pick_Up_Point { get; set; }
 
@@ -25,5 +24,7 @@ namespace MVCTravelBookingISE.Models
 
 
         public virtual ICollection<BookingModel> Bookings { get; set; }
+
+        public virtual ICollection<TravellerBooking> TravellerBookings { get; set; }
     }
 }
