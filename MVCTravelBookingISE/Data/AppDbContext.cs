@@ -21,7 +21,9 @@ namespace MVCTravelBookingISE.Data
             modelBuilder.Entity<TravellerBooking>()
                 .HasOne(tb => tb.Traveller)
                 .WithMany( t => t.TravellerBookings)
-                .HasForeignKey(tb => tb.Traveller_Id);
+                .HasForeignKey(tb => tb.Traveller_Id)
+                .OnDelete(DeleteBehavior.Cascade)
+               .IsRequired();
 
             modelBuilder.Entity<TravellerBooking>()
                .HasOne(tb => tb.Booking)
@@ -30,78 +32,80 @@ namespace MVCTravelBookingISE.Data
                .OnDelete(DeleteBehavior.Cascade)
                .IsRequired();
 
-            //reltionship between the flight rules and table flights
-            modelBuilder.Entity<FlightModel>().HasKey(f => new { f.Flight_Rules_Id });
+            base.OnModelCreating(modelBuilder);
 
-            modelBuilder.Entity<FlightModel>()
-                .HasOne(f => f.FlightRule)
-                .WithMany(fr => fr.Flights)
-                .HasForeignKey(f => f.Flight_Id)
-                .OnDelete(DeleteBehavior.Cascade)
-                .IsRequired();
+            //reltionship between the flight rules and table flights
+          //  modelBuilder.Entity<FlightModel>().HasKey(f => new { f.Flight_Rules_Id });
+
+          //  modelBuilder.Entity<FlightModel>()
+          //      .HasOne(f => f.FlightRule)
+       //         .WithMany(fr => fr.Flights)
+         //       .HasForeignKey(f => f.Flight_Id)
+          //      .OnDelete(DeleteBehavior.Cascade)
+         //       .IsRequired();
 
             //booking table has one to many reltionships with accomodation, flights,
 
-           modelBuilder.Entity<BookingModel>().HasKey(x => new { x.Transport_Id,x.Acco_Id,x.Flight_Id});
+          // modelBuilder.Entity<BookingModel>().HasKey(x => new { x.Acco_Id,x.Flight_Id,x.Transport_Id});
+
+            
+
+           // modelBuilder.Entity<BookingModel>()
+             //   .HasOne(x => x.Accomodation)
+              /// .HasForeignKey(a => a.Acco_Id)
+               // .OnDelete(DeleteBehavior.Cascade)
+               // .IsRequired();
 
 
-            modelBuilder.Entity<BookingModel>()
-                .HasOne(x => x.Accomodation)
-                .WithMany(b => b.Bookings)
-                .HasForeignKey(a => a.Acco_Id)
-                .OnDelete(DeleteBehavior.Cascade)
-                .IsRequired();
+            //modelBuilder.Entity<BookingModel>()
+              // .HasOne(x => x.Flight)
+              // .WithMany(b => b.Bookings)
+              // .HasForeignKey(f => f.Flight_Id)
+              // .OnDelete(DeleteBehavior.Cascade)
+              // .IsRequired();
 
-
-            modelBuilder.Entity<BookingModel>()
-               .HasOne(x => x.Flight)
-               .WithMany(b => b.Bookings)
-               .HasForeignKey(f => f.Flight_Id)
-               .OnDelete(DeleteBehavior.Cascade)
-               .IsRequired();
-
-            modelBuilder.Entity<BookingModel>()
-                 .HasOne(x => x.Transport)
-                 .WithMany(b => b.Bookings)
-                 .HasForeignKey(t => t.Transport_Id)
-                 .OnDelete(DeleteBehavior.Cascade)
-                 .IsRequired();
+           // modelBuilder.Entity<BookingModel>()
+             //    .HasOne(x => x.Transport)
+              //   .WithMany(b => b.Bookings)
+               //  .HasForeignKey(t => t.Transport_Id)
+               //  .OnDelete(DeleteBehavior.Cascade)
+               //  .IsRequired();
 
 
             // reinforcing the decimal property
 
-            base.OnModelCreating(modelBuilder);
-            modelBuilder.Entity<AccomodationModel>()
-                .Property(x => x.Acco_Distance)
-                .HasColumnType("decimal(10,2)");
+           // base.OnModelCreating(modelBuilder);
+       //     modelBuilder.Entity<AccomodationModel>()
+        //        .Property(x => x.Acco_Distance)
+         //       .HasColumnType("decimal(10,2)");
 
-            base.OnModelCreating(modelBuilder);
-            modelBuilder.Entity<AccomodationModel>()
-                .Property(x => x.Acco_Price)
-                .HasColumnType("decimal(10,2)");
+         //   base.OnModelCreating(modelBuilder);
+       //     modelBuilder.Entity<AccomodationModel>()
+        //        .Property(x => x.Acco_Price)
+         //       .HasColumnType("decimal(10,2)");
 
-
-            base.OnModelCreating(modelBuilder);
-            modelBuilder.Entity<FlightModel>()
-                .Property(x => x.Flight_Price)
-                .HasColumnType("decimal(10,2)");
-
-            base.OnModelCreating(modelBuilder);
-            modelBuilder.Entity<BookingModel>()
-                .Property(x => x.Booking_TotalPrice)
-                .HasColumnType("decimal(10,2)");
+//
+      //      base.OnModelCreating(modelBuilder);
+       //     modelBuilder.Entity<FlightModel>()
+         ///       .Property(x => x.Flight_Price)
+          //      .HasColumnType("decimal(10,2)");
+//
+           // base.OnModelCreating(modelBuilder);
+           // modelBuilder.Entity<BookingModel>()
+               // .Property(x => x.Booking_TotalPrice)
+              //  .HasColumnType("decimal(10,2)");
 
 
         }
 
 
-        public DbSet<BookingModel> Bookings { get; set; }
-        public DbSet<FlightModel> Flights { get; set; }
-        public DbSet<FlightRulesModel> FlightRules { get; set; }
-        public DbSet<AccomodationModel> Accomodations { get; set; }
-        public DbSet<TravellerModel> Travellers { get; set; }
-        public DbSet<TransportModel> Transports { get; set; }
-        public DbSet<TravellerBooking> TravellerBookings { get; set; }
+        public DbSet<BookingModel> Booking { get; set; }
+        public DbSet<FlightModel> Flight { get; set; }
+        public DbSet<FlightRulesModel> FlightRule { get; set; }
+        public DbSet<AccomodationModel> Accomodation { get; set; }
+        public DbSet<TravellerModel> Traveller { get; set; }
+        public DbSet<TransportModel> Transport { get; set; }
+        public DbSet<TravellerBooking> TravellerBooking { get; set; }
         
 
     }

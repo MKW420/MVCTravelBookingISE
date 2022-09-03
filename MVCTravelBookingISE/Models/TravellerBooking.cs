@@ -9,15 +9,11 @@ namespace MVCTravelBookingISE.Models
     {
         
         public int Traveller_Id { get; set; }
-        public TravellerModel traveller { get; set; }
+        public TravellerModel Traveller { get; set; }
         public int Booking_Id { get; set; }
-        public BookingModel booking { get; set; }
+        public BookingModel Booking { get; set; }
 
-
-        //RELTIONSHIPS WITH OTHER MODELS
-
-        public virtual BookingModel Booking { get; set; }
-        public virtual TravellerModel Traveller { get; set; }
+      
        
 
     }

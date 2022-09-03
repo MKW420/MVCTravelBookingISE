@@ -10,6 +10,7 @@ namespace MVCTravelBookingISE.Models
 
         [Display(Name = "Name of the accomodation")]
         [Required(ErrorMessage = "Accomodation Name required")]
+
         public string Acco_Name { get; set; }
 
         [Display(Name = "Name of accomodation destination")]
@@ -27,7 +28,7 @@ namespace MVCTravelBookingISE.Models
 
         [Display(Name = "Raduis  of the distance from airport")]
         [Required(ErrorMessage = "Distance from airport required")]
-        [Column(TypeName ="decimal(10,2")]
+        [Column(TypeName ="decimal(10,2)")]
         public decimal Acco_Distance { get; set; }
 
         [Display(Name = "Ratings of the Accomodation")]
@@ -39,11 +40,12 @@ namespace MVCTravelBookingISE.Models
 
         [Display(Name = "Price of accomodoation")]
         [Required(ErrorMessage = "Price of Accomodation required")]
-        [Column(TypeName = "decimal(10,2")]
+        [Column(TypeName = "decimal(10,2)")]
         public decimal Acco_Price { get; set; }
 
+        //booking
 
-        public virtual ICollection<BookingModel> Bookings { get; set; }
+        public List<BookingModel> Bookings { get; set; }
         
 
 

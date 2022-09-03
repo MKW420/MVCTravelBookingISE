@@ -27,7 +27,7 @@ namespace MVCTravelBookingISE.Models
         public int Ratings { get; set; }
 
         //reltionship with other table
-        public virtual ICollection<TravellerBooking> TravellerBookings { get; set; }
+        public List<TravellerBooking> TravellerBookings { get; set; }
 
     
     }

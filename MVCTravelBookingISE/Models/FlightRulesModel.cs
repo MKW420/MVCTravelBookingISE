@@ -15,7 +15,7 @@ namespace MVCTravelBookingISE.Models
 
         //Reltionships with other models
 
-        public virtual ICollection<FlightModel> Flights { get; set; }
-        public virtual ICollection<BookingModel> Bookings { get; set; }
+        public List<FlightModel> Flights { get; set; }
+        public List<BookingModel> Bookings { get; set; }
     }
 }

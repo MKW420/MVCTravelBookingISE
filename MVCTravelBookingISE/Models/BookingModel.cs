@@ -1,4 +1,6 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using NuGet.Protocol.Core.Types;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MVCTravelBookingISE.Models
@@ -22,24 +24,31 @@ namespace MVCTravelBookingISE.Models
         [Display(Name = "Total price of the booking")]
         public decimal Booking_TotalPrice { get; set; }
 
+       //Reltionships with other models 
+       public List<TravellerBooking> TravellerBookings { get; set; }
+
         //foreign key of Flight_ID
 
         public int Flight_Id { get; set; }
-        public FlightModel flight { get; set; }
+        [ForeignKey("Flight_Id")]
+        public FlightModel Flight { get; set; }
 
         //Foreign key of Accomodation_ID
         public int Acco_Id { get; set; }
-        public AccomodationModel accomodation { get; set; }
-  
+        [ForeignKey("Acco_Id")]
+        public AccomodationModel Accomodation { get; set; }
+
         //foreign key of transport
-        public  int Transport_Id { get; set; }
-        public TransportModel transport { get; set; }   
+        public int Transport_Id { get; set; }
+        [ForeignKey("Transport_Id")]
+        public TransportModel Transport { get; set; }
+        
+
+
      
-        //Reltionships with other models 
-        public virtual AccomodationModel Accomodation { get; set; }
-        public virtual FlightModel Flight { get; set; }
-        public virtual TransportModel Transport { get; set; }
-        public virtual ICollection<TravellerBooking> TravellerBookings { get; set; }
+      
+
+   
 
 
     }

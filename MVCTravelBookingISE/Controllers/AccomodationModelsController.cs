@@ -22,20 +22,20 @@ namespace MVCTravelBookingISE.Controllers
         // GET: AccomodationModels
         public async Task<IActionResult> Index()
         {
-              return _context.Accomodations != null ? 
-                          View(await _context.Accomodations.ToListAsync()) :
+              return _context.Accomodation != null ? 
+                          View(await _context.Accomodation.ToListAsync()) :
                           Problem("Entity set 'AppDbContext.Accomodations'  is null.");
         }
 
         // GET: AccomodationModels/Details/5
         public async Task<IActionResult> Details(int? id)
         {
-            if (id == null || _context.Accomodations == null)
+            if (id == null || _context.Accomodation == null)
             {
                 return NotFound();
             }
 
-            var accomodationModel = await _context.Accomodations
+            var accomodationModel = await _context.Accomodation
                 .FirstOrDefaultAsync(m => m.Acco_Id == id);
             if (accomodationModel == null)
             {
@@ -70,12 +70,12 @@ namespace MVCTravelBookingISE.Controllers
         // GET: AccomodationModels/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
-            if (id == null || _context.Accomodations == null)
+            if (id == null || _context.Accomodation == null)
             {
                 return NotFound();
             }
 
-            var accomodationModel = await _context.Accomodations.FindAsync(id);
+            var accomodationModel = await _context.Accomodation.FindAsync(id);
             if (accomodationModel == null)
             {
                 return NotFound();
@@ -121,12 +121,12 @@ namespace MVCTravelBookingISE.Controllers
         // GET: AccomodationModels/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
-            if (id == null || _context.Accomodations == null)
+            if (id == null || _context.Accomodation == null)
             {
                 return NotFound();
             }
 
-            var accomodationModel = await _context.Accomodations
+            var accomodationModel = await _context.Accomodation
                 .FirstOrDefaultAsync(m => m.Acco_Id == id);
             if (accomodationModel == null)
             {
@@ -141,14 +141,14 @@ namespace MVCTravelBookingISE.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            if (_context.Accomodations == null)
+            if (_context.Accomodation == null)
             {
                 return Problem("Entity set 'AppDbContext.Accomodations'  is null.");
             }
-            var accomodationModel = await _context.Accomodations.FindAsync(id);
+            var accomodationModel = await _context.Accomodation.FindAsync(id);
             if (accomodationModel != null)
             {
-                _context.Accomodations.Remove(accomodationModel);
+                _context.Accomodation.Remove(accomodationModel);
             }
             
             await _context.SaveChangesAsync();
@@ -157,7 +157,7 @@ namespace MVCTravelBookingISE.Controllers
 
         private bool AccomodationModelExists(int id)
         {
-          return (_context.Accomodations?.Any(e => e.Acco_Id == id)).GetValueOrDefault();
+          return (_context.Accomodation?.Any(e => e.Acco_Id == id)).GetValueOrDefault();
         }
     }
 }

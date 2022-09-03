@@ -22,9 +22,9 @@ namespace MVCTravelBookingISE.Models
         [Display(Name = "Transport ratings")]
         public int Transport_ratings { get; set; }
 
+        //booking
+        public List<BookingModel> Bookings { get; set; }
 
-        public virtual ICollection<BookingModel> Bookings { get; set; }
 
-        public virtual ICollection<TravellerBooking> TravellerBookings { get; set; }
     }
 }

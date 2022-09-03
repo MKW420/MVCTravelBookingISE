@@ -22,20 +22,20 @@ namespace MVCTravelBookingISE.Controllers
         // GET: BookingModels
         public async Task<IActionResult> Index()
         {
-              return _context.Bookings != null ? 
-                          View(await _context.Bookings.ToListAsync()) :
+              return _context.Booking != null ? 
+                          View(await _context.Booking.ToListAsync()) :
                           Problem("Entity set 'AppDbContext.Bookings'  is null.");
         }
 
         // GET: BookingModels/Details/5
         public async Task<IActionResult> Details(int? id)
         {
-            if (id == null || _context.Bookings == null)
+            if (id == null || _context.Booking == null)
             {
                 return NotFound();
             }
 
-            var bookingModel = await _context.Bookings
+            var bookingModel = await _context.Booking
                 .FirstOrDefaultAsync(m => m.Booking_Id == id);
             if (bookingModel == null)
             {
@@ -70,12 +70,12 @@ namespace MVCTravelBookingISE.Controllers
         // GET: BookingModels/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
-            if (id == null || _context.Bookings == null)
+            if (id == null || _context.Booking == null)
             {
                 return NotFound();
             }
 
-            var bookingModel = await _context.Bookings.FindAsync(id);
+            var bookingModel = await _context.Booking.FindAsync(id);
             if (bookingModel == null)
             {
                 return NotFound();
@@ -121,12 +121,12 @@ namespace MVCTravelBookingISE.Controllers
         // GET: BookingModels/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
-            if (id == null || _context.Bookings == null)
+            if (id == null || _context.Booking== null)
             {
                 return NotFound();
             }
 
-            var bookingModel = await _context.Bookings
+            var bookingModel = await _context.Booking
                 .FirstOrDefaultAsync(m => m.Booking_Id == id);
             if (bookingModel == null)
             {
@@ -141,14 +141,14 @@ namespace MVCTravelBookingISE.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            if (_context.Bookings == null)
+            if (_context.Booking == null)
             {
                 return Problem("Entity set 'AppDbContext.Bookings'  is null.");
             }
-            var bookingModel = await _context.Bookings.FindAsync(id);
+            var bookingModel = await _context.Booking.FindAsync(id);
             if (bookingModel != null)
             {
-                _context.Bookings.Remove(bookingModel);
+                _context.Booking.Remove(bookingModel);
             }
             
             await _context.SaveChangesAsync();
@@ -157,7 +157,7 @@ namespace MVCTravelBookingISE.Controllers
 
         private bool BookingModelExists(int id)
         {
-          return (_context.Bookings?.Any(e => e.Booking_Id == id)).GetValueOrDefault();
+          return (_context.Booking?.Any(e => e.Booking_Id == id)).GetValueOrDefault();
         }
     }
 }
