@@ -23,7 +23,7 @@
     </thead>
     <tbody>
 @foreach (var item in Model) {
-        <tr>
+        <tr class="table-light">
             <td>
                 @Html.DisplayFor(modelItem => item.Flight_Descrip)
             </td>
@@ -31,9 +31,10 @@
                 @Html.DisplayFor(modelItem => item.Flight_Name)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.FlightRules_Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.FlightRules_Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.FlightRules_Id">Delete</a>
+                    
+                    
+                    <button class="btn btn-outline-warning" type="submit"><a asp-action="Delete" asp-route-id="@item.FlightRules_Id">Delete</a></button>
+                    <button class="btn btn-outline-success" type="submit"><a asp-action="Edit" asp-route-id="@item.FlightRules_Id">Create</a></button>
             </td>
         </tr>
 }

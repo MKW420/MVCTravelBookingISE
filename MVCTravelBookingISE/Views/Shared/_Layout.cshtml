@@ -7,25 +7,35 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/MVCTravelBookingISE.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/sandstone/bootstrap.min.css" integrity="sha384-zEpdAL7W11eTKeoBJK1g79kgl9qjP7g84KfK3AZsuonx38n8ad+f5ZgXtoSDxPOh" crossorigin="anonymous">
 </head>
 <body>
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Unlimited Travels</a>
+                <a class="navbar-brand" asp-area="" asp-controller="FlightModels" asp-action="Index">
+                    <img src="img/Travel App or Website Logo.png" width="85" height="85"/>UNLIMITED TRAVELS</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
+                <div class="navbar-collapse collapse id=navbarColor01">
+                    <ul class="navbar-nav me-auto">
+                       <li class="nav-item">
+                           <a class="nav-link active">Home<span class="visually-hidden">(current)</span></a>
+                       </li>
                         <li class="nav-item">
+                            <a class="nav-link" href="#">Contact us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About</a>
+                        </li>
                         <li class="navbar-nav flex-grow-1">
-                            <a class="nav-link text-dark" asp.controller="FlightModelsController" asp-action="Index"> <i class=""></i></a>
+                            <a class="nav-link text-dark" asp.controller="FlightModelsController" asp-action="Index"> <i class="badge-info bi-film"></i></a>
 
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="button" aria-haspopup="true" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" id="navbarDropdown" role="button" data-toggle="button" aria-haspopup="true" aria-expanded="false">
                                 <i class="bi-film-gear"></i> Management
 
                             </a>
@@ -34,17 +44,22 @@
                                 <a class="dropdown-item" asp-controller="AccomodationModel" asp-action="Index"><i tabindex=" bi-camera-reels"></i>Accomodation</a>
                                 <a class="dropdown-item" asp-controller="BookingModel" asp-action="Index"><i tabindex=" bi-camera-reels"></i>Booking</a>
                                 <a class="dropdown-item" asp-controller="TransportModel" asp-action="Index"><i tabindex=" bi-camera-reels"></i>Transportation</a>
-
-
+                                
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Separated link</a>
                             </div>
                         </li>
                        
                     </ul>
-                    <form class="form-check-inline my-2 my-lg-0border-0"  asp-controller="FlightModelsController" asp-action="Filter"  style="padding-right:25px;"> 
-                        <input name="searchString" type="text" class="form-control" placeholder="Search for a flight..." />
-                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="bi bi-search"></i></button>
+                  
+                    <form class="d-flex">
+                        <input class="form-control me-sm-2" type="text" placeholder="Search">
+                        <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Search</button>
+                    </form>
+                    <button class="btn btn-outline-primary  my-2 my-sm-0" type="submit"><i class="bi bi-search"></i>REGISTER</button>
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="bi bi-search"></i>LOGIN</button>
+                     
 
-                    </form> 
                 </div>
             </div>
         </nav>

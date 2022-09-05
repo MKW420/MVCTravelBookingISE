@@ -20,90 +20,267 @@ namespace MVCTravelBookingISE.Data
                     {
                         new AccomodationModel
                         {
-                            Acco_Name = "",
-                            Acco_Destination = "",
-                            Acco_Rooms = "",
-                            Acco_Bathrooms = "",
-                            Acco_Distance = "",
-                            Acco_Rate = '',
-                            Acco_Price = ""
+                            Acco_Name = "Lagoon Beach Hotel",
+                            Acco_Destination = "Milnerton, CapeTown",
+                            Acco_Rooms = 1,
+                            Acco_Bathrooms = 2,
+                            Acco_Distance = 2,
+                            Acco_Rate = 5,
+                            Acco_Type = 'S',
+                            Acco_Price = 1259
 
-                            
 
+                          },
+                         new AccomodationModel
+                        {
+                            Acco_Name = "Lagoon Beach Hotel",
+                            Acco_Destination = "Milnerton, CapeTown",
+                            Acco_Rooms = 4,
+                            Acco_Bathrooms = 3,
+                            Acco_Distance = 2,
+                            Acco_Rate = 0,
+                            Acco_Type= 'G',
+                            Acco_Price = 1659
+
+
+                          },
                         new AccomodationModel
                         {
-                             Acco_Name = "",
-                            Acco_Destination = "",
-                            Acco_Rooms = "",
-                            Acco_Bathrooms = "",
-                            Acco_Distance = "",
-                            Acco_Rate = "",
-                            Acco_Price = ""
+                             Acco_Name = "President Hotel",
+                            Acco_Destination = "Sea Point , CapeTown",
+                            Acco_Rooms = 1,
+                            Acco_Bathrooms = 2,
+                            Acco_Distance = 1,
+                            Acco_Rate = 0,
+                            Acco_Type = 'S',
+                            Acco_Price = 1599
                         },
                         new AccomodationModel
                         {
-                            Acco_Name = "",
-                            Acco_Destination = "",
-                            Acco_Rooms = "",
-                            Acco_Bathrooms = "",
-                            Acco_Distance = "",
-                            Acco_Rate = "",
-                            Acco_Price = ""
+                             Acco_Name = "President Hotel",
+                            Acco_Destination = "Sea Point , CapeTown",
+                            Acco_Rooms = 3,
+                            Acco_Bathrooms = 3,
+                            Acco_Distance = 1,
+                            Acco_Rate = 0,
+                            Acco_Type = 'G',
+                            Acco_Price = 1899
                         },
-
-
-
+                        new AccomodationModel
+                        {
+                            Acco_Name = "Center Range (Holiday House)",
+                            Acco_Destination = "Milnerton, Capetown",
+                            Acco_Rooms = 5,
+                            Acco_Bathrooms = 5,
+                            Acco_Distance = 1,
+                            Acco_Rate = 0,
+                            Acco_Type = 'G',
+                            Acco_Price = 1855
+                        },
+                         new AccomodationModel
+                        {
+                            Acco_Name = "Life on the 3rd (Holiday House)",
+                            Acco_Destination = "Melville, Johannesburg",
+                            Acco_Rooms = 5,
+                            Acco_Bathrooms = 4,
+                            Acco_Distance = 2,
+                            Acco_Rate = 0,
+                            Acco_Type = 'G',
+                            Acco_Price = 1699
+                        },
+                          new AccomodationModel
+                        {
+                            Acco_Name = "Sunninghill Guest Lodges (Game Park)",
+                            Acco_Destination = "Sunninghill, Johannesburg",
+                            Acco_Rooms = 1,
+                            Acco_Bathrooms = 1,
+                            Acco_Distance = 1,
+                            Acco_Rate = 0,
+                            Acco_Type = 'G',
+                            Acco_Price = 1195
+                        },
+                         new AccomodationModel
+                        {
+                            Acco_Name = "Sunninghill Guest Lodges (Game Park)",
+                            Acco_Destination = "Sunninghill, Johannesburg",
+                            Acco_Rooms = 4,
+                            Acco_Bathrooms = 4,
+                            Acco_Distance = 1,
+                            Acco_Rate = 0,
+                            Acco_Type = 'G',
+                            Acco_Price = 1999
+                        },
+                        new AccomodationModel
+                        {
+                            Acco_Name = "Sunninghill Guest Lodges (Game Park)",
+                            Acco_Destination = "Sunninghill, Johannesburg",
+                            Acco_Rooms = 2,
+                            Acco_Bathrooms = 2,
+                            Acco_Distance = 1,
+                            Acco_Rate = 0,
+                            Acco_Type = 'G',
+                            Acco_Price = 1499
+                        },
+                        new AccomodationModel
+                        {
+                            Acco_Name = "Khasab Hotel",
+                            Acco_Destination = "Khasab",
+                            Acco_Rooms = 1,
+                            Acco_Bathrooms = 1,
+                            Acco_Distance = 1,
+                            Acco_Rate = 0,
+                            Acco_Type = 'S',
+                            Acco_Price = 1299
+                        },
+                        new AccomodationModel
+                        {
+                            Acco_Name = "Rydges Sydeny Central",
+                            Acco_Destination = "Sydney, Austraila",
+                            Acco_Rooms = 2,
+                            Acco_Bathrooms = 2,
+                            Acco_Distance = 1,
+                            Acco_Rate = 0,
+                            Acco_Type = 'G',
+                            Acco_Price = 1299
+                        },
+                         new AccomodationModel
+                        {
+                            Acco_Name = "Umhlanga Windsor Villa (Holiday House)",
+                            Acco_Destination = "Umlhanga, Durban",
+                            Acco_Rooms = 4,
+                            Acco_Bathrooms = 5,
+                            Acco_Distance = 2,
+                            Acco_Rate = 0,
+                            Acco_Type = 'G',
+                            Acco_Price = 1999,
+                        },
+                          new AccomodationModel
+                        {
+                            Acco_Name = "Point Waterfront Apartments (Holiday Apartment)",
+                            Acco_Destination = "Durban Point Waterfront, Durban",
+                            Acco_Rooms = 4,
+                            Acco_Bathrooms = 4,
+                            Acco_Distance = 1,
+                            Acco_Rate = 0,
+                            Acco_Type = 'G',
+                            Acco_Price = 2599
+                        },
 
                     });
+                    context.SaveChanges();
+                }
 
-                    //Transport
 
-                    if (!context.Transport.Any())
+                //Transport
+
+                if (!context.Transport.Any())
                 {
 
                     context.Transport.AddRange(new List<TransportModel>()
-                    { 
-                        new TransportModel
                         {
-                            Pick_Up_Point = "",
-                            Destination_point = "" ,
-                            Transport_Type = "",
-                            Transport_ratings = ""
-                        },
+                            new TransportModel
+                            {
+                                Pick_Up_Point = "O.R Tambo Airport",
+                                Destination_point = "Sunninghill, Johannesburg" ,
+                                Transport_Type = 'S',
+                                Transport_ratings = 3
+                            },
 
-                        new TransportModel
-                        {
-                            Pick_Up_Point = "",
-                            Destination_point = "" ,
-                            Transport_Type = "",
-                            Transport_ratings = ""
-                        },
-                        new TransportModel
-                        {
-                            Pick_Up_Point = "",
-                            Destination_point = "" ,
-                            Transport_Type = "",
-                            Transport_ratings = ""
-                        },
+                            new TransportModel
+                            {
+                                Pick_Up_Point = "Cape Town International Airport",
+                                Destination_point = "Milnerton, Capetown" ,
+                                Transport_Type = 'S',
+                                Transport_ratings = 3
+                            },
+                            new TransportModel
+                            {
+                                Pick_Up_Point = "Cape Town International Airport",
+                                Destination_point = "Sea Point , CapeTown" ,
+                                Transport_Type = 'S',
+                                Transport_ratings = 4
+                            },
 
 
 
 
-                    });
+                        });
+                    context.SaveChanges();
 
                 }
-                    
-                //FlightRules
-                if (!context.FlightRule.Any())
-                {
-                    context.FlightRule.AddRange(new List<FlightRulesModel>(){
+                //Flight
+
+                //   if (!context.Flight.Any())
+            //    {
+                    //   context.Flight.AddRange(new List<FlightModel>(){
+                    //       new FlightModel
+                    //       {
+                    //          Flight_Destination = "Johannesburg",
+                    //          Flight_Departure = "Cape Town",
+                    //          Flight_Date = '20/09/2022',
+                    //          Flight_Class = 'B',
+                    //          Flight_Price = 4500,
+                    //          Flight_Rules_Id = 1
+
+                    //       },
+                    //        context.Flight.AddRange(new List<FlightModel>(){
+                    //       new FlightModel
+                    //       {
+                    //          Flight_Destination = "Johannesburg",
+                    //          Flight_Departure = "Cape Town",
+                    //          Flight_Date = '02-09-2022 13:00:00',
+                    //          Flight_Class = 'B',
+                    //          Flight_Price = 3599,
+                    //          Flight_Rules_Id = 2
+
+                    //       },
+                    //        context.Flight.AddRange(new List<FlightModel>(){
+                    //       new FlightModel
+                    //       {
+                    //          Flight_Destination = "Cape Town",
+                    //          Flight_Departure = "Johannesburg",
+                    //          Flight_Date = ,
+                    //          Flight_Class = 'B',
+                    //          Flight_Price = 4500,
+                    //          Flight_Rules_Id = 3
+
+                    //       },
+                    //        context.Flight.AddRange(new List<FlightModel>(){
+                    //       new FlightModel
+                    //       {
+                    //          Flight_Destination = "Johannesburg",
+                    //          Flight_Departure = "Umhlanga",
+                    //          Flight_Date = '20/09/2022',
+                    //          Flight_Class = 'B',
+                    //          Flight_Price = 4500,
+                    //          Flight_Rules_Id = 1
+
+                    //       },
+                    //        context.Flight.AddRange(new List<FlightModel>(){
+                    //       new FlightModel
+                    //       {
+                    //          Flight_Destination = "Johannesburg",
+                    //          Flight_Departure = "Kimberely",
+                    //          Flight_Date = '20/09/2022',
+                    //          Flight_Class = 'B',
+                    //          Flight_Price = 4500,
+                    //          Flight_Rules_Id = 1
+
+                    //       },
+
+                    //   }
+                    //}
+                    //FlightRules
+                    if (!context.FlightRule.Any())
+                    {
+                        context.FlightRule.AddRange(new List<FlightRulesModel>(){
                         new FlightRulesModel
                         {
                            Flight_Descrip = "Kulula Airways does not allow any forms of alcohol, no forms of drugs or liquids  when boarding on the flight. Electronics should are prohibited during takeoff and landing and devices need to be switched off before boarding",
 
                            Flight_Name = "Kulula Airways (KA)"
 
-                },
+                        },
                         new FlightRulesModel()
                         {
                             Flight_Descrip = "Southern African Airways does not allow any forms of alcohol, no forms of drugs or liquids  when boarding on the flight. Electronics should are prohibited during takeoff and landing and devices need to be switched off before boarding",
@@ -185,13 +362,15 @@ namespace MVCTravelBookingISE.Data
                         }
 
                     });
+                        context.SaveChanges();
+                    }
+
+
+
+
+
                 }
-                context.SaveChanges();
-
-
-              
-
             }
         }
     }
-}
+
