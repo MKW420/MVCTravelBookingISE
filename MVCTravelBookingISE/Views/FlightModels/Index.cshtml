@@ -4,13 +4,196 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>View all flights</h1>
+<link rel="stylesheet" href="~/css/FlightHome.css" />
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
+<body>
+@*<section section id=home class="bg-cover hero-section">
+    
+    <div class="overlay">
+        <div class="container text-white text-center">
+            <div class="row">
+                <div class="col-12">
 
-<table class="table">
+                    <h1 >WELCOME TO UNLIMITED TRAVELS</h1>
+                    <a class="btn btn-main">Explore</a>
+                </div>
+            </div>
+           
+        </div>
+    </div>
+
+
+</section>*@
+
+
+    <div class="alert alert-dismissible alert-info">
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        <strong>Cheap and affordable Flights</strong> Ratings on Flights<a href="#" class="alert-link"> Search Now</a>.
+    </div>
+
+
+
+<section id="services">
+  @*  <div class="container">
+        <div class="row">
+            <div class="col-12 section-intro text-center">
+                <h1>Travel Safe and Easy</h1>
+                <div class="divider">
+
+                </div>
+            </div>
+        </div>
+    </div>*@
+    <div class="card ">
+      <div class="card-body ">
+          <h5 class="card-title">
+               Locations
+          </h5>
+            <div class="row">
+                <div class="col-sm">
+                    <div class="mb-2">
+                        <label id="origin-label" for="origin-input" class="form-label text-black">
+                            Origin</label>
+                        <div class="input-group">
+                                <span class="input-group-text"><i class="bi-pin-map"></i>Departure 📍</span>
+                            <input type="text" class="form-control" list="origin-options" id="origin-input" placeholder="location" aria-describedby="origin-label" />
+                            <datalist id="origin-options"></datalist>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm">
+                    <div class="mb-2">
+                        <label id="destination-label" for="destination-input" class="form-label text-black" >
+                                Destination 
+                        </label>
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="bi-pin-map"></i>Destination</span>
+                            <input type="text" class="form-control" list="destination-options" id="destination-input" placeholder="location" aria-describedby="destination-label" />
+                            <datalist id="destination-options"></datalist>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="mb-2 col">
+                    <div class="h-100 card">
+                        <div class="card-body">
+                            <h5 class="card-title">Dates</h5>
+                             <div class="mb-2">
+                                <label id="flight-type-label" for="flight-type-select" class="form-label">Flight</label>
+                                <select id="flight-type-select"
+                                        class="form-select"
+                                        aria-describedby="flight-type-label">
+                                    <option value="one-way">One-way</option>
+                                    <option value="round-trip">Round-trip</option>
+                                </select>
+                             </div>
+                            <div id="departure-date" class="mb-2">
+                                <label id="departure-date-label" for="departure-date-input" class="form-label">Departure date</label>
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class="bi-calendar"></i></span>
+                                    <input type="date"
+                                           class="form-control"
+                                           id="departure-date-input"
+                                           aria-describedby="departure-date-label" />
+                                </div>
+                            </div>
+                            <div id="return-date" class="mb-2">
+                                <label id="return-date-label" for="return-date-input" class="form-label">Return date</label>
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class="bi-calendar-fill"></i> </span>
+                                    <input type="date"
+                                           class="form-control"
+                                           id="return-date-input"
+                                           aria-describedby="return-date-label" />
+                                </div>
+                            </div>
+                        </div>
+                      
+                    </div>
+                </div>
+                <div class="mb-2 col">
+                    <div class="h-100 card">
+                        <div class="card-body">
+                            <h5 class="card-title">Details</h5>
+                            <div class="mb-2">
+                                <label id="travel-class-label" for="travel-class-select" class="form-label">Travel class</label>
+                                <select class="form-select"
+                                        id="travel-class-select"
+                                        aria-describedby="travel-class-label">
+                                    <option value="ECONOMY">Economy</option>
+                                    <option value="PREMIUM_ECONOMY">Premium Economy</option>
+                                    <option value="BUSINESS">Business</option>
+                                    <option value="FIRST">First</option>
+                                </select>
+                            </div>
+                            <label class="form-label">Passengers</label>
+                            <div class="mb-2">
+                                <div class="input-group">
+                                    <label for="adults-input" class="input-group-text">Adults</label>
+                                    <input type="number"
+                                           min="0"
+                                           class="form-control"
+                                           id="adults-input"
+                                           aria-describedby="adults-label" />
+                                </div>
+                                <span id="adults-label" class="form-text">12 years old and older</span>
+                            </div>
+                            <div class="mb-2">
+                                <div class="input-group">
+                                    <label for="children-input" class="input-group-text">Children</label>
+                                    <input type="number"
+                                           min="0"
+                                           class="form-control"
+                                           id="children-input"
+                                           aria-describedby="children-label" />
+                                </div>
+                                <span id="children-label" class="form-text">2 to 12 years old</span>
+                            </div>
+                            <div class="mb-2">
+                                <div class="input-group">
+                                    <label for="infants-input" class="input-group-text">Infants</label>
+                                    <input type="number"
+                                           min="0"
+                                           class="form-control"
+                                           id="infants-input"
+                                           aria-describedby="infants-label" />
+                                </div>
+                                <span id="infants-label" class="form-text">Up to 2 years old</span>
+                            </div>
+                            <div class="mb-2"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+      </div>
+    </div>
+    <button id="search-button" class="w-100 btn btn-primary" disabled>
+        Search
+    </button>
+</section>
+
+    <div class="jumbotron bg-white">
+        <div class="container text-center bg-white ">
+
+            <section id="services">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 section-intro text-center">
+                            <h6>Flight include international and national flights</h6>
+                            <div class="divider">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+        </div>
+    </div>
+
+    <table class="table">
     <thead>
         <tr>
             <th>
@@ -49,3 +232,45 @@
 }
     </tbody>
 </table>
+
+
+@*<div class="accordion" id="accordionExample">
+    <div class="accordion-item">
+        <h2 class="accordion-header" id="headingOne">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                Accordion Item #1
+            </button>
+        </h2>
+        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+                <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+            </div>
+        </div>
+    </div>
+    <div class="accordion-item">
+        <h2 class="accordion-header" id="headingTwo">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                Accordion Item #2
+            </button>
+        </h2>
+        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+                <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+            </div>
+        </div>
+    </div>
+    <div class="accordion-item">
+        <h2 class="accordion-header" id="headingThree">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                Accordion Item #3
+            </button>
+        </h2>
+        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+                <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+            </div>
+        </div>
+    </div>
+</div>
+*@
+</body>

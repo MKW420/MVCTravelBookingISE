@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "5TOL/kWZ4HiM+/Iy21V7JXtGYNKASinEo1vDSoF4DVs=",
+  "Hash": "+ruvBGI8mZ0uBZZP8hF4dZdJKbGk2VIrIVPwxcznlug=",
   "Source": "MVCTravelBookingISE",
   "BasePath": "_content/MVCTravelBookingISE",
   "Mode": "Default",
@@ -1819,6 +1819,23 @@
       "OriginalItemSpec": "C:\\Users\\keitu\\source\\repos\\MVCTravelBookingISE\\MVCTravelBookingISE\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\MVCTravelBookingISE.bundle.scp.css"
     },
     {
+      "Identity": "C:\\Users\\keitu\\source\\repos\\MVCTravelBookingISE\\MVCTravelBookingISE\\wwwroot\\css\\FlightHome.css",
+      "SourceId": "MVCTravelBookingISE",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\keitu\\source\\repos\\MVCTravelBookingISE\\MVCTravelBookingISE\\wwwroot\\",
+      "BasePath": "_content/MVCTravelBookingISE",
+      "RelativePath": "css/FlightHome.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\FlightHome.css"
+    },
+    {
       "Identity": "C:\\Users\\keitu\\source\\repos\\MVCTravelBookingISE\\MVCTravelBookingISE\\wwwroot\\css\\site.css",
       "SourceId": "MVCTravelBookingISE",
       "SourceType": "Discovered",
@@ -1851,6 +1868,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\keitu\\source\\repos\\MVCTravelBookingISE\\MVCTravelBookingISE\\wwwroot\\img\\gerson-repreza-CepDpEiALqM-unsplash.jpg",
+      "SourceId": "MVCTravelBookingISE",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\keitu\\source\\repos\\MVCTravelBookingISE\\MVCTravelBookingISE\\wwwroot\\",
+      "BasePath": "_content/MVCTravelBookingISE",
+      "RelativePath": "img/gerson-repreza-CepDpEiALqM-unsplash.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\gerson-repreza-CepDpEiALqM-unsplash.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\keitu\\source\\repos\\MVCTravelBookingISE\\MVCTravelBookingISE\\wwwroot\\img\\ross-parmly-rf6ywHVkrlY-unsplash.jpg",
+      "SourceId": "MVCTravelBookingISE",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\keitu\\source\\repos\\MVCTravelBookingISE\\MVCTravelBookingISE\\wwwroot\\",
+      "BasePath": "_content/MVCTravelBookingISE",
+      "RelativePath": "img/ross-parmly-rf6ywHVkrlY-unsplash.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\ross-parmly-rf6ywHVkrlY-unsplash.jpg"
     },
     {
       "Identity": "C:\\Users\\keitu\\source\\repos\\MVCTravelBookingISE\\MVCTravelBookingISE\\wwwroot\\img\\Travel App or Website Logo.png",

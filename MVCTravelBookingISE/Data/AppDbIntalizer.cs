@@ -1,4 +1,5 @@
-﻿using MVCTravelBookingISE.Models;
+﻿using Microsoft.EntityFrameworkCore.Diagnostics;
+using MVCTravelBookingISE.Models;
 
 namespace MVCTravelBookingISE.Data
 {
@@ -185,7 +186,13 @@ namespace MVCTravelBookingISE.Data
                                 Transport_Type = 'S',
                                 Transport_ratings = 3
                             },
-
+                            new TransportModel
+                            {
+                                Pick_Up_Point = "O.R Tambo Airport",
+                                Destination_point = "Sunninghill, Johannesburg" ,
+                                Transport_Type = 'C',
+                                Transport_ratings = 0
+                            },
                             new TransportModel
                             {
                                 Pick_Up_Point = "Cape Town International Airport",
@@ -210,66 +217,199 @@ namespace MVCTravelBookingISE.Data
                 }
                 //Flight
 
-                //   if (!context.Flight.Any())
-            //    {
-                    //   context.Flight.AddRange(new List<FlightModel>(){
-                    //       new FlightModel
-                    //       {
-                    //          Flight_Destination = "Johannesburg",
-                    //          Flight_Departure = "Cape Town",
-                    //          Flight_Date = '20/09/2022',
-                    //          Flight_Class = 'B',
-                    //          Flight_Price = 4500,
-                    //          Flight_Rules_Id = 1
+                //if (!context.Flight.Any())
+                //{
+                //    context.Flight.AddRange(new List<FlightModel>(){
+                //        new FlightModel
+                //        {
 
-                    //       },
-                    //        context.Flight.AddRange(new List<FlightModel>(){
-                    //       new FlightModel
-                    //       {
-                    //          Flight_Destination = "Johannesburg",
-                    //          Flight_Departure = "Cape Town",
-                    //          Flight_Date = '02-09-2022 13:00:00',
-                    //          Flight_Class = 'B',
-                    //          Flight_Price = 3599,
-                    //          Flight_Rules_Id = 2
+                //           Flight_Destination = "Johannesburg",
+                //           Flight_Departure = "CapeTown",
+                //           Flight_Date =    DateTime.Now.AddDays(+10),
+                //           Flight_Class = 'B',
+                //           Flight_Price = 4685,
+                //           Flight_Rules_Id = 1
+                           
 
-                    //       },
-                    //        context.Flight.AddRange(new List<FlightModel>(){
-                    //       new FlightModel
-                    //       {
-                    //          Flight_Destination = "Cape Town",
-                    //          Flight_Departure = "Johannesburg",
-                    //          Flight_Date = ,
-                    //          Flight_Class = 'B',
-                    //          Flight_Price = 4500,
-                    //          Flight_Rules_Id = 3
+                //        },
+                //        new FlightModel
+                //        {
 
-                    //       },
-                    //        context.Flight.AddRange(new List<FlightModel>(){
-                    //       new FlightModel
-                    //       {
-                    //          Flight_Destination = "Johannesburg",
-                    //          Flight_Departure = "Umhlanga",
-                    //          Flight_Date = '20/09/2022',
-                    //          Flight_Class = 'B',
-                    //          Flight_Price = 4500,
-                    //          Flight_Rules_Id = 1
+                //           Flight_Destination = "CapeTown",
+                //           Flight_Departure = "Johannesburg",
+                //           Flight_Date =    DateTime.Now.AddDays(+10),
+                //           Flight_Class = 'B',
+                //           Flight_Price = 4799,
+                //           Flight_Rules_Id = 3
 
-                    //       },
-                    //        context.Flight.AddRange(new List<FlightModel>(){
-                    //       new FlightModel
-                    //       {
-                    //          Flight_Destination = "Johannesburg",
-                    //          Flight_Departure = "Kimberely",
-                    //          Flight_Date = '20/09/2022',
-                    //          Flight_Class = 'B',
-                    //          Flight_Price = 4500,
-                    //          Flight_Rules_Id = 1
+                //        },
+                //        new FlightModel
+                //        {
 
-                    //       },
+                //           Flight_Destination = "Johannesburg",
+                //           Flight_Departure = "Durban",
+                //           Flight_Date =    DateTime.Now.AddDays(+10),
+                //           Flight_Class = 'B',
+                //           Flight_Price = 4599,
+                //           Flight_Rules_Id = 1
+                //          },
+                //        new FlightModel
+                //        {
 
-                    //   }
-                    //}
+                //           Flight_Destination = "Durban",
+                //           Flight_Departure = "Cape Town",
+                //           Flight_Date =    DateTime.Now.AddDays(+10),
+                //           Flight_Class = 'B',
+                //           Flight_Price = 4599,
+                //           Flight_Rules_Id = 1
+                //         },
+                //         new FlightModel
+                //        {
+
+                //           Flight_Destination = "Durban",
+                //           Flight_Departure = "Pretoria",
+                //           Flight_Date =    DateTime.Now.AddDays(+10),
+                //           Flight_Class = 'B',
+                //           Flight_Price = 4599,
+                //           Flight_Rules_Id = 3
+                //         },
+                //        new FlightModel
+                //        {
+
+                //           Flight_Destination = "Hartbeesport",
+                //           Flight_Departure = "Durban",
+                //           Flight_Date =    DateTime.Now.AddDays(+15),
+                //           Flight_Class = 'F',
+                //           Flight_Price = 8599,
+                //           Flight_Rules_Id = 1
+                //        }
+                //        ,
+                //          new FlightModel
+                //        {
+
+                //           Flight_Destination = "Pretoria",
+                //           Flight_Departure = "CapeTown",
+                //           Flight_Date =    DateTime.Now.AddDays(+15),
+                //           Flight_Class = 'B',
+                //           Flight_Price = 4599,
+                //           Flight_Rules_Id = 1
+                //          }
+                //        ,
+                //        new FlightModel
+                //        {
+
+                //           Flight_Destination = "Pretoria",
+                //           Flight_Departure = "Durban",
+                //           Flight_Date =    DateTime.Now.AddDays(+15),
+                //           Flight_Class = 'B',
+                //           Flight_Price = 5599,
+                //           Flight_Rules_Id = 1
+                //         }
+                //        ,
+                //        new FlightModel
+                //        {
+
+                //           Flight_Destination = "Port Elizabeth",
+                //           Flight_Departure = "Johannesburg",
+                //           Flight_Date =    DateTime.Now.AddDays(+20),
+                //           Flight_Class = 'B',
+                //           Flight_Price = 5589,
+                //           Flight_Rules_Id = 1
+
+                //        },
+                //         new FlightModel
+                //        {
+
+                //           Flight_Destination = "Port Elizabeth",
+                //           Flight_Departure = "Cape Town",
+                //           Flight_Date =    DateTime.Now.AddDays(+20),
+                //           Flight_Class = 'B',
+                //           Flight_Price = 4599,
+                //           Flight_Rules_Id = 1
+
+                //        },
+                //         new FlightModel
+                //        {
+
+                //           Flight_Destination = "Port Elizabeth",
+                //           Flight_Departure = "Durban",
+                //           Flight_Date =    DateTime.Now.AddDays(+20),
+                //           Flight_Class = 'B',
+                //           Flight_Price = 4599,
+                //           Flight_Rules_Id = 1
+
+                //        },
+                //        new FlightModel
+                //        {
+                //           Flight_Destination = "Cape Town",
+                //           Flight_Departure = "Queensland (Austraila)",
+                //           Flight_Date =    DateTime.Now.AddDays(+20),
+                //           Flight_Class = 'F',
+                //           Flight_Price = 8569,
+                //           Flight_Rules_Id = 4
+                //         },
+                //         new FlightModel
+                //        {
+                //           Flight_Destination = "Cape Town",
+                //           Flight_Departure = "Queensland (Austraila)",
+                //           Flight_Date =    DateTime.Now.AddDays(+20),
+                //           Flight_Class = 'B',
+                //           Flight_Price = 4599,
+                //           Flight_Rules_Id = 4
+                //         },
+                //        new FlightModel
+                //        {
+                //           Flight_Destination = "Johannesburg",
+                //           Flight_Departure = "Queensland (Austraila)",
+                //           Flight_Date =    DateTime.Now.AddDays(+20),
+                //           Flight_Class = 'B',
+                //           Flight_Price = 4599,
+                //           Flight_Rules_Id = 5
+                //          },
+                //         new FlightModel
+                //        {
+                //           Flight_Destination = "Johannesburg",
+                //           Flight_Departure = "Queensland (Austraila)",
+                //           Flight_Date =    DateTime.Now.AddDays(+20),
+                //           Flight_Class = 'E',
+                //           Flight_Price = 6899,
+                //           Flight_Rules_Id = 4
+                //          },
+                //          new FlightModel
+                //        {
+                //           Flight_Destination = "Johannesburg",
+                //           Flight_Departure = "Queensland (Austraila)",
+                //           Flight_Date =    DateTime.Now.AddDays(+20),
+                //           Flight_Class = 'F',
+                //           Flight_Price = 8599,
+                //           Flight_Rules_Id = 5
+                //          },
+                //        new FlightModel
+                //        {
+                //           Flight_Destination = "Port Elizabeth",
+                //           Flight_Departure = "Queensland (Austraila)",
+                //           Flight_Date =    DateTime.Now.AddDays(+20),
+                //           Flight_Class = 'B',
+                //           Flight_Price = 5599,
+                //           Flight_Rules_Id = 3
+                //           },
+                //          new FlightModel
+                //        {
+                //           Flight_Destination = "Johannesburg",
+                //           Flight_Departure = "Hong Kong",
+                //           Flight_Date =    DateTime.Now.AddDays(+20),
+                //           Flight_Class = 'B',
+                //           Flight_Price = 5599,
+                //           Flight_Rules_Id = 12,
+                //           FlightRules_Id = 
+
+
+                //           }
+
+                //       });
+
+                //     context.SaveChanges();
+                //    }
                     //FlightRules
                     if (!context.FlightRule.Any())
                     {

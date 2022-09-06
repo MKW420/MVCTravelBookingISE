@@ -1,0 +1,57 @@
+﻿@model IEnumerable<MVCTravelBookingISE.Models.TransportModel>
+
+@{
+    ViewData["Title"] = "Tarnsport";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="alert alert-dismissible alert-info">
+    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    <strong>Cheap and affordable Flights</strong> Ratings on Flights<a href="#" class="alert-link"> Search Now</a>.
+</div>
+<h1>list of Transport</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Pick_Up_Point)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Destination_point)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Transport_Type)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Transport_ratings)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Pick_Up_Point)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Destination_point)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Transport_Type)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Transport_ratings)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Transport_Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Transport_Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Transport_Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

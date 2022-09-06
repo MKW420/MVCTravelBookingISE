@@ -22,27 +22,28 @@
                 <div class="navbar-collapse collapse id=navbarColor01">
                     <ul class="navbar-nav me-auto">
                        <li class="nav-item">
-                           <a class="nav-link active">Home<span class="visually-hidden">(current)</span></a>
+                           <a class="nav-link active">Accomodation<span class="visually-hidden">(current)</span></a>
                        </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Contact us</a>
+                            <a class="nav-link" href="#">Flights</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">About</a>
+                            <a class="nav-link" href="#">Transport</a>
                         </li>
                         <li class="navbar-nav flex-grow-1">
                             <a class="nav-link text-dark" asp.controller="FlightModelsController" asp-action="Index"> <i class="badge-info bi-film"></i></a>
 
                         </li>
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit" asp-controller="AccomodationModels" asp-action="Create" ><i class="bi bi-search"></i>LIST YOUR PROPERTY</button>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" id="navbarDropdown" role="button" data-toggle="button" aria-haspopup="true" aria-expanded="false">
                                 <i class="bi-film-gear"></i> Management
 
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropDown">
-                                <a class="dropdown-item" asp-controller="FlightModel" asp-action="Index"><i tabindex=" bi-camera-reels"></i>Flights</a>
-                                <a class="dropdown-item" asp-controller="AccomodationModel" asp-action="Index"><i tabindex=" bi-camera-reels"></i>Accomodation</a>
-                                <a class="dropdown-item" asp-controller="BookingModel" asp-action="Index"><i tabindex=" bi-camera-reels"></i>Booking</a>
+                                <a class="dropdown-item" asp-controller="FlightModels" asp-action="Index"><i tabindex=" bi-camera-reels"></i>Flights</a>
+                                <a class="dropdown-item" asp-controller="AccomodationModels" asp-action="Index"><i tabindex=" bi-camera-reels"></i>Accomodation</a>
+                                <a class="dropdown-item" asp-controller="BookingModels" asp-action="Index"><i tabindex=" bi-camera-reels"></i>Booking</a>
                                 <a class="dropdown-item" asp-controller="TransportModel" asp-action="Index"><i tabindex=" bi-camera-reels"></i>Transportation</a>
                                 
                                 <div class="dropdown-divider"></div>
@@ -51,10 +52,11 @@
                         </li>
                        
                     </ul>
+                    
                   
                     <form class="d-flex">
                         <input class="form-control me-sm-2" type="text" placeholder="Search">
-                        <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Search</button>
+                        <button class="btn btn-outline-secondary my-2 my-sm-0 glyphicon glyphicon-search" type="submit">Search</button>
                     </form>
                     <button class="btn btn-outline-primary  my-2 my-sm-0" type="submit"><i class="bi bi-search"></i>REGISTER</button>
                     <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="bi bi-search"></i>LOGIN</button>
@@ -65,17 +67,19 @@
         </nav>
      
     </header>
+
+
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
-
+@*
     <footer class="border-top footer text-muted">
         <div class="container">
             &copy; 2022 - Unlimited Travels
          </div>
-    </footer>
+    </footer>*@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>

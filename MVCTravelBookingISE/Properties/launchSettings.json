@@ -10,7 +10,7 @@
   "profiles": {
     "MVCTravelBookingISE": {
       "commandName": "Project",
-      "launchUrl": "FlightModels/Index",
+      "launchUrl": "AccomodationModels/Index",
       "dotnetRunMessages": true,
       "launchBrowser": true,
       "applicationUrl": "https://localhost:7091;http://localhost:5091",

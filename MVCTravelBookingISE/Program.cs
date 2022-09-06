@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using MVCTravelBookingISE.Data;
 using Microsoft.AspNetCore.Identity;
-using MVCTravelBookingISE.Areas.Identity.Data;
+//using MVCTravelBookingISE.Areas.Identity.Data;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -14,9 +14,9 @@ builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultconnectionString")));
 
 
-builder.Services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = true)
-    .AddEntityFrameworkStores<AuthDbContext>();
-builder.Services.AddRazorPages();
+//builder.Services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = true)
+//    .AddEntityFrameworkStores<AuthDbContext>();
+//builder.Services.AddRazorPages();
 //AuthDB Contexr configuration
 //builder.Services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = true)
   //  .AddEntityFrameworkStores<AuthDbContext>();
@@ -24,37 +24,37 @@ builder.Services.AddRazorPages();
 builder.Services.AddControllersWithViews();
 
 
-builder.Services.Configure<IdentityOptions>(options =>
-{
-    //Password settings
-    options.SignIn.RequireConfirmedAccount = true;
-    options.Password.RequireLowercase = true;
-    options.Password.RequireNonAlphanumeric = true;
-    options.Password.RequireUppercase = true;
-    options.Password.RequiredLength = 6;
-    options.Password.RequiredUniqueChars = 1;
+//builder.Services.Configure<IdentityOptions>(options =>
+//{
+//    //Password settings
+//    options.SignIn.RequireConfirmedAccount = true;
+//    options.Password.RequireLowercase = true;
+//    options.Password.RequireNonAlphanumeric = true;
+//    options.Password.RequireUppercase = true;
+//    options.Password.RequiredLength = 6;
+//    options.Password.RequiredUniqueChars = 1;
 
-    //Lockout settings
-    options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(5);
-    options.Lockout.MaxFailedAccessAttempts = 5;
-    options.Lockout.AllowedForNewUsers = true;
+//    //Lockout settings
+//    options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(5);
+//    options.Lockout.MaxFailedAccessAttempts = 5;
+//    options.Lockout.AllowedForNewUsers = true;
 
-    //User settings
+//    //User settings
 
-    options.User.AllowedUserNameCharacters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-._@+";
-    options.User.RequireUniqueEmail = false;
-});
+//    options.User.AllowedUserNameCharacters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-._@+";
+//    options.User.RequireUniqueEmail = false;
+//});
 
-builder.Services.ConfigureApplicationCookie(options =>
-{
-    options.Cookie.HttpOnly = true;
-    options.ExpireTimeSpan = TimeSpan.FromMinutes(5);
-    options.LoginPath = "Identity/Account/Login";
-    options.AccessDeniedPath = "Identity/AccountAccessDenied";
-    options.SlidingExpiration = true;
+//builder.Services.ConfigureApplicationCookie(options =>
+//{
+//    options.Cookie.HttpOnly = true;
+//    options.ExpireTimeSpan = TimeSpan.FromMinutes(5);
+//    options.LoginPath = "Identity/Account/Login";
+//    options.AccessDeniedPath = "Identity/AccountAccessDenied";
+//    options.SlidingExpiration = true;
 
 
-});
+//});
 
 
 //builder.Services.AddTransient<ICheckout, Checkout>();
@@ -75,15 +75,15 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
-app.UseAuthentication();;
+//app.UseAuthentication();;
 
-app.UseAuthorization();
+//app.UseAuthorization();
 
-//app.MapControllerRoute(
-//    name: "default",
-//    pattern: "{controller=Home}/{action=Index}/{id?}");
+app.MapControllerRoute(
+  name: "default",
+ pattern: "{controller=Home}/{action=Index}/{id?}");
  
-app.MapRazorPages();
+//app.MapRazorPages();
 
 //SEED DATABASE
 AppDbIntalizer.Seed(app);
