@@ -2,47 +2,45 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Autofac.Core;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using MVCTravelBookingISE.Data;
+using MVCTravelBookingISE.Data.Services;
 using MVCTravelBookingISE.Models;
 
 namespace MVCTravelBookingISE.Controllers
 {
     public class AccomodationModelsController : Controller
     {
-        private readonly AppDbContext _context;
-
-        public AccomodationModelsController(AppDbContext context)
+       
+        private readonly IAccomodationService _service;
+        public AccomodationModelsController(  IAccomodationService service)
         {
-            _context = context;
+            
+            _service = service;
         }
 
         // GET: AccomodationModels
-        public async Task<IActionResult> Index()
+        public async Task <IActionResult> Index()
         {
-              return _context.Accomodation != null ? 
-                          View(await _context.Accomodation.ToListAsync()) :
-                          Problem("Entity set 'AppDbContext.Accomodations'  is null.");
+            var data = _service.GetAllAsync();
+            return View(data);
         }
 
         // GET: AccomodationModels/Details/5
-        public async Task<IActionResult> Details(int? id)
+        public async Task<IActionResult> Details(int id)
         {
-            if (id == null || _context.Accomodation == null)
+            var accomodationDetails = _service.GetByIdAsync(id);
+
+            if (accomodationDetails == null)
             {
-                return NotFound();
+                return View("Empty");
             }
 
-            var accomodationModel = await _context.Accomodation
-                .FirstOrDefaultAsync(m => m.Acco_Id == id);
-            if (accomodationModel == null)
-            {
-                return NotFound();
-            }
-
-            return View(accomodationModel);
+          
+            return View(accomodationDetails);
         }
 
         // GET: AccomodationModels/Create
@@ -60,22 +58,21 @@ namespace MVCTravelBookingISE.Controllers
         {
             if (ModelState.IsValid)
             {
-                _context.Add(accomodationModel);
-                await _context.SaveChangesAsync();
+               await  _service.AddAsync(accomodationModel);
+              
                 return RedirectToAction(nameof(Index));
             }
             return View(accomodationModel);
         }
 
         // GET: AccomodationModels/Edit/5
-        public async Task<IActionResult> Edit(int? id)
-        {
-            if (id == null || _context.Accomodation == null)
+        public async Task<IActionResult> Edit(int? id) { 
+            if (id == null || _service.Equals == null)
             {
                 return NotFound();
             }
 
-            var accomodationModel = await _context.Accomodation.FindAsync(id);
+            var accomodationModel = await Accomodation.FindAsync(id);
             if (accomodationModel == null)
             {
                 return NotFound();
@@ -108,6 +105,7 @@ namespace MVCTravelBookingISE.Controllers
                     {
                         return NotFound();
                     }
+        {
                     else
                     {
                         throw;
@@ -121,12 +119,12 @@ namespace MVCTravelBookingISE.Controllers
         // GET: AccomodationModels/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
-            if (id == null || _context.Accomodation == null)
+            if (id == null)
             {
                 return NotFound();
             }
 
-            var accomodationModel = await _context.Accomodation
+            var accomodationModel = await _service.
                 .FirstOrDefaultAsync(m => m.Acco_Id == id);
             if (accomodationModel == null)
             {

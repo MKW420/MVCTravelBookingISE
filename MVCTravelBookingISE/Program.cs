@@ -3,6 +3,7 @@ using MVCTravelBookingISE.Data;
 using Microsoft.AspNetCore.Identity;
 //using MVCTravelBookingISE.Areas.Identity.Data;
 using Microsoft.Extensions.DependencyInjection.Extensions;
+using MVCTravelBookingISE.Data.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -23,6 +24,9 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 
 builder.Services.AddControllersWithViews();
 
+//services configuration
+
+builder.Services.AddScoped<IAccomodationService, AccomodationService>();
 
 //builder.Services.Configure<IdentityOptions>(options =>
 //{
