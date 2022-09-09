@@ -8,8 +8,10 @@ namespace MVCTravelBookingISE.Data.Services
         Task <AccomodationModel> GetByIdAsync(int id);
 
         Task AddAsync(AccomodationModel accomodationModel);
-        AccomodationModel UpdateAsync (int id, AccomodationModel newAccomodation);
-        void DeleteAsync(int id);
+        Task <AccomodationModel> UpdateAsync (int id, AccomodationModel newAccomodation);
+        Task DeleteAsync(int id);
+
+
     
     }
 

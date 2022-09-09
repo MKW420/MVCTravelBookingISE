@@ -15,6 +15,7 @@ namespace MVCTravelBookingISE.Models
 
         [Display(Name = "Name of accomodation destination")]
         [Required(ErrorMessage = "Destination required")]
+        [StringLength(100,MinimumLength =3, ErrorMessage ="Accomodation should be between 3 to 100")]
         public string Acco_Destination { get; set; }
 
         [Display(Name = "Number of rooms ")]

@@ -1,4 +1,5 @@
 ﻿using Autofac.Core;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using MVCTravelBookingISE.Models;
 
@@ -19,12 +20,17 @@ namespace MVCTravelBookingISE.Data.Services
            await _context.SaveChangesAsync();
         }
 
-        public async void Delete(int id)
+        public async Task DeleteAsync(int id)
         {
-            var dataItem = await _context.Remove(id)
+            //get the acco
+
+            var result = await _context.Accomodation.FirstOrDefaultAsync(n => n.Acco_Id == id);
+            _context.Accomodation.Remove(result);
+
+            await _context.SaveChangesAsync();
         }
 
-        public async Task< IEnumerable<AccomodationModel>> GetAlAsync()
+        public async Task<IEnumerable<AccomodationModel>> GetAllAsync()
         {
             var results = await _context.Accomodation.ToListAsync();
             return results;
@@ -37,9 +43,13 @@ namespace MVCTravelBookingISE.Data.Services
             
         }
 
-        public AccomodationModel Update(int id, AccomodationModel newAccomodation)
+        public async Task<AccomodationModel> UpdateAsync(int id, AccomodationModel newAccomodation)
         {
-            throw new NotImplementedException();
+            _context.Update(newAccomodation);
+            await _context.SaveChangesAsync();
+            return newAccomodation;
         }
+
+        
     }
 }

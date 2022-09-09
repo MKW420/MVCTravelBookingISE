@@ -4,13 +4,13 @@ namespace MVCTravelBookingISE.Data.Base
 {
     public class IEntityBaseRepository<T> where T : class, IEntityBase, new()
     {
-        Task<IEnumerable<T>> GetAll();
-        Task<T> GetById(int id);
+        Task<IEnumerable<T>> GetAllAsync();
+        Task<T> GetByIdAsync(int id);
 
       
-        Task Add(T actor);
-        Task Update(int id, AccomodationModel newAccomodation);
-        void Delete(int id);
+        Task AddSync(T actor);
+        Task <T> UpdateAsync(int id, T entity);
+        Task DeleteAsync(int id);
 
     }
 }
