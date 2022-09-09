@@ -1,9 +1,10 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using MVCTravelBookingISE.Data.Base;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MVCTravelBookingISE.Models
 {
-    public class AccomodationModel
+    public class AccomodationModel : IEntityBase
     {
         [Key]
         public int Acco_Id { get; set; }
@@ -47,8 +48,6 @@ namespace MVCTravelBookingISE.Models
         //booking
 
         public List<BookingModel> Bookings { get; set; }
-        
-
-
+        public int Id { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
     }
 }

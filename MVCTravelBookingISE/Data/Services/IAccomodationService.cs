@@ -1,16 +1,11 @@
-﻿using MVCTravelBookingISE.Models;
+﻿using MVCTravelBookingISE.Data.Base;
+using MVCTravelBookingISE.Models;
 
 namespace MVCTravelBookingISE.Data.Services
 {
-    public interface IAccomodationService
+    public interface IAccomodationService:IEntityBaseRepository<AccomodationModel>
     {
-        Task<IEnumerable<AccomodationModel>> GetAllAsync();
-        Task <AccomodationModel> GetByIdAsync(int id);
-
-        Task AddAsync(AccomodationModel accomodationModel);
-        Task <AccomodationModel> UpdateAsync (int id, AccomodationModel newAccomodation);
-        Task DeleteAsync(int id);
-
+      
 
     
     }

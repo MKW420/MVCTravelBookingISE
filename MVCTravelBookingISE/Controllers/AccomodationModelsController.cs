@@ -58,7 +58,7 @@ namespace MVCTravelBookingISE.Controllers
         {
             if (ModelState.IsValid)
             {
-               await  _service.AddAsync(accomodationModel);
+               await  _service.AddSync(accomodationModel);
               
                 return RedirectToAction(nameof(Index));
             }
