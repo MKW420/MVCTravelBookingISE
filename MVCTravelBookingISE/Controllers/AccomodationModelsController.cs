@@ -25,7 +25,7 @@ namespace MVCTravelBookingISE.Controllers
         // GET: AccomodationModels
         public async Task <IActionResult> Index()
         {
-            var data = _service.GetAllAsync();
+            var data =  await _service.GetAllAsync();
             return View(data);
         }
 
