@@ -10,5 +10,7 @@ namespace MVCTravelBookingISE.Data.Services
         void Add(FlightModel FlightModel);
         FlightModel Update(int id, FlightModel newFlight);
         void Delete(int id);
+
+
     }
 }
