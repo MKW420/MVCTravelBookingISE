@@ -25,6 +25,7 @@ namespace MVCTravelBookingISE.Controllers
               return _context.FlightRule != null ? 
                           View(await _context.FlightRule.ToListAsync()) :
                           Problem("Entity set 'AppDbContext.FlightRules'  is null.");
+       
         }
 
         // GET: FlightRulesModels/Details/5

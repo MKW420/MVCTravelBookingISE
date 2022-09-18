@@ -2,6 +2,22 @@
   "version": 3,
   "targets": {
     "net6.0": {
+      "Autofac/6.4.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Diagnostics.DiagnosticSource": "4.7.1"
+        },
+        "compile": {
+          "lib/net6.0/Autofac.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Autofac.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "bootstrap/5.2.0": {
         "type": "package",
         "contentFiles": {
@@ -3857,6 +3873,27 @@
     }
   },
   "libraries": {
+    "Autofac/6.4.0": {
+      "sha512": "tkFxl6wAPuwVhrlN8wuNADnd+k2tv4ReP7ZZSL0vjfcN0RcfC9v25ogxK6b03HC7D4NwWjSLf1G/zTG8Bw43wQ==",
+      "type": "package",
+      "path": "autofac/6.4.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "autofac.6.4.0.nupkg.sha512",
+        "autofac.nuspec",
+        "icon.png",
+        "lib/net5.0/Autofac.dll",
+        "lib/net5.0/Autofac.xml",
+        "lib/net6.0/Autofac.dll",
+        "lib/net6.0/Autofac.xml",
+        "lib/netstandard2.0/Autofac.dll",
+        "lib/netstandard2.0/Autofac.xml",
+        "lib/netstandard2.1/Autofac.dll",
+        "lib/netstandard2.1/Autofac.xml"
+      ]
+    },
     "bootstrap/5.2.0": {
       "sha512": "YpzkoN4cTzTfmhW4OzPj4QkWXOllC3KR1RCvWgHv+D2bm07HiJQULZ6NYRR9++nOu0iQ6j1W4pszd0xVn6Z8sQ==",
       "type": "package",
@@ -10604,6 +10641,7 @@
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "Autofac >= 6.4.0",
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 6.0.8",
       "Microsoft.AspNetCore.Identity.UI >= 6.0.8",
       "Microsoft.EntityFrameworkCore >= 6.0.8",
@@ -10657,6 +10695,10 @@
       "net6.0": {
         "targetAlias": "net6.0",
         "dependencies": {
+          "Autofac": {
+            "target": "Package",
+            "version": "[6.4.0, )"
+          },
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
             "target": "Package",
             "version": "[6.0.8, )"
