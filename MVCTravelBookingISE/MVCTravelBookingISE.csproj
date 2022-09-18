@@ -7,13 +7,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Data\Enums\**" />
     <Compile Remove="Models\Account\**" />
-    <Content Remove="Data\Enums\**" />
     <Content Remove="Models\Account\**" />
-    <EmbeddedResource Remove="Data\Enums\**" />
     <EmbeddedResource Remove="Models\Account\**" />
-    <None Remove="Data\Enums\**" />
     <None Remove="Models\Account\**" />
   </ItemGroup>
 
@@ -29,6 +25,11 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.8" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Data\Enums\" />
+    <Folder Include="Data\ViewComponents\" />
   </ItemGroup>
 
 </Project>
