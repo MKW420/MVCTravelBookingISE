@@ -6,9 +6,10 @@ using MVCTravelBookingISE.Models;
 
 namespace MVCTravelBookingISE.Data.Services
 {
-
     public class AccomodationService : EntityBaseRepository<AccomodationModel>,IAccomodationService
-
+=======
+    public class AccomodationService : EntityBaseRepository<AccomodationModel>,IAccomodationService
+>>>>>>> 4769a3a (pushchanges)
     {
 
        private readonly AppDbContext _context;
