@@ -1,9 +1,11 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
+using MVCTravelBookingISE.Areas.Identity.Data;
 using MVCTravelBookingISE.Models;
 
 namespace MVCTravelBookingISE.Data
 {
-    public class AppDbContext:DbContext
+    public class AppDbContext: DbContext
     {
         public AppDbContext(DbContextOptions<AppDbContext> options) 
             : base(options)

@@ -131,24 +131,7 @@ namespace MVCTravelBookingISE.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        //private async Task<bool> AccomodationmodelexistsAsync(int id)
-        //{
-        //    var result = await _service.GetByIdAsync(id);
-        //    if (result == null)
-        //    {
-        //        return false;
-        //    }
-        //    else
-        //    {
-        //        if (results.acco_id == id)
-        //        {
-        //            return true;
-        //        }
-
-        //        await _service.
-
-        //    }
-
-        //}
+     
+      
     }
 }

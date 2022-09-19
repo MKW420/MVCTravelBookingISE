@@ -48,6 +48,6 @@ namespace MVCTravelBookingISE.Models
         //booking
 
         public List<BookingModel> Bookings { get; set; }
-        public int Id { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+   
     }
 }

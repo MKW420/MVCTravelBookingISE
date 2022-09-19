@@ -2,6 +2,6 @@
 {
     public interface IEntityBase
     {
-        int Id { get; set; }
+        public int Id { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
     }
 }
