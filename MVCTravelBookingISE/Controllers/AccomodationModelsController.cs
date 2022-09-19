@@ -26,9 +26,9 @@ namespace MVCTravelBookingISE.Controllers
         public async Task <IActionResult> Index()
         {
             var data =  await _service.GetAllAsync();
-=======
-            var data =  await _service.GetAllAsync();
->>>>>>> 4769a3a (pushchanges)
+
+          
+
             return View(data);
         }
 
@@ -61,10 +61,8 @@ namespace MVCTravelBookingISE.Controllers
         {
             if (ModelState.IsValid)
             {
-               await  _service.AddSync(accomodationModel);
-=======
-               await  _service.AddSync(accomodationModel);
->>>>>>> 4769a3a (pushchanges)
+                              await  _service.AddSync(accomodationModel);
+
               
                 return RedirectToAction(nameof(Index));
             }
