@@ -2,39 +2,54 @@
 @model LoginModel
 
 @{
-    ViewData["Title"] = "Log in";
-    Layout = "~/Areas/Identity/Pages/_AuthLayout.cshtml";
+
+   
 }
 
 <h1>@ViewData["Title"]</h1>
-<div class="row">
-    <div class="col-md-6">
-        <section>
-            <form id="account" method="post">
-                <h2>Use a local account to log in.</h2>
-                <hr />
-                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                <div class="form-group">
+
+
+
+     <div class="container py-5 h-100">
+         <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                <div class="card shadow-2-strong" style="border-radius: 1rem;">
+                   <div class="card-body p-5">
+                      
+                    <div class="text-center">
+                        <img src=""
+                             style="width: 185px;" alt="logo">
+                        <h4 class="mt-1 mb-5 pb-1">Unlimited Travels Login</h4>
+                    </div>
+        
+                   <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-outline mb-4">
+                     <label asp-for="Input.Email" class="form-label"></label>
                     <input asp-for="Input.Email" class="form-control" autocomplete="username" aria-required="true" />
-                    <label asp-for="Input.Email" class="form-label"></label>
+                
                     <span asp-validation-for="Input.Email" class="text-danger"></span>
                 </div>
-                <div class="form-group">
+                <div class="form-outline mb-4">
+                       <label asp-for="Input.Password" class="form-label"></label>
                     <input asp-for="Input.Password" class="form-control" autocomplete="current-password" aria-required="true" />
-                    <label asp-for="Input.Password" class="form-label"></label>
+                 
                     <span asp-validation-for="Input.Password" class="text-danger"></span>
                 </div>
-                <div>
-                    <div class="checkbox">
+                
+                    <div class="form-check d-flex justify-content-start mb-4">
                         <label asp-for="Input.RememberMe" class="form-label">
                             <input class="form-check-input" asp-for="Input.RememberMe" />
                             @Html.DisplayNameFor(m => m.Input.RememberMe)
                         </label>
                     </div>
-                </div>
-                <div>
+                
+                
                     <button id="login-submit" type="submit" class="w-100 btn btn-lg btn-primary">Log in</button>
-                </div>
+                <hr class="my-4" />
+                 <button class="btn btn-lg btn-block btn-primary" style="background-color: #dd4b39;"
+                  type="submit"><i class="fab fa-google me-2"></i> Sign in with google</button>
+                <button class="btn btn-lg btn-block btn-primary mb-2" style="background-color: #3b5998;"
+                  type="submit"><i class="fab fa-facebook-f me-2"></i>Sign in with facebook</button>
                 <div>
                     <p>
                         <a id="forgot-password" asp-page="./ForgotPassword">Forgot your password?</a>
@@ -46,8 +61,10 @@
                         <a id="resend-confirmation" asp-page="./ResendEmailConfirmation">Resend email confirmation</a>
                     </p>
                 </div>
-            </form>
-        </section>
+            
+           </div>
+         </div>
+       </div>
     </div>
   
 </div>
