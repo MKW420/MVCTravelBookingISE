@@ -38,7 +38,7 @@ h1 {
 }
 body {
     height: 100vh;
-    background-image: linear-gradient(#D5EAF5, #EDEDED);
+   
 }
 
 .nav-pills > li > a {
@@ -372,3 +372,14 @@ h1 {
         text-decoration: none;
     }
 
+    .bg-cover{
+        background-position:center !important;
+        background-size:cover !important;
+        background-position:center !important;
+    }
+
+
+
+.slide1{
+    background-image:url(../img/s-tsuchiya-3dT1HMggTFU-unsplash.jpg);
+}

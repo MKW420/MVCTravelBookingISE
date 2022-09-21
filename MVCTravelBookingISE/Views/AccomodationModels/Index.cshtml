@@ -122,6 +122,12 @@
                             </p>
                         </div>
                     </div>
+                       <div class="col-md-12">
+                        <div class="card-header text-white bg-transparent">
+                            <img class="img-thumbnail" style="max-width:150px"     src="@item.Acco_picture" alt="@item.Acco_Name">
+                    </div>
+                    </div>
+                
                 
                     <div class="col-md-12">
                         <div class="card-body">
@@ -153,7 +159,7 @@
                                 </a>
                                 <a class="btn btn-success text-white>
                                asp-controller="Orders"
-                               asp-action="AddItemToShoppingCart"
+                               asp-action="AddItemToBooking"
                                asp-route-id="@item.Acco_Id">
                                    (Price @item.Acco_Price.ToString("c") /Per Night)
                                 </a>

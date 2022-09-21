@@ -225,10 +225,31 @@
                 @Html.DisplayFor(modelItem => item.Flight_Date)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Flight_Class)
+              
+                @if(item.Flight_Class == 'B'){
+                    <span>Business Class</span>
+                }
+                else if(item.Flight_Class == 'E'){
+                    <span>Economy Class</span>
+                }
+                else if(item.Flight_Class == 'P')
+                {
+                    <span>Premium Economy</span>
+                }
+                else{
+                    <span>First class</span>
+                }
             </td>
-           
+           <td>
+                        <a class="btn btn-info float-right" asp-action="Details" asp-route-id="@item.Flight_Id">
+                            <i class="bi bi-eye-fill"></i> Add to booking
+                        </a>
+                        <a class="btn btn-danger float-right" asp-action="Details" asp-route-id="@item.Flight_Id">
+                            <i class="bi bi-eye-fill"></i> Show Details
+                        </a>
+           </td>
         </tr>
+               
 }
     </tbody>
 </table>

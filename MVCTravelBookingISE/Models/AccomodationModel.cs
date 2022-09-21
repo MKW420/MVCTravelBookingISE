@@ -12,6 +12,9 @@ namespace MVCTravelBookingISE.Models
         [Display(Name = "Name of the accomodation")]
         [Required(ErrorMessage = "Accomodation Name required")]
 
+
+        public string Acco_picture { get; set; }
+
         public string Acco_Name { get; set; }
 
         [Display(Name = "Name of accomodation destination")]
@@ -44,6 +47,8 @@ namespace MVCTravelBookingISE.Models
         [Required(ErrorMessage = "Price of Accomodation required")]
         [Column(TypeName = "decimal(10,2)")]
         public decimal Acco_Price { get; set; }
+
+        public string Acco_Rules { get; set; }
 
         //booking
 

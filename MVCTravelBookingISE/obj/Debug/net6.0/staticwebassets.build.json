@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "AZRGUIorXg/eYQiPpBw4bnKYgKTZO2yDkhsQHmhS8M0=",
+  "Hash": "r5xaU9v/qShJtEcC8JhRs+rvQUQRlV902XgU/rcby3E=",
   "Source": "MVCTravelBookingISE",
   "BasePath": "_content/MVCTravelBookingISE",
   "Mode": "Default",
@@ -1870,6 +1870,23 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
+      "Identity": "C:\\Users\\keitu\\source\\repos\\MVCTravelBookingISE\\MVCTravelBookingISE\\wwwroot\\img\\francesco-ungaro-8l-FczZV4_E-unsplash.jpg",
+      "SourceId": "MVCTravelBookingISE",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\keitu\\source\\repos\\MVCTravelBookingISE\\MVCTravelBookingISE\\wwwroot\\",
+      "BasePath": "_content/MVCTravelBookingISE",
+      "RelativePath": "img/francesco-ungaro-8l-FczZV4_E-unsplash.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\francesco-ungaro-8l-FczZV4_E-unsplash.jpg"
+    },
+    {
       "Identity": "C:\\Users\\keitu\\source\\repos\\MVCTravelBookingISE\\MVCTravelBookingISE\\wwwroot\\img\\gerson-repreza-CepDpEiALqM-unsplash.jpg",
       "SourceId": "MVCTravelBookingISE",
       "SourceType": "Discovered",
@@ -1902,6 +1919,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\ross-parmly-rf6ywHVkrlY-unsplash.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\keitu\\source\\repos\\MVCTravelBookingISE\\MVCTravelBookingISE\\wwwroot\\img\\s-tsuchiya-3dT1HMggTFU-unsplash.jpg",
+      "SourceId": "MVCTravelBookingISE",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\keitu\\source\\repos\\MVCTravelBookingISE\\MVCTravelBookingISE\\wwwroot\\",
+      "BasePath": "_content/MVCTravelBookingISE",
+      "RelativePath": "img/s-tsuchiya-3dT1HMggTFU-unsplash.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\s-tsuchiya-3dT1HMggTFU-unsplash.jpg"
     },
     {
       "Identity": "C:\\Users\\keitu\\source\\repos\\MVCTravelBookingISE\\MVCTravelBookingISE\\wwwroot\\img\\Travel App or Website Logo.png",

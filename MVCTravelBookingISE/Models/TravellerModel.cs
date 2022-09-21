@@ -29,6 +29,6 @@ namespace MVCTravelBookingISE.Models
         //reltionship with other table
         public List<TravellerBooking> TravellerBookings { get; set; }
 
-    
+        public List<RewardsModel> Rewards { get; set; }
     }
 }

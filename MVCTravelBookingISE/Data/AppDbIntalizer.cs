@@ -28,7 +28,9 @@ namespace MVCTravelBookingISE.Data
                             Acco_Distance = 2,
                             Acco_Rate = 5,
                             Acco_Type = 'S',
-                            Acco_Price = 1259
+                            Acco_Price = 1259,
+                            Acco_picture= "https://images.unsplash.com/photo-1615460549969-36fa19521a4f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80",
+                            Acco_Rules = "Free Cancellation for 48 hours (Full Refund included) After 3 Days a partial Refund will be included (50%) After 7 Days there is no Refunds. Free Parking included, WIFI available and no smoking allowed "
 
 
                           },
@@ -41,7 +43,9 @@ namespace MVCTravelBookingISE.Data
                             Acco_Distance = 2,
                             Acco_Rate = 0,
                             Acco_Type= 'G',
-                            Acco_Price = 1659
+                            Acco_Price = 1659,
+                            Acco_picture="https://images.unsplash.com/photo-1445019980597-93fa8acb246c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1174&q=80",
+                             Acco_Rules = "Free Cancellation for 48 hours (Full Refund included) After 3 Days a partial Refund will be included (50%) After 7 Days there is no Refunds. Parking fee included, WIFI available and no smoking allowed "
 
 
                           },
@@ -54,7 +58,9 @@ namespace MVCTravelBookingISE.Data
                             Acco_Distance = 1,
                             Acco_Rate = 0,
                             Acco_Type = 'S',
-                            Acco_Price = 1599
+                            Acco_Price = 1599,
+                            Acco_picture = "https://images.unsplash.com/photo-1445019980597-93fa8acb246c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1174&q=80",
+                             Acco_Rules = "Free Cancellation for 48 hours (Full Refund included) After 3 Days a partial Refund will be included (50%) After 7 Days there is no Refunds. Parking fee included, WIFI available and no smoking allowed "
                         },
                         new AccomodationModel
                         {
@@ -65,7 +71,9 @@ namespace MVCTravelBookingISE.Data
                             Acco_Distance = 1,
                             Acco_Rate = 0,
                             Acco_Type = 'G',
-                            Acco_Price = 1899
+                            Acco_Price = 1899,
+                            Acco_picture="https://images.unsplash.com/photo-1611892440504-42a792e24d32?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+                             Acco_Rules = "Free Cancellation for 48 hours (Full Refund included) After 3 Days a partial Refund will be included (50%) After 7 Days there is no Refunds. Parking fee included, WIFI available and no smoking allowed "
                         },
                         new AccomodationModel
                         {
@@ -76,7 +84,9 @@ namespace MVCTravelBookingISE.Data
                             Acco_Distance = 1,
                             Acco_Rate = 0,
                             Acco_Type = 'G',
-                            Acco_Price = 1855
+                            Acco_Price = 1855,
+                            Acco_picture = "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+                             Acco_Rules = "Free Cancellation for 48 hours (Full Refund included) After 3 Days a partial Refund will be included (50%) After 7 Days there is no Refunds. Parking fee included, WIFI available and no smoking allowed "
                         },
                          new AccomodationModel
                         {
@@ -87,8 +97,11 @@ namespace MVCTravelBookingISE.Data
                             Acco_Distance = 2,
                             Acco_Rate = 0,
                             Acco_Type = 'G',
-                            Acco_Price = 1699
+                            Acco_Price = 1699,
+                            Acco_picture ="https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+                             Acco_Rules = "Free Cancellation for 48 hours (Full Refund included) After 3 Days a partial Refund will be included (50%) After 7 Days there is no Refunds. Parking fee included, WIFI available and no smoking allowed "
                         },
+
                           new AccomodationModel
                         {
                             Acco_Name = "Sunninghill Guest Lodges (Game Park)",
@@ -98,7 +111,9 @@ namespace MVCTravelBookingISE.Data
                             Acco_Distance = 1,
                             Acco_Rate = 0,
                             Acco_Type = 'G',
-                            Acco_Price = 1195
+                            Acco_Price = 1195,
+                            Acco_picture="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+                             Acco_Rules = "Free Cancellation for 48 hours (Full Refund included) After 3 Days a partial Refund will be included (50%) After 7 Days there is no Refunds. Parking fee included, WIFI available and no smoking allowed "
                         },
                          new AccomodationModel
                         {
@@ -109,7 +124,9 @@ namespace MVCTravelBookingISE.Data
                             Acco_Distance = 1,
                             Acco_Rate = 0,
                             Acco_Type = 'G',
-                            Acco_Price = 1999
+                            Acco_Price = 1999,
+                            Acco_picture ="https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+                             Acco_Rules = "Free Cancellation for 48 hours (Full Refund included) After 3 Days a partial Refund will be included (50%) After 7 Days there is no Refunds. Parking fee included, WIFI available and no smoking allowed "
                         },
                         new AccomodationModel
                         {
@@ -120,7 +137,9 @@ namespace MVCTravelBookingISE.Data
                             Acco_Distance = 1,
                             Acco_Rate = 0,
                             Acco_Type = 'G',
-                            Acco_Price = 1499
+                            Acco_Price = 1499,
+                            Acco_picture = "https://images.unsplash.com/photo-1618773928121-c32242e63f39?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+                             Acco_Rules = "Free Cancellation for 48 hours (Full Refund included) After 3 Days a partial Refund will be included (50%) After 7 Days there is no Refunds. Parking fee included, WIFI available and no smoking allowed "
                         },
                         new AccomodationModel
                         {
@@ -131,9 +150,11 @@ namespace MVCTravelBookingISE.Data
                             Acco_Distance = 1,
                             Acco_Rate = 0,
                             Acco_Type = 'S',
-                            Acco_Price = 1299
+                            Acco_Price = 1299,
+                            Acco_picture="https://images.unsplash.com/photo-1564501049412-61c2a3083791?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1332&q=80",
+                             Acco_Rules = "Free Cancellation for 48 hours (Full Refund included) After 3 Days a partial Refund will be included (50%) After 7 Days there is no Refunds. Free Parking included, WIFI available and smoking allowed adn complimentary Shuttle provided on arrival "
                         },
-                        new AccomodationModel
+                        new AccomodationModel()
                         {
                             Acco_Name = "Rydges Sydeny Central",
                             Acco_Destination = "Sydney, Austraila",
@@ -142,9 +163,11 @@ namespace MVCTravelBookingISE.Data
                             Acco_Distance = 1,
                             Acco_Rate = 0,
                             Acco_Type = 'G',
-                            Acco_Price = 1299
+                            Acco_picture ="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80",
+                             Acco_Rules = "Free Cancellation for 48 hours (Full Refund included) After 3 Days a partial Refund will be included (50%) After 7 Days there is no Refunds. Free Parking included, WIFI available and no smoking allowed. Swimming pool included",
+                            Acco_Price = 1299,
                         },
-                         new AccomodationModel
+                         new AccomodationModel()
                         {
                             Acco_Name = "Umhlanga Windsor Villa (Holiday House)",
                             Acco_Destination = "Umlhanga, Durban",
@@ -154,8 +177,10 @@ namespace MVCTravelBookingISE.Data
                             Acco_Rate = 0,
                             Acco_Type = 'G',
                             Acco_Price = 1999,
+                            Acco_picture="https://images.unsplash.com/photo-1570129477492-45c003edd2be?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+                            Acco_Rules = "Free Cancellation for 48 hours (Full Refund included) After 3 Days a partial Refund will be included (50%) After 7 Days there is no Refunds. Free Parking included, WIFI available and no smoking allowed "
                         },
-                          new AccomodationModel
+                          new AccomodationModel()
                         {
                             Acco_Name = "Point Waterfront Apartments (Holiday Apartment)",
                             Acco_Destination = "Durban Point Waterfront, Durban",
@@ -164,7 +189,9 @@ namespace MVCTravelBookingISE.Data
                             Acco_Distance = 1,
                             Acco_Rate = 0,
                             Acco_Type = 'G',
-                            Acco_Price = 2599
+                            Acco_Price = 2599,
+                            Acco_picture = "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80",
+                            Acco_Rules = "Free Cancellation for 48 hours (Full Refund included) After 3 Days a partial Refund will be included (50%) After 7 Days there is no Refunds. Parking fee included, WIFI available and no smoking allowed "
                         },
 
                     });
@@ -215,203 +242,10 @@ namespace MVCTravelBookingISE.Data
                     context.SaveChanges();
 
                 }
-                //Flight
-
-                //if (!context.Flight.Any())
-                //{
-                //    context.Flight.AddRange(new List<FlightModel>(){
-                //        new FlightModel
-                //        {
-
-                //           Flight_Destination = "Johannesburg",
-                //           Flight_Departure = "CapeTown",
-                //           Flight_Date =    DateTime.Now.AddDays(+10),
-                //           Flight_Class = 'B',
-                //           Flight_Price = 4685,
-                //           Flight_Rules_Id = 1
-                           
-
-                //        },
-                //        new FlightModel
-                //        {
-
-                //           Flight_Destination = "CapeTown",
-                //           Flight_Departure = "Johannesburg",
-                //           Flight_Date =    DateTime.Now.AddDays(+10),
-                //           Flight_Class = 'B',
-                //           Flight_Price = 4799,
-                //           Flight_Rules_Id = 3
-
-                //        },
-                //        new FlightModel
-                //        {
-
-                //           Flight_Destination = "Johannesburg",
-                //           Flight_Departure = "Durban",
-                //           Flight_Date =    DateTime.Now.AddDays(+10),
-                //           Flight_Class = 'B',
-                //           Flight_Price = 4599,
-                //           Flight_Rules_Id = 1
-                //          },
-                //        new FlightModel
-                //        {
-
-                //           Flight_Destination = "Durban",
-                //           Flight_Departure = "Cape Town",
-                //           Flight_Date =    DateTime.Now.AddDays(+10),
-                //           Flight_Class = 'B',
-                //           Flight_Price = 4599,
-                //           Flight_Rules_Id = 1
-                //         },
-                //         new FlightModel
-                //        {
-
-                //           Flight_Destination = "Durban",
-                //           Flight_Departure = "Pretoria",
-                //           Flight_Date =    DateTime.Now.AddDays(+10),
-                //           Flight_Class = 'B',
-                //           Flight_Price = 4599,
-                //           Flight_Rules_Id = 3
-                //         },
-                //        new FlightModel
-                //        {
-
-                //           Flight_Destination = "Hartbeesport",
-                //           Flight_Departure = "Durban",
-                //           Flight_Date =    DateTime.Now.AddDays(+15),
-                //           Flight_Class = 'F',
-                //           Flight_Price = 8599,
-                //           Flight_Rules_Id = 1
-                //        }
-                //        ,
-                //          new FlightModel
-                //        {
-
-                //           Flight_Destination = "Pretoria",
-                //           Flight_Departure = "CapeTown",
-                //           Flight_Date =    DateTime.Now.AddDays(+15),
-                //           Flight_Class = 'B',
-                //           Flight_Price = 4599,
-                //           Flight_Rules_Id = 1
-                //          }
-                //        ,
-                //        new FlightModel
-                //        {
-
-                //           Flight_Destination = "Pretoria",
-                //           Flight_Departure = "Durban",
-                //           Flight_Date =    DateTime.Now.AddDays(+15),
-                //           Flight_Class = 'B',
-                //           Flight_Price = 5599,
-                //           Flight_Rules_Id = 1
-                //         }
-                //        ,
-                //        new FlightModel
-                //        {
-
-                //           Flight_Destination = "Port Elizabeth",
-                //           Flight_Departure = "Johannesburg",
-                //           Flight_Date =    DateTime.Now.AddDays(+20),
-                //           Flight_Class = 'B',
-                //           Flight_Price = 5589,
-                //           Flight_Rules_Id = 1
-
-                //        },
-                //         new FlightModel
-                //        {
-
-                //           Flight_Destination = "Port Elizabeth",
-                //           Flight_Departure = "Cape Town",
-                //           Flight_Date =    DateTime.Now.AddDays(+20),
-                //           Flight_Class = 'B',
-                //           Flight_Price = 4599,
-                //           Flight_Rules_Id = 1
-
-                //        },
-                //         new FlightModel
-                //        {
-
-                //           Flight_Destination = "Port Elizabeth",
-                //           Flight_Departure = "Durban",
-                //           Flight_Date =    DateTime.Now.AddDays(+20),
-                //           Flight_Class = 'B',
-                //           Flight_Price = 4599,
-                //           Flight_Rules_Id = 1
-
-                //        },
-                //        new FlightModel
-                //        {
-                //           Flight_Destination = "Cape Town",
-                //           Flight_Departure = "Queensland (Austraila)",
-                //           Flight_Date =    DateTime.Now.AddDays(+20),
-                //           Flight_Class = 'F',
-                //           Flight_Price = 8569,
-                //           Flight_Rules_Id = 4
-                //         },
-                //         new FlightModel
-                //        {
-                //           Flight_Destination = "Cape Town",
-                //           Flight_Departure = "Queensland (Austraila)",
-                //           Flight_Date =    DateTime.Now.AddDays(+20),
-                //           Flight_Class = 'B',
-                //           Flight_Price = 4599,
-                //           Flight_Rules_Id = 4
-                //         },
-                //        new FlightModel
-                //        {
-                //           Flight_Destination = "Johannesburg",
-                //           Flight_Departure = "Queensland (Austraila)",
-                //           Flight_Date =    DateTime.Now.AddDays(+20),
-                //           Flight_Class = 'B',
-                //           Flight_Price = 4599,
-                //           Flight_Rules_Id = 5
-                //          },
-                //         new FlightModel
-                //        {
-                //           Flight_Destination = "Johannesburg",
-                //           Flight_Departure = "Queensland (Austraila)",
-                //           Flight_Date =    DateTime.Now.AddDays(+20),
-                //           Flight_Class = 'E',
-                //           Flight_Price = 6899,
-                //           Flight_Rules_Id = 4
-                //          },
-                //          new FlightModel
-                //        {
-                //           Flight_Destination = "Johannesburg",
-                //           Flight_Departure = "Queensland (Austraila)",
-                //           Flight_Date =    DateTime.Now.AddDays(+20),
-                //           Flight_Class = 'F',
-                //           Flight_Price = 8599,
-                //           Flight_Rules_Id = 5
-                //          },
-                //        new FlightModel
-                //        {
-                //           Flight_Destination = "Port Elizabeth",
-                //           Flight_Departure = "Queensland (Austraila)",
-                //           Flight_Date =    DateTime.Now.AddDays(+20),
-                //           Flight_Class = 'B',
-                //           Flight_Price = 5599,
-                //           Flight_Rules_Id = 3
-                //           },
-                //          new FlightModel
-                //        {
-                //           Flight_Destination = "Johannesburg",
-                //           Flight_Departure = "Hong Kong",
-                //           Flight_Date =    DateTime.Now.AddDays(+20),
-                //           Flight_Class = 'B',
-                //           Flight_Price = 5599,
-                //           Flight_Rules_Id = 12,
-                //           FlightRules_Id = 
 
 
-                //           }
-
-                //       });
-
-                //     context.SaveChanges();
-                //    }
-                    //FlightRules
-                    if (!context.FlightRule.Any())
+                //FlightRules
+                if (!context.FlightRule.Any())
                     {
                         context.FlightRule.AddRange(new List<FlightRulesModel>(){
                         new FlightRulesModel
@@ -506,10 +340,224 @@ namespace MVCTravelBookingISE.Data
                     }
 
 
+                if (!context.Flight.Any())
+                {
+                    context.Flight.AddRange(new List<FlightModel>(){
+                        new FlightModel
+                        {
+
+                           Flight_Destination = "Johannesburg",
+                           Flight_Departure = "CapeTown",
+                           Flight_Date =    DateTime.Now.AddDays(10),
+                           Flight_Class = 'B',
+                           Flight_Price = 4685,
+                           FlightRules_Id = 1
 
 
 
+
+
+                        },
+                        new FlightModel
+                        {
+
+                           Flight_Destination = "CapeTown",
+                           Flight_Departure = "Johannesburg",
+                           Flight_Date =    DateTime.Now.AddDays(10),
+                           Flight_Class = 'B',
+                           Flight_Price = 4799,
+                           FlightRules_Id = 3
+
+
+                        },
+                        new FlightModel
+                        {
+
+                           Flight_Destination = "Johannesburg",
+                           Flight_Departure = "Durban",
+                           Flight_Date =    DateTime.Now.AddDays(10),
+                           Flight_Class = 'B',
+                           Flight_Price = 4599,
+                           FlightRules_Id = 2
+
+                          },
+                        new FlightModel
+                        {
+
+                           Flight_Destination = "Durban",
+                           Flight_Departure = "Cape Town",
+                           Flight_Date =    DateTime.Now.AddDays(10),
+                           Flight_Class = 'B',
+                           Flight_Price = 4599,
+                           FlightRules_Id = 4
+
+                         },
+                         new FlightModel
+                        {
+
+                           Flight_Destination = "Durban",
+                           Flight_Departure = "Pretoria",
+                           Flight_Date =    DateTime.Now.AddDays(10),
+                           Flight_Class = 'B',
+                           Flight_Price = 4599,
+                           FlightRules_Id= 5
+
+                         },
+                        new FlightModel
+                        {
+
+                           Flight_Destination = "Hartbeesport",
+                           Flight_Departure = "Durban",
+                           Flight_Date =    DateTime.Now.AddDays(15),
+                           Flight_Class = 'F',
+                           Flight_Price = 8599,
+                           FlightRules_Id = 2
+
+                        }
+                        ,
+                          new FlightModel
+                        {
+
+                           Flight_Destination = "Pretoria",
+                           Flight_Departure = "CapeTown",
+                           Flight_Date =    DateTime.Now.AddDays(15),
+                           Flight_Class = 'B',
+                           Flight_Price = 4599,
+                           FlightRules_Id = 1
+
+                          }
+                        ,
+                        new FlightModel
+                        {
+
+                           Flight_Destination = "Pretoria",
+                           Flight_Departure = "Durban",
+                           Flight_Date =    DateTime.Now.AddDays(15),
+                           Flight_Class = 'B',
+                           Flight_Price = 5599,
+                           FlightRules_Id = 4
+
+                         }
+                        ,
+                        new FlightModel
+                        {
+
+                           Flight_Destination = "Port Elizabeth",
+                           Flight_Departure = "Johannesburg",
+                           Flight_Date =    DateTime.Now.AddDays(20),
+                           Flight_Class = 'B',
+                           Flight_Price = 5589,
+                           FlightRules_Id = 4
+
+                        },
+                         new FlightModel
+                        {
+
+                           Flight_Destination = "Port Elizabeth",
+                           Flight_Departure = "Cape Town",
+                           Flight_Date =    DateTime.Now.AddDays(20),
+                           Flight_Class = 'B',
+                           Flight_Price = 4599,
+                           FlightRules_Id= 4
+
+
+                        },
+                         new FlightModel
+                        {
+
+                           Flight_Destination = "Port Elizabeth",
+                           Flight_Departure = "Durban",
+                           Flight_Date =    DateTime.Now.AddDays(20),
+                           Flight_Class = 'B',
+                           Flight_Price = 4599,
+                           FlightRules_Id = 2
+
+
+                        },
+                        new FlightModel
+                        {
+                           Flight_Destination = "Cape Town",
+                           Flight_Departure = "Queensland (Austraila)",
+                           Flight_Date =    DateTime.Now.AddDays(20),
+                           Flight_Class = 'F',
+                           Flight_Price = 8569,
+                           FlightRules_Id = 2
+
+                         },
+                         new FlightModel
+                        {
+                           Flight_Destination = "Cape Town",
+                           Flight_Departure = "Queensland (Austraila)",
+                           Flight_Date =    DateTime.Now.AddDays(20),
+                           Flight_Class = 'B',
+                           Flight_Price = 4599,
+                           FlightRules_Id = 3
+
+                         },
+                        new FlightModel
+                        {
+                           Flight_Destination = "Johannesburg",
+                           Flight_Departure = "Queensland (Austraila)",
+                           Flight_Date =    DateTime.Now.AddDays(20),
+                           Flight_Class = 'B',
+                           Flight_Price = 4599,
+                           FlightRules_Id = 2
+
+                          },
+                         new FlightModel
+                        {
+                           Flight_Destination = "Johannesburg",
+                           Flight_Departure = "Queensland (Austraila)",
+                           Flight_Date =    DateTime.Now.AddDays(20),
+                           Flight_Class = 'E',
+                           Flight_Price = 6899,
+                           FlightRules_Id = 12
+
+
+                          },
+                          new FlightModel
+                        {
+                           Flight_Destination = "Johannesburg",
+                           Flight_Departure = "Queensland (Austraila)",
+                           Flight_Date =    DateTime.Now.AddDays(20),
+                           Flight_Class = 'F',
+                           Flight_Price = 8599,
+                           FlightRules_Id = 8
+
+                          },
+                        new FlightModel
+                        {
+                           Flight_Destination = "Port Elizabeth",
+                           Flight_Departure = "Queensland (Austraila)",
+                           Flight_Date =    DateTime.Now.AddDays(20),
+                           Flight_Class = 'B',
+                           Flight_Price = 5599,
+                           FlightRules_Id = 2
+
+
+                           },
+                          new FlightModel
+                        {
+                           Flight_Destination = "Johannesburg",
+                           Flight_Departure = "Hong Kong",
+                           Flight_Date =    DateTime.Now.AddDays(20),
+                           Flight_Class = 'B',
+                           Flight_Price = 5599,
+                           FlightRules_Id = 1
+
+
+
+
+                           }
+
+                       });
+
+                    context.SaveChanges();
                 }
+
+
+
+            }
             }
         }
     }

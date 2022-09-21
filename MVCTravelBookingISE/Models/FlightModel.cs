@@ -31,10 +31,9 @@ namespace MVCTravelBookingISE.Models
         public decimal Flight_Price{ get; set; }
 
        
-        public int Flight_Rules_Id { get; set; }
+        public int FlightRules_Id { get; set; }
         [ForeignKey("FlightRules_Id")]
-
-        public virtual FlightRulesModel FlightRule { get; set; }
+        public FlightRulesModel FlightRule { get; set; }
         //Reltionships with other Models
     
         public List<BookingModel> Bookings { get; set; }

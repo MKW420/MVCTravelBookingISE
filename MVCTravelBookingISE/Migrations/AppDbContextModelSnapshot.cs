@@ -17,7 +17,7 @@ namespace MVCTravelBookingISE.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "6.0.8")
+                .HasAnnotation("ProductVersion", "6.0.9")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
@@ -35,7 +35,8 @@ namespace MVCTravelBookingISE.Migrations
 
                     b.Property<string>("Acco_Destination")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<decimal>("Acco_Distance")
                         .HasColumnType("decimal(10,2)");
@@ -53,9 +54,17 @@ namespace MVCTravelBookingISE.Migrations
                     b.Property<int>("Acco_Rooms")
                         .HasColumnType("int");
 
+                    b.Property<string>("Acco_Rules")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Acco_Type")
                         .IsRequired()
                         .HasColumnType("nvarchar(1)");
+
+                    b.Property<string>("Acco_picture")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Acco_Id");
 
@@ -138,9 +147,6 @@ namespace MVCTravelBookingISE.Migrations
                     b.Property<decimal>("Flight_Price")
                         .HasColumnType("decimal(10,2)");
 
-                    b.Property<int>("Flight_Rules_Id")
-                        .HasColumnType("int");
-
                     b.HasKey("Flight_Id");
 
                     b.HasIndex("FlightRules_Id");
@@ -167,6 +173,39 @@ namespace MVCTravelBookingISE.Migrations
                     b.HasKey("FlightRules_Id");
 
                     b.ToTable("FlightRule");
+                });
+
+            modelBuilder.Entity("MVCTravelBookingISE.Models.RewardsModel", b =>
+                {
+                    b.Property<int>("Rewards_Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Rewards_Id"), 1L, 1);
+
+                    b.Property<DateTime>("ExpiryRewardsDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Rewards_Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Rewards_Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Rewards_Status")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Traveller_Id")
+                        .HasColumnType("int");
+
+                    b.HasKey("Rewards_Id");
+
+                    b.HasIndex("Traveller_Id");
+
+                    b.ToTable("RewardsModel");
                 });
 
             modelBuilder.Entity("MVCTravelBookingISE.Models.TransportModel", b =>
@@ -285,6 +324,17 @@ namespace MVCTravelBookingISE.Migrations
                     b.Navigation("FlightRule");
                 });
 
+            modelBuilder.Entity("MVCTravelBookingISE.Models.RewardsModel", b =>
+                {
+                    b.HasOne("MVCTravelBookingISE.Models.TravellerModel", "Traveller")
+                        .WithMany("Rewards")
+                        .HasForeignKey("Traveller_Id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Traveller");
+                });
+
             modelBuilder.Entity("MVCTravelBookingISE.Models.TravellerBooking", b =>
                 {
                     b.HasOne("MVCTravelBookingISE.Models.BookingModel", "Booking")
@@ -333,6 +383,8 @@ namespace MVCTravelBookingISE.Migrations
 
             modelBuilder.Entity("MVCTravelBookingISE.Models.TravellerModel", b =>
                 {
+                    b.Navigation("Rewards");
+
                     b.Navigation("TravellerBookings");
                 });
 #pragma warning restore 612, 618

@@ -13,8 +13,7 @@ namespace MVCTravelBookingISE.Models
         public int Booking_Id { get; set; }
         public BookingModel Booking { get; set; }
 
-      
-       
+
 
     }
 }
