@@ -34,3 +34,6 @@ function initMenu() {
 $(document).ready(function () {
     initMenu();
 });
+$(function () {
+    $('[data-toggle="popover"]').popover()
+})

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "r5xaU9v/qShJtEcC8JhRs+rvQUQRlV902XgU/rcby3E=",
+  "Hash": "6R3mFsu8m2AtrPN5K/kY+qjU2Ja7oiCfvobxUGpfneA=",
   "Source": "MVCTravelBookingISE",
   "BasePath": "_content/MVCTravelBookingISE",
   "Mode": "Default",
@@ -1902,6 +1902,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\gerson-repreza-CepDpEiALqM-unsplash.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\keitu\\source\\repos\\MVCTravelBookingISE\\MVCTravelBookingISE\\wwwroot\\img\\logoT.PNG",
+      "SourceId": "MVCTravelBookingISE",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\keitu\\source\\repos\\MVCTravelBookingISE\\MVCTravelBookingISE\\wwwroot\\",
+      "BasePath": "_content/MVCTravelBookingISE",
+      "RelativePath": "img/logoT.PNG",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\logoT.PNG"
     },
     {
       "Identity": "C:\\Users\\keitu\\source\\repos\\MVCTravelBookingISE\\MVCTravelBookingISE\\wwwroot\\img\\ross-parmly-rf6ywHVkrlY-unsplash.jpg",

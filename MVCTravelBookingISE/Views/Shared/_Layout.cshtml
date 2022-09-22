@@ -11,10 +11,10 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom box-shadow">
             <div class="container-fluid">
                 <a class="navbar-brand" asp-area="" asp-controller="FlightModels" asp-action="Index">
-                    <img src=@Url.Content("img/Travel App or Website Logo.png")width="75" height="75"/>UNLIMITED TRAVELS</a>
+                    <img src=@Url.Content("~/img/Travel App or Website Logo.png") width="65" height="75"/>UNLIMITED TRAVELS</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -23,13 +23,9 @@
                    
                     <ul class="navbar-nav me-auto">
                       
-                       
-                       
-                        <li class="navbar-nav flex-grow-1">
-                            <a class="nav-link text-dark" asp.controller="FlightModelsController" asp-action="Index"> <i class="badge-info bi-film"></i></a>
-
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About</a>
                         </li>
-                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit" asp-controller="AccomodationModels" asp-action="Create" ><i class="bi bi-search"></i>LIST YOUR PROPERTY</button>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" id="navbarDropdown" role="button" data-toggle="button" aria-haspopup="true" aria-expanded="false">
                                 <i class="bi-film-gear"></i> Management
@@ -45,6 +41,12 @@
                                 <a class="dropdown-item" href="#">POLICY</a>
                             </div>
                         </li>
+                        <li class="navbar-nav flex-grow-1">
+                            <a class="nav-link text-dark" asp.controller="FlightModelsController" asp-action="Index"> <i class="badge-info bi-film"></i></a>
+
+                        </li>
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit" asp-controller="AccomodationModels" asp-action="Create" ><i class="bi bi-search"></i>LIST YOUR PROPERTY</button>
+                       
                        
                     </ul>
                     
@@ -185,11 +187,7 @@
             </div>
         </section>
         <!-- Section: Links  -->
-        <!-- Copyright -->
-        <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
-            © 2021 Copyright:
-            <a class="text-reset fw-bold" href="https://mdbootstrap.com/">MDBootstrap.com</a>
-        </div>
+      
         <!-- Copyright -->
     </footer>
     <!-- Footer -->
