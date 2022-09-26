@@ -7,8 +7,7 @@ namespace MVCTravelBookingISE.Data
 {
     public class AppDbContext: DbContext
     {
-        public AppDbContext(DbContextOptions<AppDbContext> options) 
-            : base(options)
+        public AppDbContext(DbContextOptions<AppDbContext> options)  : base(options)
         {
 
         }
@@ -108,6 +107,7 @@ namespace MVCTravelBookingISE.Data
         public DbSet<TravellerModel> Traveller { get; set; }
         public DbSet<TransportModel> Transport { get; set; }
         public DbSet<TravellerBooking> TravellerBooking { get; set; }
+        public DbSet<MVCTravelBookingISE.Models.RewardsModel> RewardsModel { get; set; }
         
 
     }

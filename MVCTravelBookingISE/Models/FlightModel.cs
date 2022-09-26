@@ -1,9 +1,10 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using MVCTravelBookingISE.Data.Base;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MVCTravelBookingISE.Models
 {
-    public class FlightModel
+    public class FlightModel:IEntityBase
     {
         [Key]
         public int Flight_Id { get; set; }

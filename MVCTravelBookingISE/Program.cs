@@ -11,6 +11,9 @@ using Microsoft.Extensions.Options;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddScoped<IAccomodationService, AccomodationService>();
+builder.Services.AddScoped<IFlightService, FlightService>();
+builder.Services.AddScoped<IRewardsService, RewardsService>();
+
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();

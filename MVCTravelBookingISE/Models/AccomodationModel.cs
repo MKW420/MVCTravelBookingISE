@@ -12,7 +12,6 @@ namespace MVCTravelBookingISE.Models
         [Display(Name = "Name of the accomodation")]
         [Required(ErrorMessage = "Accomodation Name required")]
 
-
         public string Acco_picture { get; set; }
 
         public string Acco_Name { get; set; }

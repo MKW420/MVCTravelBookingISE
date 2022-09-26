@@ -6,43 +6,40 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using MVCTravelBookingISE.Data;
+using MVCTravelBookingISE.Data.Services;
 using MVCTravelBookingISE.Models;
 
 namespace MVCTravelBookingISE.Controllers
 {
     public class FlightModelsController : Controller
     {
-        private readonly AppDbContext _context;
+        private readonly IFlightService _service;
 
-        public FlightModelsController(AppDbContext context)
+
+        public FlightModelsController(IFlightService service)
         {
-            _context = context;
+            _service = service;
         }
 
         // GET: FlightModels
         public async Task<IActionResult> Index()
         {
-              return _context.Flight != null ? 
-                          View(await _context.Flight.ToListAsync()) :
-                          Problem("Entity set 'AppDbContext.Flights'  is null.");
+            var data = await _service.GetAllAsync();
+            return View(data);
         }
 
         // GET: FlightModels/Details/5
-        public async Task<IActionResult> Details(int? id)
+        public async Task<IActionResult> Details(int id)
         {
-            if (id == null || _context.Flight == null)
+            var FlightDetails = await _service.GetByIdAsync(id);
+
+            if (FlightDetails == null)
             {
-                return NotFound();
+                return View("Empty");
             }
 
-            var flightModel = await _context.Flight
-                .FirstOrDefaultAsync(m => m.Flight_Id == id);
-            if (flightModel == null)
-            {
-                return NotFound();
-            }
 
-            return View(flightModel);
+            return View(FlightDetails);
         }
 
         // GET: FlightModels/Create
@@ -60,27 +57,24 @@ namespace MVCTravelBookingISE.Controllers
         {
             if (ModelState.IsValid)
             {
-                _context.Add(flightModel);
-                await _context.SaveChangesAsync();
+                await _service.AddSync(flightModel);
+
+
                 return RedirectToAction(nameof(Index));
             }
             return View(flightModel);
         }
 
         // GET: FlightModels/Edit/5
-        public async Task<IActionResult> Edit(int? id)
+        public async Task<IActionResult> Edit(int id)
         {
-            if (id == null || _context.Flight == null)
-            {
-                return NotFound();
-            }
-
-            var flightModel = await _context.Flight.FindAsync(id);
+            var flightModel = await _service.GetByIdAsync(id);
             if (flightModel == null)
             {
-                return NotFound();
+                return View("Not found");
             }
             return View(flightModel);
+
         }
 
         // POST: FlightModels/Edit/5
@@ -95,45 +89,27 @@ namespace MVCTravelBookingISE.Controllers
                 return NotFound();
             }
 
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
-                try
-                {
-                    _context.Update(flightModel);
-                    await _context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!FlightModelExists(flightModel.Flight_Id))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
-                return RedirectToAction(nameof(Index));
+                return View(flightModel);
+
             }
-            return View(flightModel);
+            await _service.UpdateAsync(id, flightModel);
+            return RedirectToAction(nameof(Index));
+
         }
 
         // GET: FlightModels/Delete/5
-        public async Task<IActionResult> Delete(int? id)
+        public async Task<IActionResult> Delete(int id)
         {
-            if (id == null || _context.Flight == null)
-            {
-                return NotFound();
-            }
+            var flightModel = await _service.GetByIdAsync(id);
 
-            var flightModel = await _context.Flight
-                .FirstOrDefaultAsync(m => m.Flight_Id == id);
             if (flightModel == null)
             {
-                return NotFound();
+                return View("Not found");
             }
-
             return View(flightModel);
+
         }
 
         // POST: FlightModels/Delete/5
@@ -141,23 +117,15 @@ namespace MVCTravelBookingISE.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            if (_context.Flight == null)
+            var flightModel = await _service.GetByIdAsync(id);
+            if (flightModel == null)
             {
-                return Problem("Entity set 'AppDbContext.Flights'  is null.");
+                return View("Not found");
             }
-            var flightModel = await _context.Flight.FindAsync(id);
-            if (flightModel != null)
-            {
-                _context.Flight.Remove(flightModel);
-            }
-            
-            await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+            return View(flightModel);
         }
 
-        private bool FlightModelExists(int id)
-        {
-          return (_context.Flight?.Any(e => e.Flight_Id == id)).GetValueOrDefault();
-        }
+      
+
     }
 }

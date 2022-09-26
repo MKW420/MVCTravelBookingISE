@@ -383,3 +383,8 @@ h1 {
 .slide1{
     background-image:url(../img/s-tsuchiya-3dT1HMggTFU-unsplash.jpg);
 }
+.card-img-top {
+    max-height: 160px;
+    min-height: 160px;
+    object-fit: cover
+}

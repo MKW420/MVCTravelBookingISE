@@ -6,36 +6,37 @@
 }
 <head>
     <script></script>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
+    <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/css/site.css"/>
 </head>
+
 <body>
 
-    <section id="services " class="view w-100  text-white" style="background-image:url('https://images.unsplash.com/photo-1501785888041-af3ef285b470?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80'); background-repeat:no-repeat; background-size:cover; background-position: center center;">
-      <div class="mask rgba-black-light align-items-center">
+  @*  <section id="services " class="view w-100">
+      <div class="align-items-center">
         <div class="container">
         <div class="row">
-            <div class="col-12 mb-4 text-white text-center">
-                        <h1 class="h1-reponsive white-text text-uppercase font-weight-bold mb-0 pt-md-5 pt-5 wow fadeInDown" data-wow-delay="0.3s" >Find Cheap acccomodation-many deals to choose form! </h1>
+            <div class="col-12 mb-4 text-black text-center">
+                        <h1 class="h1-reponsive white-text text-uppercase font-weight-bold mb-0 pt-md-5 pt-5 wow fadeInDown" data-wow-delay="0.3s" >Find Afforable acccomodation </h1>
                         <hr class="hr-light my-4 wow fadeInDown" data-wow-delay="0.4s">
                         <h5 class="text-uppercase mb-4 white-text wow fadeInDown" data-wow-delay="0.4s" ></h5>
                             The destination, ratings and price of accomodation is listed below</p>
-                        <a class="btn btn-outline-white wow fadeInDown" data-wow-delay="0.4s">portfolio</a>
-                        <a class="btn btn-outline-white wow fadeInDown" data-wow-delay="0.4s">About me</a>
+                   
 
             </div>
         </div>
     </div>
     </div>
     </section>
+  *@
+
   
 
-<p>
-    <a  class="btn btn-primary text-white" asp-action="Create">List your property</a>
-</p>
-    <div class="card border-5 border-info ">
+    <div class="card border-5 border-dark ">
     <div class="card-body ">
-            <h5 class="card-title">
-                Locations
-            </h5>
+          
             <div class="row">
                 <div class="col-sm">
                     <div class="mb-2">
@@ -48,6 +49,9 @@
                             <datalist id="origin-options"></datalist>
                         </div>
                     </div>
+                    <p>
+                        <a class="btn btn-primary text-white" asp-action="Create">Search Accomodation!</a>
+                    </p>
                 </div>
              <div class="col-sm">
                @* <div id="departure-date" class="mb-1">
@@ -111,6 +115,139 @@
           </div>
       </div>
   </div>
+
+
+    <div class="container-fluid container py-3 mt-4">
+        <h2 class="h3">What guests are saying about homes in the United States</h2>
+        <div class="row mt-4">
+            <div class="col-md-3">
+                <div class="card mb-3">
+                    <img src="https://images.unsplash.com/photo-1533654793924-4fc4949fb71e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1351&q=80" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title text-info">&#9733; &#9733; &#9733; &#9733; &#9733;</h5>
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <div class="">
+                            <div class="d-flex">
+                                <img src="https://a0.muscache.com/im/pictures/660e2273-b37b-4f50-917e-369e7bc3f665.jpg?aki_policy=large" class="ml-0 mr-2 img-fluidX rounded-circle w-25 mb-3" alt="...">
+                                <div class="d-flex flex-column">
+                                    <h5 class="mt-0 mb-1">Sara</h5>
+                                    <p>United States</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+             <div class="col-md-3">
+                <div class="card mb-3">
+                    <img src="https://images.unsplash.com/photo-1533654793924-4fc4949fb71e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1351&q=80" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title text-info">&#9733; &#9733; &#9733; &#9733; &#9733;</h5>
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <div class="">
+                            <div class="d-flex">
+                                <img src="https://a0.muscache.com/im/pictures/660e2273-b37b-4f50-917e-369e7bc3f665.jpg?aki_policy=large" class="ml-0 mr-2 img-fluidX rounded-circle w-25 mb-3" alt="...">
+                                <div class="d-flex flex-column">
+                                    <h5 class="mt-0 mb-1">Sara</h5>
+                                    <p>United States</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+           
+           
+            <div class="col-md-3">
+                <div class="card mb-3">
+                    <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title text-info">&#9733; &#9733; &#9733; &#9733; &#9733;</h5>
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <div class="">
+                            <div class="d-flex">
+                                <img src="https://a0.muscache.com/im/pictures/660e2273-b37b-4f50-917e-369e7bc3f665.jpg?aki_policy=large" class="ml-0 mr-2 img-fluidX rounded-circle w-25 mb-3" alt="...">
+                                <div class="d-flex flex-column">
+                                    <h5 class="mt-0 mb-1">Sara</h5>
+                                    <p>United States</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+             <div class="col-md-3">
+                <div class="card mb-3">
+                    <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title text-info">&#9733; &#9733; &#9733; &#9733; &#9733;</h5>
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <div class="">
+                            <div class="d-flex">
+                                <img src="https://a0.muscache.com/im/pictures/660e2273-b37b-4f50-917e-369e7bc3f665.jpg?aki_policy=large" class="ml-0 mr-2 img-fluidX rounded-circle w-25 mb-3" alt="...">
+                                <div class="d-flex flex-column">
+                                    <h5 class="mt-0 mb-1">Sara</h5>
+                                    <p>United States</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+<div class="container-fluid container">
+    <div class="container pl-0">
+        <div class="row">
+            <div class="col-12 pl-0 mb-5">
+                <h2 class="h3  mt-0 mb-2">When are you travelling?</h2>
+                <p class="mt-0 ml-0 mb-2">Add dates for updated pricing and availability.</p>
+                <button class="btn btn-lg btn-success">Add dates</button>
+            </div>
+        </div>
+    </div>
+</div>
+    <div class="container-fluid container py-3 mt-4">
+       
+      <div class="row mt-3">
+         
+        <div class="col-md-3">
+            <div class="card mb-3 border-0">
+                <img src="https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" class="card-img-top br0" alt="...">
+                <p class="small text-uppercase pb-0">Entire house, Joshua Tree</p>
+                <div class="card-body p-0">
+                    <h5 class="card-title">The Joshua Tree House</h5>
+                    <p class="card-text m-0">$290/night</p>
+                    <p class="small m-0 text-info">&#9733;&#9733;&#9733;&#9733;&#9733;<span class="text-secondary"> 465, Superhost</span></p>
+
+                </div>
+            </div>
+        
+                </div>
+                <div class="col-md-3">
+            <div class="card mb-3 border-0">
+                <img src="https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" class="card-img-top br0" alt="...">
+                <p class="small text-uppercase pb-0">Entire house, Joshua Tree</p>
+                <div class="card-body p-0">
+                    <h5 class="card-title">The Joshua Tree House</h5>
+                    <p class="card-text m-0">$290/night</p>
+                    <p class="small m-0 text-info">&#9733;&#9733;&#9733;&#9733;&#9733;<span class="text-secondary"> 465, Superhost</span></p>
+
+                </div>
+            </div>
+               
+                </div>
+           
+
+
+        </div>
+        </div>
+    
 <div class="row">
     @foreach (var item in Model) {
 
@@ -166,20 +303,23 @@
                                     <i class="bi bi-eye-fill"></i> Show Details
                                 </a>
                                 <a class="btn btn-success text-white" data-toggle="popover"
-                               asp-controller="Orders"
+                               asp-controller="Booking"
                                asp-action="AddItemToBooking"
                                asp-route-id="@item.Acco_Id">
                                    (Price @item.Acco_Price.ToString("c") /Per Night)
                                 </a>
+                                
                             </p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        
         }
 
-
+            
+       
 
 </div>
 @*<table class="table">
@@ -244,5 +384,23 @@
 }
     </tbody>
 </table>*@
+    <script>
+        var today = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate());
+        $('#startDate').datepicker({
+            uiLibrary: 'bootstrap4',
+            iconsLibrary: 'fontawesome',
+            minDate: today,
+            maxDate: function () {
+                return $('#endDate').val();
+            }
+        });
+        $('#endDate').datepicker({
+            uiLibrary: 'bootstrap4',
+            iconsLibrary: 'fontawesome',
+            minDate: function () {
+                return $('#startDate').val();
+            }
+        });
+    </script>
 <script src="~/js/site.js"></script>
 </body>

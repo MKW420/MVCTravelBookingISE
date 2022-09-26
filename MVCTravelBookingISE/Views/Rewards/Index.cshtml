@@ -1,0 +1,53 @@
+﻿@model IEnumerable<MVCTravelBookingISE.Models.RewardsModel>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Rewards_Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Rewards_Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Rewards_Status)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ExpiryRewardsDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Traveller)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Rewards_Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Rewards_Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Rewards_Status)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ExpiryRewardsDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Traveller.Email)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Rewards_Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Rewards_Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Rewards_Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

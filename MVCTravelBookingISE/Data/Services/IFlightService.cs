@@ -3,7 +3,7 @@ using MVCTravelBookingISE.Models;
 
 namespace MVCTravelBookingISE.Data.Services
 {
-    public interface IFlightService 
+    public interface IFlightService : IEntityBaseRepository<FlightModel>
     {
        
 

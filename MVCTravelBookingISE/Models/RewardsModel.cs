@@ -1,9 +1,10 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using MVCTravelBookingISE.Data.Base;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MVCTravelBookingISE.Models
 {
-    public class RewardsModel
+    public class RewardsModel:IEntityBase
     {
         [Key]
         public int Rewards_Id { get; set; }

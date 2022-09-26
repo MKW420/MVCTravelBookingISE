@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Autofac.Core;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -14,35 +15,30 @@ namespace MVCTravelBookingISE.Controllers
 {
     public class AccomodationModelsController : Controller
     {
-       
+
         private readonly IAccomodationService _service;
-        public AccomodationModelsController(  IAccomodationService service)
+        public AccomodationModelsController(IAccomodationService service)
         {
-            
+
             _service = service;
         }
 
         // GET: AccomodationModels
-        public async Task <IActionResult> Index()
+        [AllowAnonymous]
+        public async Task<IActionResult> Index()
         {
-            var data =  await _service.GetAllAsync();
-
-          
+            var data = await _service.GetAllAsync();
 
             return View(data);
         }
 
         // GET: AccomodationModels/Details/5
+        // [AllowAnonymous]
+   
         public async Task<IActionResult> Details(int id)
         {
-            var accomodationDetails = _service.GetByIdAsync(id);
+            var accomodationDetails = await _service.GetAccomodationByIdAsync(id);
 
-            if (accomodationDetails == null)
-            {
-                return View("Empty");
-            }
-
-          
             return View(accomodationDetails);
         }
 
@@ -61,77 +57,108 @@ namespace MVCTravelBookingISE.Controllers
         {
             if (ModelState.IsValid)
             {
-                              await  _service.AddSync(accomodationModel);
+                await _service.AddSync(accomodationModel);
 
-              
+
                 return RedirectToAction(nameof(Index));
             }
             return View(accomodationModel);
         }
 
-        // GET: AccomodationModels/Edit/5
-        public async Task<IActionResult> Edit(int id) { 
-             
-            var accomodationModel = await _service.GetByIdAsync(id);
-            if(accomodationModel == null)
-            {
-                return View("Not found");
-            }
-            return View(accomodationModel);
+      
 
-        }
 
         // POST: AccomodationModels/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Acco_Id,Acco_Name,Acco_Destination,Acco_Rooms,Acco_Bathrooms,Acco_Distance,Acco_Rate,Acco_Type,Acco_Price")] AccomodationModel accomodationModel)
+
+        //     [HttpPost]
+
+        //public async Task<IActionResult> Edit(int id, [Bind("Acco_Id,Acco_Name,Acco_Destination,Acco_Rooms,Acco_Bathrooms,Acco_Distance,Acco_Rate,Acco_Type,Acco_Price")] Accomodation accomodation)
+        //{
+
+        //    if (!ModelState.IsValid)
+        //    {
+        //        return View(accomodation);
+
+        //     }
+        //    await _service.UpdateAsync(id, accomodation);
+        //    return RedirectToAction(nameof(Index));
+
+
+        //}
+
+        //GET: 
+        public async Task<IActionResult> Edit(int id)
         {
-            if (id != accomodationModel.Acco_Id)
+            var accomodationDetails = await _service.GetAccomodationByIdAsync(id);
+
+            if (accomodationDetails == null) return View("NotFound");
+
+            var response = new AccomodationModel()
             {
-                return NotFound();
-            }
+               Acco_Id = accomodationDetails.Acco_Id,
+               Acco_Name = accomodationDetails.Acco_Name,
+               Acco_Bathrooms =accomodationDetails.Acco_Bathrooms,
+               Acco_Rooms =accomodationDetails.Acco_Rooms,
+               Acco_Price =accomodationDetails.Acco_Price,
+               Acco_Rate =accomodationDetails.Acco_Rate,
+               Acco_Rules=accomodationDetails.Acco_Rules,
+               Acco_Destination =accomodationDetails.Acco_Destination,
+               Acco_picture = accomodationDetails.Acco_picture,
+               Acco_Distance = accomodationDetails.Acco_Distance,
+               Acco_Type = accomodationDetails.Acco_Type
+
+
+            };
+            return View(response);
+        }
+
+        [HttpPost]
+
+      // GET: AccomodationModels/Edit/5
+        public async Task<IActionResult> Edit(int id, AccomodationModel accomodation)
+        {
+
+            if (id != accomodation.Acco_Id) return View("Not found");
 
             if (!ModelState.IsValid)
             {
-                return View(accomodationModel);
-
-             }
-            await _service.UpdateAsync(id, accomodationModel);
-            return RedirectToAction(nameof(Index));
-            
-        
-        }
-
-        // GET: AccomodationModels/Delete/5
-        public async Task<IActionResult> Delete(int id)
-        {
-            var accomodationModel = await _service.GetByIdAsync(id);
-            if (accomodationModel == null)
-            {
-                return View("Not found");
+                return View(accomodation);
             }
-            return View(accomodationModel);
-        }
 
-        // POST: AccomodationModels/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
-        {
-            var accomodationDetails = await _service.GetByIdAsync(id);
-            if (accomodationDetails == null )
-            {
-                return View("Not found");
-            }
-            await _service.DeleteAsync(id);
-            
+            await _service.UpdateAccomodationAsync(accomodation);
             return RedirectToAction(nameof(Index));
         }
-
-     
-      
-    }
 }
+}
+//    // GET: AccomodationModels/Delete/5
+//    public async Task<IActionResult> Delete(int id)
+//    {
+//        var accomodationDetails = await _service.GetByIdAsync(id);
+//        if (accomodationDetails == null)
+//        {
+//            return View("Not found");
+//        }
+//        return View(accomodationDetails);
+//    }
+
+//    // POST: AccomodationModels/Delete/5
+//    [HttpPost, ActionName("Delete")]
+//    [ValidateAntiForgeryToken]
+//    public async Task<IActionResult> DeleteConfirmed(int id)
+//    {
+//        var accomodationDetails = await _service.GetByIdAsync(id);
+//        if (accomodationDetails == null )
+//        {
+//            return View("Not found");
+//        }
+//        await _service.DeleteAsync(id);
+
+//        return RedirectToAction(nameof(Index));
+//    }
+
+
+
+//}
+

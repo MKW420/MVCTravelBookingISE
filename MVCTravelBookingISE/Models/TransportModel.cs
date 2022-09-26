@@ -1,9 +1,9 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using MVCTravelBookingISE.Data.Base;
+using System.ComponentModel.DataAnnotations;
 
 namespace MVCTravelBookingISE.Models
 {
-    public class TransportModel
-    {
+    public class TransportModel: IEntityBase { 
         [Key]
         public int Transport_Id { get; set; }
 
