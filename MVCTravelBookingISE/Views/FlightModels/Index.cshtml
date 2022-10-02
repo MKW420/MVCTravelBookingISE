@@ -35,8 +35,108 @@
     </div>
 
 
+  
+     <div class="row">
+         <div class="col">
+             <div class="mb-2">
+                <strong>Which option do you want to choose?</strong>
+                <div class="form-check form-check-inline">
+                    <strong><label class="form-check-label">Round-trip</label></strong>
+                    <input type="radio" class="form-check-input" />
+                </div>
+                <div class="form-check form-check-inline">
+                    <strong> <label class="form-check-label">One-Way trip</label></strong>
+                    <input type="radio" class="form-check-input" />
+               </div>
+                <div class="form-check form-check-inline">
+                    <strong><label class="form-check-label">Multi-City</label></strong>
+                    <input type="radio" class="form-check-input" />
+                </div>
+                
+                
 
-<section id="services">
+                <div class="col">
+                    <div class="mb-2">
+                   
+                       <select class="form-select"
+                        id="travel-class-select"
+                        aria-describedby="travel-class-label">
+                        <option value="ECONOMY">Economy</option>
+                        <option value="PREMIUM_ECONOMY">Premium Economy</option>
+                        <option value="BUSINESS">Business</option>
+                        <option value="FIRST">First</option>
+                       </select>
+                    </div>
+                </div>
+                
+             </div>
+         </div>
+      
+            </div>
+       
+    <div class="card border-5">
+        <div class="card-body ">
+
+            <div class="row">
+                <div class="col">
+                    <div class="mb-2">
+                       
+                        <div class="input-group">
+                            <span class="input-group-text"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-airplane-fill" viewBox="0 0 16 16">
+                  <path d="M6.428 1.151C6.708.591 7.213 0 8 0s1.292.592 1.572 1.151C9.861 1.73 10 2.431 10 3v3.691l5.17 2.585a1.5 1.5 0 0 1 .83 1.342V12a.5.5 0 0 1-.582.493l-5.507-.918-.375 2.253 1.318 1.318A.5.5 0 0 1 10.5 16h-5a.5.5 0 0 1-.354-.854l1.319-1.318-.376-2.253-5.507.918A.5.5 0 0 1 0 12v-1.382a1.5 1.5 0 0 1 .83-1.342L6 6.691V3c0-.568.14-1.271.428-1.849Z"/>
+                </svg></span>
+                               <input type="text" class="form-control" list="origin-options" id="origin-input" placeholder="Destination" aria-describedby="origin-label" />
+                            <datalist id="origin-options"></datalist>
+
+                        </div>
+                       
+                    </div>
+                    
+                    
+                    
+                </div>
+               
+                <div class="col">
+                    <div class="mb-3">
+                        <div class="input-group">
+
+                            <input type="text" class="form-control" list="origin-options" id="origin-input" placeholder="Departure" aria-describedby="origin-label" />
+                            <datalist id="origin-options"></datalist>
+
+                        </div>
+                    </div>
+                   
+                </div>
+                <div class="col-sm">
+                 
+
+                   
+                    <div class="mb-2">
+                        <div class="input-group">
+                            <label for="adults-input" class="input-group-text">Date</label>
+                            <input type="date"
+                                   min="0"
+                                   class="form-control"
+                                   id="adult-input"
+                                   aria-describedby="adults-label" />
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="mb-3">
+                        <a class="btn btn-primary text-white" asp-action="Create">Search Flights!</a>
+
+
+
+
+                    </div>
+                   
+                </div>
+
+            </div>
+        </div>
+    </div>
   @*  <div class="container">
         <div class="row">
             <div class="col-12 section-intro text-center">
@@ -47,145 +147,12 @@
             </div>
         </div>
     </div>*@
-    <div class="card border border-info border-4">
-      <div class="card-body ">
-          <h5 class="card-title">
-               Locations
-          </h5>
-            <div class="row">
-                <div class="col-sm">
-                    <div class="mb-2">
-                        <label id="origin-label" for="origin-input" class="form-label text-black">
-                            Origin</label>
-                        <div class="input-group">
-                                <span class="input-group-text">
-                                    <i class="bi-pin-map"></i>Departure
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-fill" viewBox="0 0 16 16">
-                                        <path fill-rule="evenodd" d="M4 4a4 4 0 1 1 4.5 3.969V13.5a.5.5 0 0 1-1 0V7.97A4 4 0 0 1 4 3.999zm2.493 8.574a.5.5 0 0 1-.411.575c-.712.118-1.28.295-1.655.493a1.319 1.319 0 0 0-.37.265.301.301 0 0 0-.057.09V14l.002.008a.147.147 0 0 0 .016.033.617.617 0 0 0 .145.15c.165.13.435.27.813.395.751.25 1.82.414 3.024.414s2.273-.163 3.024-.414c.378-.126.648-.265.813-.395a.619.619 0 0 0 .146-.15.148.148 0 0 0 .015-.033L12 14v-.004a.301.301 0 0 0-.057-.09 1.318 1.318 0 0 0-.37-.264c-.376-.198-.943-.375-1.655-.493a.5.5 0 1 1 .164-.986c.77.127 1.452.328 1.957.594C12.5 13 13 13.4 13 14c0 .426-.26.752-.544.977-.29.228-.68.413-1.116.558-.878.293-2.059.465-3.34.465-1.281 0-2.462-.172-3.34-.465-.436-.145-.826-.33-1.116-.558C3.26 14.752 3 14.426 3 14c0-.599.5-1 .961-1.243.505-.266 1.187-.467 1.957-.594a.5.5 0 0 1 .575.411z" />
-                                    </svg>
-                                </span>
-                            <input type="text" class="form-control" list="origin-options" id="origin-input" placeholder="location" aria-describedby="origin-label" />
-                            <datalist id="origin-options"></datalist>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm">
-                    <div class="mb-2">
-                        <label id="destination-label" for="destination-input" class="form-label text-black" >
-                                Destination
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
-                                    <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z" />
-                                </svg>
-                        </label>
-                        <div class="input-group">
-                            <span class="input-group-text"><i class="bi-pin-map"></i>Destination</span>
-                            <input type="text" class="form-control" list="destination-options" id="destination-input" placeholder="location" aria-describedby="destination-label" />
-                            <datalist id="destination-options"></datalist>
-                        </div>
-                    </div>
-                </div>
 
-            </div>
-            <div class="row">
-                <div class="mb-2 col">
-                    <div class="h-100 card">
-                        <div class="card-body">
-                            <h5 class="card-title">Dates</h5>
-                             <div class="mb-2">
-                                <label id="flight-type-label" for="flight-type-select" class="form-label">Flight</label>
-                                <select id="flight-type-select"
-                                        class="form-select"
-                                        aria-describedby="flight-type-label">
-                                    <option value="one-way">One-way</option>
-                                    <option value="round-trip">Round-trip</option>
-                                </select>
-                             </div>
-                            <div id="departure-date" class="mb-2">
-                                <label id="departure-date-label" for="departure-date-input" class="form-label">Departure date</label>
-                                <div class="input-group">
-                                    <span class="input-group-text"><i class="bi-calendar"></i></span>
-                                    <input type="date"
-                                           class="form-control"
-                                           id="departure-date-input"
-                                           aria-describedby="departure-date-label" />
-                                </div>
-                            </div>
-                            <div id="return-date" class="mb-2">
-                                <label id="return-date-label" for="return-date-input" class="form-label">Return date</label>
-                                <div class="input-group">
-                                    <span class="input-group-text"><i class="bi-calendar-fill"></i> </span>
-                                    <input type="date"
-                                           class="form-control"
-                                           id="return-date-input"
-                                           aria-describedby="return-date-label" />
-                                </div>
-                            </div>
-                        </div>
-                      
-                    </div>
-                </div>
-                <div class="mb-2 col">
-                    <div class="h-100 card">
-                        <div class="card-body">
-                            <h5 class="card-title">Details</h5>
-                            <div class="mb-2">
-                                <label id="travel-class-label" for="travel-class-select" class="form-label">Travel class</label>
-                                <select class="form-select"
-                                        id="travel-class-select"
-                                        aria-describedby="travel-class-label">
-                                    <option value="ECONOMY">Economy</option>
-                                    <option value="PREMIUM_ECONOMY">Premium Economy</option>
-                                    <option value="BUSINESS">Business</option>
-                                    <option value="FIRST">First</option>
-                                </select>
-                            </div>
-                            <label class="form-label">Passengers</label>
-                            <div class="mb-2">
-                                <div class="input-group">
-                                    <label for="adults-input" class="input-group-text">Adults</label>
-                                    <input type="number"
-                                           min="0"
-                                           class="form-control"
-                                           id="adults-input"
-                                           aria-describedby="adults-label" />
-                                </div>
-                                <span id="adults-label" class="form-text">12 years old and older</span>
-                            </div>
-                            <div class="mb-2">
-                                <div class="input-group">
-                                    <label for="children-input" class="input-group-text">Children</label>
-                                    <input type="number"
-                                           min="0"
-                                           class="form-control"
-                                           id="children-input"
-                                           aria-describedby="children-label" />
-                                </div>
-                                <span id="children-label" class="form-text">2 to 12 years old</span>
-                            </div>
-                            <div class="mb-2">
-                                <div class="input-group">
-                                    <label for="infants-input" class="input-group-text">Infants</label>
-                                    <input type="number"
-                                           min="0"
-                                           class="form-control"
-                                           id="infants-input"
-                                           aria-describedby="infants-label" />
-                                </div>
-                                <span id="infants-label" class="form-text">Up to 2 years old</span>
-                            </div>
-                            <div class="mb-2"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
-      </div>
-            <button id="search-button" class="w-100 btn btn-primary" disabled>
-                Search
-            </button>
-    </div>
-   
-</section>
+          
+       
+          
+
 
     <div class="jumbotron bg-white">
         <div class="container text-center bg-white ">
@@ -205,7 +172,7 @@
         </div>
     </div>
    
-    <table class="table table-striped border border-5 border-dark">
+    <table class="table table-striped">
     <thead>
         <tr>
             <th>
@@ -226,6 +193,7 @@
     </thead>
     <tbody>
 @foreach (var item in Model) {
+   
         <tr >
             <td>
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-airplane" viewBox="0 0 16 16">
@@ -268,7 +236,7 @@
                         </a>
                         
                         <a class="btn btn-primary float-right" asp-action="Details" asp-route-id="@item.Flight_Id">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-body-text" viewBox="0 0 16 16">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="1M6" fill="currentColor" class="bi bi-body-text" viewBox="0 0 16 16">
                                 <path fill-rule="evenodd" d="M0 .5A.5.5 0 0 1 .5 0h4a.5.5 0 0 1 0 1h-4A.5.5 0 0 1 0 .5Zm0 2A.5.5 0 0 1 .5 2h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5Zm9 0a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5Zm-9 2A.5.5 0 0 1 .5 4h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5Zm5 0a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5Zm7 0a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5Zm-12 2A.5.5 0 0 1 .5 6h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5Zm8 0a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5Zm-8 2A.5.5 0 0 1 .5 8h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5Zm7 0a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5Zm-7 2a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 0 1h-8a.5.5 0 0 1-.5-.5Zm0 2a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5Zm0 2a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5Z" />
                             </svg>
                             <i class="bi bi-eye-fill"></i> Show Details

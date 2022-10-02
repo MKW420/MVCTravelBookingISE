@@ -1,9 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&family=Rubik:wght@300&display=swap');
 
-html {
-    font-size: 14px;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+*{
+    margin:0;
+    padding:0;
 }
-
 @media (min-width: 768px) {
   html {
     font-size: 16px;
@@ -17,11 +18,17 @@ html {
 
 body {
     margin-bottom: 60px;
-    font-family: 'Roboto', sans-serif;
+    font-family:  'Roboto', sans-serif;
 }
 header {
   
    height:100px;
+   position:sticky;
+   top:0;
+   z-index:10;
+}
+.navbar{
+ ht
 }
 h1,
 h2,

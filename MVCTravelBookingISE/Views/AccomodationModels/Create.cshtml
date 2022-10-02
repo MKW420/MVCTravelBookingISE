@@ -9,72 +9,105 @@
 <h4>AccomodationModel</h4>
 <hr />
 <div class="row">
-    <div class="col-md-6">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Acco_Name" class="control-label"></label>
-                <input asp-for="Acco_Name" class="form-control" />
-                <span asp-validation-for="Acco_Name" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Acco_Destination" class="control-label"></label>
-                <input asp-for="Acco_Destination" class="form-control" />
-                <span asp-validation-for="Acco_Destination" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Acco_Rooms" class="control-label"></label>
-                <input asp-for="Acco_Rooms" class="form-control" />
-                <span asp-validation-for="Acco_Rooms" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Acco_Bathrooms" class="control-label"></label>
-                <input asp-for="Acco_Bathrooms" class="form-control" />
-                <span asp-validation-for="Acco_Bathrooms" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Acco_Distance" class="control-label"></label>
-                <input asp-for="Acco_Distance" class="form-control" />
-                <span asp-validation-for="Acco_Distance" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Acco_Rate" class="control-label"></label>
-                <input asp-for="Acco_Rate" class="form-control" />
-                <span asp-validation-for="Acco_Rate" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Acco_Rules" class="control-label"></label>
-                <input asp-for="Acco_Rules" class="form-control" />
-                <span asp-validation-for="Acco_Rules" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Acco_picture" class="control-label"></label>
-                <input asp-for="Acco_picture" class="form-control" />
-                <span asp-validation-for="Acco_picture" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Acco_Type" class="control-label"></label>
-                <input asp-for="Acco_Type" class="form-control" />
-                <span asp-validation-for="Acco_Type" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Acco_Price" class="control-label"></label>
-                <div class="input-group mb-3">
-                    <span class="input-group-text">
-                      R
-                    </span> 
+    <div class="col-md-8 off-set-2">
+        <p>
+            <h4>New Accomodation</h4>
+        </p>
+        <div class="row">
+            <div class="col-md-8 offset-2">
+                <form asp-action="Create" class="">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                   <div class="row">
+                       <div class="col-md-6">
+
+                            <div class="form-group">
+                                <label asp-for="Acco_Name" class="control-label"></label>
+                                <input asp-for="Acco_Name" class="form-control" />
+                                <span asp-validation-for="Acco_Name" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="Acco_Destination" class="control-label"></label>
+                                <input asp-for="Acco_Destination" class="form-control" />
+                                <span asp-validation-for="Acco_Destination" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="Acco_Distance" class="control-label"></label>
+                                <input asp-for="Acco_Distance" class="form-control" />
+                                <span asp-validation-for="Acco_Distance" class="text-danger"></span>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label asp-for="Acco_Type" class="control-label"></label>
+                                <input asp-for="Acco_Type" class="form-control" />
+                                <span asp-validation-for="Acco_Type" class="text-danger"></span>
+                            </div>
+                       </div>
+                        <div class="col-md-6">
+
+                            <div class="form-group">
+                                <label asp-for="Acco_Rooms" class="control-label"></label>
+                                <input asp-for="Acco_Rooms" class="form-control" />
+                                <span asp-validation-for="Acco_Rooms" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="Acco_Bathrooms" class="control-label"></label>
+                                <input asp-for="Acco_Bathrooms" class="form-control" />
+                                <span asp-validation-for="Acco_Bathrooms" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="Acco_Rate" class="control-label"></label>
+                                <input asp-for="Acco_Rate" class="form-control" />
+                                <span asp-validation-for="Acco_Rate" class="text-danger"></span>
+                            </div>
+                              <div class="form-group">
+                                <label asp-for="Acco_picture" class="control-label"></label>
+                                <input asp-for="Acco_picture" class="form-control" />
+                                <span asp-validation-for="Acco_picture" class="text-danger"></span>
+                              </div>
+                           
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label asp-for="Acco_Price" class="control-label"></label>
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text">
+                                        R
+                                    </span>
+
+                                    <input asp-for="Acco_Price" class="form-control" />
+                                    <span class="input-group-text">.00</span>
+                                </div>
+
+
+                                <span asp-validation-for="Acco_Price" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label asp-for="Acco_Rules" class="control-label"></label>
+                                <textarea asp-for="Acco_Rules" class="form-control" ></textarea>
+                                <span asp-validation-for="Acco_Rules" class="text-danger"></span>
+                            </div>
+                            </div>
+                   </div>
+                    <div class="col-md-4 offset-4 text-center">
+                        <img width="100%" id="ImageURLPreview" />
+                    </div>
+                   
+                  
                     
-                    <input asp-for="Acco_Price" class="form-control" />
-                    <span class="input-group-text">.00</span>
-                </div>
-               
-               
-                <span asp-validation-for="Acco_Price" class="text-danger"></span>
+                   
+                  
+                   
+                  
+                   
+                    <div class="form-group">
+                        <input type="submit" value="Create" class="btn btn-success" />
+                    </div>
+                </form>
             </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
+        </div>
+       
     </div>
 </div>
 
@@ -84,4 +117,10 @@
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <script>
+        $("Acco_picture").on("change", function()){
+            var output = document.getElementById("ImageURLPreview")
+            output.src $(this).val();
+        }
+    </script>
 }

@@ -24,6 +24,7 @@ namespace MVCTravelBookingISE.Models
         [Display(Name = "Total price of the booking")]
         public decimal Booking_TotalPrice { get; set; }
 
+     
        //Reltionships with other models 
        public List<TravellerBooking> TravellerBookings { get; set; }
 

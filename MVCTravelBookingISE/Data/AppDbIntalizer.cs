@@ -363,7 +363,7 @@ namespace MVCTravelBookingISE.Data
 
                            Flight_Destination = "CapeTown",
                            Flight_Departure = "Johannesburg",
-                           Flight_Date =    DateTime.Now.AddDays(10),
+                           Flight_Date =   DateTime.Now.AddDays(10),
                            Flight_Class = 'B',
                            Flight_Price = 4799,
                            FlightRules_Id = 3

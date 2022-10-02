@@ -4,63 +4,86 @@
     ViewData["Title"] = "Details";
 }
 
-<h1>Details</h1>
+<h1>More information about the Accomodation</h1>
 
-<div>
-    <h4>AccomodationModel</h4>
+      
     <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Acco_Name)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Acco_Name)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Acco_Destination)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Acco_Destination)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Acco_Rooms)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Acco_Rooms)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Acco_Bathrooms)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Acco_Bathrooms)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Acco_Distance)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Acco_Distance)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Acco_Rate)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Acco_Rate)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Acco_Type)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Acco_Type)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Acco_Price)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Acco_Price)
-        </dd>
-    </dl>
-</div>
+    <div class="card">
+       <div class="card-body">
+
+
+        <dl class="row gx-5">
+        
+            <dt class = "col-sm-2">
+                @Html.DisplayNameFor(model => model.Acco_Name)
+            </dt>
+            <dd class = "col-sm-10">
+                @Html.DisplayFor(model => model.Acco_Name)
+            </dd>
+            <dt class = "col-sm-2">
+                @Html.DisplayNameFor(model => model.Acco_Destination)
+            </dt>
+            <dd class = "col-sm-10">
+                @Html.DisplayFor(model => model.Acco_Destination)
+            </dd>
+            <dt class = "col-sm-2">
+                @Html.DisplayNameFor(model => model.Acco_Rooms)
+            </dt>
+            <dd class = "col-sm-10">
+                @Html.DisplayFor(model => model.Acco_Rooms)
+            </dd>
+            <dt class = "col-sm-2">
+                @Html.DisplayNameFor(model => model.Acco_Bathrooms)
+            </dt>
+            <dd class = "col-sm-10">
+                @Html.DisplayFor(model => model.Acco_Bathrooms)
+            </dd>
+            <dt class = "col-sm-2">
+                @Html.DisplayNameFor(model => model.Acco_Distance)
+            </dt>
+            <dd class = "col-sm-10">
+                @Html.DisplayFor(model => model.Acco_Distance)
+            </dd>
+            <dt class = "col-sm-2">
+                @Html.DisplayNameFor(model => model.Acco_Rate)
+            </dt>
+            <dd class = "col-sm-10">
+                @*@{ 
+                    if(Model.Ratings.Count > 0){
+
+                        <p>The overall rating for @Model.Acco_Name is @Model.Acco_Rate </p>
+                    }
+                    else{
+                        <p>Be the first one to rate @Model.Acco_Name</p>
+                    }
+                   
+                }*@
+               @{using (Html.BeginForm()){
+                   for(int i=0; i< 6;i++){
+                       <input type="radio" id="rating" name="rating" value="@i"/>@i
+                   }
+                     <input type="submit" value="Add your rating"/>
+               }
+               }
+            </dd>
+          
+            <dt class = "col-sm-2">
+                @Html.DisplayNameFor(model => model.Acco_Price)
+            </dt>
+            <dd class = "col-sm-10">
+                @Html.DisplayFor(model => model.Acco_Price)
+            </dd>
+            <dt class = "col-sm-2">
+                @Html.DisplayNameFor(model => model.Acco_Rules)
+            </dt>
+            <dd class = "col-sm-10">
+                @Html.DisplayFor(model => model.Acco_Rules)
+            </dd>
+        </dl>
+     </div>
+
+  </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model?.Acco_Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    <a class="btn btn-danger" asp-action="Edit" asp-route-id="@Model?.Acco_Id">Edit</a> |
+    <a class="btn btn-info"asp-action="Index">Back to List</a>
 </div>

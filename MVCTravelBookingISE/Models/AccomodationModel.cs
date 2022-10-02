@@ -1,6 +1,7 @@
 ﻿using MVCTravelBookingISE.Data.Base;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Linq;
 
 namespace MVCTravelBookingISE.Models
 {
@@ -11,10 +12,10 @@ namespace MVCTravelBookingISE.Models
 
         [Display(Name = "Name of the accomodation")]
         [Required(ErrorMessage = "Accomodation Name required")]
+         public string Acco_Name { get; set; }
 
+        [Display(Name =("Picture of the Accomodation"))]
         public string Acco_picture { get; set; }
-
-        public string Acco_Name { get; set; }
 
         [Display(Name = "Name of accomodation destination")]
         [Required(ErrorMessage = "Destination required")]
@@ -38,6 +39,17 @@ namespace MVCTravelBookingISE.Models
         [Display(Name = "Ratings of the Accomodation")]
         public int Acco_Rate { get; set; }
 
+            
+            //    if(Ratings.Count > 0)
+            //    {
+            //        return ((int)Ratings.Average(x => x.rating));
+            //    }
+            //    return (5);
+            //}
+
+            
+        
+
         [Display(Name = "Type of accomodation")]
         [Required(ErrorMessage = "Type of accomodation required")]
         public char Acco_Type { get; set; }
@@ -47,11 +59,15 @@ namespace MVCTravelBookingISE.Models
         [Column(TypeName = "decimal(10,2)")]
         public decimal Acco_Price { get; set; }
 
+
+        [Display(Name ="Rules of the accomdoation")]
         public string Acco_Rules { get; set; }
 
         //booking
 
         public List<BookingModel> Bookings { get; set; }
+
+        public List<Rating> Ratings { get; set; }
    
     }
 }

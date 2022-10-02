@@ -9,7 +9,15 @@
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
     <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
-    <link href="~/css/site.css"/>
+    <link rel="stylesheet" href="~/css/site.css"/>
+    <title>Bootstrap Example</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+
+    @*<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>*@
 </head>
 
 <body>
@@ -32,28 +40,38 @@
     </section>
   *@
 
-  
-
-    <div class="card border-5 border-dark ">
+  <h1>Search for Accomodation that suits you! </h1>
+ 
+    <div class="card">
     <div class="card-body ">
           
             <div class="row">
-                <div class="col-sm">
+                <div class="col">
                     <div class="mb-2">
                         <label id="origin-label" for="origin-input" class="form-label text-black">
-                            Origin
+                          
                         </label>
                         <div class="input-group">
-                            <span class="input-group-text"><i class="bi-pin-map"></i>Destination 📍</span>
-                            <input type="text" class="form-control" list="origin-options" id="origin-input" placeholder="location" aria-describedby="origin-label" />
+                            <span class="input-group-text">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search-heart-fill" viewBox="0 0 16 16">
+                                    <path d="M6.5 13a6.474 6.474 0 0 0 3.845-1.258h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.008 1.008 0 0 0-.115-.1A6.471 6.471 0 0 0 13 6.5 6.502 6.502 0 0 0 6.5 0a6.5 6.5 0 1 0 0 13Zm0-8.518c1.664-1.673 5.825 1.254 0 5.018-5.825-3.764-1.664-6.69 0-5.018Z" />
+                                </svg>
+                            </span>
+                            <input type="text" class="form-control" list="origin-options" id="origin-input" placeholder="Where are you going?" aria-describedby="origin-label" />
                             <datalist id="origin-options"></datalist>
                         </div>
                     </div>
-                    <p>
-                        <a class="btn btn-primary text-white" asp-action="Create">Search Accomodation!</a>
-                    </p>
+                   
                 </div>
-             <div class="col-sm">
+              
+                <div class="col">
+                    <div class="mb-2">
+                        <a class="btn btn-primary text-white" asp-action="Create">Search Accomodation!</a>
+                        
+                    </div>
+
+                </div>
+                
                @* <div id="departure-date" class="mb-1">
                     <label id="departure-date-label" for="departure-date-input" class="form-label">Check-in date</label>
                     <div class="input-group">
@@ -75,34 +93,10 @@
                                aria-describedby="return-date-label" />
                     </div>
                 </div>*@
-                <label class="form-label">Bathrooms</label>
-                <div class="mb-2">
-                    <div class="input-group">
-                        <label for="adults-input" class="input-group-text">Bathrooms</label>
-                        <input type="number"
-                               min="0"
-                               class="form-control"
-                               id="adults-input"
-                               aria-describedby="adults-label" />
-                    </div>
-               
-                </div>
-                </div>
-                <div class="col-sm">
-                <label class="form-label">rooms</label>
-                <div class="mb-2">
-                    <div class="input-group">
-                        <label for="adults-input" class="input-group-text">rooms</label>
-                        <input type="number"
-                               min="0"
-                               class="form-control"
-                               id="adults-input"
-                               aria-describedby="adults-label" />
-                    </div>
-                  
-                </div>
 
-             </div>
+            
+            
+              
            
             </div>
     </div>
@@ -118,43 +112,26 @@
 
 
     <div class="container-fluid container py-3 mt-4">
-        <h2 class="h3">What guests are saying about homes in the United States</h2>
+        <h2 class="h3">Browse by Accomodation category</h2>
         <div class="row mt-4">
             <div class="col-md-3">
                 <div class="card mb-3">
                     <img src="https://images.unsplash.com/photo-1533654793924-4fc4949fb71e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1351&q=80" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title text-info">&#9733; &#9733; &#9733; &#9733; &#9733;</h5>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                        <div class="">
-                            <div class="d-flex">
-                                <img src="https://a0.muscache.com/im/pictures/660e2273-b37b-4f50-917e-369e7bc3f665.jpg?aki_policy=large" class="ml-0 mr-2 img-fluidX rounded-circle w-25 mb-3" alt="...">
-                                <div class="d-flex flex-column">
-                                    <h5 class="mt-0 mb-1">Sara</h5>
-                                    <p>United States</p>
-                                </div>
-                            </div>
-                        </div>
+                        <h5 class="card-title"><strong>Hotels</strong></h5>
+                        <p class="card-text">How much hotels are there</p>
+                        <button class="btn btn-sm btn-success">Explore!</button>
 
                     </div>
                 </div>
             </div>
              <div class="col-md-3">
                 <div class="card mb-3">
-                    <img src="https://images.unsplash.com/photo-1533654793924-4fc4949fb71e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1351&q=80" class="card-img-top" alt="...">
+                    <img src="https://images.unsplash.com/photo-1590523277543-a94d2e4eb00b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1332&q=80" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title text-info">&#9733; &#9733; &#9733; &#9733; &#9733;</h5>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                        <div class="">
-                            <div class="d-flex">
-                                <img src="https://a0.muscache.com/im/pictures/660e2273-b37b-4f50-917e-369e7bc3f665.jpg?aki_policy=large" class="ml-0 mr-2 img-fluidX rounded-circle w-25 mb-3" alt="...">
-                                <div class="d-flex flex-column">
-                                    <h5 class="mt-0 mb-1">Sara</h5>
-                                    <p>United States</p>
-                                </div>
-                            </div>
-                        </div>
-
+                        <h5 class="card-title"><strong>Resorts</strong></h5>
+                        <p class="card-text">How much hotels are there</p>
+                        <button class="btn btn-sm btn-success">Explore!</button>
                     </div>
                 </div>
             </div>
@@ -162,52 +139,34 @@
            
             <div class="col-md-3">
                 <div class="card mb-3">
-                    <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" class="card-img-top" alt="...">
+                    <img src="https://images.unsplash.com/photo-1613561323381-fd3eb1a73ee8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title text-info">&#9733; &#9733; &#9733; &#9733; &#9733;</h5>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                        <div class="">
-                            <div class="d-flex">
-                                <img src="https://a0.muscache.com/im/pictures/660e2273-b37b-4f50-917e-369e7bc3f665.jpg?aki_policy=large" class="ml-0 mr-2 img-fluidX rounded-circle w-25 mb-3" alt="...">
-                                <div class="d-flex flex-column">
-                                    <h5 class="mt-0 mb-1">Sara</h5>
-                                    <p>United States</p>
-                                </div>
-                            </div>
-                        </div>
-
+                            <h5 class="card-title"><strong>Villas</strong></h5>
+                        <p class="card-text">How much hotels are there</p>
+                        <button class="btn btn-sm btn-success">Explore!</button>
                     </div>
                 </div>
             </div>
              <div class="col-md-3">
                 <div class="card mb-3">
-                    <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" class="card-img-top" alt="...">
+                    <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title text-info">&#9733; &#9733; &#9733; &#9733; &#9733;</h5>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                        <div class="">
-                            <div class="d-flex">
-                                <img src="https://a0.muscache.com/im/pictures/660e2273-b37b-4f50-917e-369e7bc3f665.jpg?aki_policy=large" class="ml-0 mr-2 img-fluidX rounded-circle w-25 mb-3" alt="...">
-                                <div class="d-flex flex-column">
-                                    <h5 class="mt-0 mb-1">Sara</h5>
-                                    <p>United States</p>
-                                </div>
-                            </div>
-                        </div>
-
+                             <h5 class="card-title"><strong>Apartments</strong></h5>
+                        <p class="card-text">How much hotels are there</p>
+                        <button class="btn btn-sm btn-success">Explore!</button>
                     </div>
                 </div>
             </div>
 
         </div>
     </div>
-<div class="container-fluid container">
+<div class="container-fluid ">
     <div class="container pl-0">
         <div class="row">
             <div class="col-12 pl-0 mb-5">
                 <h2 class="h3  mt-0 mb-2">When are you travelling?</h2>
                 <p class="mt-0 ml-0 mb-2">Add dates for updated pricing and availability.</p>
-                <button class="btn btn-lg btn-success">Add dates</button>
+                <button class="btn btn-sm btn-success">Add dates</button>
             </div>
         </div>
     </div>
@@ -252,14 +211,14 @@
     @foreach (var item in Model) {
 
         <div class="col-md-4 col-xs-6 border-primary mb-3">
-            <div class="card mb-3" style="max-width: 540px;">
+            <div class="card mb-3" style="max-width: 400px">
                 <div class="row g-0">
                     <div class="col-md-12 bg-transparent">
                         <div class="card-header text-white bg-transparent">
                             <p class="card-text">
                                 <h5 class="card-title">
-                                    @item.Acco_Name
-                                   @* @if (User.Identity.IsAuthenticated && User.IsInRole("Admin"))
+                                        <strong> @item.Acco_Name</strong>
+                                        @* @if (User.Identity.IsAuthenticated && User.IsInRole("Admin"))
                                     {
                                         <a class="text-white float-right" asp-action="Edit" asp-route-id="@item.Acco_Id"><i class="bi bi-pencil-square"></i></a>
                                     }*@
@@ -269,29 +228,52 @@
                     </div>
                        <div class="col-md-12">
                      
-                            <img class="img-rounded" style="max-width:250px"     src="@item.Acco_picture" alt="@item.Acco_Name">
+                            <img class="img-rounded" style="max-width:400px"   src="@item.Acco_picture" alt="@item.Acco_Name">
                   
                     </div>
                 
                 
                     <div class="col-md-12">
                         <div class="card-body">
-                            <p class="card-text"><b>Destination:📍 </b>@item.Acco_Destination</p>
-                            <p class="card-text"><b>Bathrooms: 🚽 </b>@item.Acco_Bathrooms</p>
-                            <p class="card-text"><b>Rooms:🛏️ </b>@item.Acco_Rooms</p>
-                            <p class="card-text"><b>Ratings: ⭐</b>@item.Acco_Rate</p>
+                            <p class="card-text"><b>Destination: </b>@item.Acco_Destination</p>
+                            <p class="card-text"><b>Bathrooms:  </b>@item.Acco_Bathrooms</p>
+                            <p class="card-text"><b>Rooms: </b>@item.Acco_Rooms</p>
+                            <p class="card-text">
+                             @if(item.Acco_Rate == 5){
+                                  <span class="text-info">&#9733;&#9733;&#9733;&#9733;&#9733;<span class="text-secondary"> Superhost</span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-hand-thumbs-up-fill" viewBox="0 0 16 16">
+  <path d="M6.956 1.745C7.021.81 7.908.087 8.864.325l.261.066c.463.116.874.456 1.012.965.22.816.533 2.511.062 4.51a9.84 9.84 0 0 1 .443-.051c.713-.065 1.669-.072 2.516.21.518.173.994.681 1.2 1.273.184.532.16 1.162-.234 1.733.058.119.103.242.138.363.077.27.113.567.113.856 0 .289-.036.586-.113.856-.039.135-.09.273-.16.404.169.387.107.819-.003 1.148a3.163 3.163 0 0 1-.488.901c.054.152.076.312.076.465 0 .305-.089.625-.253.912C13.1 15.522 12.437 16 11.5 16H8c-.605 0-1.07-.081-1.466-.218a4.82 4.82 0 0 1-.97-.484l-.048-.03c-.504-.307-.999-.609-2.068-.722C2.682 14.464 2 13.846 2 13V9c0-.85.685-1.432 1.357-1.615.849-.232 1.574-.787 2.132-1.41.56-.627.914-1.28 1.039-1.639.199-.575.356-1.539.428-2.59z"/>
+</svg></span>
+                             }
+                             else if(item.Acco_Rate == 4){
+                                    <span class="text-info">&#9733;&#9733;&#9733;&#9733;</span>
+                             }
+                             else if(item.Acco_Rate == 3)
+                            {
+                                    <span class="text-info">&#9733;&#9733;&#9733;</span>
+                            }
+                            else if(item.Acco_Rate == 2){
+                                    <span class="ext-info">&#9733;&#9733;</span>
+                            }
+                            else if(item.Acco_Rate == 1){
+                                    <p class="text-info">&#9733;</p>
+                            }
+                            else{
+                                <span class="text-secondary">Be the first one to rate!</span>
+                            }
+                            </p>
                             <p class="card-text"><b>Radius Distance:🗺️ </b>@item.Acco_Distance KM</p>
 
-                            <p class="card-text">
+                           @* <p class="card-text">
                                 <b>Type: </b>
                                @if(item.Acco_Type == 'S' || item.Acco_Type == 's'){
-                                    <span>Single 🧍</span>
+                                  
+                                  <span class="label label-info">Single person</span>
                                }
                                else{
-                                    <span>Group 🧑🏽‍🤝‍🧑🏽</span>
+                                        <span class="label label-info">Group</span>
                                }
                             
-                            </p>
+                            </p>*@
                             
 
                         </div>
@@ -306,10 +288,13 @@
                                asp-controller="Booking"
                                asp-action="AddItemToBooking"
                                asp-route-id="@item.Acco_Id">
+                                        <!-- Full screen modal -->
+                                    
                                    (Price @item.Acco_Price.ToString("c") /Per Night)
                                 </a>
                                 
                             </p>
+                              
                         </div>
                     </div>
                 </div>
@@ -384,6 +369,7 @@
 }
     </tbody>
 </table>*@
+  
     <script>
         var today = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate());
         $('#startDate').datepicker({

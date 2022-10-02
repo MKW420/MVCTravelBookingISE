@@ -6,43 +6,56 @@
 
 <h1>Details</h1>
 
-<div>
-    <h4>FlightModel</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Flight_Destination)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Flight_Destination)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Flight_Departure)
-        </dt>
-        <dd class = "col-sm-10">
+<div class="card">
+    <div class="card-header">
+        <ul class="nav nav-tabs card-header-tabs">
+            <li class="nav-item">
+                <a class="nav-link active" href="#">Destination</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Rules</a>
+            </li>
+            
+        </ul>
+    </div>
+    <dl class="card-body">
+       
+    
+       
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Flight_Departure)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Flight_Destination)
+        </dt>
+
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Flight_Destination)
+        </dd>
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Flight_Date)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Flight_Date)
         </dd>
-        <dt class = "col-sm-2">
+
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Flight_Class)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Flight_Class)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Flight_Price)
         </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Flight_Price)
+        <dd class="col-sm-10">
+            R  @Html.DisplayFor(model => model.Flight_Price)
         </dd>
+       
     </dl>
+
 </div>
 <div>
     <a class="btn btn-dark"  asp-action="Edit" asp-route-id="@Model?.Flight_Id">Edit</a> |
-    <a class="btn btn-info" asp-action="Index">Back to List</a>
+    <a class="btn btn-primary" asp-action="Index">Back to List</a>
 </div>

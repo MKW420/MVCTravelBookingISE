@@ -109,6 +109,6 @@ namespace MVCTravelBookingISE.Data
         public DbSet<TravellerBooking> TravellerBooking { get; set; }
         public DbSet<MVCTravelBookingISE.Models.RewardsModel> RewardsModel { get; set; }
         
-
+        public DbSet<Rating> rating { get; set; }
     }
 }
