@@ -10,46 +10,31 @@ namespace MVCTravelBookingISE.Models
         [Key]
         public int Booking_Id { get; set; }
 
-        [Display(Name = "Name of the booking")]
-        [Required(ErrorMessage = "Booking Name required")]
-        public string Booking_Name { get; set; }
+        public string UserId { get; set; }
 
         [Display(Name = "The date of the booking ")]
         [Required(ErrorMessage = "Booking Date required")]
-        public DateTime Booking_date{ get; set; }
+        public DateTime Booking_Startdate { get; set; }
 
-        [Display(Name = "Approved Y/N")]
+        public DateTime Booking_Enddate { get; set; }
+
+        [Display(Name = "Approved Yes/No")]
         public string Booking_Approved { get; set; }
 
-        [Display(Name = "Total price of the booking")]
-        public decimal Booking_TotalPrice { get; set; }
-
-     
-       //Reltionships with other models 
-       public List<TravellerBooking> TravellerBookings { get; set; }
-
-        //foreign key of Flight_ID
-
-        public int Flight_Id { get; set; }
-        [ForeignKey("Flight_Id")]
-        public FlightModel Flight { get; set; }
-
-        //Foreign key of Accomodation_ID
-        public int Acco_Id { get; set; }
-        [ForeignKey("Acco_Id")]
-        public AccomodationModel Accomodation { get; set; }
-
-        //foreign key of transport
-        public int Transport_Id { get; set; }
-        [ForeignKey("Transport_Id")]
-        public TransportModel Transport { get; set; }
-        
+        public decimal TotalPrice { get; set; }
 
 
-     
-      
+        public List<BookingItem> Bookingitem { get; set; }
 
-   
+        public List<Rating> Ratings { get; set; }
+
+
+
+
+
+
+
+
 
 
     }

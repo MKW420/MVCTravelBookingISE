@@ -18,9 +18,7 @@
             <th>
                 @Html.DisplayNameFor(model => model.ExpiryRewardsDate)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Traveller)
-            </th>
+           
             <th></th>
         </tr>
     </thead>
@@ -39,9 +37,7 @@
             <td>
                 @Html.DisplayFor(modelItem => item.ExpiryRewardsDate)
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Traveller.Email)
-            </td>
+            
             <td>
                 <a asp-action="Edit" asp-route-id="@item.Rewards_Id">Edit</a> |
                 <a asp-action="Details" asp-route-id="@item.Rewards_Id">Details</a> |

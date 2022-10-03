@@ -80,8 +80,8 @@ namespace MVCTravelBookingISE.Data.Services
 
             //Removing existing Accomodation
 
-            var existingAccomodationDb = _context.Booking.Where(n => n.Acco_Id == data.Acco_Id).ToList();
-             _context.Booking.RemoveRange(existingAccomodationDb);
+            var existingAccomodationDb = _context.bookingItems.Where(n => n.Acco_Id == data.Acco_Id).ToList();
+            // _context.Booking.RemoveRange(existingAccomodationDb);
             await _context.SaveChangesAsync();
 
             //Add booking

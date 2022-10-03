@@ -1,4 +1,6 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MVCTravelBookingISE.Models
 {
@@ -9,9 +11,11 @@ namespace MVCTravelBookingISE.Models
 
         public int rating { get; set; }
 
-        public int UserID { get; set; }
+        public string UserId { get; set; }
 
-        public int item_ID { get; set; }
+        public int Booking_Id { get; set; }
+        [ForeignKey("Booking_Id")]
+        public BookingModel Booking { get; set; }
         public DateTime TimeStamp { get; set; }
 
         public string RatingComment { get; set; }

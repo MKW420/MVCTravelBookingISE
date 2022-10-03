@@ -31,13 +31,13 @@ namespace MVCTravelBookingISE.Models
         [Column(TypeName = "decimal(10,2)")]
         public decimal Flight_Price{ get; set; }
 
-       
+        
         public int FlightRules_Id { get; set; }
         [ForeignKey("FlightRules_Id")]
         public FlightRulesModel FlightRule { get; set; }
         //Reltionships with other Models
     
-        public List<BookingModel> Bookings { get; set; }
+        public List<BookingItem> Bookingitem { get; set; }
 
         
     }

@@ -48,8 +48,7 @@ namespace MVCTravelBookingISE.Models
             //}
 
             
-        
-
+       
         [Display(Name = "Type of accomodation")]
         [Required(ErrorMessage = "Type of accomodation required")]
         public char Acco_Type { get; set; }
@@ -63,9 +62,13 @@ namespace MVCTravelBookingISE.Models
         [Display(Name ="Rules of the accomdoation")]
         public string Acco_Rules { get; set; }
 
+         public string Acco_availability { get; set; }
+
         //booking
 
-        public List<BookingModel> Bookings { get; set; }
+       
+
+        public List<BookingItem> Bookingitem { get; set; }
 
         public List<Rating> Ratings { get; set; }
    

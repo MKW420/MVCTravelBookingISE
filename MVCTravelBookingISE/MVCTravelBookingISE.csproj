@@ -29,7 +29,7 @@
 
   <ItemGroup>
     <Folder Include="Data\Enums\" />
-    <Folder Include="Data\Services\ViewController\" />
+    <Folder Include="Data\ViewModels\" />
   </ItemGroup>
 
 </Project>

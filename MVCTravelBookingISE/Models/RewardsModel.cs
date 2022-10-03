@@ -9,6 +9,9 @@ namespace MVCTravelBookingISE.Models
         [Key]
         public int Rewards_Id { get; set; }
 
+        public string UserId { get; set; }
+
+
         [Required(ErrorMessage ="Rewards Name")]
         public string Rewards_Name { get; set; }
 
@@ -20,11 +23,7 @@ namespace MVCTravelBookingISE.Models
         [Required(ErrorMessage = "Expiry Date required")]
         public DateTime ExpiryRewardsDate { get; set; }
 
-        public int Traveller_Id { get; set; }
-        [ForeignKey("Traveller_Id")]
-        public TravellerModel Traveller { get; set; }
-
-
+    
 
     }
 }

@@ -16,8 +16,7 @@ namespace MVCTravelBookingISE.Models
         public string Flight_Name { get; set; }
 
         //Reltionships with other models
-
         public List<FlightModel> Flights { get; set; }
-        public List<BookingModel> Bookings { get; set; }
+       
     }
 }
