@@ -24,7 +24,7 @@ namespace MVCTravelBookingISE.Data.Services
                 Acco_Name = accomodation.Acco_Name,
                 Acco_Distance = accomodation.Acco_Distance,
                 Acco_Type = accomodation.Acco_Type,
-               Acco_Rate = accomodation.Acco_Rate,
+                Acco_Rate = accomodation.Acco_Rate,
                 Acco_Rooms = accomodation.Acco_Rooms,
                 Acco_Bathrooms = accomodation.Acco_Bathrooms,
                 Acco_Destination = accomodation.Acco_Destination,
@@ -80,7 +80,7 @@ namespace MVCTravelBookingISE.Data.Services
 
             //Removing existing Accomodation
 
-            var existingAccomodationDb = _context.bookingItems.Where(n => n.Acco_Id == data.Acco_Id).ToList();
+            var existingAccomodationDb = _context.Accomodation.Where(n => n.Acco_Id == data.Acco_Id).ToList();
             // _context.Booking.RemoveRange(existingAccomodationDb);
             await _context.SaveChangesAsync();
 

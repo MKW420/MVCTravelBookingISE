@@ -27,9 +27,9 @@ namespace MVCTravelBookingISE.Controllers
         [AllowAnonymous]
         public async Task<IActionResult> Index()
         {
-          //  var data = await _service.GetAllAsync(n => n.Bookings);
+            var data = await _service.GetAllAsync();
 
-            return View();
+            return View(data);
         }
         public async Task<IActionResult> Filter(string searchstring)
         {

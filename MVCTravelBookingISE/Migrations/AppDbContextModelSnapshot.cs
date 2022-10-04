@@ -132,8 +132,9 @@ namespace MVCTravelBookingISE.Migrations
                     b.Property<DateTime>("Booking_Startdate")
                         .HasColumnType("datetime2");
 
-                    b.Property<decimal>("TotalPrice")
-                        .HasColumnType("decimal(18,2)");
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("UserId")
                         .IsRequired()
@@ -310,8 +311,8 @@ namespace MVCTravelBookingISE.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("MVCTravelBookingISE.Models.BookingModel", "Booking")
-                        .WithMany("Bookingitem")
+                    b.HasOne("MVCTravelBookingISE.Models.BookingModel", "booking")
+                        .WithMany("bookingItem")
                         .HasForeignKey("Booking_Id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -330,11 +331,11 @@ namespace MVCTravelBookingISE.Migrations
 
                     b.Navigation("Accomodation");
 
-                    b.Navigation("Booking");
-
                     b.Navigation("Flight");
 
                     b.Navigation("Transport");
+
+                    b.Navigation("booking");
                 });
 
             modelBuilder.Entity("MVCTravelBookingISE.Models.FlightModel", b =>
@@ -372,9 +373,9 @@ namespace MVCTravelBookingISE.Migrations
 
             modelBuilder.Entity("MVCTravelBookingISE.Models.BookingModel", b =>
                 {
-                    b.Navigation("Bookingitem");
-
                     b.Navigation("Ratings");
+
+                    b.Navigation("bookingItem");
                 });
 
             modelBuilder.Entity("MVCTravelBookingISE.Models.FlightModel", b =>

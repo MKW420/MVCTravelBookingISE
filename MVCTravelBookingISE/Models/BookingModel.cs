@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using MVCTravelBookingISE.Areas.Identity.Data;
 using NuGet.Protocol.Core.Types;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -10,7 +11,13 @@ namespace MVCTravelBookingISE.Models
         [Key]
         public int Booking_Id { get; set; }
 
+        public string Email { get; set; }
+
         public string UserId { get; set; }
+        //[ForeignKey(nameof(UserId))]
+        //public ApplicationUser User { get; set; }
+
+
 
         [Display(Name = "The date of the booking ")]
         [Required(ErrorMessage = "Booking Date required")]
@@ -21,10 +28,11 @@ namespace MVCTravelBookingISE.Models
         [Display(Name = "Approved Yes/No")]
         public string Booking_Approved { get; set; }
 
-        public decimal TotalPrice { get; set; }
+      
 
 
-        public List<BookingItem> Bookingitem { get; set; }
+        public  List<BookingItem> bookingItem { get; set; }
+
 
         public List<Rating> Ratings { get; set; }
 

@@ -7,12 +7,20 @@ using MVCTravelBookingISE.Data.Services;
 using MVCTravelBookingISE.Areas.Identity.Data;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.Extensions.Options;
+using MVCTravelBookingISE.Data.Reservations;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddScoped<IAccomodationService, AccomodationService>();
+builder.Services.AddScoped<ITransportService, TransportService>();
 builder.Services.AddScoped<IFlightService, FlightService>();
 builder.Services.AddScoped<IRewardsService, RewardsService>();
+
+//Configure HTTP
+builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor > ();
+builder.Services.AddScoped(b => BookingReserved.GetBooking(b));
+
+builder.Services.AddSession();
 
 
 // Add services to the container.
@@ -104,8 +112,6 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
-app.UseAuthorization();
-
 app.UseSession();
 
 app.UseAuthentication(); 

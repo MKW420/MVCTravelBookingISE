@@ -13,11 +13,7 @@ namespace MVCTravelBookingISE.Models
         public int Item_Id { get; set; }
         public int Amount { get; set; }
 
-        [Display(Name = "Total price of the booking")]
-        public decimal Price { get; set; }
-        public int Booking_Id { get; set; }
-        [ForeignKey("Booking_Id")]
-        public BookingModel Booking { get; set; }   
+          public decimal Price { get; set; }
         public int Flight_Id { get; set; }
         [ForeignKey("Flight_Id")]
         public FlightModel Flight { get; set; }
@@ -32,8 +28,12 @@ namespace MVCTravelBookingISE.Models
         [ForeignKey("Transport_Id")]
         public TransportModel Transport { get; set; }
 
-       
+        public int Booking_Id { get; set; }
+        [ForeignKey("Booking_Id")]
+
+        public BookingModel booking { get; set; }
+
 
     }
-   
+
 }
