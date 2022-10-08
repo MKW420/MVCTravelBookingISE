@@ -17,9 +17,10 @@ namespace MVCTravelBookingISE.Controllers
     {
 
         private readonly IAccomodationService _service;
-        public AccomodationModelsController(IAccomodationService service)
+      //  private readonly ILogger<AccomodationModelsController> _logger;
+        public AccomodationModelsController(ILogger<AccomodationModelsController> logger, IAccomodationService service)
         {
-
+           // _logger = logger;
             _service = service;
         }
 
@@ -43,7 +44,66 @@ namespace MVCTravelBookingISE.Controllers
             }
             return View("Index", allAccomodation);
         }
+        public async Task<IActionResult> FilterResort()
+        {
+            var allAccomodation = await _service.GetAllAsync();
 
+            if (allAccomodation != null)
+            {
+                var filterResult = allAccomodation.Where(n => n.Acco_Type.Equals('R') || n.Acco_Type.Equals('R')).ToList();
+                return View("Index", filterResult);
+
+            }
+            return View("Index", allAccomodation);
+        }
+        public async Task<IActionResult> FilterHotel()
+        {
+            var allAccomodation = await _service.GetAllAsync();
+
+            if (allAccomodation != null)
+            {
+                var filterResult = allAccomodation.Where(n => n.Acco_Type.Equals('H') || n.Acco_Type.Equals('H')).ToList();
+                return View("Index", filterResult);
+
+            }
+            return View("Index", allAccomodation);
+        }
+        public async Task<IActionResult> FilterVilla()
+        {
+            var allAccomodation = await _service.GetAllAsync();
+
+            if (allAccomodation != null)
+            {
+                var filterResult = allAccomodation.Where(n => n.Acco_Type.Equals('V') || n.Acco_Type.Equals('V')).ToList();
+                return View("Index", filterResult);
+
+            }
+            return View("Index", allAccomodation);
+        }
+        public async Task<IActionResult> FilterApartment()
+        {
+            var allAccomodation = await _service.GetAllAsync();
+
+            if (allAccomodation != null)
+            {
+                var filterResult = allAccomodation.Where(n => n.Acco_Type.Equals('A') || n.Acco_Type.Equals('A')).ToList();
+                return View("Index", filterResult);
+
+            }
+            return View("Index", allAccomodation);
+        }
+        public async Task<IActionResult> PricesEqaulToOneThousand()
+        {
+            var allAccomodation = await _service.GetAllAsync();
+
+            if(allAccomodation != null)
+            {
+                var filterResult = allAccomodation.Where(n => n.Acco_Price > 1000 || n.Acco_Price > 1000).ToList();
+                return View("Index", filterResult);
+
+            }
+            return View("Index", allAccomodation);
+        }
         // GET: Acco
         // GET: AccomodationModels/Details/5
         // [AllowAnonymous]

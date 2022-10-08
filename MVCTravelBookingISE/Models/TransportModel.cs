@@ -26,7 +26,7 @@ namespace MVCTravelBookingISE.Models
 
         //booking
        
-        public List<BookingItem> Bookingitem { get; set; }
+      
 
     }
 }

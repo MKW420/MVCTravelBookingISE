@@ -37,8 +37,7 @@ namespace MVCTravelBookingISE.Models
         public FlightRulesModel FlightRule { get; set; }
         //Reltionships with other Models
     
-        public List<BookingItem> Bookingitem { get; set; }
-
+  
         
     }
 }

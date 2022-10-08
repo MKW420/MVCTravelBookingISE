@@ -28,17 +28,14 @@ namespace MVCTravelBookingISE.Models
         [Display(Name = "Approved Yes/No")]
         public string Booking_Approved { get; set; }
 
-      
-
-
-        public  List<BookingItem> bookingItem { get; set; }
-
 
         public List<Rating> Ratings { get; set; }
 
 
 
-
+        public int Item_Id { get; set; }
+        [ForeignKey("Item_Id")]
+        public BookingAccoItem BookingAccoItem { get; set; }
 
 
 

@@ -37,6 +37,8 @@ namespace MVCTravelBookingISE.Data
         
         public DbSet<Rating> rating { get; set; }
 
-        public DbSet<BookingItem> bookingItems { get; set; }
+        public DbSet<BookingAccoItem> bookingAccoItems { get; set; }
+
+        public DbSet<ReservedItem> ReservedItems { get; set; }
     }
 }

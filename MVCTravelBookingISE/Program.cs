@@ -18,7 +18,9 @@ builder.Services.AddScoped<IRewardsService, RewardsService>();
 
 //Configure HTTP
 builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor > ();
-builder.Services.AddScoped(b => BookingReserved.GetBooking(b));
+builder.Services.AddScoped(br => BookingReserved.GetBookingCart(br));
+
+builder.Services.AddMemoryCache();
 
 builder.Services.AddSession();
 
@@ -40,7 +42,11 @@ builder.Services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.R
     .AddDefaultTokenProviders();
 
 builder.Services.AddMemoryCache();
-builder.Services.AddSession();
+builder.Services.AddSession(options =>
+{
+    options.IdleTimeout = TimeSpan.FromMinutes(120);
+}
+    );
 
 
 

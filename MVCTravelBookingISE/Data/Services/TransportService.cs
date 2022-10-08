@@ -69,7 +69,7 @@ namespace MVCTravelBookingISE.Data.Services
 
             //Removing existing Accomodation
 
-            var existingTransportDb = _context.bookingItems.Where(n => n.Acco_Id == data.Transport_Id).ToList();
+           
             // _context.Booking.RemoveRange(existingAccomodationDb);
             await _context.SaveChangesAsync();
 

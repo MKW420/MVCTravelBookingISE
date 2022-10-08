@@ -7,16 +7,18 @@ using MVCTravelBookingISE.Models;
 namespace MVCTravelBookingISE.Data.Services
 {
     public class AccomodationService : EntityBaseRepository<AccomodationModel>,IAccomodationService
-
     {
 
       private readonly AppDbContext _context;
 
+        //private readonly IHttpContextAccessor _contexthttp;
+
         public AccomodationService(AppDbContext context) : base(context) {
             _context = context;
-               
+             
         }
 
+     
         public async Task AddNewAccomodation(AccomodationModel accomodation)
         {
             var newAccomodation = new AccomodationModel()
@@ -36,15 +38,7 @@ namespace MVCTravelBookingISE.Data.Services
            await _context.Accomodation.AddAsync(newAccomodation);
             await _context.SaveChangesAsync();
 
-            //ADD 
-
-            //foreach(var accoId in accomodation.Acco_Id)
-            //{
-            //    var newAccomodation = new Accomodation()
-            //    {
-
-            //    }
-            //}
+         
         }
 
         public async Task<AccomodationModel> GetAccomodationByIdAsync(int id)
@@ -84,33 +78,10 @@ namespace MVCTravelBookingISE.Data.Services
             // _context.Booking.RemoveRange(existingAccomodationDb);
             await _context.SaveChangesAsync();
 
-            //Add booking
-            //foreach(var accoId in data.Acco_Id)
-            //{
-            //    var newAccomodation = new BookingModel()
-            //    {
-            //        Acco_Id = accoId
-                    
-            //    };
-            //    await _context.Booking.AddAsync(newAccomodation);
-            //}
-            //await _context.SaveChangesAsync();
+           
         }
-        //public async Task UpdateAccomodationAsync(NewAccomodationVM data)
-        //{
-        //    var dbAccomodation = await _context.Accomodation.FirstOrDefaultAsync(n => n.Acco_Id == data.Id);
+   
 
-
-        //    if(dbAccomodation != null)
-        //    {
-        //        dbAccomodation.Acco_Id = data.Acco_Id;
-        //        dbAccomodation.Acco_Name = data.Acco_Name;
-        //        dbAccomodation.Acco_
-        //    }
-
-
-
-        //}
 
     }
 }

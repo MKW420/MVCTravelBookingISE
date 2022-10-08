@@ -1,8 +1,8 @@
 ﻿namespace MVCTravelBookingISE.Data.ViewComponents
 {
-    public class Rewards
+    public  static class Rewards
     {
-
+       
 
     }
 }
