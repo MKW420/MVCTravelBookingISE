@@ -90,9 +90,9 @@
                             </div>
                             </div>
                    </div>
-                    <div class="col-md-4 offset-4 text-center">
-                        <img width="100%" id="ImageURLPreview" />
-                    </div>
+                   @* <div class="col-md-4 offset-4 text-center">
+                        <img width="100%" id="ImageU />
+                    </div>*@
                    
                   
                     
@@ -115,12 +115,12 @@
     <a asp-action="Index">Back to List</a>
 </div>
 
-@section Scripts {
+@*@section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
     <script>
         $("Acco_picture").on("change", function()){
             var output = document.getElementById("ImageURLPreview")
             output.src $(this).val();
         }
-    </script>
+    </script>*@
 }

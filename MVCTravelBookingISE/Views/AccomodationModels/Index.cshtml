@@ -37,11 +37,205 @@
     </div>
     </section>
   *@
+  <header class="py-3 mb-4 border-bottom shadow">
+    <div class="container-fluid align-items-center d-flex">
+        <div class="flex-shrink-1">
+            <a href="#" class="d-flex align-items-center col-lg-4 mb-2 mb-lg-0 link-dark text-decoration-none">
+                <i class="bi bi-bootstrap fs-2 text-dark"></i>
+            </a>
+        </div>
+        <div class="flex-grow-1 d-flex align-items-center">
+                <form class="w-100 me-3" class="d-flex" asp-controller="AccomodationModels" asp-action="Filter">
 
+                    <input name ="searchstring" type="search" class="form-control" placeholder="Search...">
+                    <button class="btn btn-secondary my-2 my-sm-0 g" type="submit">Search</button>
+            </form>
+            <div class="flex-shrink-0 dropdown">
+                <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" id="dropdownUser2" data-bs-toggle="dropdown" aria-expanded="false">
+                    <img src="https://via.placeholder.com/28?text=!" alt="user" width="32" height="32" class="rounded-circle">
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="dropdownUser2" style="">
+                    <li><a class="dropdown-item" href="#">Search Flights</a></li>
+                    <li><a class="dropdown-item" href="#">Dashboard</a></li>
+                    <li><a class="dropdown-item" href="#">Profile</a></li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+                    <li><a class="dropdown-item" href="#">Sign out</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</header>
+<div class="container-fluid pb-3 flex-grow-1 d-flex flex-column flex-sm-row overflow-auto">
+    <div class="row flex-grow-sm-1 flex-grow-0">
+        <aside class="col-sm-3 flex-grow-sm-1 flex-shrink-1 flex-grow-0 sticky-top pb-sm-0 pb-3">
+            <div class="bg-light border rounded-3 p-1 h-100 sticky-top">
+                <ul class="nav nav-pills flex-sm-column flex-row mb-auto justify-content-between text-truncate">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link px-2 text-truncate">
+                            <i class="bi bi-house fs-5"></i>
+                            <span class="d-none d-sm-inline">Home</span>
+                        </a>
+                    </li>
+                    <li>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                   Below R 2500.00
+                                </label>
+                            </div>
+                    </li>
+                    <li>
+                                        <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                  <label class="form-check-label" for="flexCheckDefault">
+                    > Above
+                  </label>
+                </div>
+                    </li>
+                    <li>
+                        <a href="#" class="nav-link px-2 text-truncate"><i class="bi bi-bricks fs-5"></i>
+                            <span class="d-none d-sm-inline">Products</span> </a>
+                    </li>
+                    <li>
+                        <a href="#" class="nav-link px-2 text-truncate"><i class="bi bi-people fs-5"></i>
+                            <span class="d-none d-sm-inline">Customers</span> </a>
+                    </li>
+                </ul>
+            </div>
+        </aside>
+        <main class="col overflow-auto h-100">
+            <div class="bg-light border rounded-3 p-3">
+
+                    <div class="container-fluid container py-3 mt-4">
+                        <h2 class="h3">Browse by Accomodation category</h2>
+                        <div class="row mt-4">
+                            <div class="col-md-3">
+                                <div class="card mb-3">
+                                    <img src="https://images.unsplash.com/photo-1533654793924-4fc4949fb71e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1351&q=80" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title"><strong>Hotels</strong></h5>
+                                        <p class="card-text">How much hotels are there</p>
+
+                                        <form class="d-flex" asp-controller="AccomodationModels" asp-action="FilterHotel">
+                                            <button class="btn btn-sm btn-success">Explore!</button>
+
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="card mb-3">
+                                    <img src="https://images.unsplash.com/photo-1590523277543-a94d2e4eb00b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1332&q=80" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title"><strong>Resorts</strong></h5>
+                                        <p class="card-text">How much hotels are there</p>
+                                        <form class="d-flex" asp-controller="AccomodationModels" asp-action="FilterResort">
+                                            <button class="btn btn-sm btn-success">Explore!</button>
+
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="col-md-3">
+                                <div class="card mb-3">
+                                    <img src="https://images.unsplash.com/photo-1613561323381-fd3eb1a73ee8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title"><strong>Villas</strong></h5>
+                                        <p class="card-text">How much hotels are there</p>
+                                        <form class="d-flex" asp-controller="AccomodationModels" asp-action="FilterVilla">
+                                            <button class="btn btn-sm btn-success">Explore!</button>
+
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="card mb-3">
+                                    <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title"><strong>Apartments</strong></h5>
+                                        <p class="card-text">How much hotels are there</p>
+                                        <form class="d-flex" asp-controller="AccomodationModels" asp-action="FilterApartment">
+                                            <button class="btn btn-sm btn-success">Explore!</button>
+
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="container-fluid ">
+                        <div class="container pl-0">
+                            <div class="row">
+                                <div class="col-12 pl-0 mb-5">
+                                    <h2 class="h3  mt-0 mb-2">When are you travelling?</h2>
+                                    <p class="mt-0 ml-0 mb-2">Add dates for updated pricing and availability.</p>
+                                    <button class="btn btn-sm btn-success">Add dates</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container-fluid container py-3 mt-4">
+
+                        <div class="row mt-3">
+
+                            <div class="col-md-3">
+                                <div class="card mb-3 border-0">
+                                    <img src="https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" class="card-img-top br0" alt="...">
+                                    <p class="small text-uppercase pb-0">Entire house, Joshua Tree</p>
+                                    <div class="card-body p-0">
+                                        <h5 class="card-title">The Joshua Tree House</h5>
+                                        <p class="card-text m-0">$290/night</p>
+                                        <p class="small m-0 text-info">&#9733;&#9733;&#9733;&#9733;&#9733;<span class="text-secondary"> 465, Superhost</span></p>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="col-md-3">
+                                <div class="card mb-3 border-0">
+                                    <img src="https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" class="card-img-top br0" alt="...">
+                                    <p class="small text-uppercase pb-0">Entire house, Joshua Tree</p>
+                                    <div class="card-body p-0">
+                                        <h5 class="card-title">The Joshua Tree House</h5>
+                                        <p class="card-text m-0">$290/night</p>
+                                        <p class="small m-0 text-info">&#9733;&#9733;&#9733;&#9733;&#9733;<span class="text-secondary"> 465, Superhost</span></p>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="col-md-3">
+                                <div class="card mb-3 border-0">
+                                    <img src="https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" class="card-img-top br0" alt="...">
+                                    <p class="small text-uppercase pb-0">Entire house, Joshua Tree</p>
+                                    <div class="card-body p-0">
+                                        <h5 class="card-title">The Joshua Tree House</h5>
+                                        <p class="card-text m-0">$290/night</p>
+                                        <p class="small m-0 text-info">&#9733;&#9733;&#9733;&#9733;&#9733;<span class="text-secondary"> 465, Superhost</span></p>
+
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+                        </div>
+                    </div>
+            </div>
+               
+        </main>
+    </div>
+</div>
  
     <div class="card border-5" style="margin-top:50px;">
     <div class="card-body ">
-            <select class="form-control" id="Role" name="Role">
+        @*    <select class="form-control" id="Role" name="Role">
                 <option value="">- Please select a role-</option>
                 <option value="Project Manager">Project Manager</option>
                 <option value="Team Leader">Team Leader</option>
@@ -50,7 +244,7 @@
                 <option value="Tester">Tester</option>
                 <option value="Network Manager">Network Manager</option>
                 <option value="Support Person">Support Person</option>
-            </select>
+            </select>*@
             <div class="row">
                 <div class="col">
                     <div class="mb-2">
@@ -63,25 +257,13 @@
                 </div>
                 <div class="col">
                     <div class="mb-2">
-                        <form class="d-flex" asp-controller="AccomodationModels" asp-action="Filter">
-                            <div class="input-group">
-                                <span class="input-group-text">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search-heart-fill" viewBox="0 0 16 16">
-                                        <path d="M6.5 13a6.474 6.474 0 0 0 3.845-1.258h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.008 1.008 0 0 0-.115-.1A6.471 6.471 0 0 0 13 6.5 6.502 6.502 0 0 0 6.5 0a6.5 6.5 0 1 0 0 13Zm0-8.518c1.664-1.673 5.825 1.254 0 5.018-5.825-3.764-1.664-6.69 0-5.018Z" />
-                                    </svg>
-                                </span>
-                                <input type="text" class="form-control" list="origin-options" id="origin-input" placeholder="Where are you going?" aria-describedby="origin-label" />
-                                <datalist id="origin-options"></datalist>
-                            </div>
-                            <button class="btn btn-secondary my-2 my-sm-0 g" type="submit">Search</button>
-                        </form>
+                      
                     </div>
                 </div>
 
 
-
-              
-
+           
+                
 
 
                 @* <div id="departure-date" class="mb-1">
@@ -114,122 +296,10 @@
     </div>
   </div>
 
-  <div class="row">
-      <div class="col-2">
-          <div class="card mb-3">
 
-          </div>
-      </div>
-  </div>
+   
 
-
-    <div class="container-fluid container py-3 mt-4">
-        <h2 class="h3">Browse by Accomodation category</h2>
-        <div class="row mt-4">
-            <div class="col-md-3">
-                <div class="card mb-3">
-                    <img src="https://images.unsplash.com/photo-1533654793924-4fc4949fb71e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1351&q=80" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title"><strong>Hotels</strong></h5>
-                        <p class="card-text">How much hotels are there</p>
-                       
-                         <form class="d-flex" asp-controller="AccomodationModels" asp-action="FilterHotel">
-                            <button class="btn btn-sm btn-success">Explore!</button>
-                       
-                    </form>
-                    </div>
-                </div>
-            </div>
-             <div class="col-md-3">
-                <div class="card mb-3">
-                    <img src="https://images.unsplash.com/photo-1590523277543-a94d2e4eb00b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1332&q=80" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title"><strong>Resorts</strong></h5>
-                        <p class="card-text">How much hotels are there</p>
-                          <form class="d-flex" asp-controller="AccomodationModels" asp-action="FilterResort">
-                            <button class="btn btn-sm btn-success">Explore!</button>
-                       
-                    </form>
-                    </div>
-                </div>
-            </div>
-           
-           
-            <div class="col-md-3">
-                <div class="card mb-3">
-                    <img src="https://images.unsplash.com/photo-1613561323381-fd3eb1a73ee8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" class="card-img-top" alt="...">
-                    <div class="card-body">
-                            <h5 class="card-title"><strong>Villas</strong></h5>
-                        <p class="card-text">How much hotels are there</p>
-                          <form class="d-flex" asp-controller="AccomodationModels" asp-action="FilterVilla">
-                            <button class="btn btn-sm btn-success">Explore!</button>
-                       
-                    </form>
-                    </div>
-                </div>
-            </div>
-             <div class="col-md-3">
-                <div class="card mb-3">
-                    <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" class="card-img-top" alt="...">
-                    <div class="card-body">
-                             <h5 class="card-title"><strong>Apartments</strong></h5>
-                        <p class="card-text">How much hotels are there</p>
-                        <form class="d-flex" asp-controller="AccomodationModels" asp-action="FilterApartment">
-                            <button class="btn btn-sm btn-success">Explore!</button>
-
-                        </form>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </div>
-<div class="container-fluid ">
-    <div class="container pl-0">
-        <div class="row">
-            <div class="col-12 pl-0 mb-5">
-                <h2 class="h3  mt-0 mb-2">When are you travelling?</h2>
-                <p class="mt-0 ml-0 mb-2">Add dates for updated pricing and availability.</p>
-                <button class="btn btn-sm btn-success">Add dates</button>
-            </div>
-        </div>
-    </div>
-</div>
-    <div class="container-fluid container py-3 mt-4">
-       
-      <div class="row mt-3">
-         
-        <div class="col-md-3">
-            <div class="card mb-3 border-0">
-                <img src="https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" class="card-img-top br0" alt="...">
-                <p class="small text-uppercase pb-0">Entire house, Joshua Tree</p>
-                <div class="card-body p-0">
-                    <h5 class="card-title">The Joshua Tree House</h5>
-                    <p class="card-text m-0">$290/night</p>
-                    <p class="small m-0 text-info">&#9733;&#9733;&#9733;&#9733;&#9733;<span class="text-secondary"> 465, Superhost</span></p>
-
-                </div>
-            </div>
-        
-                </div>
-                <div class="col-md-3">
-            <div class="card mb-3 border-0">
-                <img src="https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" class="card-img-top br0" alt="...">
-                <p class="small text-uppercase pb-0">Entire house, Joshua Tree</p>
-                <div class="card-body p-0">
-                    <h5 class="card-title">The Joshua Tree House</h5>
-                    <p class="card-text m-0">$290/night</p>
-                    <p class="small m-0 text-info">&#9733;&#9733;&#9733;&#9733;&#9733;<span class="text-secondary"> 465, Superhost</span></p>
-
-                </div>
-            </div>
-               
-                </div>
-           
-
-
-        </div>
-        </div>
+   
     
 <div class="row">
     @foreach (var item in Model) {
@@ -309,11 +379,11 @@
                                     <i class="bi bi-eye-fill"></i> Show Details
                                 </a>
                                 <a class="btn btn-success text-white" data-toggle="popover"
-                               asp-controller="BookingModels"
-                               asp-action="AddItemToBookingCart"
-                               asp-route-id="@item.Acco_Id">
+                                   asp-controller="BookingModels"
+                                   asp-action="AddItemToBookingCart"
+                                   asp-route-id="@item.Acco_Id">
                                         <!-- Full screen modal -->
-                                    Add to Booking
+                                    
                                    (Price @item.Acco_Price.ToString("c") /Per Night)
                                 </a>
                                 

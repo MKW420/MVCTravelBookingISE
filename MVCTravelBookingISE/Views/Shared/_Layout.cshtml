@@ -79,8 +79,11 @@
                     <input name="searchstring" class="form-control me-sm-2" type="text" placeholder="Search...">
                     <button class="btn btn-secondary my-2 my-sm-0 g" type="submit">Search</button>
                 </form>
-                <partial name="_LoginPartial.cshtml" />
 
+                <partial name="_LoginPartial.cshtml" />
+                <ul class="navbar-nav">
+                    @await Component.InvokeAsync("BookingReservedCartSummary")
+                </ul>
                 </div>
             </div>
         </nav>

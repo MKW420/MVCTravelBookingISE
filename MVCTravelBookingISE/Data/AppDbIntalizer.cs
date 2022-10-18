@@ -11,7 +11,7 @@ namespace MVCTravelBookingISE.Data
             {
                 var context = serviceScope.ServiceProvider.GetService<AppDbContext>();
 
-                context.Database.EnsureCreated();
+             context.Database.EnsureCreated();
 
 
                 if (!context.Transport.Any())

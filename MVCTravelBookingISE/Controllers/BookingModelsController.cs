@@ -43,11 +43,11 @@ namespace MVCTravelBookingISE.Controllers
             var response = new BookingVModel()
             {
                 BookingReserved = _bookingReserved,
+                BookingTotalPrice= _bookingReserved.GetBookingTotal()
             };
          
             return (View(response));
         }
-
         public async Task<RedirectToActionResult> AddItemToBookingCart(int id)
         {
             var item = await _accomodationService.GetAccomodationByIdAsync(id);
@@ -60,7 +60,22 @@ namespace MVCTravelBookingISE.Controllers
             return RedirectToAction(nameof(BookingCart));
 
         }
-         
+        //public async Task<IActionResult> RemoveItemFromBookingCart(int id)
+        //{
+        //    var item = await _accomodationService.GetAccomodationByIdAsync(id);
+
+        //    if (item != null)
+        //    {
+        //        NewMethod(item);
+        //    }
+
+        //    return RedirectToAction(nameof(BookingCart));
+
+        //    void NewMethod(AccomodationModel item)
+        //    {
+        //        _bookingReserved.RemoveItemFromBooking(item);
+        //    }
+        //}
     }
   
   
