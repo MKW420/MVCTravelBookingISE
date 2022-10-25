@@ -18,7 +18,7 @@ namespace MVCTravelBookingISE.Controllers
 
         private readonly IAccomodationService _service;
       //  private readonly ILogger<AccomodationModelsController> _logger;
-        public AccomodationModelsController(ILogger<AccomodationModelsController> logger, IAccomodationService service)
+        public AccomodationModelsController( IAccomodationService service)
         {
            // _logger = logger;
             _service = service;
@@ -50,7 +50,7 @@ namespace MVCTravelBookingISE.Controllers
 
             if (allAccomodation != null)
             {
-                var filterResult = allAccomodation.Where(n => n.Acco_Type.Equals('R') || n.Acco_Type.Equals('R')).ToList();
+                var filterResult = allAccomodation.Where(n => n.Acco_Name.Equals("Resort") || n.Acco_Type.Equals("resort")).ToList();
                 return View("Index", filterResult);
 
             }
@@ -62,7 +62,7 @@ namespace MVCTravelBookingISE.Controllers
 
             if (allAccomodation != null)
             {
-                var filterResult = allAccomodation.Where(n => n.Acco_Type.Equals('H') || n.Acco_Type.Equals('H')).ToList();
+                var filterResult = allAccomodation.Where(n => n.Acco_Name.Equals("Hotel") || n.Acco_Type.Equals("hotel")).ToList();
                 return View("Index", filterResult);
 
             }
@@ -74,7 +74,7 @@ namespace MVCTravelBookingISE.Controllers
 
             if (allAccomodation != null)
             {
-                var filterResult = allAccomodation.Where(n => n.Acco_Type.Equals('V') || n.Acco_Type.Equals('V')).ToList();
+                var filterResult = allAccomodation.Where(n => n.Acco_Name.Equals("Villa") || n.Acco_Type.Equals("villa")).ToList();
                 return View("Index", filterResult);
 
             }
@@ -86,7 +86,7 @@ namespace MVCTravelBookingISE.Controllers
 
             if (allAccomodation != null)
             {
-                var filterResult = allAccomodation.Where(n => n.Acco_Type.Equals('A') || n.Acco_Type.Equals('A')).ToList();
+                var filterResult = allAccomodation.Where(n => n.Acco_Name.Equals("Apartment") || n.Acco_Type.Equals("apartment")).ToList();
                 return View("Index", filterResult);
 
             }
@@ -98,7 +98,7 @@ namespace MVCTravelBookingISE.Controllers
 
             if(allAccomodation != null)
             {
-                var filterResult = allAccomodation.Where(n => n.Acco_Price > 1000 || n.Acco_Price > 1000).ToList();
+                var filterResult = allAccomodation.Where(n => n.Acco_Price > 1500 || n.Acco_Price > 1500).ToList();
                 return View("Index", filterResult);
 
             }

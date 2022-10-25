@@ -6,6 +6,7 @@
 }
 <head>
     <script></script>
+    <script src="~/js/main.js" type="text/javascript"></script>
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
     <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
@@ -14,11 +15,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
-
+    
    
 </head>
 
 <body>
+
 
   @*  <section id="services " class="view w-100">
       <div class="align-items-center">
@@ -37,7 +39,8 @@
     </div>
     </section>
   *@
-  <header class="py-3 mb-4 border-bottom shadow">
+  <header class="py-3 mb-4 border-bottom shadow bg-dark">
+       
     <div class="container-fluid align-items-center d-flex">
         <div class="flex-shrink-1">
             <a href="#" class="d-flex align-items-center col-lg-4 mb-2 mb-lg-0 link-dark text-decoration-none">
@@ -65,46 +68,18 @@
                 </ul>
             </div>
         </div>
+
     </div>
 </header>
+
+    <strong><label class="form-label" for="customRange2">Search price Range</label></strong>
+    <div class="range">
+        <input type="range" class="form-range" min="0" max="1000" id="customRange2" />
+    </div>
+   
 <div class="container-fluid pb-3 flex-grow-1 d-flex flex-column flex-sm-row overflow-auto">
     <div class="row flex-grow-sm-1 flex-grow-0">
-        <aside class="col-sm-3 flex-grow-sm-1 flex-shrink-1 flex-grow-0 sticky-top pb-sm-0 pb-3">
-            <div class="bg-light border rounded-3 p-1 h-100 sticky-top">
-                <ul class="nav nav-pills flex-sm-column flex-row mb-auto justify-content-between text-truncate">
-                    <li class="nav-item">
-                        <a href="#" class="nav-link px-2 text-truncate">
-                            <i class="bi bi-house fs-5"></i>
-                            <span class="d-none d-sm-inline">Home</span>
-                        </a>
-                    </li>
-                    <li>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                <label class="form-check-label" for="flexCheckDefault">
-                                   Below R 2500.00
-                                </label>
-                            </div>
-                    </li>
-                    <li>
-                                        <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                  <label class="form-check-label" for="flexCheckDefault">
-                    > Above
-                  </label>
-                </div>
-                    </li>
-                    <li>
-                        <a href="#" class="nav-link px-2 text-truncate"><i class="bi bi-bricks fs-5"></i>
-                            <span class="d-none d-sm-inline">Products</span> </a>
-                    </li>
-                    <li>
-                        <a href="#" class="nav-link px-2 text-truncate"><i class="bi bi-people fs-5"></i>
-                            <span class="d-none d-sm-inline">Customers</span> </a>
-                    </li>
-                </ul>
-            </div>
-        </aside>
+     
         <main class="col overflow-auto h-100">
             <div class="bg-light border rounded-3 p-3">
 
@@ -180,127 +155,20 @@
                             </div>
                         </div>
                     </div>
-                    <div class="container-fluid container py-3 mt-4">
-
-                        <div class="row mt-3">
-
-                            <div class="col-md-3">
-                                <div class="card mb-3 border-0">
-                                    <img src="https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" class="card-img-top br0" alt="...">
-                                    <p class="small text-uppercase pb-0">Entire house, Joshua Tree</p>
-                                    <div class="card-body p-0">
-                                        <h5 class="card-title">The Joshua Tree House</h5>
-                                        <p class="card-text m-0">$290/night</p>
-                                        <p class="small m-0 text-info">&#9733;&#9733;&#9733;&#9733;&#9733;<span class="text-secondary"> 465, Superhost</span></p>
-
-                                    </div>
-                                </div>
-
-                            </div>
-                            <div class="col-md-3">
-                                <div class="card mb-3 border-0">
-                                    <img src="https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" class="card-img-top br0" alt="...">
-                                    <p class="small text-uppercase pb-0">Entire house, Joshua Tree</p>
-                                    <div class="card-body p-0">
-                                        <h5 class="card-title">The Joshua Tree House</h5>
-                                        <p class="card-text m-0">$290/night</p>
-                                        <p class="small m-0 text-info">&#9733;&#9733;&#9733;&#9733;&#9733;<span class="text-secondary"> 465, Superhost</span></p>
-
-                                    </div>
-                                </div>
-
-                            </div>
-                            <div class="col-md-3">
-                                <div class="card mb-3 border-0">
-                                    <img src="https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" class="card-img-top br0" alt="...">
-                                    <p class="small text-uppercase pb-0">Entire house, Joshua Tree</p>
-                                    <div class="card-body p-0">
-                                        <h5 class="card-title">The Joshua Tree House</h5>
-                                        <p class="card-text m-0">$290/night</p>
-                                        <p class="small m-0 text-info">&#9733;&#9733;&#9733;&#9733;&#9733;<span class="text-secondary"> 465, Superhost</span></p>
-
-                                    </div>
-                                </div>
-
-                            </div>
-
-
-                        </div>
-                    </div>
+                   
             </div>
                
         </main>
     </div>
 </div>
  
-    <div class="card border-5" style="margin-top:50px;">
-    <div class="card-body ">
-        @*    <select class="form-control" id="Role" name="Role">
-                <option value="">- Please select a role-</option>
-                <option value="Project Manager">Project Manager</option>
-                <option value="Team Leader">Team Leader</option>
-                <option value="Senior Developer">Senior Developer</option>
-                <option value="Junior Developer">Junior Developer</option>
-                <option value="Tester">Tester</option>
-                <option value="Network Manager">Network Manager</option>
-                <option value="Support Person">Support Person</option>
-            </select>*@
-            <div class="row">
-                <div class="col">
-                    <div class="mb-2">
-                        <label id="origin-label" for="origin-input" class="form-label text-black">
-                          
-                        </label>
-                      
-                    </div>
-                    
-                </div>
-                <div class="col">
-                    <div class="mb-2">
-                      
-                    </div>
-                </div>
-
-
-           
-                
-
-
-                @* <div id="departure-date" class="mb-1">
-                    <label id="departure-date-label" for="departure-date-input" class="form-label">Check-in date</label>
-                    <div class="input-group">
-                        <span class="input-group-text"><i class="bi-calendar"></i></span>
-                        <input type="date"
-                               class="form-control"
-                               id="departure-date-input"
-                               aria-describedby="departure-date-label" />
-                    </div>
-                </div>*@
-                
-               @* <div id="return-date" class="mb-2">
-                    <label id="return-date-label" for="return-date-input" class="form-label">Return date</label>
-                    <div class="input-group">
-                        <span class="input-group-text"><i class="bi-calendar-fill"></i> </span>
-                        <input type="date"
-                               class="form-control"
-                               id="return-date-input"
-                               aria-describedby="return-date-label" />
-                    </div>
-                </div>*@
-
-            
-            
-              
-           
-            </div>
-    </div>
-  </div>
-
-
-   
-
-   
     
+   
+
+   <div>
+
+      <strong><h1>Browse All Accomodation</h1></strong
+    </div>
 <div class="row">
     @foreach (var item in Model) {
 
@@ -481,6 +349,11 @@
                 return $('#startDate').val();
             }
         });
+
+
+     
     </script>
+    
 <script src="~/js/site.js"></script>
+
 </body>

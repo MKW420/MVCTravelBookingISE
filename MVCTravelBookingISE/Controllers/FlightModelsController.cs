@@ -41,7 +41,18 @@ namespace MVCTravelBookingISE.Controllers
 
             return View(FlightDetails);
         }
+        public async Task<IActionResult> Filter(string searchDes, string searchDep, DateTime dateflight)
+        {
+            var allTransport = await _service.GetAllAsync();
 
+            if (!string.IsNullOrEmpty(searchDep))
+            {
+                var filterResult = allTransport.Where(n => n.Flight_Departure.Contains(searchDep) || n.Flight_Destination.Contains(searchDes)).ToList();
+                return View("Index", filterResult);
+
+            }
+            return View("Index", allTransport);
+        }
         // GET: FlightModels/Create
         public IActionResult Create()
         {

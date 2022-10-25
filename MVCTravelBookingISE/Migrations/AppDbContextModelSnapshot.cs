@@ -77,19 +77,23 @@ namespace MVCTravelBookingISE.Migrations
 
             modelBuilder.Entity("MVCTravelBookingISE.Models.BookingAccoItem", b =>
                 {
-                    b.Property<int>("Item_Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Item_Id"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<int>("Acco_Id")
                         .HasColumnType("int");
 
+                    b.Property<string>("BookingCartId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int>("Qauntity")
                         .HasColumnType("int");
 
-                    b.HasKey("Item_Id");
+                    b.HasKey("Id");
 
                     b.HasIndex("Acco_Id");
 
@@ -118,16 +122,11 @@ namespace MVCTravelBookingISE.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("Item_Id")
-                        .HasColumnType("int");
-
                     b.Property<string>("UserId")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Booking_Id");
-
-                    b.HasIndex("Item_Id");
 
                     b.ToTable("Booking");
                 });
@@ -325,17 +324,6 @@ namespace MVCTravelBookingISE.Migrations
                     b.Navigation("Accomodation");
                 });
 
-            modelBuilder.Entity("MVCTravelBookingISE.Models.BookingModel", b =>
-                {
-                    b.HasOne("MVCTravelBookingISE.Models.BookingAccoItem", "BookingAccoItem")
-                        .WithMany("booking")
-                        .HasForeignKey("Item_Id")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("BookingAccoItem");
-                });
-
             modelBuilder.Entity("MVCTravelBookingISE.Models.FlightModel", b =>
                 {
                     b.HasOne("MVCTravelBookingISE.Models.FlightRulesModel", "FlightRule")
@@ -378,11 +366,6 @@ namespace MVCTravelBookingISE.Migrations
                     b.Navigation("Bookingitem");
 
                     b.Navigation("Ratings");
-                });
-
-            modelBuilder.Entity("MVCTravelBookingISE.Models.BookingAccoItem", b =>
-                {
-                    b.Navigation("booking");
                 });
 
             modelBuilder.Entity("MVCTravelBookingISE.Models.BookingModel", b =>

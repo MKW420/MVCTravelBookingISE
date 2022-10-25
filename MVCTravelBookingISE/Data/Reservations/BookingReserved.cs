@@ -9,7 +9,7 @@ namespace MVCTravelBookingISE.Data.Reservations
     public class BookingReserved
     {
 
-        public int Item_Id { get; set; }
+        public string BookingCartId { get; set; }
         public AppDbContext _context { get; set; }
         public List<BookingAccoItem> Items { get; set; }
 
@@ -18,23 +18,23 @@ namespace MVCTravelBookingISE.Data.Reservations
             _context = context;
         }
 
-        public static BookingReserved GetBookingCart(IServiceProvider service)
+        public static BookingReserved GetBookingCart(IServiceProvider services)
         {
-            ISession session = service.GetRequiredService<IHttpContextAccessor>()?.HttpContext.Session;
+            ISession session = services.GetRequiredService<IHttpContextAccessor>()?.HttpContext.Session;
 
-            var context = service.GetService<AppDbContext>();
+            var context = services.GetService<AppDbContext>();
 
-            int cartId = session.GetInt32("cartId") ?? 0; Guid.NewGuid();
-            session.SetInt32("cartId", cartId);
+            string cartId = session.GetString("CartId") ??  Guid.NewGuid().ToString();
+            session.SetString("CartId", cartId);
 
-            return new BookingReserved(context) { Item_Id = cartId };
+            return new BookingReserved(context) { BookingCartId = cartId };
 
         }
-     
+    
       
         public void AddItemToBooking(AccomodationModel accomodation)
         {
-            var bookingAccoItem = _context.bookingAccoItems.FirstOrDefault(n => n.Accomodation.Acco_Id == accomodation.Acco_Id && n.Item_Id == Item_Id);
+            var bookingAccoItem = _context.bookingAccoItems.FirstOrDefault(n => n.Accomodation.Acco_Id == accomodation.Acco_Id && n.BookingCartId == BookingCartId);
             //var bookingFlightItem = _context.bookingItems.FirstOrDefault(n => n.Flight.Flight_Id == flight.Flight_Id && n.Item_Id == ItemId);
             //var bookingTransportItem = _context.bookingItems.FirstOrDefault(n => n.Transport.Transport_Id == transport.Transport_Id && n.Item_Id == ItemId);
            
@@ -42,10 +42,9 @@ namespace MVCTravelBookingISE.Data.Reservations
             {
                 bookingAccoItem = new BookingAccoItem()
                 {
-                   Item_Id =Item_Id,
+                    BookingCartId = BookingCartId,
                    Accomodation = accomodation,
                    Qauntity = 1
-
                   
                 };
 
@@ -60,9 +59,9 @@ namespace MVCTravelBookingISE.Data.Reservations
           
         }
 
-        public void RemoveItemFromBooking(AccomodationModel accomodation, FlightModel flight, TransportModel transport)
+        public void RemoveItemFromBooking(AccomodationModel accomodation)
         {
-            var bookingItem = _context.bookingAccoItems.FirstOrDefault(n => n.Accomodation.Acco_Id == accomodation.Acco_Id && n.Item_Id == Item_Id);
+            var bookingItem = _context.bookingAccoItems.FirstOrDefault(n => n.Accomodation.Acco_Id == accomodation.Acco_Id && n.BookingCartId == BookingCartId);
             if (bookingItem != null)
             {
 
@@ -86,11 +85,11 @@ namespace MVCTravelBookingISE.Data.Reservations
 
         public List<BookingAccoItem> GetBookingAccoItem()
         {
-
-            return Items ?? (Items = _context.bookingAccoItems.Where(n => n.Item_Id == Item_Id).Include(n => n.Accomodation).ToList());
+          
+            return Items ?? (Items = _context.bookingAccoItems.Where(n => n.BookingCartId == BookingCartId).Include(n => n.Accomodation).ToList());
 
         }
-        public decimal GetBookingTotal() => _context.bookingAccoItems.Where(n => n.Item_Id == Item_Id).Select(n => n.Accomodation.Acco_Price * n.Qauntity).Sum();
+        public decimal GetBookingTotal() => _context.bookingAccoItems.Where(n => n.BookingCartId == BookingCartId).Select(n => n.Accomodation.Acco_Price * n.Qauntity).Sum();
 
        
     }

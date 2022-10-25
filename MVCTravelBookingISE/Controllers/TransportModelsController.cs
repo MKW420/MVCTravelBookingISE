@@ -2,47 +2,41 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Autofac.Core;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using MVCTravelBookingISE.Data;
+using MVCTravelBookingISE.Data.Services;
 using MVCTravelBookingISE.Models;
 
 namespace MVCTravelBookingISE.Controllers
 {
     public class TransportModelsController : Controller
     {
-        private readonly AppDbContext _context;
-
-        public TransportModelsController(AppDbContext context)
+        private readonly ITransportService _service;
+     
+        public TransportModelsController( ITransportService service)
         {
-            _context = context;
+           
+            _service = service;
         }
 
+        
         // GET: TransportModels
         public async Task<IActionResult> Index()
         {
-              return _context.Transport != null ? 
-                          View(await _context.Transport.ToListAsync()) :
-                          Problem("Entity set 'AppDbContext.transports'  is null.");
+            var allTranpsorts = await _service.GetAllAsync();
+            return View(allTranpsorts);
         }
 
         // GET: TransportModels/Details/5
-        public async Task<IActionResult> Details(int? id)
+        [AllowAnonymous]
+        public async Task<IActionResult> Details(int id)
         {
-            if (id == null || _context.Transport == null)
-            {
-                return NotFound();
-            }
-
-            var transportModel = await _context.Transport
-                .FirstOrDefaultAsync(m => m.Transport_Id == id);
-            if (transportModel == null)
-            {
-                return NotFound();
-            }
-
-            return View(transportModel);
+            var transportDetail = await _service.GetTransportByIdAsync(id);
+            return View(transportDetail);
         }
 
         // GET: TransportModels/Create
@@ -56,31 +50,26 @@ namespace MVCTravelBookingISE.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Transport_Id,Pick_Up_Point,Delivery_point,Transport_Type")] TransportModel transportModel)
-        {
-            if (ModelState.IsValid)
-            {
-                _context.Add(transportModel);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
-            }
-            return View(transportModel);
-        }
+        
 
         // GET: TransportModels/Edit/5
-        public async Task<IActionResult> Edit(int? id)
+        public async Task<IActionResult> UpdateRating(int id)
         {
-            if (id == null || _context.Transport == null)
-            {
-                return NotFound();
-            }
+            var transportDetials = await _service.GetTransportByIdAsync(id);
+            if (transportDetials == null) return View("Not found");
 
-            var transportModel = await _context.Transport.FindAsync(id);
-            if (transportModel == null)
+            var response = new TransportModel()
             {
-                return NotFound();
-            }
-            return View(transportModel);
+                Transport_Id = transportDetials.Transport_Id,
+                Destination_point = transportDetials.Destination_point,
+                Pick_Up_Point = transportDetials.Pick_Up_Point,
+                Transport_ratings = transportDetials.Transport_ratings,
+                Transport_Status = transportDetials.Transport_Status,
+                Transport_Type = transportDetials.Transport_Type
+            };
+
+            
+            return View(response);
         }
 
         // POST: TransportModels/Edit/5
@@ -88,76 +77,59 @@ namespace MVCTravelBookingISE.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Transport_Id,Pick_Up_Point,Delivery_point,Transport_Type")] TransportModel transportModel)
+        public async Task<IActionResult> UpdateRating(int id, [Bind("Transport_Id,Pick_Up_Point,Delivery_point,Transport_Type")] TransportModel transportModel)
         {
-            if (id != transportModel.Transport_Id)
-            {
-                return NotFound();
-            }
+           
 
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
-                try
-                {
-                    _context.Update(transportModel);
-                    await _context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!TransportModelExists(transportModel.Transport_Id))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
-                return RedirectToAction(nameof(Index));
+                return View(transportModel);
             }
+            await _service.UpdateAsync(id,transportModel);
             return View(transportModel);
         }
 
         // GET: TransportModels/Delete/5
-        public async Task<IActionResult> Delete(int? id)
-        {
-            if (id == null || _context.Transport == null)
-            {
-                return NotFound();
-            }
-
-            var transportModel = await _context.Transport
-                .FirstOrDefaultAsync(m => m.Transport_Id == id);
-            if (transportModel == null)
-            {
-                return NotFound();
-            }
-
-            return View(transportModel);
-        }
-
+       
         // POST: TransportModels/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
+        //[HttpPost, ActionName("Delete")]
+        //[ValidateAntiForgeryToken]
+       
+        public async Task<IActionResult> Filter(char searchchar)
         {
-            if (_context.Transport == null)
-            {
-                return Problem("Entity set 'AppDbContext.transports'  is null.");
-            }
-            var transportModel = await _context.Transport.FindAsync(id);
-            if (transportModel != null)
-            {
-                _context.Transport.Remove(transportModel);
-            }
-            
-            await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
-        }
+            var allTransport = await _service.GetAllAsync();
 
-        private bool TransportModelExists(int id)
+            if (searchchar != null)
+            {
+                var filterResult = allTransport.Where(n => n.Transport_Type.Equals(searchchar));
+                return View("Index", filterResult);
+
+            }
+            return View("Index", allTransport);
+        }
+        public async Task<IActionResult> FilterShuttle()
         {
-          return (_context.Transport?.Any(e => e.Transport_Id == id)).GetValueOrDefault();
+            var allTransport = await _service.GetAllAsync();
+
+            if (allTransport!= null)
+            {
+                var filterResult = allTransport.Where(n => n.Transport_Type.Equals('S'));
+                return View("Index", filterResult);
+
+            }
+            return View("Index", allTransport);
+        }
+        public async Task<IActionResult> FilterRental()
+        {
+            var allTransport = await _service.GetAllAsync();
+
+            if (allTransport != null)
+            {
+                var filterResult = allTransport.Where(n => n.Transport_Type.Equals('R'));
+                return View("Index", filterResult);
+
+            }
+            return View("Index", allTransport);
         }
     }
 }

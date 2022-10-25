@@ -10,7 +10,7 @@ namespace MVCTravelBookingISE.Models
     {
 
         [System.ComponentModel.DataAnnotations.Key]
-        public int Item_Id { get; set; }
+        public int Id { get; set; }
         public int Qauntity{ get; set; }
 
         //Foreign key of Accomodation_ID
@@ -20,7 +20,8 @@ namespace MVCTravelBookingISE.Models
 
         //foreign key 
 
-        public List<BookingModel> booking{ get; set; }
+        public string BookingCartId { get; set; }
+      
 
     }
 

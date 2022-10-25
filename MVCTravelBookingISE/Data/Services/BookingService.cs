@@ -7,33 +7,19 @@ namespace MVCTravelBookingISE.Data.Services
     public class BookingService : IBookingService
     {
 
+
         private readonly AppDbContext _context;
 
-        public BookingService(AppDbContext context)
+        public BookingService(AppDbContext context) { 
+        }
+        public Task<List<BookingModel>> GetBookingByUserIdAsync(string userId)
         {
-            _context = context;
+            throw new NotImplementedException();
         }
 
-        public Task<List<BookingModel>> GetBookingByUserId(string userId)
+        public Task StoreBookingAsync(List<BookingAccoItem> bookingAccoItems, string userId, string emailAddress)
         {
-          var booking = _context.Booking.Include(n => n.BookingAccoItem).ThenInclude(n => n.Accomodation).Where(n => n.UserId == userId).ToListAsync();
-            return booking;
-        }
-
-        public async Task StoreBooking(List<BookingReserved> items, string userId, string userEmailAddress)
-        {
-            var booking = new BookingModel()
-            {
-                UserId = userId,
-                Email = userEmailAddress
-            };
-
-            await _context.Booking.AddAsync(booking);
-            await _context.SaveChangesAsync();
-
-            foreach(var item in items)
-            {
-            }
+            throw new NotImplementedException();
         }
     }
 }

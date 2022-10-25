@@ -29,15 +29,9 @@ namespace MVCTravelBookingISE.Data.Services
             await _context.Transport.AddAsync(newTransport);
             await _context.SaveChangesAsync();
 
-            //ADD 
+            
 
-            //foreach(var accoId in accomodation.Acco_Id)
-            //{
-            //    var newAccomodation = new Accomodation()
-            //    {
-
-            //    }
-            //}
+          
         }
 
         public async Task<TransportModel> GetTransportByIdAsync(int id)
@@ -48,7 +42,7 @@ namespace MVCTravelBookingISE.Data.Services
 
         }
 
-        public async Task UpdateAccomodationAsync(TransportModel data)
+        public async Task UpdateTransportAsync(TransportModel data)
         {
             var dbTransport = await _context.Transport.FirstOrDefaultAsync(n => n.Transport_Id == data.Transport_Id);
             if (dbTransport != null)

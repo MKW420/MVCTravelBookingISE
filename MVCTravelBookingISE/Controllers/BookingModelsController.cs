@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net.Http.Headers;
 using System.Security.Cryptography.Xml;
 using System.Threading.Tasks;
+using Autofac.Core;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -25,6 +26,8 @@ namespace MVCTravelBookingISE.Controllers
    
         private readonly IAccomodationService _accomodationService;
 
+       // private readonly IBookingService _bookingService;
+
         private readonly BookingReserved _bookingReserved;
 
 
@@ -32,23 +35,27 @@ namespace MVCTravelBookingISE.Controllers
            
             _accomodationService = accomodationService;
             _bookingReserved = bookingReserved;
+            //_bookingService = bookingService;
 
         }
-
+      
         public IActionResult BookingCart()
         {
 
+
+
             var items = _bookingReserved.GetBookingAccoItem();
             _bookingReserved.Items = items;
-            var response = new BookingVModel()
+
+            var rep = new BookingVModel()
             {
-                BookingReserved = _bookingReserved,
-                BookingTotalPrice= _bookingReserved.GetBookingTotal()
+                bookingReserved = _bookingReserved,
+                BookingTotalPrice = _bookingReserved.GetBookingTotal()
             };
-         
-            return (View(response));
+
+            return View(rep);
         }
-        public async Task<RedirectToActionResult> AddItemToBookingCart(int id)
+        public async Task<RedirectToActionResult> AddItemToBookingCart(int id) 
         {
             var item = await _accomodationService.GetAccomodationByIdAsync(id);
 
@@ -60,22 +67,19 @@ namespace MVCTravelBookingISE.Controllers
             return RedirectToAction(nameof(BookingCart));
 
         }
-        //public async Task<IActionResult> RemoveItemFromBookingCart(int id)
-        //{
-        //    var item = await _accomodationService.GetAccomodationByIdAsync(id);
+        public async Task<IActionResult> c(int id)
+        {
+            var item = await _accomodationService.GetAccomodationByIdAsync(id);
 
-        //    if (item != null)
-        //    {
-        //        NewMethod(item);
-        //    }
+            if (item != null)
+            {
+                _bookingReserved.RemoveItemFromBooking(item);
+            }
 
-        //    return RedirectToAction(nameof(BookingCart));
+            return Redirect(nameof(BookingCart));
 
-        //    void NewMethod(AccomodationModel item)
-        //    {
-        //        _bookingReserved.RemoveItemFromBooking(item);
-        //    }
-        //}
+            
+        }
     }
   
   

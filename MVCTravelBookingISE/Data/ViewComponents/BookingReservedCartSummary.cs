@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using MVCTravelBookingISE.Data.Reservations;
+using MVCTravelBookingISE.Models;
 
 namespace MVCTravelBookingISE.Data.ViewComponents
 {

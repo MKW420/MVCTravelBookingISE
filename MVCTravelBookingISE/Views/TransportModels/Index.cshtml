@@ -1,60 +1,74 @@
 ﻿@model IEnumerable<MVCTravelBookingISE.Models.TransportModel>
 
 @{
-    ViewData["Title"] = "Tarnsport";
+    ViewData["Title"] = "Transport";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<div class="alert alert-dismissible alert-info">
-    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-    <strong>Cheap and affordable Flights</strong> Ratings on Flights<a href="#" class="alert-link"> Search Now</a>.
+<div class="form-outline mb-4">
+    <input type="search" class="form-control" id="datatable-search-input">
+    <label class="form-label" for="datatable-search-input">Search</label>
 </div>
-
 <div class="container px-4 px-lg-5">
+
     <!-- Heading Row-->
     <div class="row gx-4 gx-lg-5 align-items-center my-5">
         <div class="col-lg-7"><img class="img-fluid rounded mb-4 mb-lg-0" src="https://images.unsplash.com/photo-1570125909232-eb263c188f7e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80" alt="..." /></div>
         <div class="col-lg-5">
-            <h1 class="font-weight-light">Find Shuttle,Carport,Car rentals</h1>
-            <p>This is a template that is great for small businesses. It doesn't have too much fancy flare to it, but it makes a great use of the standard Bootstrap core components. Feel free to use this template for any project you want!</p>
-            <a class="btn btn-primary" href="#!">Call to Action!</a>
+            <h1 class="text-lg">Find Shuttle,Carport,Car rentals</h1>
+            <p>Clean cars. Flexible bookings.Socially distant rental counters! Book Now! Refunds are also included</p>
+            <a class="btn btn-outline-secondary" href="#!">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cursor-fill" viewBox="0 0 16 16">
+                    <path d="M14.082 2.182a.5.5 0 0 1 .103.557L8.528 15.467a.5.5 0 0 1-.917-.007L5.57 10.694.803 8.652a.5.5 0 0 1-.006-.916l12.728-5.657a.5.5 0 0 1 .556.103z" />
+                </svg>Book Now!
+            </a>
         </div>
     </div>
     <!-- Call to Action-->
-    <div class="card text-white bg-secondary my-5 py-4 text-center">
-        <div class="card-body"><p class="text-white m-0">This call to action card is a great place to showcase some important information or display a clever tagline!</p></div>
+    <div class="card text-white bg-dark my-5 py-4 text-center">
+        <div class="card-body "><p class="text-white m-0">Get 10% off your next booking after rating your experience! </p></div>
     </div>
     <!-- Content Row-->
-    <div class="row gx-4 gx-lg-5">
-        <div class="col-md-4 mb-5">
-            <div class="card h-100">
-                <div class="card-body">
-                    <h2 class="card-title">Car Shuttles</h2>
-                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem magni quas ex numquam, maxime minus quam molestias corporis quod, ea minima accusamus.</p>
-                </div>
-                <div class="card-footer"><a class="btn btn-primary btn-sm" href="#!">More Info</a></div>
+    <div class="card-group">
+        <div class="card">
+            <img class="card-img-top" src="https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">Car Rentals</h5>
+                <p class="card-text">Free Cancellation available on most cars.</p>
+                <a href="#" class="btn btn-outline-primary">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-car-front-fill" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M2.52 3.515A2.5 2.5 0 0 1 4.82 2h6.362c1 0 1.904.596 2.298 1.515l.792 1.848c.075.175.21.319.38.404.5.25.855.715.965 1.262l.335 1.679c.033.161.049.325.049.49v.413c0 .814-.39 1.543-1 1.997V13.5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-1.338c-1.292.048-2.745.088-4 .088s-2.708-.04-4-.088V13.5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-1.892c-.61-.454-1-1.183-1-1.997v-.413a2.5 2.5 0 0 1 .049-.49l.335-1.68c.11-.546.465-1.012.964-1.261a.807.807 0 0 0 .381-.404l.792-1.848ZM3 10a1 1 0 1 0 0-2 1 1 0 0 0 0 2Zm10 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2ZM6 8a1 1 0 0 0 0 2h4a1 1 0 1 0 0-2H6ZM2.906 5.189l.956-1.913A.5.5 0 0 1 4.309 3h7.382a.5.5 0 0 1 .447.276l.956 1.913a.51.51 0 0 1-.497.731c-.91-.073-3.35-.17-4.597-.17-1.247 0-3.688.097-4.597.17a.51.51 0 0 1-.497-.731Z" />
+                    </svg> Go somewhere
+                </a>
             </div>
         </div>
-        <div class="col-md-4 mb-5">
-            <div class="card h-100">
-                <div class="card-body">
-                    <h2 class="card-title">Card Two</h2>
-                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod tenetur ex natus at dolorem enim! Nesciunt pariatur voluptatem sunt quam eaque, vel, non in id dolore voluptates quos eligendi labore.</p>
-                </div>
-                <div class="card-footer"><a class="btn btn-primary btn-sm" href="#!">More Info</a></div>
+        <div class="card">
+            <img class="card-img-top" src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">Shuttle services</h5>
+                <p class="card-text">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-headset" viewBox="0 0 16 16">
+                        <path d="M8 1a5 5 0 0 0-5 5v1h1a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a6 6 0 1 1 12 0v6a2.5 2.5 0 0 1-2.5 2.5H9.366a1 1 0 0 1-.866.5h-1a1 1 0 1 1 0-2h1a1 1 0 0 1 .866.5H11.5A1.5 1.5 0 0 0 13 12h-1a1 1 0 0 1-1-1V8a1 1 0 0 1 1-1h1V6a5 5 0 0 0-5-5z" />
+                    </svg>24/7 customer service.
+                </p>
+                <a href="#" class="btn btn-outline-primary"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-car-front-fill" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M2.52 3.515A2.5 2.5 0 0 1 4.82 2h6.362c1 0 1.904.596 2.298 1.515l.792 1.848c.075.175.21.319.38.404.5.25.855.715.965 1.262l.335 1.679c.033.161.049.325.049.49v.413c0 .814-.39 1.543-1 1.997V13.5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-1.338c-1.292.048-2.745.088-4 .088s-2.708-.04-4-.088V13.5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-1.892c-.61-.454-1-1.183-1-1.997v-.413a2.5 2.5 0 0 1 .049-.49l.335-1.68c.11-.546.465-1.012.964-1.261a.807.807 0 0 0 .381-.404l.792-1.848ZM3 10a1 1 0 1 0 0-2 1 1 0 0 0 0 2Zm10 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2ZM6 8a1 1 0 0 0 0 2h4a1 1 0 1 0 0-2H6ZM2.906 5.189l.956-1.913A.5.5 0 0 1 4.309 3h7.382a.5.5 0 0 1 .447.276l.956 1.913a.51.51 0 0 1-.497.731c-.91-.073-3.35-.17-4.597-.17-1.247 0-3.688.097-4.597.17a.51.51 0 0 1-.497-.731Z"/>
+</svg> Go somewhere</a>
             </div>
         </div>
-        <div class="col-md-4 mb-5">
-            <div class="card h-100">
-                <div class="card-body">
-                    <h2 class="card-title">Card Three</h2>
-                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem magni quas ex numquam, maxime minus quam molestias corporis quod, ea minima accusamus.</p>
-                </div>
-                <div class="card-footer"><a class="btn btn-primary btn-sm" href="#!">More Info</a></div>
+        <div class="card">
+            <img class="card-img-top" src="https://images.unsplash.com/photo-1615929362369-4af8423ebd68?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">Other transport options</h5>
+                <p class="card-text">Other well known transport services available.</p>
+                <a href="#" class="btn btn-outline-primary">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-car-front-fill" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M2.52 3.515A2.5 2.5 0 0 1 4.82 2h6.362c1 0 1.904.596 2.298 1.515l.792 1.848c.075.175.21.319.38.404.5.25.855.715.965 1.262l.335 1.679c.033.161.049.325.049.49v.413c0 .814-.39 1.543-1 1.997V13.5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-1.338c-1.292.048-2.745.088-4 .088s-2.708-.04-4-.088V13.5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-1.892c-.61-.454-1-1.183-1-1.997v-.413a2.5 2.5 0 0 1 .049-.49l.335-1.68c.11-.546.465-1.012.964-1.261a.807.807 0 0 0 .381-.404l.792-1.848ZM3 10a1 1 0 1 0 0-2 1 1 0 0 0 0 2Zm10 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2ZM6 8a1 1 0 0 0 0 2h4a1 1 0 1 0 0-2H6ZM2.906 5.189l.956-1.913A.5.5 0 0 1 4.309 3h7.382a.5.5 0 0 1 .447.276l.956 1.913a.51.51 0 0 1-.497.731c-.91-.073-3.35-.17-4.597-.17-1.247 0-3.688.097-4.597.17a.51.51 0 0 1-.497-.731Z" />
+                    </svg> Go somewhere
+                </a>
             </div>
         </div>
     </div>
-</div>
-<table class="table">
+    <table class="table table-hover table-dark text-white" style="margin-top:50px">
     <thead>
         <tr>
             <th>
@@ -66,6 +80,7 @@
             <th>
                 @Html.DisplayNameFor(model => model.Transport_Type)
             </th>
+         
             <th>
                 @Html.DisplayNameFor(model => model.Transport_ratings)
             </th>
@@ -82,15 +97,69 @@
                 @Html.DisplayFor(modelItem => item.Destination_point)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Transport_Type)
+              
+
+                        <p class="card-text">
+                            @if (item.Transport_Type == 'S')
+                            {
+                                <span class="text-white">
+                                  Shuttle
+                                </span>
+                            }
+                            else if (item.Transport_Type == 'C')
+                            {
+                                <span class="text-white">Carport</span>
+                            }
+                            else
+                            {
+                                <span class="text-white" >Rental</span>
+                            }
+                           
+                        </p>
+
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Transport_ratings)
+             
+                        <p class="card-text">
+                            @if (item.Transport_ratings == 5)
+                            {
+                                <span class="text-primary">
+                                    &#9733;&#9733;&#9733;&#9733;&#9733;<span class="text-secondary"> Superhost</span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-hand-thumbs-up-fill" viewBox="0 0 16 16">
+                                        <path d="M6.956 1.745C7.021.81 7.908.087 8.864.325l.261.066c.463.116.874.456 1.012.965.22.816.533 2.511.062 4.51a9.84 9.84 0 0 1 .443-.051c.713-.065 1.669-.072 2.516.21.518.173.994.681 1.2 1.273.184.532.16 1.162-.234 1.733.058.119.103.242.138.363.077.27.113.567.113.856 0 .289-.036.586-.113.856-.039.135-.09.273-.16.404.169.387.107.819-.003 1.148a3.163 3.163 0 0 1-.488.901c.054.152.076.312.076.465 0 .305-.089.625-.253.912C13.1 15.522 12.437 16 11.5 16H8c-.605 0-1.07-.081-1.466-.218a4.82 4.82 0 0 1-.97-.484l-.048-.03c-.504-.307-.999-.609-2.068-.722C2.682 14.464 2 13.846 2 13V9c0-.85.685-1.432 1.357-1.615.849-.232 1.574-.787 2.132-1.41.56-.627.914-1.28 1.039-1.639.199-.575.356-1.539.428-2.59z" />
+                                    </svg>
+                                </span>
+                            }
+                            else if (item.Transport_ratings == 4)
+                            {
+                                <span class="text-primary">&#9733;&#9733;&#9733;&#9733;</span>
+                            }
+                            else if (item.Transport_ratings == 3)
+                            {
+                                <span class="text-primary">&#9733;&#9733;&#9733;</span>
+                            }
+                            else if (item.Transport_ratings == 2)
+                            {
+                                <span class="text-primary">&#9733;&#9733;</span>
+                            }
+                            else if (item.Transport_ratings == 1)
+                            {
+                            <p class="text-primary">&#9733;</p>
+                            }
+                            else
+                            {
+                            <span class="text-primary">Be the first one to rate!</span>
+                            }
+                        </p>
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.Transport_Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Transport_Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Transport_Id">Delete</a>
+                        
+                    <a class="btn btn-success" asp-action="Details" asp-route-id="@item.Transport_Id">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cursor-fill" viewBox="0 0 16 16">
+                                <path d="M14.082 2.182a.5.5 0 0 1 .103.557L8.528 15.467a.5.5 0 0 1-.917-.007L5.57 10.694.803 8.652a.5.5 0 0 1-.006-.916l12.728-5.657a.5.5 0 0 1 .556.103z" />
+                            </svg>  View
+                    </a>
+
             </td>
         </tr>
 }

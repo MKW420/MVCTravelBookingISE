@@ -234,7 +234,22 @@ namespace MVCTravelBookingISE.Data
                                 Transport_Type = 'S',
                                 Transport_ratings = 4
                             },
+                               new TransportModel
+                            {
+                                Pick_Up_Point = "Cape Town International Airport",
+                                Destination_point = "Bellville, CapeTown" ,
+                                Transport_Type = 'S',
+                                Transport_ratings = 0,
+                              
+                            },
+                                new TransportModel
+                            {
+                                Pick_Up_Point = "Cape Town International Airport",
+                                Destination_point = "Stellenbosch, CapeTown" ,
+                                Transport_Type = 'S',
+                                Transport_ratings = 0,
 
+                            },
 
 
 

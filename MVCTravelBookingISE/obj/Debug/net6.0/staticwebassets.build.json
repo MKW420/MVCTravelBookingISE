@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "6FWVjjOrsUrmdX8eaINNS5wCj+MjBVqCwoNMIwPc4xU=",
+  "Hash": "q1m/n693AQGYSstIpwXZe0pipKFyqpU/+cNcjtL0u/8=",
   "Source": "MVCTravelBookingISE",
   "BasePath": "_content/MVCTravelBookingISE",
   "Mode": "Default",
@@ -1836,6 +1836,23 @@
       "OriginalItemSpec": "wwwroot\\css\\FlightHome.css"
     },
     {
+      "Identity": "C:\\Users\\keitu\\source\\repos\\MVCTravelBookingISE\\MVCTravelBookingISE\\wwwroot\\css\\Ratings.css",
+      "SourceId": "MVCTravelBookingISE",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\keitu\\source\\repos\\MVCTravelBookingISE\\MVCTravelBookingISE\\wwwroot\\",
+      "BasePath": "_content/MVCTravelBookingISE",
+      "RelativePath": "css/Ratings.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\Ratings.css"
+    },
+    {
       "Identity": "C:\\Users\\keitu\\source\\repos\\MVCTravelBookingISE\\MVCTravelBookingISE\\wwwroot\\css\\site.css",
       "SourceId": "MVCTravelBookingISE",
       "SourceType": "Discovered",
@@ -1887,12 +1904,12 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
-      "Identity": "C:\\Users\\keitu\\source\\repos\\MVCTravelBookingISE\\MVCTravelBookingISE\\wwwroot\\img\\A letter Logo design(1).png",
+      "Identity": "C:\\Users\\keitu\\source\\repos\\MVCTravelBookingISE\\MVCTravelBookingISE\\wwwroot\\img\\A letter Logo design(4).png",
       "SourceId": "MVCTravelBookingISE",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\keitu\\source\\repos\\MVCTravelBookingISE\\MVCTravelBookingISE\\wwwroot\\",
       "BasePath": "_content/MVCTravelBookingISE",
-      "RelativePath": "img/A letter Logo design(1).png",
+      "RelativePath": "img/A letter Logo design(4).png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1901,15 +1918,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\A letter Logo design(1).png"
+      "OriginalItemSpec": "wwwroot\\img\\A letter Logo design(4).png"
     },
     {
-      "Identity": "C:\\Users\\keitu\\source\\repos\\MVCTravelBookingISE\\MVCTravelBookingISE\\wwwroot\\img\\A letter Logo design(2).png",
+      "Identity": "C:\\Users\\keitu\\source\\repos\\MVCTravelBookingISE\\MVCTravelBookingISE\\wwwroot\\img\\A letter Logo design(5).png",
       "SourceId": "MVCTravelBookingISE",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\keitu\\source\\repos\\MVCTravelBookingISE\\MVCTravelBookingISE\\wwwroot\\",
       "BasePath": "_content/MVCTravelBookingISE",
-      "RelativePath": "img/A letter Logo design(2).png",
+      "RelativePath": "img/A letter Logo design(5).png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1918,24 +1935,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\A letter Logo design(2).png"
-    },
-    {
-      "Identity": "C:\\Users\\keitu\\source\\repos\\MVCTravelBookingISE\\MVCTravelBookingISE\\wwwroot\\img\\A letter Logo design(3).png",
-      "SourceId": "MVCTravelBookingISE",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\keitu\\source\\repos\\MVCTravelBookingISE\\MVCTravelBookingISE\\wwwroot\\",
-      "BasePath": "_content/MVCTravelBookingISE",
-      "RelativePath": "img/A letter Logo design(3).png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\A letter Logo design(3).png"
+      "OriginalItemSpec": "wwwroot\\img\\A letter Logo design(5).png"
     },
     {
       "Identity": "C:\\Users\\keitu\\source\\repos\\MVCTravelBookingISE\\MVCTravelBookingISE\\wwwroot\\img\\francesco-ungaro-8l-FczZV4_E-unsplash.jpg",
@@ -2055,6 +2055,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\undraw_Travel_mode_re_2lxo.png"
+    },
+    {
+      "Identity": "C:\\Users\\keitu\\source\\repos\\MVCTravelBookingISE\\MVCTravelBookingISE\\wwwroot\\js\\main.js",
+      "SourceId": "MVCTravelBookingISE",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\keitu\\source\\repos\\MVCTravelBookingISE\\MVCTravelBookingISE\\wwwroot\\",
+      "BasePath": "_content/MVCTravelBookingISE",
+      "RelativePath": "js/main.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\main.js"
     },
     {
       "Identity": "C:\\Users\\keitu\\source\\repos\\MVCTravelBookingISE\\MVCTravelBookingISE\\wwwroot\\js\\site.js",

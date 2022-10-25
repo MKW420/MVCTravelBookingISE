@@ -11,6 +11,6 @@ namespace MVCTravelBookingISE.Data.Services
        
         Task<TransportModel> GetTransportByIdAsync(int id);
 
-        Task UpdateAccomodationAsync(TransportModel data);
+        Task UpdateTransportAsync(TransportModel data);
     }
 }

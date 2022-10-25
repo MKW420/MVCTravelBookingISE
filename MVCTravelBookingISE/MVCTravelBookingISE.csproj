@@ -14,10 +14,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Remove="Data\ViewModels\AccomodationInfoVModel.cshtml" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Autofac" Version="6.4.0" />
     <PackageReference Include="bootstrap" Version="5.2.1" />
     <PackageReference Include="Microsoft.AspNet.SessionState.SessionStateModule" Version="1.1.0" />
@@ -35,18 +31,6 @@
 
   <ItemGroup>
     <Folder Include="Data\Enums\" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <UpToDateCheckInput Remove="Data\ViewModels\AccomodationInfoVModel.cshtml" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <_ContentIncludedByDefault Remove="Data\ViewModels\AccomodationInfoVModel.cshtml" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="Data\ViewModels\AccomodationInfoVModel.cshtml" />
   </ItemGroup>
 
 </Project>
