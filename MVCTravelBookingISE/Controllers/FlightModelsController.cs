@@ -14,8 +14,7 @@ namespace MVCTravelBookingISE.Controllers
     public class FlightModelsController : Controller
     {
         private readonly IFlightService _service;
-
-
+       
         public FlightModelsController(IFlightService service)
         {
             _service = service;
@@ -24,7 +23,7 @@ namespace MVCTravelBookingISE.Controllers
         // GET: FlightModels
         public async Task<IActionResult> Index()
         {
-            var data = await _service.GetAllAsync();
+            var data = await _service.GetAllAsync(n => n.FlightRule);
             return View(data);
         }
 
@@ -56,6 +55,7 @@ namespace MVCTravelBookingISE.Controllers
         // GET: FlightModels/Create
         public IActionResult Create()
         {
+
             return View();
         }
 

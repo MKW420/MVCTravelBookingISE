@@ -40,5 +40,7 @@ namespace MVCTravelBookingISE.Data
         public DbSet<BookingAccoItem> bookingAccoItems { get; set; }
 
         public DbSet<ReservedItem> ReservedItems { get; set; }
+
+
     }
 }

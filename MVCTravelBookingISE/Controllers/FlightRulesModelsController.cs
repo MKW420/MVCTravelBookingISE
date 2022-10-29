@@ -6,45 +6,43 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using MVCTravelBookingISE.Data;
+using MVCTravelBookingISE.Data.Services;
 using MVCTravelBookingISE.Models;
 
 namespace MVCTravelBookingISE.Controllers
 {
     public class FlightRulesModelsController : Controller
     {
-        private readonly AppDbContext _context;
+      
+        private readonly IFlightRulesService _service;
 
-        public FlightRulesModelsController(AppDbContext context)
+        public FlightRulesModelsController(IFlightRulesService service)
         {
-            _context = context;
+            _service = service;
         }
 
         // GET: FlightRulesModels
         public async Task<IActionResult> Index()
         {
-              return _context.FlightRule != null ? 
-                          View(await _context.FlightRule.ToListAsync()) :
-                          Problem("Entity set 'AppDbContext.FlightRules' is null.");
-       
+            var data = await _service.GetAllAsync();
+            return View(data);
+
         }
 
         // GET: FlightRulesModels/Details/5
-        public async Task<IActionResult> Details(int? id)
+        public async Task<IActionResult> Details(int id)
         {
-            if (id == null || _context.FlightRule == null)
+            var FlightRulesDetails = await _service.GetFlightRulesByIdAsync(id);
+
+            if (FlightRulesDetails == null)
             {
-                return NotFound();
+                return View("Empty");
             }
 
-            var flightRulesModel = await _context.FlightRule
-                .FirstOrDefaultAsync(m => m.FlightRules_Id == id);
-            if (flightRulesModel == null)
-            {
-                return NotFound();
-            }
 
-            return View(flightRulesModel);
+            return View(FlightRulesDetails);
         }
+        
 
         // GET: FlightRulesModels/Create
         public IActionResult Create()
@@ -61,27 +59,30 @@ namespace MVCTravelBookingISE.Controllers
         {
             if (ModelState.IsValid)
             {
-                _context.Add(flightRulesModel);
-                await _context.SaveChangesAsync();
+                await _service.AddSync(flightRulesModel);
+
+
                 return RedirectToAction(nameof(Index));
             }
             return View(flightRulesModel);
         }
 
         // GET: FlightRulesModels/Edit/5
-        public async Task<IActionResult> Edit(int? id)
+        public async Task<IActionResult> Edit(int id)
         {
-            if (id == null || _context.FlightRule == null)
-            {
-                return NotFound();
-            }
+            var FlightRulesDetails = await _service.GetFlightRulesByIdAsync(id);
 
-            var flightRulesModel = await _context.FlightRule.FindAsync(id);
-            if (flightRulesModel == null)
+            if (FlightRulesDetails == null) return View("NotFound");
+
+            var response = new FlightRulesModel()
             {
-                return NotFound();
-            }
-            return View(flightRulesModel);
+                FlightRules_Id = FlightRulesDetails.FlightRules_Id,
+                Flight_Name = FlightRulesDetails.Flight_Name,
+                Flight_Descrip = FlightRulesDetails.Flight_Descrip
+              
+
+            };
+            return View(response);
         }
 
         // POST: FlightRulesModels/Edit/5
@@ -91,74 +92,18 @@ namespace MVCTravelBookingISE.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("FlightRules_Id,Flight_Descrip,Flight_Name")] FlightRulesModel flightRulesModel)
         {
-            if (id != flightRulesModel.FlightRules_Id)
+            if (id != flightRulesModel.FlightRules_Id) return View("Not found");
+
+            if (!ModelState.IsValid)
             {
-                return NotFound();
+                return View(flightRulesModel);
             }
 
-            if (ModelState.IsValid)
-            {
-                try
-                {
-                    _context.Update(flightRulesModel);
-                    await _context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!FlightRulesModelExists(flightRulesModel.FlightRules_Id))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
-                return RedirectToAction(nameof(Index));
-            }
-            return View(flightRulesModel);
-        }
-
-        // GET: FlightRulesModels/Delete/5
-        public async Task<IActionResult> Delete(int? id)
-        {
-            if (id == null || _context.FlightRule == null)
-            {
-                return NotFound();
-            }
-
-            var flightRulesModel = await _context.FlightRule
-                .FirstOrDefaultAsync(m => m.FlightRules_Id == id);
-            if (flightRulesModel == null)
-            {
-                return NotFound();
-            }
-
-            return View(flightRulesModel);
-        }
-
-        // POST: FlightRulesModels/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
-        {
-            if (_context.FlightRule == null)
-            {
-                return Problem("Entity set 'AppDbContext.FlightRules'  is null.");
-            }
-            var flightRulesModel = await _context.FlightRule.FindAsync(id);
-            if (flightRulesModel != null)
-            {
-                _context.FlightRule.Remove(flightRulesModel);
-            }
-            
-            await _context.SaveChangesAsync();
+            await _service.UpdateFlightAsync(flightRulesModel);
             return RedirectToAction(nameof(Index));
         }
 
-        private bool FlightRulesModelExists(int id)
-        {
-          return (_context.FlightRule?.Any(e => e.FlightRules_Id == id)).GetValueOrDefault();
-        }
+        // GET: FlightRulesModels/Delete/5
+      
     }
 }

@@ -26,7 +26,7 @@ namespace MVCTravelBookingISE.Models
 
         //booking
        
-      
+        public string Transport_FuelCard { get; set; }
 
     }
 }

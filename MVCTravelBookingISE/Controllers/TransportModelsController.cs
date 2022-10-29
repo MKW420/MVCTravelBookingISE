@@ -44,7 +44,40 @@ namespace MVCTravelBookingISE.Controllers
         {
             return View();
         }
+        public async Task<IActionResult> Edit(int id)
+        {
+            var TransInfo = await _service.GetTransportByIdAsync(id);
 
+            if (TransInfo == null) return View("NotFound");
+
+            var response = new TransportModel()
+            {
+               Transport_Id = TransInfo.Transport_Id,
+               Transport_ratings = TransInfo.Transport_ratings,
+               Transport_Status = TransInfo.Transport_Status,
+               Transport_Type = TransInfo.Transport_Type,
+
+
+            };
+            return View(response);
+        }
+
+        [HttpPost]
+
+        // GET: AccomodationModels/Edit/5
+        public async Task<IActionResult> Edit(int id, TransportModel transport)
+        {
+
+            if (id != transport.Transport_Id) return View("Not found");
+
+            if (!ModelState.IsValid)
+            {
+                return View(transport);
+            }
+
+            await _service.UpdateTransportAsync(transport);
+            return RedirectToAction(nameof(Index));
+        }
         // POST: TransportModels/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
@@ -95,13 +128,13 @@ namespace MVCTravelBookingISE.Controllers
         //[HttpPost, ActionName("Delete")]
         //[ValidateAntiForgeryToken]
        
-        public async Task<IActionResult> Filter(char searchchar)
+        public async Task<IActionResult> Filter(string searchPick, string DesSearch)
         {
             var allTransport = await _service.GetAllAsync();
 
-            if (searchchar != null)
+            if (searchPick != null && DesSearch != null)
             {
-                var filterResult = allTransport.Where(n => n.Transport_Type.Equals(searchchar));
+                var filterResult = allTransport.Where(n => n.Pick_Up_Point.Equals(searchPick) && n.Destination_point.Equals(DesSearch));
                 return View("Index", filterResult);
 
             }
@@ -131,5 +164,7 @@ namespace MVCTravelBookingISE.Controllers
             }
             return View("Index", allTransport);
         }
+    
+        
     }
 }

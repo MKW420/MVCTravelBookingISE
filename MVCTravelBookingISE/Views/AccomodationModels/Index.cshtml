@@ -11,12 +11,11 @@
     <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
     <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="~/css/site.css"/>
-    <title>Bootstrap Example</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
-    
+  
    
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@500&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -48,11 +47,12 @@
             </a>
         </div>
         <div class="flex-grow-1 d-flex align-items-center">
-                <form class="w-100 me-3" class="d-flex" asp-controller="AccomodationModels" asp-action="Filter">
-
-                    <input name ="searchstring" type="search" class="form-control" placeholder="Search...">
-                    <button class="btn btn-secondary my-2 my-sm-0 g" type="submit">Search</button>
-            </form>
+               <div class="input-group">
+              <input type="text" class="form-control" value="web development">
+              <span class="input-group-btn">
+                <button class="btn btn-primary" type="button"><i class="fa fa-search"></i></button>
+              </span>
+            </div>
             <div class="flex-shrink-0 dropdown">
                 <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" id="dropdownUser2" data-bs-toggle="dropdown" aria-expanded="false">
                     <img src="https://via.placeholder.com/28?text=!" alt="user" width="32" height="32" class="rounded-circle">
@@ -71,204 +71,312 @@
 
     </div>
 </header>
-
-    <strong><label class="form-label" for="customRange2">Search price Range</label></strong>
-    <div class="range">
-        <input type="range" class="form-range" min="0" max="1000" id="customRange2" />
-    </div>
-   
-<div class="container-fluid pb-3 flex-grow-1 d-flex flex-column flex-sm-row overflow-auto">
-    <div class="row flex-grow-sm-1 flex-grow-0">
-     
-        <main class="col overflow-auto h-100">
-            <div class="bg-light border rounded-3 p-3">
-
-                    <div class="container-fluid container py-3 mt-4">
-                        <h2 class="h3">Browse by Accomodation category</h2>
-                        <div class="row mt-4">
-                            <div class="col-md-3">
-                                <div class="card mb-3">
-                                    <img src="https://images.unsplash.com/photo-1533654793924-4fc4949fb71e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1351&q=80" class="card-img-top" alt="...">
-                                    <div class="card-body">
-                                        <h5 class="card-title"><strong>Hotels</strong></h5>
-                                        <p class="card-text">How much hotels are there</p>
-
-                                        <form class="d-flex" asp-controller="AccomodationModels" asp-action="FilterHotel">
-                                            <button class="btn btn-sm btn-success">Explore!</button>
-
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="card mb-3">
-                                    <img src="https://images.unsplash.com/photo-1590523277543-a94d2e4eb00b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1332&q=80" class="card-img-top" alt="...">
-                                    <div class="card-body">
-                                        <h5 class="card-title"><strong>Resorts</strong></h5>
-                                        <p class="card-text">How much hotels are there</p>
-                                        <form class="d-flex" asp-controller="AccomodationModels" asp-action="FilterResort">
-                                            <button class="btn btn-sm btn-success">Explore!</button>
-
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
+ <div class="container my-5">
 
 
-                            <div class="col-md-3">
-                                <div class="card mb-3">
-                                    <img src="https://images.unsplash.com/photo-1613561323381-fd3eb1a73ee8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" class="card-img-top" alt="...">
-                                    <div class="card-body">
-                                        <h5 class="card-title"><strong>Villas</strong></h5>
-                                        <p class="card-text">How much hotels are there</p>
-                                        <form class="d-flex" asp-controller="AccomodationModels" asp-action="FilterVilla">
-                                            <button class="btn btn-sm btn-success">Explore!</button>
+        <!-- Section: Block Content -->
+        <section class="dark-grey-text text-center">
 
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="card mb-3">
-                                    <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" class="card-img-top" alt="...">
-                                    <div class="card-body">
-                                        <h5 class="card-title"><strong>Apartments</strong></h5>
-                                        <p class="card-text">How much hotels are there</p>
-                                        <form class="d-flex" asp-controller="AccomodationModels" asp-action="FilterApartment">
-                                            <button class="btn btn-sm btn-success">Explore!</button>
+            <strong><h1 class="text-center font-weight-bold mb-4 pb-2 h1">Find your stay!</h1></strong>
+            <p class="text-center text-muted w-responsive mx-auto mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, error amet numquam iure provident voluptate esse quasi, veritatis totam voluptas nostrum quisquam eum porro a pariatur veniam.</p>
 
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
+            <!-- Grid row -->
+            <div class="row">
 
-                        </div>
-                    </div>
-                    <div class="container-fluid ">
-                        <div class="container pl-0">
-                            <div class="row">
-                                <div class="col-12 pl-0 mb-5">
-                                    <h2 class="h3  mt-0 mb-2">When are you travelling?</h2>
-                                    <p class="mt-0 ml-0 mb-2">Add dates for updated pricing and availability.</p>
-                                    <button class="btn btn-sm btn-success">Add dates</button>
-                                </div>
+                <!-- Grid column -->
+                <div class="col-md-6 mb-4">
+
+                    <!-- Card -->
+                    <div class="card card-image" style="background-image: url(https://mdbootstrap.com/img/Photos/Horizontal/Nature/6-col/img%20%2873%29.jpg);">
+                        <div class="text-white text-center d-flex align-items-center rgba-black-strong py-5 px-4 px-md-5 rounded">
+                            <div>
+                                <h6 class="text-white">
+                                    <i class="fas fa-chart-pie"></i>
+                                    <strong> Marketing</strong>
+                                </h6>
+                                <h3 class="py-3 font-weight-bold text-white">
+                                    <strong>This is card title</strong>
+                                </h3>
+                                <p class="pb-3">
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat fugiat,
+                                    laboriosam, voluptatem, optio vero odio nam sit officia accusamus minus error nisi architecto
+                                    nulla ipsum dignissimos. Odit sed qui, dolorum!
+                                </p>
+                                <a class="btn btn-warning btn-rounded btn-md">View project <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up-right" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M14 2.5a.5.5 0 0 0-.5-.5h-6a.5.5 0 0 0 0 1h4.793L2.146 13.146a.5.5 0 0 0 .708.708L13 3.707V8.5a.5.5 0 0 0 1 0v-6z"/>
+</svg></a>
                             </div>
                         </div>
                     </div>
-                   
+                    <!-- Card -->
+
+                </div>
+                <!-- Grid column -->
+                <!-- Grid column -->
+                <div class="col-md-6 mb-4">
+
+                    <!-- Card -->
+                    <div class="card card-image" style="background-image: url(https://mdbootstrap.com/img/Photos/Horizontal/City/6-col/img%20%2847%29.jpg);">
+                        <div class="text-white text-center d-flex align-items-center rgba-black-strong py-5 px-4 px-md-5 rounded">
+                            <div>
+                                <h6 class="green-tex text-white">
+                                    <i class="fas fa-eye"></i>
+                                    <strong> Entertainment</strong>
+                                </h6>
+                                <h3 class="py-3 font-weight-bold text-white">
+                                    <strong>This is card title</strong>
+                                </h3>
+                                <p class="pb-3">
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat fugiat,
+                                    laboriosam, voluptatem, optio vero odio nam sit officia accusamus minus error nisi architecto
+                                    nulla ipsum dignissimos. Odit sed qui, dolorum!
+                                </p>
+                                <a class="btn btn-warning btn-rounded btn-md"> View project <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up-right" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M14 2.5a.5.5 0 0 0-.5-.5h-6a.5.5 0 0 0 0 1h4.793L2.146 13.146a.5.5 0 0 0 .708.708L13 3.707V8.5a.5.5 0 0 0 1 0v-6z"/>
+</svg></a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card -->
+
+                </div>
+                <!-- Grid column -->
+
             </div>
-               
-        </main>
+            <!-- Grid row -->
+
+        </section>
+        <!-- Section: Block Content -->
+
+
     </div>
-</div>
- 
-    
+
    
+    
+ 
+ <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
 
-   <div>
-
-      <strong><h1>Browse All Accomodation</h1></strong
-    </div>
+<div class="container">
 <div class="row">
-    @foreach (var item in Model) {
+  <!-- BEGIN SEARCH RESULT -->
+  <div class="col-md-12">
+    <div class="grid search">
+      <div class="grid-body">
+        <div class="row">
+          <!-- BEGIN FILTERS -->
+          <div class="col-md-3">
+            <h3 class="grid-title"><i class="fa fa-filter"></i> Filters</h3>
+            <hr>
+            
+            <!-- BEGIN FILTER BY CATEGORY -->
+            <h6>By category:</h6>
+            <div class="checkbox">
+              <label><input type="checkbox" class="icheck"> Villa</label>
+            </div>
+            <div class="checkbox">
+              <label><input type="checkbox" class="icheck"> Resorts</label>
+            </div>
+            <div class="checkbox">
+              <label><input type="checkbox" class="icheck"> Apartments</label>
+            </div>
+            <div class="checkbox">
+              <label><input type="checkbox" class="icheck"> Hotels</label>
+            </div>
+            <hr />
 
-        <div class="col-md-4 col-xs-6 border-primary mb-3">
-            <div class="card mb-3" style="max-width: 400px">
-                <div class="row g-0">
-                    <div class="col-md-12 bg-transparent">
-                        <div class="card-header text-white bg-transparent">
-                            <p class="card-text">
-                                <h5 class="card-title">
-                                        <strong> @item.Acco_Name</strong>
-                                        @* @if (User.Identity.IsAuthenticated && User.IsInRole("Admin"))
-                                    {
-                                        <a class="text-white float-right" asp-action="Edit" asp-route-id="@item.Acco_Id"><i class="bi bi-pencil-square"></i></a>
-                                    }*@
-                                </h5>
-                            </p>
-                        </div>
-                    </div>
-                       <div class="col-md-12">
-                     
-                            <img class="img-rounded" style="max-width:400px"   src="@item.Acco_picture" alt="@item.Acco_Name">
-                  
-                    </div>
-                
-                
-                    <div class="col-md-12">
-                        <div class="card-body">
-                            <p class="card-text"><b>Destination: </b>@item.Acco_Destination</p>
-                            <p class="card-text"><b>Bathrooms:  </b>@item.Acco_Bathrooms</p>
-                            <p class="card-text"><b>Rooms: </b>@item.Acco_Rooms</p>
-                            <p class="card-text">
-                             @if(item.Acco_Rate == 5){
-                                  <span class="text-info">&#9733;&#9733;&#9733;&#9733;&#9733;<span class="text-secondary"> Superhost</span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-hand-thumbs-up-fill" viewBox="0 0 16 16">
+             <h6>By Star Rating:</h6>
+            <div class="checkbox">
+              <label><input type="checkbox" class="icheck"> 1 star</label>
+            </div>
+            <div class="checkbox">
+              <label><input type="checkbox" class="icheck"> 2 stars </label>
+            </div>
+            <div class="checkbox">
+              <label><input type="checkbox" class="icheck"> 3 stars</label>
+            </div>
+            <div class="checkbox">
+              <label><input type="checkbox" class="icheck"> 4 stars</label>
+            </div>
+             <div class="checkbox">
+              <label><input type="checkbox" class="icheck"> 5 stars</label>
+            </div>
+             <div class="checkbox">
+              <label><input type="checkbox" class="icheck">Unrated</label>
+            </div>
+            <hr />
+            <!-- END FILTER BY CATEGORY -->
+            
+            <div class="padding"></div>
+             <strong><label class="form-label" for="customRange2">Search price Range</label></strong>
+
+    <form>
+        <strong><span>0</span></strong> <input type="range" class="form-range w-75" min="0" max="100" id="customRange2" />   <strong><span>100</span></strong>
+
+    </form>
+                                <div class="padding"></div>
+                                <hr />
+            <!-- BEGIN FILTER BY DATE -->
+            <h6>By date:</h6>
+            From
+            <div class="input-group date form_date" data-date="2014-06-14T05:25:07Z" data-date-format="dd-mm-yyyy" data-link-field="dtp_input1">
+              <input type="date" class="form-control">
+            
+            </div>
+            <input type="hidden" id="dtp_input1" value="">
+            
+            To
+            <div class="input-group date form_date" data-date="2014-06-14T05:25:07Z" data-date-format="dd-mm-yyyy" data-link-field="dtp_input2">
+              <input type="date" class="form-control">
+              
+            </div>
+            <input type="hidden" id="dtp_input2" value="">
+            <!-- END FILTER BY DATE -->
+            
+            <div class="padding"></div>
+            <hr />
+            <!-- BEGIN FILTER BY PRICE -->
+            <h6>By price:</h6>
+            Between <div id="price1">$300</div> to <div id="price2">$800</div>
+            <div class="slider-primary">
+              <div class="slider slider-horizontal" style="width: 152px;"><div class="slider-track"><div class="slider-selection" style="left: 30%; width: 50%;"></div><div class="slider-handle round" style="left: 30%;"></div><div class="slider-handle round" style="left: 80%;"></div></div><div class="tooltip top hide" style="top: -30px; left: 50.1px;"><div class="tooltip-arrow"></div><div class="tooltip-inner">300 : 800</div></div><input type="text" class="slider" value="" data-slider-min="0" data-slider-max="1000" data-slider-step="1" data-slider-value="[300,800]" data-slider-tooltip="hide"></div>
+            </div>
+            <div style="margin-top:50px;">
+                <a class="btn btn-primary">Submit</a>
+           </div>
+            <!-- END FILTER BY PRICE -->
+          </div>
+          <!-- END FILTERS -->
+          <!-- BEGIN RESULT -->
+          <div class="col-md-9">
+            <h2><i class="fa fa-file-o"></i>List of Accomodations</h2>
+            <hr>
+            <!-- BEGIN SEARCH INPUT -->
+          
+            <!-- END SEARCH INPUT -->
+           
+            
+            <div class="padding"></div>
+            
+            <div class="row">
+              <!-- BEGIN ORDER RESULT -->
+              <div class="col-sm-6">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                    Order by <span class="caret"></span>
+                  </button>
+                  <ul class="dropdown-menu" role="menu">
+                    <li><a href="#">Villa</a></li>
+                    <li><a href="#">Resorts</a></li>
+                    <li><a href="#">Hotels</a></li>
+                    <li><a href="#">Apartments</a></li>
+                  </ul>
+                </div>
+              </div>
+              <!-- END ORDER RESULT -->
+              
+              <div class="col-md-6 text-right">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-default active"><i class="fa fa-list"></i></button>
+                  <button type="button" class="btn btn-default"><i class="fa fa-th"></i></button>
+                </div>
+              </div>
+            </div>
+                                <div class="alert alert-primary" role="alert">
+                                    Get a 30% Discount on group <a href="#" class="alert-link"> accomodations</a> 
+                                </div>
+              @foreach (var item in Model) {
+            <!-- BEGIN TABLE RESULT -->
+            <div class="table-responsive">
+              <table class="table table-hover">
+                <tbody><tr>
+                  <td class="number text-center">1</td>
+                  <td class="image"><img src="@item.Acco_picture" alt=""></td>
+                   <td class="product text">
+                   <strong><h5>@item.Acco_Name</h5><span class=" text-black">@item.Acco_Destination</span>
+                       <br>
+                        @if(item.Acco_Rate == 5){
+                                  <span class="text-warning">&#9733;&#9733;&#9733;&#9733;&#9733;<span class="text-warning"> Superhost</span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-hand-thumbs-up-fill" viewBox="0 0 16 16">
   <path d="M6.956 1.745C7.021.81 7.908.087 8.864.325l.261.066c.463.116.874.456 1.012.965.22.816.533 2.511.062 4.51a9.84 9.84 0 0 1 .443-.051c.713-.065 1.669-.072 2.516.21.518.173.994.681 1.2 1.273.184.532.16 1.162-.234 1.733.058.119.103.242.138.363.077.27.113.567.113.856 0 .289-.036.586-.113.856-.039.135-.09.273-.16.404.169.387.107.819-.003 1.148a3.163 3.163 0 0 1-.488.901c.054.152.076.312.076.465 0 .305-.089.625-.253.912C13.1 15.522 12.437 16 11.5 16H8c-.605 0-1.07-.081-1.466-.218a4.82 4.82 0 0 1-.97-.484l-.048-.03c-.504-.307-.999-.609-2.068-.722C2.682 14.464 2 13.846 2 13V9c0-.85.685-1.432 1.357-1.615.849-.232 1.574-.787 2.132-1.41.56-.627.914-1.28 1.039-1.639.199-.575.356-1.539.428-2.59z"/>
 </svg></span>
                              }
                              else if(item.Acco_Rate == 4){
-                                    <span class="text-info">&#9733;&#9733;&#9733;&#9733;</span>
+                                    <span class="text-warning">&#9733;&#9733;&#9733;&#9733;</span>
                              }
                              else if(item.Acco_Rate == 3)
                             {
-                                    <span class="text-info">&#9733;&#9733;&#9733;</span>
+                                    <span class="text-warning">&#9733;&#9733;&#9733;</span>
                             }
                             else if(item.Acco_Rate == 2){
-                                    <span class="ext-info">&#9733;&#9733;</span>
+                                    <span class="text-warning">&#9733;&#9733;</span>
                             }
                             else if(item.Acco_Rate == 1){
-                                    <p class="text-info">&#9733;</p>
+                                    <p class="text-warning">&#9733;</p>
                             }
                             else{
-                                <span class="text-secondary">Be the first one to rate!</span>
+                                <span class="text-warning">No Ratings</span>
                             }
-                            </p>
-                            <p class="card-text"><b>Radius Distance:🗺️ </b>@item.Acco_Distance KM</p>
+                       </strong><br><span class="text-success">@item.Acco_Rules</span>
+                         <br> <span class="text-muted">Number of bathrooms: @item.Acco_Rooms</span>
+                                                       
+                                                        <br>  <a class="btn btn-sm btn-success float-right" asp-action="Details" asp-route-id="@item.Acco_Id">
+                                                            Check Availability
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+                                                                <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" />
+                                                            </svg>
+                                                        </a>
+                  </td>
+                  <td class="rate text-right">
 
-                           @* <p class="card-text">
-                                <b>Type: </b>
-                               @if(item.Acco_Type == 'S' || item.Acco_Type == 's'){
-                                  
-                                  <span class="label label-info">Single person</span>
-                               }
-                               else{
-                                        <span class="label label-info">Group</span>
-                               }
-                            
-                            </p>*@
-                            
-
-                        </div>
-                    </div>
-                    <div class="col-md-12">
-                        <div class="card-footer ">
-                            <p class="card-text">
-                                <a class="btn btn-outline-primary float-right" asp-action="Details" asp-route-id="@item.Acco_Id">
-                                    <i class="bi bi-eye-fill"></i> Show Details
-                                </a>
-                                <a class="btn btn-success text-white" data-toggle="popover"
-                                   asp-controller="BookingModels"
-                                   asp-action="AddItemToBookingCart"
-                                   asp-route-id="@item.Acco_Id">
-                                        <!-- Full screen modal -->
-                                    
-                                   (Price @item.Acco_Price.ToString("c") /Per Night)
-                                </a>
-                                
-                            </p>
-                              
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        }
-
-            
+                  </td>
+                  <td class="price text-right">@item.Acco_Price.ToString("c")
+               </td>
+                </tr>
        
-
+              
+                
+              </tbody></table>
+            </div>
+            <!-- END TABLE RESULT -->
+            }
+            <!-- BEGIN PAGINATION -->
+                                <nav aria-label="Page navigation example">
+                                    <ul class="pagination pagination-circle pg-blue">
+                                        <li class="page-item disabled"><a class="page-link">First</a></li>
+                                        <li class="page-item disabled">
+                                            <a class="page-link" aria-label="Previous">
+                                                <span aria-hidden="true">&laquo;</span>
+                                                <span class="sr-only">Previous</span>
+                                            </a>
+                                        </li>
+                                        <li class="page-item active"><a class="page-link">1</a></li>
+                                        <li class="page-item"><a class="page-link">2</a></li>
+                                        <li class="page-item"><a class="page-link">3</a></li>
+                                        <li class="page-item"><a class="page-link">4</a></li>
+                                        <li class="page-item"><a class="page-link">5</a></li>
+                                        <li class="page-item">
+                                            <a class="page-link" aria-label="Next">
+                                                <span aria-hidden="true">&raquo;</span>
+                                                <span class="sr-only">Next</span>
+                                            </a>
+                                        </li>
+                                        <li class="page-item"><a class="page-link">Last</a></li>
+                                    </ul>
+                                </nav>
+            <!-- END PAGINATION -->
+          </div>
+          <!-- END RESULT -->
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- END SEARCH RESULT -->
 </div>
+</div>
+   
+    
+   
+
+  
 @*<table class="table">
     <thead>
         <tr>
@@ -331,7 +439,80 @@
 }
     </tbody>
 </table>*@
-  
+    <div class="container z-depth-1 my-5 py-5">
+
+        <!-- Section -->
+        <section>
+
+         
+            <h1 class="font-weight-bold text-center dark-grey-text pb-2">Our Services</h1>
+            <hr class="w-header my-4">
+            <p class="lead text-center text-muted pt-2 mb-5">
+                Join thousands of satisfied customers using our template
+                globally.
+            </p>
+
+            <div class="row d-flex justify-content-center">
+
+                <div class="col-md-6 col-lg-5 col-xl-4">
+                    <h5 class="font-weight-normal border-top border-light pt-4 mb-4">
+                        <a class=" btn btn-sm btn-lg btn-primary dark-grey-text" href="#">
+                            Website
+                            Design
+                        </a>
+                    </h5>
+                    <p class="text-muted mb-5 pb-md-3">
+                        Written enquire painful to offices forming it. Then so does over sent
+                        dull. Likewise offended humour mrs
+                        fat trifling answered. On ye position greatest so desirous enable performance based.
+                    </p>
+                </div>
+
+                <div class="col-md-6 col-lg-5 col-xl-4">
+                    <h5 class="font-weight-normal border-top border-secondary pt-4 mb-4">
+                        <a class="  btn btn-sm btn-lg btn-primary dark-grey-text"
+                           href="#">Application Development</a>
+                    </h5>
+                    <p class="text-muted mb-5 pb-md-3">
+                        Written enquire painful to offices forming it. Then so does over sent
+                        dull. Likewise offended humour mrs
+                        fat trifling answered. On ye position greatest so desirous enable performance based.
+                    </p>
+                </div>
+
+                <div class="w-100"></div>
+
+                <div class="col-md-6 col-lg-5 col-xl-4">
+                    <h5 class="font-weight-normal border-top border-light pt-4 mb-4">
+                        <a class=" btn btn-sm btn-lg btn-primary  dark-grey-text" href="#">
+                            Branding
+                            Package
+                        </a>
+                    </h5>
+                    <p class="text-muted mb-5">
+                        Written enquire painful to offices forming it. Then so does over sent dull.
+                        Likewise offended humour mrs
+                        fat trifling answered. On ye position greatest so desirous enable performance based.
+                    </p>
+                </div>
+
+                <div class="col-md-6 col-lg-5 col-xl-4">
+                    <h5 class="font-weight-normal border-top border-light pt-4 mb-4">
+                        <a class=" btn btn-sm btn-lg btn-primary  dark-grey-text"
+                           href="#">Advertisement</a>
+                    </h5>
+                    <p class="text-muted mb-5">
+                        Written enquire painful to offices forming it. Then so does over sent dull.
+                        Likewise offended humour mrs
+                        fat trifling answered. On ye position greatest so desirous enable performance based.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+        <!-- Section -->
+
+    </div>
     <script>
         var today = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate());
         $('#startDate').datepicker({

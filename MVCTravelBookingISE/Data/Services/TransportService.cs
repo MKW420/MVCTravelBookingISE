@@ -29,9 +29,7 @@ namespace MVCTravelBookingISE.Data.Services
             await _context.Transport.AddAsync(newTransport);
             await _context.SaveChangesAsync();
 
-            
-
-          
+        
         }
 
         public async Task<TransportModel> GetTransportByIdAsync(int id)
@@ -53,12 +51,8 @@ namespace MVCTravelBookingISE.Data.Services
                 dbTransport.Transport_ratings = data.Transport_ratings;
                 dbTransport.Pick_Up_Point = data.Pick_Up_Point;
                 dbTransport.Transport_Type = data.Transport_Type;
-
-
-                await _context.SaveChangesAsync();
-
-
-
+                dbTransport.Destination_point = data.Destination_point;
+ 
             }
 
             //Removing existing Accomodation

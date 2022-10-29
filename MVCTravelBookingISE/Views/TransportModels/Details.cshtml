@@ -1,0 +1,105 @@
+﻿@model MVCTravelBookingISE.Models.TransportModel
+
+   
+@{
+}
+
+
+
+<div class="card border-secondary" style="width:700px; margin-top:50px;">
+    <img class="card-img-top" src="https://images.unsplash.com/photo-1517026575980-3e1e2dedeab4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1098&q=80" alt="card image cap" />
+   
+    <div class="card-body">
+        
+        <h5 class="card-title">From: @Html.DisplayFor(model => model.Pick_Up_Point) </h5>
+        <h5 class="card-title"> To:  @Html.DisplayFor(model => model.Destination_point)</h5>
+        <p class="card-text"></p>
+        <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked />
+            <strong><label class="form-check-label" for="flexSwitchCheckChecked">Add fuel card</label></strong>
+        </div>
+        <!-- ID Example -->
+        <button type="button" class="btn btn-outline-secondary btn-xs" data-bs-toggle="modal" data-bs-target="#centralModalSuccess">
+            Why Add a fuel card?
+        </button>
+
+        <!-- Central Modal Medium Success -->
+        <div class="modal fade" id="centralModalSuccess" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+             aria-hidden="true">
+            <div class="modal-dialog modal-notify modal-success" role="document">
+                <!--Content-->
+                <div class="modal-content">
+                    <!--Header-->
+                    <div class="modal-header">
+                        <p class="heading lead">Top Up Fuel Card</p>
+
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true" class="white-text">&times;</span>
+                        </button>
+                    </div>
+
+                    <!--Body-->
+                    <div class="modal-body">
+                        <div class="text-center">
+                            <i class="fas fa-check fa-4x mb-3 animated rotateIn"></i>
+                            <p>
+                              By using a fuel card, reward points are automically added to your account! 
+                              You can use your rewards points to get 50% off your next travel booking.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!--Footer-->
+                    <div class="modal-footer justify-content-center">
+                        <a type="button" class="btn btn-success">Get it now <i class="far fa-gem ml-1 text-white"></i></a>
+                        <a type="button" class="btn btn-outline-success waves-effect" data-dismiss="modal">No, thanks</a>
+                    </div>
+                </div>
+                <!--/.Content-->
+            </div>
+        </div>
+        <!-- Central Modal Medium Success-->
+        <div class="col-sm">
+
+
+
+            <div class="mb-2">
+                <div class="input-group">
+                    <label for="adults-input" class="input-group-text">From</label>
+                    <input type="date"
+                           min="0"
+                           class="form-control"
+                           id="adult-input"
+                           aria-describedby="adults-label" />
+                </div>
+
+            </div>
+        </div>
+        <div class="col-sm">
+
+
+
+            <div class="mb-2">
+                <div class="input-group">
+                    <label for="adults-input" class="input-group-text">To</label>
+                    <input type="date"
+                           min="0"
+                           class="form-control"
+                           id="adult-input"
+                           aria-describedby="adults-label" />
+                </div>
+
+            </div>
+    </div>
+
+</div>
+
+
+
+<div>
+    <a class="btn btn-success" asp-action="#">Add To Booking</a>
+    <a class="btn btn-primary" asp-action="Index">Back to List</a>
+   
+</div>
+<!-- Checked switch -->
+<script src="~/js/main.js" type="text/javascript"></script>

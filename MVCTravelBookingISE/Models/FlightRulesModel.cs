@@ -1,17 +1,18 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using MVCTravelBookingISE.Data.Base;
+using System.ComponentModel.DataAnnotations;
 
 namespace MVCTravelBookingISE.Models
 {
-    public class FlightRulesModel
+    public class FlightRulesModel:IEntityBase
     {
         [Key]
         public int FlightRules_Id { get; set; }
 
-        [Display(Name = "Flight Description")]
+        [Display(Name = "Airline Rule")]
         [Required(ErrorMessage = "Flight Description required")]
         public string Flight_Descrip { get; set; }
 
-        [Display(Name = "Flight Name")]
+        [Display(Name = "Airlines")]
         [Required(ErrorMessage = "Flight Name required")]
         public string Flight_Name { get; set; }
 

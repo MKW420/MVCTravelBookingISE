@@ -17,7 +17,7 @@ namespace MVCTravelBookingISE.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "6.0.9")
+                .HasAnnotation("ProductVersion", "6.0.10")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
@@ -294,6 +294,10 @@ namespace MVCTravelBookingISE.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Pick_Up_Point")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Transport_FuelCard")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 

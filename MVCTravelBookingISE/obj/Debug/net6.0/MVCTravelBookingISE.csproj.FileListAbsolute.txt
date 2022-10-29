@@ -271,3 +271,9 @@ C:\Users\keitu\source\repos\MVCTravelBookingISE\MVCTravelBookingISE\obj\Debug\ne
 C:\Users\keitu\source\repos\MVCTravelBookingISE\MVCTravelBookingISE\obj\Debug\net6.0\MVCTravelBookingISE.pdb
 C:\Users\keitu\source\repos\MVCTravelBookingISE\MVCTravelBookingISE\obj\Debug\net6.0\MVCTravelBookingISE.genruntimeconfig.cache
 C:\Users\keitu\source\repos\MVCTravelBookingISE\MVCTravelBookingISE\obj\Debug\net6.0\ref\MVCTravelBookingISE.dll
+C:\Users\keitu\source\repos\MVCTravelBookingISE\MVCTravelBookingISE\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\keitu\source\repos\MVCTravelBookingISE\MVCTravelBookingISE\bin\Debug\net6.0\Microsoft.Owin.dll
+C:\Users\keitu\source\repos\MVCTravelBookingISE\MVCTravelBookingISE\bin\Debug\net6.0\Owin.dll
+C:\Users\keitu\source\repos\MVCTravelBookingISE\MVCTravelBookingISE\bin\Debug\net6.0\SendGrid.dll
+C:\Users\keitu\source\repos\MVCTravelBookingISE\MVCTravelBookingISE\bin\Debug\net6.0\StarkbankEcdsa.dll
+C:\Users\keitu\source\repos\MVCTravelBookingISE\MVCTravelBookingISE\bin\Debug\net6.0\AuthorizeNet.dll

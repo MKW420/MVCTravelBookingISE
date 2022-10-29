@@ -4,226 +4,84 @@
     ViewData["Title"] = "Details";
 }
 
-<h1 class="text-xxl-center">More information about the Accomodation</h1>
 
-      
-    <hr />
-    <div class="card text-center">
-    <div class="card-header"> @Html.DisplayFor(model => model.Acco_Destination)</div>
-    <img class="card-img-top align-content-md-center" style="height:300px; width:350px; " src=" @Html.DisplayFor(model => model.Acco_picture)" />
-    <div class="card-body">
-        <h3 class="card-title"> @Html.DisplayFor(model => model.Acco_Name)</h3>
-        
-        <p class="card-text"> @Html.DisplayFor(model => model.Acco_Rules)</p>
-     
-      
-     
-    </div>
-    <div class="card-footer text-muted">@Html.DisplayFor(model => model.Acco_Rate)</div>
-</div>
-      
-<div>
-     
-    <a class="btn btn-danger" asp-action="Edit" asp-route-id="@Model?.Acco_Id">Edit</a> 
-    <a class="btn btn-outline-dark"asp-action="Index">Back to List</a>
-    <a class="btn btn-success text-white " data-toggle="popover"
-
-       asp-controller="BookingModels"
-       asp-action="AddItemToBookingCart"
-       asp-route-id="@Model?.Acco_Id">
-        <!-- Full screen modal -->
-         Add to booking(Price @Model?.Acco_Price.ToString("c"))
-        
-    </a>
-</div>
 <div class="container my-5 py-5 z-depth-1">
 
 
     <!--Section: Content-->
-    <section class="text-center">
+    <section class="px-md-5 mx-md-5 text-center text-lg-left dark-grey-text">
 
-        <!-- Section heading -->
-        <h3 class="font-weight-bold mb-5">Product Details</h3>
-
+        <!--Grid row-->
         <div class="row">
 
-            <div class="col-lg-6">
+            <!--Grid column-->
+            <div class="col-md-4 mb-4 mb-md-0">
 
-                <!--Carousel Wrapper-->
-                <div id="carousel-thumb" class="carousel slide carousel-fade carousel-thumbnails" data-ride="carousel">
-
-                    <!--Slides-->
-                    <div class="carousel-inner text-center text-md-left" role="listbox">
-                        <div class="carousel-item active">
-                            <img class="card-img-top align-content-md-center" style="height:300px; width:350px; " src=" @Html.DisplayFor(model => model.Acco_picture)" />
-                                 alt="First slide" class="img-fluid">
-                        </div>
-                       
-                    </div>
-                    <!--/.Slides-->
-                    <!--Thumbnails-->
-                    <a class="carousel-control-prev" href="#carousel-thumb" role="button" data-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Previous</span>
+                <!--Image-->
+                <div class="view overlay z-depth-1-half">
+                    <img class="img-thumbnail" src="@Html.DisplayFor(model => model.Acco_picture)" class="img-fluid" alt="">
+                    <a href="#">
+                        <div class="mask rgba-white-light"></div>
                     </a>
-                    <a class="carousel-control-next" href="#carousel-thumb" role="button" data-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Next</span>
-                    </a>
-                    <!--/.Thumbnails-->
-
                 </div>
-                <!--/.Carousel Wrapper-->
 
             </div>
+            <!--Grid column-->
+            <!--Grid column-->
+            <div class="col-md-8 mb-4 mb-md-0">
 
-            <div class="col-lg-5 text-center text-md-left">
+                <h3 class="font-weight-bold">@Html.DisplayFor(model => model.Acco_Name)</h3>
 
-                <h2 class="h2-responsive text-center text-md-left product-name font-weight-bold dark-grey-text mb-1 ml-xl-0 ml-4">
-                    <strong>Sony headphones</strong>
-                </h2>
-                <span class="badge badge-danger product mb-4 ml-xl-0 ml-4">bestseller</span>
-                <h3 class="h3-responsive text-center text-md-left mb-5 ml-xl-0 ml-4">
-                    <span class="red-text font-weight-bold">
-                        <strong>$49</strong>
-                    </span>
-                    <span class="grey-text">
-                        <small>
-                            <s>$89</s>
-                        </small>
-                    </span>
-                </h3>
+                <p class="text-muted">
+                    This accomodation is
+                    @if(Model.Acco_Type == 'G'){
+                        <span>meant for group of people</span>
+                    }
+                    else{
+                        <span>meant for single or indivivual</span>
+                    }
+                </p>
+                <p class="card-text"> @Html.DisplayFor(model => model.Acco_Rules)</p>
+                <a class="btn btn-primary btn-md ml-0" data-toggle="popover"
+                   
 
-                <!--Accordion wrapper-->
-                <div class="accordion md-accordion" id="accordionEx" role="tablist" aria-multiselectable="true">
-
-                    <!-- Accordion card -->
-                    <div class="card">
-
-                        <!-- Card header -->
-                        <div class="card-header" role="tab" id="headingOne1">
-                            <a data-toggle="collapse" data-parent="#accordionEx" href="#collapseOne1" aria-expanded="true"
-                               aria-controls="collapseOne1">
-                                <h5 class="mb-0">
-                                    Description
-                                    <i class="fas fa-angle-down rotate-icon"></i>
-                                </h5>
-                            </a>
-                        </div>
-
-                        <!-- Card body -->
-                        <div id="collapseOne1" class="collapse show" role="tabpanel" aria-labelledby="headingOne1"
-                             data-parent="#accordionEx">
-                            <div class="card-body">
-                                <p class="card-text"> @Html.DisplayFor(model => model.Acco_Rules)</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Accordion card -->
-                    <!-- Accordion card -->
-                    <div class="card">
-
-                        <!-- Card header -->
-                        <div class="card-header" role="tab" id="headingTwo2">
-                            <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx" href="#collapseTwo2"
-                               aria-expanded="false" aria-controls="collapseTwo2">
-                                <h5 class="mb-0">
-                                    Details
-                                    <i class="fas fa-angle-down rotate-icon"></i>
-                                </h5>
-                            </a>
-                        </div>
-
-                        <!-- Card body -->
-                        <div id="collapseTwo2" class="collapse" role="tabpanel" aria-labelledby="headingTwo2"
-                             data-parent="#accordionEx">
-                            <div class="card-body">
-                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.
-                                3 wolf moon officia aute,
-                                non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf
-                                moon
-                                tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et.
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Accordion card -->
-                    <!-- Accordion card -->
-                    <div class="card">
-
-                        <!-- Card header -->
-                        <div class="card-header" role="tab" id="headingThree3">
-                            <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx" href="#collapseThree3"
-                               aria-expanded="false" aria-controls="collapseThree3">
-                                <h5 class="mb-0">
-                                    Shipping
-                                    <i class="fas fa-angle-down rotate-icon"></i>
-                                </h5>
-                            </a>
-                        </div>
-
-                        <!-- Card body -->
-                        <div id="collapseThree3" class="collapse" role="tabpanel" aria-labelledby="headingThree3"
-                             data-parent="#accordionEx">
-                            <div class="card-body">
-                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.
-                                3 wolf moon officia aute,
-                                non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf
-                                moon
-                                tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et.
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Accordion card -->
-
-                </div>
-                <!--/.Accordion wrapper-->
-                <!-- Add to Cart -->
-                <section class="color">
-                    <div class="mt-5">
-                        <p class="grey-text">Choose your color</p>
-                        <div class="row text-center text-md-left">
-
-                            <div class="col-md-4 col-12">
-                                <!--Radio group-->
-                                <div class="form-group">
-                                    <input class="form-check-input" name="group100" type="radio" id="radio100" checked="checked">
-                                    <label for="radio100" class="form-check-label dark-grey-text">Blue</label>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <!--Radio group-->
-                                <div class="form-group">
-                                    <input class="form-check-input" name="group100" type="radio" id="radio101">
-                                    <label for="radio101" class="form-check-label dark-grey-text">Orange</label>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <!--Radio group-->
-                                <div class="form-group">
-                                    <input class="form-check-input" name="group100" type="radio" id="radio102">
-                                    <label for="radio102" class="form-check-label dark-grey-text">Red</label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="row mt-3">
-                            <div class="col-md-12 text-center text-md-left text-md-right">
-                                <button class="btn btn-primary btn-rounded">
-                                    <i class="fas fa-cart-plus mr-2" aria-hidden="true"></i> Add to cart
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <!-- /.Add to Cart -->
+      
+                    asp-controller="BookingModels"
+                    asp-action="AddItemToBookingCart"
+                    asp-route-id="@Model?.Acco_Id">
+                    <!-- Full screen modal -->
+                    Reserve
+                   (Price @Model?.Acco_Price.ToString("c")
+                </a>
 
             </div>
+            <!--Grid column-->
 
         </div>
+        <!--Grid row-->
+
 
     </section>
     <!--Section: Content-->
 
+         
+<div>
+
+        <a class="btn btn-danger" asp-action="Edit" asp-route-id="@Model?.Acco_Id">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
+                <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z" />
+            </svg>
+        </a>
+        <a class="btn btn-outline-dark" asp-action="Index">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-return-left" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M14.5 1.5a.5.5 0 0 1 .5.5v4.8a2.5 2.5 0 0 1-2.5 2.5H2.707l3.347 3.346a.5.5 0 0 1-.708.708l-4.2-4.2a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 8.3H12.5A1.5 1.5 0 0 0 14 6.8V2a.5.5 0 0 1 .5-.5z" />
+            </svg>
+        </a>
+   
+</div>
 
 </div>
-<script type="text/javascript" src="~/js/main.js"></script>
+      
+
+

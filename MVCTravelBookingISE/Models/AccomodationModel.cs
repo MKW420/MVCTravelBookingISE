@@ -36,7 +36,7 @@ namespace MVCTravelBookingISE.Models
         [Column(TypeName ="decimal(10,2)")]
         public decimal Acco_Distance { get; set; }
 
-        [Display(Name = "Ratings of the Accomodation")]
+        [Display(Name = "Rating of the Accomodation")]
         public int Acco_Rate { get; set; }
 
             
