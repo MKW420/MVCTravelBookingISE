@@ -8,6 +8,8 @@ using MVCTravelBookingISE.Areas.Identity.Data;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.Extensions.Options;
 using MVCTravelBookingISE.Data.Reservations;
+using Microsoft.AspNetCore.Authorization;
+using MVCTravelBookingISE.Authorization;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -56,12 +58,12 @@ builder.Services.AddSession(options =>
 builder.Services.AddRazorPages();
 
 
-builder.Services.AddAuthentication(options =>
+builder.Services.AddAuthorization(options =>
 {
-    options.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
-}
-    
-);
+    options.FallbackPolicy = new AuthorizationPolicyBuilder()
+        .RequireAuthenticatedUser()
+        .Build();
+});
 
 
 builder.Services.Configure<IdentityOptions>(options =>
@@ -97,6 +99,15 @@ builder.Services.ConfigureApplicationCookie(options =>
 
 
 builder.Services.AddControllersWithViews();
+// Authorization handlers.
+//builder.Services.AddScoped<IAuthorizationHandler,
+//                      AccomodationIsOwnerAuthorizationHandler>();
+
+//builder.Services.AddSingleton<IAuthorizationHandler,
+//                      AccomodationAdministratorsAuthorizationHandler>();
+
+//builder.Services.AddSingleton<IAuthorizationHandler,
+//                      AccomodationManagerAuthorizationHandler>();
 
 
 var app = builder.Build();

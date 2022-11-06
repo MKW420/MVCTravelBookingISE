@@ -1,8 +1,593 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+
+
+}
+<head>
+
+    <title>Home Page</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+
+    <div class="container my-5">
+
+
+        <!--Section: Content-->
+        <section class="magazine-section dark-grey-text">
+
+            <!-- Section heading -->
+            <h3 class="text-center font-weight-bold mb-4 pb-2">Magazine newsfeed</h3>
+            <!-- Section description -->
+            <p class="text-center w-responsive mx-auto mb-5">
+                Duis aute irure dolor in reprehenderit in voluptate velit
+                esse cillum dolore eu fugiat nulla sint occaecat cupidatat non proident, sunt culpa
+                qui officia deserunt est laborum.
+            </p>
+
+            <!-- Grid row -->
+            <div class="row">
+
+                <!-- Grid column -->
+                <div class="col-lg-4 col-md-12 mb-4">
+
+                    <!-- Featured news -->
+                    <div class="single-news mb-3">
+
+                        <!-- Image -->
+                        <div class="view overlay rounded z-depth-2 mb-4">
+                            <img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Others/images/86.jpg" alt="Sample image">
+                            <a>
+                                <div class="mask rgba-white-slight"></div>
+                            </a>
+                        </div>
+
+                        <!-- Grid row -->
+                        <div class="row mb-3">
+
+                            <!-- Grid column -->
+                            <div class="col-12">
+
+                                <!-- Badge -->
+                                <a href="#!"><span class="badge pink"><i class="fas fa-camera pr-2" aria-hidden="true"></i>Adventure</span></a>
+
+                            </div>
+                            <!-- Grid column -->
+
+                        </div>
+                        <!-- Grid row -->
+                        <!-- Title -->
+                        <div class="d-flex justify-content-between">
+                            <div class="col-11 text-truncate pl-0 mb-3">
+                                <a class="font-weight-bold">This is title of the news</a>
+                            </div>
+                            <a>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-return-right" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M1.5 1.5A.5.5 0 0 0 1 2v4.8a2.5 2.5 0 0 0 2.5 2.5h9.793l-3.347 3.346a.5.5 0 0 0 .708.708l4.2-4.2a.5.5 0 0 0 0-.708l-4-4a.5.5 0 0 0-.708.708L13.293 8.3H3.5A1.5 1.5 0 0 1 2 6.8V2a.5.5 0 0 0-.5-.5z" />
+                                </svg></i>
+                            </a>
+                        </div>
+
+                    </div>
+                    <!-- Featured news -->
+                    <!-- Small news -->
+                    <div class="single-news mb-3">
+
+                        <!-- Title -->
+                        <div class="d-flex justify-content-between">
+                            <div class="col-11 text-truncate pl-0 mb-3">
+                                <a>24 Food Swaps That Slash Calories.</a>
+                            </div>
+                            <a><i class="fas fa-angle-double-right"></i></a>
+                        </div>
+
+                    </div>
+                    <!-- Small news -->
+                    <!-- Small news -->
+                    <hr />
+                    <div class="single-news mb-3">
+
+                        <!-- Title -->
+                        <div class="d-flex justify-content-between">
+                            <div class="col-11 text-truncate pl-0 mb-3">
+                                <a>How to Make a Beet Cocktail?</a>
+                            </div>
+                            <a>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-return-right" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M1.5 1.5A.5.5 0 0 0 1 2v4.8a2.5 2.5 0 0 0 2.5 2.5h9.793l-3.347 3.346a.5.5 0 0 0 .708.708l4.2-4.2a.5.5 0 0 0 0-.708l-4-4a.5.5 0 0 0-.708.708L13.293 8.3H3.5A1.5 1.5 0 0 1 2 6.8V2a.5.5 0 0 0-.5-.5z" />
+                                </svg>
+                            </a>
+                        </div>
+
+                    </div>
+                    <!-- Small news -->
+                    <!-- Small news -->
+                    <hr />
+                    <div class="single-news mb-3">
+
+                        <!-- Title -->
+                        <div class="d-flex justify-content-between">
+                            <div class="col-11 text-truncate pl-0 mb-3">
+                                <a>8 Sneaky Reasons You're Always Hungry.</a>
+                            </div>
+                            <a>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-return-right" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M1.5 1.5A.5.5 0 0 0 1 2v4.8a2.5 2.5 0 0 0 2.5 2.5h9.793l-3.347 3.346a.5.5 0 0 0 .708.708l4.2-4.2a.5.5 0 0 0 0-.708l-4-4a.5.5 0 0 0-.708.708L13.293 8.3H3.5A1.5 1.5 0 0 1 2 6.8V2a.5.5 0 0 0-.5-.5z" />
+                                </svg>
+                            </a>
+                        </div>
+
+                    </div>
+                    <!-- Small news -->
+                    <!-- Small news -->
+                    <div class="single-news">
+
+                        <!-- Title -->
+                        <div class="d-flex justify-content-between">
+                            <div class="col-11 text-truncate pl-0">
+                                <a>5 Pressure Cooker Recipes You Need to Try.</a>
+                            </div>
+                            <a>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-return-right" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M1.5 1.5A.5.5 0 0 0 1 2v4.8a2.5 2.5 0 0 0 2.5 2.5h9.793l-3.347 3.346a.5.5 0 0 0 .708.708l4.2-4.2a.5.5 0 0 0 0-.708l-4-4a.5.5 0 0 0-.708.708L13.293 8.3H3.5A1.5 1.5 0 0 1 2 6.8V2a.5.5 0 0 0-.5-.5z" />
+                                </svg>
+                            </a>
+                        </div>
+
+                    </div>
+                    <!-- Small news -->
+
+                </div>
+                <!-- Grid column -->
+                <!-- Grid column -->
+                <div class="col-lg-4 col-md-6 mb-4">
+
+                    <!-- Featured news -->
+                    <div class="single-news mb-3">
+
+                        <!-- Image -->
+                        <div class="view overlay rounded z-depth-2 mb-4">
+                            <img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Others/images/31.jpg" alt="Sample image">
+                            <a>
+                                <div class="mask rgba-white-slight"></div>
+                            </a>
+                        </div>
+
+                        <!-- Grid row -->
+                        <div class="row mb-3">
+
+                            <!-- Grid column -->
+                            <div class="col-12">
+
+                                <!-- Badge -->
+                                <a href="#!"><span class="badge deep-orange"><i class="fas fa-plane pr-2" aria-hidden="true"></i>Travel</span></a>
+
+                            </div>
+                            <!-- Grid column -->
+
+                        </div>
+                        <!-- Grid row -->
+                        <!-- Title -->
+                        <div class="d-flex justify-content-between">
+                            <div class="col-11 text-truncate pl-0 mb-3">
+                                <a class="font-weight-bold">This is title of the news</a>
+                            </div>
+                            <a><i class="fas fa-angle-double-right"></i></a>
+                        </div>
+
+                    </div>
+                    <!-- Featured news -->
+                    <!-- Small news -->
+                    <div class="single-news mb-3">
+
+                        <!-- Title -->
+                        <div class="d-flex justify-content-between">
+                            <div class="col-11 text-truncate pl-0 mb-3">
+                                <a>Trends in the blogosphere for 2018.</a>
+                            </div>
+                            <a><i class="fas fa-angle-double-right"></i></a>
+                        </div>
+
+                    </div>
+                    <!-- Small news -->
+                    <!-- Small news -->
+                    <div class="single-news mb-3">
+
+                        <!-- Title -->
+                        <div class="d-flex justify-content-between">
+                            <div class="col-11 text-truncate pl-0 mb-3">
+                                <a>Where can you eat the best lunch in Warsaw?</a>
+                            </div>
+                            <a><i class="fas fa-angle-double-right"></i></a>
+                        </div>
+
+                    </div>
+                    <!-- Small news -->
+                    <!-- Small news -->
+                    <div class="single-news mb-3">
+
+                        <!-- Title -->
+                        <div class="d-flex justify-content-between">
+                            <div class="col-11 text-truncate pl-0 mb-3">
+                                <a>What camera is worth taking for holidays?</a>
+                            </div>
+                            <a><i class="fas fa-angle-double-right"></i></a>
+                        </div>
+
+                    </div>
+                    <!-- Small news -->
+                    <!-- Small news -->
+                    <div class="single-news">
+
+                        <!-- Title -->
+                        <div class="d-flex justify-content-between">
+                            <div class="col-11 text-truncate pl-0">
+                                <a>Why should you visit Lisbon?</a>
+                            </div>
+                            <a><i class="fas fa-angle-double-right"></i></a>
+                        </div>
+
+                    </div>
+                    <!-- Small news -->
+
+                </div>
+                <!-- Grid column -->
+                <!-- Grid column -->
+                <div class="col-lg-4 col-md-6 mb-4">
+
+                    <!-- Featured news -->
+                    <div class="single-news mb-3">
+
+                        <!-- Image -->
+                        <div class="view overlay rounded z-depth-2 mb-4">
+                            <img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Others/images/52.jpg" alt="Sample image">
+                            <a>
+                                <div class="mask rgba-white-slight"></div>
+                            </a>
+                        </div>
+
+                        <!-- Grid row -->
+                        <div class="row mb-3">
+
+                            <!-- Grid column -->
+                            <div class="col-12">
+
+                                <!-- Badge -->
+                                <a href="#!"><span class="badge success-color"><i class="fas fa-leaf pr-2" aria-hidden="true"></i>Nature</span></a>
+
+                            </div>
+                            <!-- Grid column -->
+
+                        </div>
+                        <!-- Grid row -->
+                        <!-- Title -->
+                        <div class="d-flex justify-content-between">
+                            <div class="col-11 text-truncate pl-0 mb-3">
+                                <a class="font-weight-bold">This is title of the news</a>
+                            </div>
+                            <a><i class="fas fa-angle-double-right"></i></a>
+                        </div>
+
+                    </div>
+                    <!-- Featured news -->
+                    <!-- Small news -->
+                    <div class="single-news mb-3">
+
+                        <!-- Title -->
+                        <div class="d-flex justify-content-between">
+                            <div class="col-11 text-truncate pl-0 mb-3">
+                                <a>How to recognize the footsteps of wild animals?</a>
+                            </div>
+                            <a><i class="fas fa-angle-double-right"></i></a>
+                        </div>
+
+                    </div>
+                    <!-- Small news -->
+                    <!-- Small news -->
+                    <div class="single-news mb-3">
+
+                        <!-- Title -->
+                        <div class="d-flex justify-content-between">
+                            <div class="col-11 text-truncate pl-0 mb-3">
+                                <a>National Parks in Poland.</a>
+                            </div>
+                            <a><i class="fas fa-angle-double-right"></i></a>
+                        </div>
+
+                    </div>
+                    <!-- Small news -->
+                    <!-- Small news -->
+                    <div class="single-news mb-3">
+
+                        <!-- Title -->
+                        <div class="d-flex justify-content-between">
+                            <div class="col-11 text-truncate pl-0 mb-3">
+                                <a>Traveling without littering the planet.</a>
+                            </div>
+                            <a><i class="fas fa-angle-double-right"></i></a>
+                        </div>
+
+                    </div>
+                    <!-- Small news -->
+                    <!-- Small news -->
+                    <div class="single-news">
+
+                        <!-- Title -->
+                        <div class="d-flex justify-content-between">
+                            <div class="col-11 text-truncate pl-0">
+                                <a>How to protect rainforests?</a>
+                            </div>
+                            <a><i class="fas fa-angle-double-right"></i></a>
+                        </div>
+
+                    </div>
+                    <!-- Small news -->
+
+                </div>
+                <!-- Grid column -->
+
+            </div>
+            <!-- Grid row -->
+
+        </section>
+        <!--Section: Content-->
+
+
+    </div>
+
+    <div class="container my-5 p-5 z-depth-1">
+
+
+        <!--Section: Content-->
+        <section class="dark-grey-text">
+
+            <!-- Section heading -->
+            <h2 class="text-center font-weight-bold mb-4 pb-2">Why is it so great?</h2>
+            <!-- Section description -->
+            <p class="text-center lead grey-text mx-auto mb-5">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+            </p>
+
+            <!-- Grid row -->
+            <div class="row">
+
+                <!-- Grid column -->
+                <div class="col-lg-5 text-center text-lg-left">
+                    <img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Others/screens-section.jpg" alt="Sample image">
+                </div>
+                <!-- Grid column -->
+                <!-- Grid column -->
+                <div class="col-lg-7">
+
+                    <!-- Grid row -->
+                    <div class="row mb-3">
+
+                        <!-- Grid column -->
+                        <div class="col-1">
+                            <i class="fas fa-share fa-lg indigo-text"></i>
+                        </div>
+                        <!-- Grid column -->
+                        <!-- Grid column -->
+                        <div class="col-xl-10 col-md-11 col-10">
+                            <h5 class="font-weight-bold mb-3">Safety</h5>
+                            <p class="grey-text">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit enim ad minima veniam,
+                                quis nostrum exercitationem ullam. Reprehenderit maiores aperiam assumenda deleniti hic.
+                            </p>
+                        </div>
+                        <!-- Grid column -->
+
+                    </div>
+                    <!-- Grid row -->
+                    <!-- Grid row -->
+                    <div class="row mb-3">
+
+                        <!-- Grid column -->
+                        <div class="col-1">
+                            <i class="fas fa-share fa-lg indigo-text"></i>
+                        </div>
+                        <!-- Grid column -->
+                        <!-- Grid column -->
+                        <div class="col-xl-10 col-md-11 col-10">
+                            <h5 class="font-weight-bold mb-3">Technology</h5>
+                            <p class="grey-text">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit enim ad minima veniam,
+                                quis nostrum exercitationem ullam. Reprehenderit maiores aperiam assumenda deleniti hic.
+                            </p>
+                        </div>
+                        <!-- Grid column -->
+
+                    </div>
+                    <!-- Grid row -->
+                    <!--Grid row-->
+                    <div class="row">
+
+                        <!-- Grid column -->
+                        <div class="col-1">
+                            <i class="fas fa-share fa-lg indigo-text"></i>
+                        </div>
+                        <!-- Grid column -->
+                        <!-- Grid column -->
+                        <div class="col-xl-10 col-md-11 col-10">
+                            <h5 class="font-weight-bold mb-3">Finance</h5>
+                            <p class="grey-text mb-0">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit enim ad minima
+                                veniam, quis nostrum exercitationem ullam. Reprehenderit maiores aperiam assumenda deleniti hic.
+                            </p>
+                        </div>
+                        <!-- Grid column -->
+
+                    </div>
+                    <!--Grid row-->
+
+                </div>
+                <!--Grid column-->
+
+            </div>
+            <!-- Grid row -->
+
+        </section>
+        <!--Section: Content-->
+
+
+    </div>
+    <main class="">
+        <div class="container">
+            <!--Section: Content-->
+            <!--Section: Content-->
+            <!--Section: Content-->
+            <section class="text-center">
+
+
+                <div class="row">
+                    <div class="col-lg-4 col-md-12 mb-4">
+                        <div class="card">
+                            <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                                <img src="https://images.unsplash.com/photo-1569629743817-70d8db6c323b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1198&q=80" class="img-fluid" />
+                                <a href="#!">
+                                    <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                                </a>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">Airlines</h5>
+                                <p class="card-text">
+                                    Some quick example text to build on the card title and make up the bulk of the
+                                    card's content.
+                                </p>
+                                <a href="FlightModels/Index" class="btn btn-primary">Explore airlines</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="card">
+                            <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                                <img src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" class="img-fluid" />
+                                <a href="#!">
+                                    <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                                </a>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">Transport</h5>
+                                <p class="card-text">
+                                    Some quick example text to build on the card title and make up the bulk of the
+                                    card's content.
+                                </p>
+                                <a href="TransportModels/Index" class="btn btn-primary">Explore transport</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="card">
+                            <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                                <img src="https://images.unsplash.com/photo-1600671012016-e5890d87f804?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1254&q=80" class="img-fluid" />
+                                <a href="#!">
+                                    <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                                </a>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">Accomodation</h5>
+                                <p class="card-text">
+                                    Some quick example text to build on the card title and make up the bulk of the
+                                    card's content.
+                                </p>
+                                <a href="AccomodationModels/Index" class="btn btn-primary">Explore Accomodation</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--Section: Content-->
+
+            <hr class="my-5" />
+
+
+            <!--Section: Content-->
+        </div>
+    </main>
+    <!--Main layout-->
+    <div class="container my-5">
+
+        <style>
+            .border-top {
+                border-top: 5px solid #33b5e5 !important;
+                border-top-left-radius: .25rem !important;
+                border-top-right-radius: .25rem !important;
+            }
+        </style>
+
+        <!--Section: Content-->
+        <section class="text-center dark-grey-text mb-5">
+
+            <div class="card">
+                <div class="card-body rounded-top border-top p-5">
+
+                    <!-- Section heading -->
+                    <h3 class="font-weight-bold my-4">Contact Us</h3>
+                    <!-- Section description -->
+                    <p class="font-weight-light mx-auto mb-4 pb-2">Lorem ipsum dolor, sit amet consectetur<br> adipisicing elit. Id quam sapiente molestiae.</p>
+
+                    <form class="mb-4 mx-md-5" action="">
+
+                        <div class="row">
+                            <div class="col-md-6 mb-4">
+
+                                <!-- Name -->
+                                <input type="text" id="name" class="form-control" placeholder="Name">
+
+                            </div>
+                            <div class="col-md-6 mb-4">
+
+                                <!-- Email -->
+                                <input type="email" id="email" class="form-control" placeholder="Email">
+
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-12 mb-4">
+
+                                <!-- Subject -->
+                                <input type="text" id="subject" class="form-control" placeholder="Subject">
+
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-12">
+
+                                <div class="form-group mb-4">
+                                    <textarea class="form-control rounded" id="message" rows="3" placeholder="How can we help?"></textarea>
+                                </div>
+
+                                <div class="text-center">
+                                    <button type="submit" class="btn btn-primary btn-md">Submit</button>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </form>
+
+                </div>
+            </div>
+
+        </section>
+        <!--Section: Content-->
+
+    </div>
+
+
+
+
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
