@@ -19,71 +19,73 @@ using Newtonsoft.Json.Linq;
 
 namespace MVCTravelBookingISE.Controllers
 {
-  
+
     public class BookingModelsController : Controller
     {
 
-   
+
         private readonly IAccomodationService _accomodationService;
 
-       // private readonly IBookingService _bookingService;
+        // private readonly IBookingService _bookingService;
 
         private readonly BookingReserved _bookingReserved;
 
 
-        public BookingModelsController(IAccomodationService accomodationService, BookingReserved bookingReserved) { 
-           
+        public BookingModelsController(IAccomodationService accomodationService, BookingReserved bookingReserved)
+        {
+
             _accomodationService = accomodationService;
             _bookingReserved = bookingReserved;
             //_bookingService = bookingService;
 
         }
-      
-        public IActionResult BookingCart()
-        {
+
+        //    public IActionResult BookingCart()
+        //    {
 
 
 
-            var items = _bookingReserved.GetBookingAccoItem();
-            _bookingReserved.Items = items;
+        //        var items = _bookingReserved.GetBookingAccoItem();
+        //        _bookingReserved.Items = items;
 
-            var rep = new BookingVModel()
-            {
-                bookingReserved = _bookingReserved,
-                BookingTotalPrice = _bookingReserved.GetBookingTotal()
-            };
+        //        var rep = new BookingVModel()
+        //        {
+        //            bookingReserved = _bookingReserved,
+        //            BookingTotalPrice = _bookingReserved.GetBookingTotal()
+        //        };
 
-            return View(rep);
-        }
-        public async Task<RedirectToActionResult> AddItemToBookingCart(int id) 
-        {
-            var item = await _accomodationService.GetAccomodationByIdAsync(id);
+        //        return View(rep);
+        //    }
+        //    public async Task<RedirectToActionResult> AddItemToBookingCart(int id) 
+        //    {
+        //        var item = await _accomodationService.GetAccomodationByIdAsync(id);
 
-              if(item != null) {
+        //          if(item != null) {
 
-                   _bookingReserved.AddItemToBooking(item);
-              }
+        //               _bookingReserved.AddItemToBooking(item);
+        //          }
 
-            return RedirectToAction(nameof(BookingCart));
+        //        return RedirectToAction(nameof(BookingCart));
 
-        }
-        public async Task<IActionResult> c(int id)
-        {
-            var item = await _accomodationService.GetAccomodationByIdAsync(id);
+        //    }
+        //    public async Task<IActionResult> c(int id)
+        //    {
+        //        var item = await _accomodationService.GetAccomodationByIdAsync(id);
 
-            if (item != null)
-            {
-                _bookingReserved.RemoveItemFromBooking(item);
-            }
+        //        if (item != null)
+        //        {
+        //            _bookingReserved.RemoveItemFromBooking(item);
+        //        }
 
-            return Redirect(nameof(BookingCart));
+        //        return Redirect(nameof(BookingCart));
 
-            
-        }
+
+        //    }
+        //}
+
+
+
     }
-  
-  
-
 }
  
 

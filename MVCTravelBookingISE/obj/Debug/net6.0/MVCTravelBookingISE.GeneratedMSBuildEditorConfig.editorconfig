@@ -203,10 +203,6 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb21vZGF0aW9uTW9kZWxzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/keitu/source/repos/MVCTravelBookingISE/MVCTravelBookingISE/Views/AccomodationModels/UpdateRating.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb21vZGF0aW9uTW9kZWxzXFVwZGF0ZVJhdGluZy5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/keitu/source/repos/MVCTravelBookingISE/MVCTravelBookingISE/Views/BookingModels/BookingCart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va2luZ01vZGVsc1xCb29raW5nQ2FydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -291,14 +287,6 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmF0aW5nXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/keitu/source/repos/MVCTravelBookingISE/MVCTravelBookingISE/Views/Reservation/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVzZXJ2YXRpb25cSW5kZXguY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/keitu/source/repos/MVCTravelBookingISE/MVCTravelBookingISE/Views/Rewards/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmV3YXJkc1xJbmRleC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/keitu/source/repos/MVCTravelBookingISE/MVCTravelBookingISE/Views/Shared/Components/BookingReservedCartSummary/Default.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcQm9va2luZ1Jlc2VydmVkQ2FydFN1bW1hcnlcRGVmYXVsdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -333,10 +321,6 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/keitu/source/repos/MVCTravelBookingISE/MVCTravelBookingISE/Views/TransportModels/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJhbnNwb3J0TW9kZWxzXEluZGV4LmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/keitu/source/repos/MVCTravelBookingISE/MVCTravelBookingISE/Views/TransportModels/UpdateRating.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJhbnNwb3J0TW9kZWxzXFVwZGF0ZVJhdGluZy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/keitu/source/repos/MVCTravelBookingISE/MVCTravelBookingISE/Views/_ViewImports.cshtml]

@@ -32,64 +32,64 @@ namespace MVCTravelBookingISE.Data.Reservations
         }
     
       
-        public void AddItemToBooking(AccomodationModel accomodation)
-        {
-            var bookingAccoItem = _context.bookingAccoItems.FirstOrDefault(n => n.Accomodation.Acco_Id == accomodation.Acco_Id && n.BookingCartId == BookingCartId);
-            //var bookingFlightItem = _context.bookingItems.FirstOrDefault(n => n.Flight.Flight_Id == flight.Flight_Id && n.Item_Id == ItemId);
-            //var bookingTransportItem = _context.bookingItems.FirstOrDefault(n => n.Transport.Transport_Id == transport.Transport_Id && n.Item_Id == ItemId);
+    //    public void AddItemToBooking(AccomodationModel accomodation)
+    //    {
+    //        var bookingAccoItem = _context.bookingAccoItems.FirstOrDefault(n => n.Accomodation.Acco_Id == accomodation.Acco_Id && n.BookingCartId == BookingCartId);
+    //        //var bookingFlightItem = _context.bookingItems.FirstOrDefault(n => n.Flight.Flight_Id == flight.Flight_Id && n.Item_Id == ItemId);
+    //        //var bookingTransportItem = _context.bookingItems.FirstOrDefault(n => n.Transport.Transport_Id == transport.Transport_Id && n.Item_Id == ItemId);
            
-            if (bookingAccoItem == null)
-            {
-                bookingAccoItem = new BookingAccoItem()
-                {
-                    BookingCartId = BookingCartId,
-                   Accomodation = accomodation,
-                   Qauntity = 1
+    //        if (bookingAccoItem == null)
+    //        {
+    //            bookingAccoItem = new BookingAccoItem()
+    //            {
+    //                BookingCartId = BookingCartId,
+    //               Accomodation = accomodation,
+    //               Qauntity = 1
                   
-                };
+    //            };
 
-                _context.bookingAccoItems.Add(bookingAccoItem);
-            }
-            else
-            {
-                bookingAccoItem.Qauntity++;
+    //            _context.bookingAccoItems.Add(bookingAccoItem);
+    //        }
+    //        else
+    //        {
+    //            bookingAccoItem.Qauntity++;
 
-            }
-            _context.SaveChanges();
+    //        }
+    //        _context.SaveChanges();
           
-        }
+    //    }
 
-        public void RemoveItemFromBooking(AccomodationModel accomodation)
-        {
-            var bookingItem = _context.bookingAccoItems.FirstOrDefault(n => n.Accomodation.Acco_Id == accomodation.Acco_Id && n.BookingCartId == BookingCartId);
-            if (bookingItem != null)
-            {
+    //    public void RemoveItemFromBooking(AccomodationModel accomodation)
+    //    {
+    //        var bookingItem = _context.bookingAccoItems.FirstOrDefault(n => n.Accomodation.Acco_Id == accomodation.Acco_Id && n.BookingCartId == BookingCartId);
+    //        if (bookingItem != null)
+    //        {
 
-                if (bookingItem.Qauntity > 1)
-                {
-                    bookingItem.Qauntity--;
-                }
-                else
-                {
-                    _context.bookingAccoItems.Remove(bookingItem);
-                }
-
-
-
-            }
-            _context.SaveChanges();
-        }
+    //            if (bookingItem.Qauntity > 1)
+    //            {
+    //                bookingItem.Qauntity--;
+    //            }
+    //            else
+    //            {
+    //                _context.bookingAccoItems.Remove(bookingItem);
+    //            }
 
 
-        // GET: BookingModels/Details/5
 
-        public List<BookingAccoItem> GetBookingAccoItem()
-        {
+    //        }
+    //        _context.SaveChanges();
+    //    }
+
+
+    //    // GET: BookingModels/Details/5
+
+    //    public List<BookingAccoItem> GetBookingAccoItem()
+    //    {
           
-            return Items ?? (Items = _context.bookingAccoItems.Where(n => n.BookingCartId == BookingCartId).Include(n => n.Accomodation).ToList());
+    //        return Items ?? (Items = _context.bookingAccoItems.Where(n => n.BookingCartId == BookingCartId).Include(n => n.Accomodation).ToList());
 
-        }
-        public decimal GetBookingTotal() => _context.bookingAccoItems.Where(n => n.BookingCartId == BookingCartId).Select(n => n.Accomodation.Acco_Price * n.Qauntity).Sum();
+    //    }
+    //    public decimal GetBookingTotal() => _context.bookingAccoItems.Where(n => n.BookingCartId == BookingCartId).Select(n => n.Accomodation.Acco_Price * n.Qauntity).Sum();
 
        
     }

@@ -13,11 +13,11 @@ namespace MVCTravelBookingISE.Data.ViewComponents
           _bookingReserved = bookingReserved;
         }
 
-        public IViewComponentResult Invoke()
-        {
-            var items = _bookingReserved.GetBookingAccoItem();
-            return View(items.Count);
-        }
+        //public IViewComponentResult Invoke()
+        //{
+        //    var items = _bookingReserved.GetBookingAccoItem();
+        //    return View(items.Count);
+        //}
     }
 }
     

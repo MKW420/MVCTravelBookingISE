@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 namespace MVCTravelBookingISE.Models
 {
     public class TransportModel: IEntityBase { 
+
         [Key]
         public int Transport_Id { get; set; }
 
@@ -19,14 +20,13 @@ namespace MVCTravelBookingISE.Models
         [Required(ErrorMessage = "Transport Type required")]
         public char Transport_Type { get; set; }
 
-        [Display(Name = "Transport ratings")]
+        [Display(Name = "Average ratings")]
         public int Transport_ratings { get; set; }
-
         public string Transport_Status { get; set; }
+        public List<TripManagementModel> TripManagements { get; set; }
+        public List<TransportBookingItem> Bookingitem { get; set; }
 
-        //booking
-       
-        public string Transport_FuelCard { get; set; }
+        public bool Transport_FuelCard { get; set; }
 
     }
 }

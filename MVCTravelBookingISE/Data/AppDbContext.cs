@@ -17,30 +17,27 @@ namespace MVCTravelBookingISE.Data
        {
             //one to many reltionship between travellers and bookings
 
-            
-
             base.OnModelCreating(modelBuilder);
-
-           
 
         }
 
 
-        public DbSet<BookingModel> Booking { get; set; }
         public DbSet<FlightModel> Flight { get; set; }
+
         public DbSet<FlightRulesModel> FlightRule { get; set; }
+
         public DbSet<AccomodationModel> Accomodation { get; set; }
       
         public DbSet<TransportModel> Transport { get; set; }
-      
-        public DbSet<MVCTravelBookingISE.Models.RewardsModel> RewardsModel { get; set; }
-        
-        public DbSet<Rating> rating { get; set; }
-
-        public DbSet<BookingAccoItem> bookingAccoItems { get; set; }
-
-        public DbSet<ReservedItem> ReservedItems { get; set; }
 
 
+
+        public DbSet<FlightBookingItem> FlightBookingItem { get; set; }
+
+        public DbSet<TransportBookingItem> TransportBookingItem { get; set; }
+
+        public DbSet<BookingAccoItem> AccomodationBookingItem { get; set; }
+
+        public DbSet<TripManagementModel> TripManagement { get; set; }
     }
 }

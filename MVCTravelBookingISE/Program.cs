@@ -15,7 +15,7 @@ builder.Services.AddScoped<IAccomodationService, AccomodationService>();
 builder.Services.AddScoped<ITransportService, TransportService>();
 builder.Services.AddScoped<IFlightService, FlightService>();
 builder.Services.AddScoped<IFlightRulesService, FlightRulesService>();
-builder.Services.AddScoped<IRewardsService, RewardsService>();
+
 
 //Configure HTTP
 builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor > ();
