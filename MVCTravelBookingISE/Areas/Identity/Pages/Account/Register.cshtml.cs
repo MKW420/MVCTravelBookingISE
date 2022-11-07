@@ -22,6 +22,7 @@ using MVCTravelBookingISE.Areas.Identity.Data;
 
 namespace MVCTravelBookingISE.Areas.Identity.Pages.Account
 {
+    [AllowAnonymous]
     public class RegisterModel : PageModel
     {
         private readonly SignInManager<ApplicationUser> _signInManager;

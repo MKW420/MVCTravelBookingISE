@@ -99,15 +99,6 @@ builder.Services.ConfigureApplicationCookie(options =>
 
 
 builder.Services.AddControllersWithViews();
-// Authorization handlers.
-//builder.Services.AddScoped<IAuthorizationHandler,
-//                      AccomodationIsOwnerAuthorizationHandler>();
-
-//builder.Services.AddSingleton<IAuthorizationHandler,
-//                      AccomodationAdministratorsAuthorizationHandler>();
-
-//builder.Services.AddSingleton<IAuthorizationHandler,
-//                      AccomodationManagerAuthorizationHandler>();
 
 
 var app = builder.Build();
