@@ -10,6 +10,7 @@ using Microsoft.Extensions.Options;
 using MVCTravelBookingISE.Data.Reservations;
 using Microsoft.AspNetCore.Authorization;
 using MVCTravelBookingISE.Authorization;
+using ContactManager.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -136,6 +137,7 @@ app.MapControllerRoute(
 
 
 //SEED DATABASE
+SeedData.SeedRoles(app);
 AppDbIntalizer.Seed(app);
 
 

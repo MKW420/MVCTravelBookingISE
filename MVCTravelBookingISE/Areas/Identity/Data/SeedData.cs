@@ -1,10 +1,12 @@
 ﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using MVCTravelBookingISE.Authorization;
 using MVCTravelBookingISE.Data;
 using System;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Threading.Tasks;
 
 // dotnet aspnet-codegenerator razorpage -m Contact -dc ApplicationDbContext -outDir Pages\Contacts --referenceScriptLibraries
@@ -89,74 +91,30 @@ namespace ContactManager.Data
         }
         #endregion
         #region snippet1
-        //public static void SeedDB(AuthDbContext context, string adminID)
-        //{
-        //    if (context.Contact.Any())
-        //    {
-        //        return;   // DB has been seeded
-        //    }
+        public static void SeedDB(AuthDbContext context, string adminID)
+        {
 
-        //    context.Contact.AddRange(
-        //    #region snippet_Contact
-        //        new Contact
-        //        {
-        //            Name = "Debra Garcia",
-        //            Address = "1234 Main St",
-        //            City = "Redmond",
-        //            State = "WA",
-        //            Zip = "10999",
-        //            Email = "debra@example.com",
-        //            Status = ContactStatus.Approved,
-        //            OwnerID = adminID
-        //        },
-        //    #endregion
-        //    #endregion
-        //        new Contact
-        //        {
-        //            Name = "Thorsten Weinrich",
-        //            Address = "5678 1st Ave W",
-        //            City = "Redmond",
-        //            State = "WA",
-        //            Zip = "10999",
-        //            Email = "thorsten@example.com",
-        //            Status = ContactStatus.Submitted,
-        //            OwnerID = adminID
-        //        },
-        //        new Contact
-        //        {
-        //            Name = "Yuhong Li",
-        //            Address = "9012 State st",
-        //            City = "Redmond",
-        //            State = "WA",
-        //            Zip = "10999",
-        //            Email = "yuhong@example.com",
-        //            Status = ContactStatus.Rejected,
-        //            OwnerID = adminID
-        //        },
-        //        new Contact
-        //        {
-        //            Name = "Jon Orton",
-        //            Address = "3456 Maple St",
-        //            City = "Redmond",
-        //            State = "WA",
-        //            Zip = "10999",
-        //            Email = "jon@example.com",
-        //            Status = ContactStatus.Submitted,
-        //            OwnerID = adminID
-        //        },
-        //        new Contact
-        //        {
-        //            Name = "Diliana Alexieva-Bosseva",
-        //            Address = "7890 2nd Ave E",
-        //            City = "Redmond",
-        //            State = "WA",
-        //            Zip = "10999",
-        //            Email = "diliana@example.com",
-        //            OwnerID = adminID
-        //        }
-        //     );
-        //    context.SaveChanges();
-        //}
+        }
+
+        public static async void SeedRoles(IApplicationBuilder applicationBuilder)
+        {
+            using (var serviceScope = applicationBuilder.ApplicationServices.CreateScope())
+            {
+                var context = serviceScope.ServiceProvider.GetService<AuthDbContext>();
+
+                List<string> roles = new List<string>() { "Administrator", "Manager", "SuperUSer", "User", "Authorizer", "Supplier", "owner" };
+                foreach (var role in roles)
+                {
+                    var roleStore = new RoleStore<IdentityRole>(context);
+                    if (!context.Roles.Any(r => r.Name == role))
+                    {
+                        await roleStore.CreateAsync(new IdentityRole(role));
+                    }
+
+                }
+
+            }
+        }
         #endregion
     }
 }
