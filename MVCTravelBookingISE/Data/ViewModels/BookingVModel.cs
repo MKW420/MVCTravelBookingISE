@@ -7,7 +7,6 @@ namespace MVCTravelBookingISE.Data.ViewModels
     {
 
         public BookingReserved bookingReserved {get; set; }
-
         public decimal BookingTotalPrice { get; set; }
 
     }

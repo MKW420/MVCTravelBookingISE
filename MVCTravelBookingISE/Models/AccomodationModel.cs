@@ -37,18 +37,8 @@ namespace MVCTravelBookingISE.Models
         [Column(TypeName ="decimal(10,2)")]
         public decimal Acco_Distance { get; set; }
 
-        [Display(Name = "Rating of the Accomodation")]
+        [Display(Name = "Average of the Accomodation")]
         public int Acco_Rate { get; set; }
-
-            
-            //    if(Ratings.Count > 0)
-            //    {
-            //        return ((int)Ratings.Average(x => x.rating));
-            //    }
-            //    return (5);
-            //}
-
-            
        
         [Display(Name = "Type of accomodation")]
         [Required(ErrorMessage = "Type of accomodation required")]
@@ -63,11 +53,7 @@ namespace MVCTravelBookingISE.Models
         [Display(Name ="Rules of the accomdoation")]
         public string Acco_Rules { get; set; }
 
-         public string Acco_availability { get; set; }
-
-        //booking
-
-       
+         public Boolean Acco_availability { get; set; }       
 
         public List<BookingAccoItem> Bookingitem { get; set; }
 

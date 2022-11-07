@@ -16,6 +16,7 @@ namespace MVCTravelBookingISE.Data.ViewComponents
         public IViewComponentResult Invoke()
         {
             var items = _bookingReserved.GetBookingAccoItem();
+            
             return View(items.Count);
         }
     }

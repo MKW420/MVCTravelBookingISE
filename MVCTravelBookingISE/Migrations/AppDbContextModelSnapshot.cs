@@ -62,9 +62,8 @@ namespace MVCTravelBookingISE.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(1)");
 
-                    b.Property<string>("Acco_availability")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<bool>("Acco_availability")
+                        .HasColumnType("bit");
 
                     b.Property<string>("Acco_picture")
                         .IsRequired()
@@ -86,49 +85,37 @@ namespace MVCTravelBookingISE.Migrations
                     b.Property<int>("Acco_Id")
                         .HasColumnType("int");
 
-                    b.Property<string>("BookingCartId")
+                    b.Property<string>("SessionId")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("Qauntity")
-                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
                     b.HasIndex("Acco_Id");
 
-                    b.ToTable("bookingAccoItems");
+                    b.ToTable("AccomodationBookingItem");
                 });
 
-            modelBuilder.Entity("MVCTravelBookingISE.Models.BookingModel", b =>
+            modelBuilder.Entity("MVCTravelBookingISE.Models.FlightBookingItem", b =>
                 {
-                    b.Property<int>("Booking_Id")
+                    b.Property<int>("BookingId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Booking_Id"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("BookingId"), 1L, 1);
 
-                    b.Property<string>("Booking_Approved")
+                    b.Property<int>("Flight_Id")
+                        .HasColumnType("int");
+
+                    b.Property<string>("SessionId")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("Booking_Enddate")
-                        .HasColumnType("datetime2");
+                    b.HasKey("BookingId");
 
-                    b.Property<DateTime>("Booking_Startdate")
-                        .HasColumnType("datetime2");
+                    b.HasIndex("Flight_Id");
 
-                    b.Property<string>("Email")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("UserId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Booking_Id");
-
-                    b.ToTable("Booking");
+                    b.ToTable("FlightBookingItem");
                 });
 
             modelBuilder.Entity("MVCTravelBookingISE.Models.FlightModel", b =>
@@ -190,16 +177,13 @@ namespace MVCTravelBookingISE.Migrations
 
             modelBuilder.Entity("MVCTravelBookingISE.Models.Rating", b =>
                 {
-                    b.Property<int>("RatingsId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("RatingsId"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<int?>("AccomodationModelAcco_Id")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Booking_Id")
                         .HasColumnType("int");
 
                     b.Property<string>("RatingComment")
@@ -209,6 +193,9 @@ namespace MVCTravelBookingISE.Migrations
                     b.Property<DateTime>("TimeStamp")
                         .HasColumnType("datetime2");
 
+                    b.Property<int>("TripId")
+                        .HasColumnType("int");
+
                     b.Property<string>("UserId")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -216,69 +203,35 @@ namespace MVCTravelBookingISE.Migrations
                     b.Property<int>("rating")
                         .HasColumnType("int");
 
-                    b.HasKey("RatingsId");
+                    b.HasKey("Id");
 
                     b.HasIndex("AccomodationModelAcco_Id");
 
-                    b.HasIndex("Booking_Id");
+                    b.HasIndex("TripId");
 
-                    b.ToTable("rating");
+                    b.ToTable("Rating");
                 });
 
-            modelBuilder.Entity("MVCTravelBookingISE.Models.ReservedItem", b =>
+            modelBuilder.Entity("MVCTravelBookingISE.Models.TransportBookingItem", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("BookingId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("BookingId"), 1L, 1);
 
-                    b.Property<int>("AccomodationAcco_Id")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Qauntity")
-                        .HasColumnType("int");
-
-                    b.Property<int>("ReservedBooking_Id")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("AccomodationAcco_Id");
-
-                    b.ToTable("ReservedItems");
-                });
-
-            modelBuilder.Entity("MVCTravelBookingISE.Models.RewardsModel", b =>
-                {
-                    b.Property<int>("Rewards_Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Rewards_Id"), 1L, 1);
-
-                    b.Property<DateTime>("ExpiryRewardsDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Rewards_Description")
+                    b.Property<string>("SessionId")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Rewards_Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("Transport_Id")
+                        .HasColumnType("int");
 
-                    b.Property<string>("Rewards_Status")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.HasKey("BookingId");
 
-                    b.Property<string>("UserId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.HasIndex("Transport_Id");
 
-                    b.HasKey("Rewards_Id");
-
-                    b.ToTable("RewardsModel");
+                    b.ToTable("TransportBookingItem");
                 });
 
             modelBuilder.Entity("MVCTravelBookingISE.Models.TransportModel", b =>
@@ -297,9 +250,8 @@ namespace MVCTravelBookingISE.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Transport_FuelCard")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<bool>("Transport_FuelCard")
+                        .HasColumnType("bit");
 
                     b.Property<string>("Transport_Status")
                         .IsRequired()
@@ -317,6 +269,38 @@ namespace MVCTravelBookingISE.Migrations
                     b.ToTable("Transport");
                 });
 
+            modelBuilder.Entity("MVCTravelBookingISE.Models.TripManagementModel", b =>
+                {
+                    b.Property<int>("TripId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("TripId"), 1L, 1);
+
+                    b.Property<int>("Acco_Id")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Flight_Id")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Transport_Id")
+                        .HasColumnType("int");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("TripId");
+
+                    b.HasIndex("Acco_Id");
+
+                    b.HasIndex("Flight_Id");
+
+                    b.HasIndex("Transport_Id");
+
+                    b.ToTable("TripManagement");
+                });
+
             modelBuilder.Entity("MVCTravelBookingISE.Models.BookingAccoItem", b =>
                 {
                     b.HasOne("MVCTravelBookingISE.Models.AccomodationModel", "Accomodation")
@@ -326,6 +310,17 @@ namespace MVCTravelBookingISE.Migrations
                         .IsRequired();
 
                     b.Navigation("Accomodation");
+                });
+
+            modelBuilder.Entity("MVCTravelBookingISE.Models.FlightBookingItem", b =>
+                {
+                    b.HasOne("MVCTravelBookingISE.Models.FlightModel", "Flight")
+                        .WithMany("Bookingitem")
+                        .HasForeignKey("Flight_Id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Flight");
                 });
 
             modelBuilder.Entity("MVCTravelBookingISE.Models.FlightModel", b =>
@@ -345,24 +340,51 @@ namespace MVCTravelBookingISE.Migrations
                         .WithMany("Ratings")
                         .HasForeignKey("AccomodationModelAcco_Id");
 
-                    b.HasOne("MVCTravelBookingISE.Models.BookingModel", "Booking")
-                        .WithMany("Ratings")
-                        .HasForeignKey("Booking_Id")
+                    b.HasOne("MVCTravelBookingISE.Models.TripManagementModel", "tripManagement")
+                        .WithMany()
+                        .HasForeignKey("TripId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Booking");
+                    b.Navigation("tripManagement");
                 });
 
-            modelBuilder.Entity("MVCTravelBookingISE.Models.ReservedItem", b =>
+            modelBuilder.Entity("MVCTravelBookingISE.Models.TransportBookingItem", b =>
+                {
+                    b.HasOne("MVCTravelBookingISE.Models.TransportModel", "transport")
+                        .WithMany("Bookingitem")
+                        .HasForeignKey("Transport_Id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("transport");
+                });
+
+            modelBuilder.Entity("MVCTravelBookingISE.Models.TripManagementModel", b =>
                 {
                     b.HasOne("MVCTravelBookingISE.Models.AccomodationModel", "Accomodation")
                         .WithMany()
-                        .HasForeignKey("AccomodationAcco_Id")
+                        .HasForeignKey("Acco_Id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("MVCTravelBookingISE.Models.FlightModel", "flight")
+                        .WithMany("TripManagements")
+                        .HasForeignKey("Flight_Id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("MVCTravelBookingISE.Models.TransportModel", "transport")
+                        .WithMany("TripManagements")
+                        .HasForeignKey("Transport_Id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Accomodation");
+
+                    b.Navigation("flight");
+
+                    b.Navigation("transport");
                 });
 
             modelBuilder.Entity("MVCTravelBookingISE.Models.AccomodationModel", b =>
@@ -372,14 +394,23 @@ namespace MVCTravelBookingISE.Migrations
                     b.Navigation("Ratings");
                 });
 
-            modelBuilder.Entity("MVCTravelBookingISE.Models.BookingModel", b =>
+            modelBuilder.Entity("MVCTravelBookingISE.Models.FlightModel", b =>
                 {
-                    b.Navigation("Ratings");
+                    b.Navigation("Bookingitem");
+
+                    b.Navigation("TripManagements");
                 });
 
             modelBuilder.Entity("MVCTravelBookingISE.Models.FlightRulesModel", b =>
                 {
                     b.Navigation("Flights");
+                });
+
+            modelBuilder.Entity("MVCTravelBookingISE.Models.TransportModel", b =>
+                {
+                    b.Navigation("Bookingitem");
+
+                    b.Navigation("TripManagements");
                 });
 #pragma warning restore 612, 618
         }

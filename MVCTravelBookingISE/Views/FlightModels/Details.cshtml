@@ -46,6 +46,14 @@
 
 </div>
 <div>
+    <a class="btn btn-primary btn-md ml-0" data-toggle="popover"
+       asp-controller="BookingModels"
+       asp-action="AddFlightItemToBookingCart"
+       asp-route-id="@Model?.Flight_Id">
+        <!-- Full screen modal -->
+        Reserve
+        (Price @Model?.Flight_Price.ToString("c")
+    </a>
     <a class="btn btn-dark"  asp-action="Edit" asp-route-id="@Model?.Flight_Id">Edit</a> |
     <a class="btn btn-primary" asp-action="Index">Back to List</a>
 </div>
