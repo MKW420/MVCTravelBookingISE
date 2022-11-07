@@ -317,6 +317,7 @@
                             }
                        </strong><br><span class="text-success">@item.Acco_Rules</span>
                          <br> <span class="text-muted">Number of bathrooms: @item.Acco_Rooms</span>
+                        <br> <span class="text-muted">Number of bathrooms: @item.Acco_Bathrooms</span>
                                                        
                                                         <br>  <a class="btn btn-sm btn-success float-right" asp-action="Details" asp-route-id="@item.Acco_Id">
                                                             Check Availability
@@ -513,7 +514,7 @@
         <!-- Section -->
 
     </div>
-    <script>
+  @*  <script>
         var today = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate());
         $('#startDate').datepicker({
             uiLibrary: 'bootstrap4',
@@ -533,7 +534,7 @@
 
 
      
-    </script>
+    </script>*@
     
 <script src="~/js/site.js"></script>
 

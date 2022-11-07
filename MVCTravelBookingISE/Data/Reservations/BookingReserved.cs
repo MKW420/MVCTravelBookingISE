@@ -9,9 +9,13 @@ namespace MVCTravelBookingISE.Data.Reservations
     public class BookingReserved
     {
 
-        public string BookingCartId { get; set; }
+        public string SessionId { get; set; }
         public AppDbContext _context { get; set; }
-        public List<BookingAccoItem> Items { get; set; }
+        public List<BookingAccoItem> AccoItems { get; set; }
+
+      //  public List<TransportBookingItem>  TransportItems { get; set; }
+
+        public List<FlightBookingItem> FlightBookingItems { get; set; }
 
         public BookingReserved(AppDbContext context)
         {
@@ -27,71 +31,100 @@ namespace MVCTravelBookingISE.Data.Reservations
             string cartId = session.GetString("CartId") ??  Guid.NewGuid().ToString();
             session.SetString("CartId", cartId);
 
-            return new BookingReserved(context) { BookingCartId = cartId };
+            return new BookingReserved(context) { SessionId = cartId };
 
         }
-    
+
+
+        public void AddItemToBooking(AccomodationModel accomodation)
+        {
+            var bookingAccoItem = _context.AccomodationBookingItem.FirstOrDefault(n => n.Accomodation.Acco_Id == accomodation.Acco_Id && n.SessionId == SessionId);
+            //var bookingFlightItem = _context.bookingItems.FirstOrDefault(n => n.Flight.Flight_Id == flight.Flight_Id && n.Item_Id == ItemId);
+            //var bookingTransportItem = _context.bookingItems.FirstOrDefault(n => n.Transport.Transport_Id == transport.Transport_Id && n.Item_Id == ItemId);
+
+            if (bookingAccoItem == null)
+            {
+                bookingAccoItem = new BookingAccoItem()
+                {
+                    Accomodation = accomodation,
+                    SessionId = SessionId
+              
+                };
+
+                _context.AccomodationBookingItem.Add(bookingAccoItem);
+            }
+          
+            _context.SaveChanges();
+
+        }
+        public void AddFlightItemToBooking(FlightModel flight)
+        {
+            var bookingFlightItem = _context.FlightBookingItem.FirstOrDefault(n => n.Flight.Flight_Id == flight.Flight_Id&& n.SessionId == SessionId);
+          
+            if (bookingFlightItem == null)
+            {
+                bookingFlightItem = new FlightBookingItem()
+                {
+                    Flight = flight,
+                    SessionId = SessionId
+
+                };
+
+                _context.FlightBookingItem.Add(bookingFlightItem);
+            }
+
+            _context.SaveChanges();
+
+        }
+        //public void AddTransportItemToBooking(TransportModel transport)
+        //{
+        //    var bookingTransItem = _context.TransportBookingItem.FirstOrDefault(n => n.transport.Transport_Id == transport.Transport_Id && n.SessionId == SessionId);
+
+        //    if (bookingTransItem == null)
+        //    {
+        //        bookingTransItem = new TransportBookingItem()
+        //        {
+        //            transport = transport,
+        //            SessionId = SessionId
+
+        //        };
+
+        //        _context.TransportBookingItem.Add(bookingTransItem);
+        //    }
+
+        //    _context.SaveChanges();
+
+        //}
+        public void RemoveItemFromBooking(AccomodationModel accomodation)
+        {
+            var bookingItem = _context.AccomodationBookingItem.FirstOrDefault(n => n.Accomodation.Acco_Id == accomodation.Acco_Id && n.SessionId == SessionId);
+            if (bookingItem != null)
+            {
+                
+                    _context.AccomodationBookingItem.Remove(bookingItem);
+                
+            }
+            _context.SaveChanges();
+        }
+
+
+        // GET: BookingModels/Details/5
+
+        public List<BookingAccoItem> GetBookingAccoItem()
+        {
+
+            return AccoItems ?? (AccoItems = _context.AccomodationBookingItem.Where(n => n.SessionId == SessionId).Include(n => n.Accomodation).ToList());
+
+        }
+
+        public List<FlightBookingItem> GetFlightBookingItems() {
+            return FlightBookingItems ?? (FlightBookingItems = _context.FlightBookingItem.Where(n => n.SessionId == SessionId).Include(n => n.Flight).ToList());
+
+        }
       
-    //    public void AddItemToBooking(AccomodationModel accomodation)
-    //    {
-    //        var bookingAccoItem = _context.bookingAccoItems.FirstOrDefault(n => n.Accomodation.Acco_Id == accomodation.Acco_Id && n.BookingCartId == BookingCartId);
-    //        //var bookingFlightItem = _context.bookingItems.FirstOrDefault(n => n.Flight.Flight_Id == flight.Flight_Id && n.Item_Id == ItemId);
-    //        //var bookingTransportItem = _context.bookingItems.FirstOrDefault(n => n.Transport.Transport_Id == transport.Transport_Id && n.Item_Id == ItemId);
-           
-    //        if (bookingAccoItem == null)
-    //        {
-    //            bookingAccoItem = new BookingAccoItem()
-    //            {
-    //                BookingCartId = BookingCartId,
-    //               Accomodation = accomodation,
-    //               Qauntity = 1
-                  
-    //            };
-
-    //            _context.bookingAccoItems.Add(bookingAccoItem);
-    //        }
-    //        else
-    //        {
-    //            bookingAccoItem.Qauntity++;
-
-    //        }
-    //        _context.SaveChanges();
-          
-    //    }
-
-    //    public void RemoveItemFromBooking(AccomodationModel accomodation)
-    //    {
-    //        var bookingItem = _context.bookingAccoItems.FirstOrDefault(n => n.Accomodation.Acco_Id == accomodation.Acco_Id && n.BookingCartId == BookingCartId);
-    //        if (bookingItem != null)
-    //        {
-
-    //            if (bookingItem.Qauntity > 1)
-    //            {
-    //                bookingItem.Qauntity--;
-    //            }
-    //            else
-    //            {
-    //                _context.bookingAccoItems.Remove(bookingItem);
-    //            }
+        public decimal GetBookingTotal() => _context.AccomodationBookingItem.Where(n => n.SessionId == SessionId).Select(n => n.Accomodation.Acco_Price).Sum();
 
 
-
-    //        }
-    //        _context.SaveChanges();
-    //    }
-
-
-    //    // GET: BookingModels/Details/5
-
-    //    public List<BookingAccoItem> GetBookingAccoItem()
-    //    {
-          
-    //        return Items ?? (Items = _context.bookingAccoItems.Where(n => n.BookingCartId == BookingCartId).Include(n => n.Accomodation).ToList());
-
-    //    }
-    //    public decimal GetBookingTotal() => _context.bookingAccoItems.Where(n => n.BookingCartId == BookingCartId).Select(n => n.Accomodation.Acco_Price * n.Qauntity).Sum();
-
-       
     }
 }
 

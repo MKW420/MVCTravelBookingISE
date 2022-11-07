@@ -18,7 +18,6 @@ namespace MVCTravelBookingISE.Models
         [ForeignKey("Acco_Id")]
         public AccomodationModel Accomodation { get; set; }
 
-      
         public string SessionId { get; set; }
       
 
