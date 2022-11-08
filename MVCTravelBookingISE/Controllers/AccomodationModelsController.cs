@@ -13,6 +13,7 @@ using MVCTravelBookingISE.Models;
 
 namespace MVCTravelBookingISE.Controllers
 {
+    [AllowAnonymous]
     public class AccomodationModelsController : Controller
     {
 
@@ -110,6 +111,7 @@ namespace MVCTravelBookingISE.Controllers
 
         public async Task<IActionResult> Details(int id)
         {
+
             var accomodationDetails = await _service.GetAccomodationByIdAsync(id);
 
             return View(accomodationDetails);

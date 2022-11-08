@@ -8,6 +8,9 @@ using MVCTravelBookingISE.Areas.Identity.Data;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.Extensions.Options;
 using MVCTravelBookingISE.Data.Reservations;
+using Microsoft.AspNetCore.Authorization;
+using MVCTravelBookingISE.Authorization;
+using ContactManager.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -56,12 +59,12 @@ builder.Services.AddSession(options =>
 builder.Services.AddRazorPages();
 
 
-builder.Services.AddAuthentication(options =>
+builder.Services.AddAuthorization(options =>
 {
-    options.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
-}
-    
-);
+    options.FallbackPolicy = new AuthorizationPolicyBuilder()
+        .RequireAuthenticatedUser()
+        .Build();
+});
 
 
 builder.Services.Configure<IdentityOptions>(options =>
@@ -90,8 +93,8 @@ builder.Services.ConfigureApplicationCookie(options =>
 {
     options.Cookie.HttpOnly = true;
     options.ExpireTimeSpan = TimeSpan.FromMinutes(5);
-    options.LoginPath = "Identity/Account/Login";
-    options.AccessDeniedPath = "Identity/Account/AccessDenied";
+    options.LoginPath = "/Identity/Account/Login";
+    options.AccessDeniedPath = "/Identity/Account/AccessDenied";
     options.SlidingExpiration = true;
 });
 
@@ -134,6 +137,7 @@ app.MapControllerRoute(
 
 
 //SEED DATABASE
+SeedData.SeedRoles(app);
 AppDbIntalizer.Seed(app);
 
 

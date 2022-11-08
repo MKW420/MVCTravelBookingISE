@@ -1,5 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore.Diagnostics;
 using MVCTravelBookingISE.Models;
+using MVCTravelBookingISE.Areas.Identity.Data;
+using ContactManager.Data;
 
 namespace MVCTravelBookingISE.Data
 {
@@ -12,7 +14,6 @@ namespace MVCTravelBookingISE.Data
                 var context = serviceScope.ServiceProvider.GetService<AppDbContext>();
 
                 context.Database.EnsureCreated();
-
 
                 if (!context.Transport.Any())
                 {

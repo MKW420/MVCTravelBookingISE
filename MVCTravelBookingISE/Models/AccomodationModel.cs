@@ -9,6 +9,7 @@ namespace MVCTravelBookingISE.Models
     {
         [Key]
         public int Acco_Id { get; set; }
+        //public string? OwnerID { get; set; }
 
         [Display(Name = "Name of the accomodation")]
         [Required(ErrorMessage = "Accomodation Name required")]
