@@ -30,8 +30,8 @@ namespace MVCTravelBookingISE.Data
       
         public DbSet<TransportModel> Transport { get; set; }
 
-
-
+        
+        
         public DbSet<FlightBookingItem> FlightBookingItem { get; set; }
 
         public DbSet<TransportBookingItem> TransportBookingItem { get; set; }
