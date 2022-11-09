@@ -76,25 +76,25 @@ namespace MVCTravelBookingISE.Data.Reservations
             _context.SaveChanges();
 
         }
-        //public void AddTransportItemToBooking(TransportModel transport)
-        //{
-        //    var bookingTransItem = _context.TransportBookingItem.FirstOrDefault(n => n.transport.Transport_Id == transport.Transport_Id && n.SessionId == SessionId);
+        public void AddTransportItemToBooking(TransportModel transport)
+        {
+            var bookingTransItem = _context.TransportBookingItem.FirstOrDefault(n => n.transport.Transport_Id == transport.Transport_Id && n.SessionId == SessionId);
 
-        //    if (bookingTransItem == null)
-        //    {
-        //        bookingTransItem = new TransportBookingItem()
-        //        {
-        //            transport = transport,
-        //            SessionId = SessionId
+            if (bookingTransItem == null)
+            {
+                bookingTransItem = new TransportBookingItem()
+                {
+                    transport = transport,
+                    SessionId = SessionId
 
-        //        };
+                };
 
-        //        _context.TransportBookingItem.Add(bookingTransItem);
-        //    }
+                _context.TransportBookingItem.Add(bookingTransItem);
+            }
 
-        //    _context.SaveChanges();
+            _context.SaveChanges();
 
-        //}
+        }
         public void RemoveItemFromBooking(AccomodationModel accomodation)
         {
             var bookingItem = _context.AccomodationBookingItem.FirstOrDefault(n => n.Accomodation.Acco_Id == accomodation.Acco_Id && n.SessionId == SessionId);

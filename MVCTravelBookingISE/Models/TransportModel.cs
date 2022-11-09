@@ -23,7 +23,7 @@ namespace MVCTravelBookingISE.Models
         [Display(Name = "Average ratings")]
         public int Transport_ratings { get; set; }
         public string Transport_Status { get; set; }
-        public List<TripManagementModel> TripManagements { get; set; }
+       
         public List<TransportBookingItem> Bookingitem { get; set; }
 
         public bool Transport_FuelCard { get; set; }

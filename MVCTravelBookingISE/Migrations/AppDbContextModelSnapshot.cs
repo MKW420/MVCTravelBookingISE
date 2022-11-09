@@ -279,13 +279,13 @@ namespace MVCTravelBookingISE.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("TripId"), 1L, 1);
 
-                    b.Property<int>("Acco_Id")
+                    b.Property<int>("BookingAccoId")
                         .HasColumnType("int");
 
-                    b.Property<int>("Flight_Id")
+                    b.Property<int>("BookingFlightId")
                         .HasColumnType("int");
 
-                    b.Property<int>("Transport_Id")
+                    b.Property<int>("BookingTransportId")
                         .HasColumnType("int");
 
                     b.Property<string>("UserId")
@@ -294,11 +294,11 @@ namespace MVCTravelBookingISE.Migrations
 
                     b.HasKey("TripId");
 
-                    b.HasIndex("Acco_Id");
+                    b.HasIndex("BookingAccoId");
 
-                    b.HasIndex("Flight_Id");
+                    b.HasIndex("BookingFlightId");
 
-                    b.HasIndex("Transport_Id");
+                    b.HasIndex("BookingTransportId");
 
                     b.ToTable("TripManagement");
                 });
@@ -364,29 +364,29 @@ namespace MVCTravelBookingISE.Migrations
 
             modelBuilder.Entity("MVCTravelBookingISE.Models.TripManagementModel", b =>
                 {
-                    b.HasOne("MVCTravelBookingISE.Models.AccomodationModel", "Accomodation")
-                        .WithMany()
-                        .HasForeignKey("Acco_Id")
+                    b.HasOne("MVCTravelBookingISE.Models.BookingAccoItem", "bookedAccoItem")
+                        .WithMany("Tripitem")
+                        .HasForeignKey("BookingAccoId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("MVCTravelBookingISE.Models.FlightModel", "flight")
-                        .WithMany("TripManagements")
-                        .HasForeignKey("Flight_Id")
+                    b.HasOne("MVCTravelBookingISE.Models.FlightBookingItem", "bookedflightItem")
+                        .WithMany("Tripitem")
+                        .HasForeignKey("BookingFlightId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("MVCTravelBookingISE.Models.TransportModel", "transport")
-                        .WithMany("TripManagements")
-                        .HasForeignKey("Transport_Id")
+                    b.HasOne("MVCTravelBookingISE.Models.TransportBookingItem", "bookedtransportItem")
+                        .WithMany("Tripitem")
+                        .HasForeignKey("BookingTransportId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Accomodation");
+                    b.Navigation("bookedAccoItem");
 
-                    b.Navigation("flight");
+                    b.Navigation("bookedflightItem");
 
-                    b.Navigation("transport");
+                    b.Navigation("bookedtransportItem");
                 });
 
             modelBuilder.Entity("MVCTravelBookingISE.Models.AccomodationModel", b =>
@@ -396,11 +396,19 @@ namespace MVCTravelBookingISE.Migrations
                     b.Navigation("Ratings");
                 });
 
+            modelBuilder.Entity("MVCTravelBookingISE.Models.BookingAccoItem", b =>
+                {
+                    b.Navigation("Tripitem");
+                });
+
+            modelBuilder.Entity("MVCTravelBookingISE.Models.FlightBookingItem", b =>
+                {
+                    b.Navigation("Tripitem");
+                });
+
             modelBuilder.Entity("MVCTravelBookingISE.Models.FlightModel", b =>
                 {
                     b.Navigation("Bookingitem");
-
-                    b.Navigation("TripManagements");
                 });
 
             modelBuilder.Entity("MVCTravelBookingISE.Models.FlightRulesModel", b =>
@@ -408,11 +416,14 @@ namespace MVCTravelBookingISE.Migrations
                     b.Navigation("Flights");
                 });
 
+            modelBuilder.Entity("MVCTravelBookingISE.Models.TransportBookingItem", b =>
+                {
+                    b.Navigation("Tripitem");
+                });
+
             modelBuilder.Entity("MVCTravelBookingISE.Models.TransportModel", b =>
                 {
                     b.Navigation("Bookingitem");
-
-                    b.Navigation("TripManagements");
                 });
 #pragma warning restore 612, 618
         }

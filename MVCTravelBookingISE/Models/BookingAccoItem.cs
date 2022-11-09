@@ -19,8 +19,8 @@ namespace MVCTravelBookingISE.Models
         public AccomodationModel Accomodation { get; set; }
 
         public string SessionId { get; set; }
-      
 
+        public List<TripManagementModel> Tripitem { get; set; }
     }
 
 }

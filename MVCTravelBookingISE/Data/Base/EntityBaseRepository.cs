@@ -9,9 +9,12 @@ namespace MVCTravelBookingISE.Data.Base
     {
 
         private readonly AppDbContext _context;
+
+       // private readonly AuthDbContext _dbContext;
         public EntityBaseRepository(AppDbContext context)
         {
             _context = context;
+          //  _dbContext = dbContext;
         }
         public async Task AddSync(T entity)
         {

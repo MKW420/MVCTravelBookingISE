@@ -28,18 +28,19 @@ namespace MVCTravelBookingISE.Controllers
 
         private readonly IFlightService _flightService;
 
-     //   private readonly ITransportService _transportService;
+      private readonly ITransportService _transportService;
 
         // private readonly IBookingService _bookingService;
 
         private readonly BookingReserved _bookingReserved;
 
 
-        public BookingModelsController(IAccomodationService accomodationService, IFlightService  flightService,BookingReserved bookingReserved)
+        public BookingModelsController(IAccomodationService accomodationService, IFlightService  flightService , ITransportService transportService, BookingReserved bookingReserved)
         {
 
             _accomodationService = accomodationService;
             _flightService = flightService;
+            _transportService = transportService;
             _bookingReserved = bookingReserved;
             //_bookingService = bookingService;
 
@@ -87,6 +88,21 @@ namespace MVCTravelBookingISE.Controllers
             {
 
                 _bookingReserved.AddFlightItemToBooking(item);
+            }
+
+            return RedirectToAction(nameof(BookingCart));
+
+        }
+
+        [AllowAnonymous]
+        public async Task<RedirectToActionResult> AddTransportItemToBookingCart(int id)
+        {
+            var item = await _transportService.GetTransportByIdAsync(id);
+
+            if (item != null)
+            {
+
+                _bookingReserved.AddTransportItemToBooking(item);
             }
 
             return RedirectToAction(nameof(BookingCart));

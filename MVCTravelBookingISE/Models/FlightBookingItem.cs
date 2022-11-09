@@ -15,5 +15,7 @@ namespace MVCTravelBookingISE.Models
         public FlightModel Flight { get; set; }
 
         public string SessionId { get; set; }
+
+        public List<TripManagementModel> Tripitem { get; set; }
     }
 }
