@@ -31,8 +31,8 @@ namespace MVCTravelBookingISE.Data
                             Acco_Type = 'S',
                             Acco_Price = 1259,
                             Acco_picture= "https://images.unsplash.com/photo-1615460549969-36fa19521a4f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80",
-                            Acco_Rules = "Free Cancellation for 48 hours (Full Refund included) After 3 Days a partial Refund will be included (50%) After 7 Days there is no Refunds. Free Parking included, WIFI available and no smoking allowed "
-
+                            Acco_Rules = "Free Cancellation for 48 hours (Full Refund included) After 3 Days a partial Refund will be included (50%) After 7 Days there is no Refunds. Free Parking included, WIFI available and no smoking allowed ",
+                            Acco_availability = true
 
                           },
                          new AccomodationModel
@@ -46,8 +46,8 @@ namespace MVCTravelBookingISE.Data
                             Acco_Type= 'G',
                             Acco_Price = 1659,
                             Acco_picture="https://images.unsplash.com/photo-1445019980597-93fa8acb246c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1174&q=80",
-                             Acco_Rules = "Free Cancellation for 48 hours (Full Refund included) After 3 Days a partial Refund will be included (50%) After 7 Days there is no Refunds. Parking fee included, WIFI available and no smoking allowed "
-
+                             Acco_Rules = "Free Cancellation for 48 hours (Full Refund included) After 3 Days a partial Refund will be included (50%) After 7 Days there is no Refunds. Parking fee included, WIFI available and no smoking allowed ",
+                              Acco_availability = true
 
                           },
                         new AccomodationModel
@@ -61,7 +61,8 @@ namespace MVCTravelBookingISE.Data
                             Acco_Type = 'S',
                             Acco_Price = 1599,
                             Acco_picture = "https://images.unsplash.com/photo-1445019980597-93fa8acb246c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1174&q=80",
-                             Acco_Rules = "Free Cancellation for 48 hours (Full Refund included) After 3 Days a partial Refund will be included (50%) After 7 Days there is no Refunds. Parking fee included, WIFI available and no smoking allowed "
+                             Acco_Rules = "Free Cancellation for 48 hours (Full Refund included) After 3 Days a partial Refund will be included (50%) After 7 Days there is no Refunds. Parking fee included, WIFI available and no smoking allowed ",
+                              Acco_availability = true
                         },
                         new AccomodationModel
                         {
@@ -74,7 +75,8 @@ namespace MVCTravelBookingISE.Data
                             Acco_Type = 'G',
                             Acco_Price = 1899,
                             Acco_picture="https://images.unsplash.com/photo-1611892440504-42a792e24d32?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
-                             Acco_Rules = "Free Cancellation for 48 hours (Full Refund included) After 3 Days a partial Refund will be included (50%) After 7 Days there is no Refunds. Parking fee included, WIFI available and no smoking allowed "
+                             Acco_Rules = "Free Cancellation for 48 hours (Full Refund included) After 3 Days a partial Refund will be included (50%) After 7 Days there is no Refunds. Parking fee included, WIFI available and no smoking allowed ",
+                               Acco_availability = true
                         },
                         new AccomodationModel
                         {
@@ -87,7 +89,9 @@ namespace MVCTravelBookingISE.Data
                             Acco_Type = 'G',
                             Acco_Price = 1855,
                             Acco_picture = "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
-                             Acco_Rules = "Free Cancellation for 48 hours (Full Refund included) After 3 Days a partial Refund will be included (50%) After 7 Days there is no Refunds. Parking fee included, WIFI available and no smoking allowed "
+                             Acco_Rules = "Free Cancellation for 48 hours (Full Refund included) After 3 Days a partial Refund will be included (50%) After 7 Days there is no Refunds. Parking fee included, WIFI available and no smoking allowed ",
+                              Acco_availability = true
+
                         },
                          new AccomodationModel
                         {
@@ -100,8 +104,10 @@ namespace MVCTravelBookingISE.Data
                             Acco_Type = 'G',
                             Acco_Price = 1699,
                             Acco_picture ="https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
-                             Acco_Rules = "Free Cancellation for 48 hours (Full Refund included) After 3 Days a partial Refund will be included (50%) After 7 Days there is no Refunds. Parking fee included, WIFI available and no smoking allowed "
-                        },
+                             Acco_Rules = "Free Cancellation for 48 hours (Full Refund included) After 3 Days a partial Refund will be included (50%) After 7 Days there is no Refunds. Parking fee included, WIFI available and no smoking allowed ",
+                             Acco_availability = true
+
+                         },
 
                           new AccomodationModel
                         {
@@ -114,8 +120,9 @@ namespace MVCTravelBookingISE.Data
                             Acco_Type = 'G',
                             Acco_Price = 1195,
                             Acco_picture="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
-                             Acco_Rules = "Free Cancellation for 48 hours (Full Refund included) After 3 Days a partial Refund will be included (50%) After 7 Days there is no Refunds. Parking fee included, WIFI available and no smoking allowed "
-                        },
+                             Acco_Rules = "Free Cancellation for 48 hours (Full Refund included) After 3 Days a partial Refund will be included (50%) After 7 Days there is no Refunds. Parking fee included, WIFI available and no smoking allowed ",
+                              Acco_availability = true
+                          },
                          new AccomodationModel
                         {
                             Acco_Name = "Sunninghill Guest Lodges (Game Park)",
@@ -127,8 +134,10 @@ namespace MVCTravelBookingISE.Data
                             Acco_Type = 'G',
                             Acco_Price = 1999,
                             Acco_picture ="https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
-                             Acco_Rules = "Free Cancellation for 48 hours (Full Refund included) After 3 Days a partial Refund will be included (50%) After 7 Days there is no Refunds. Parking fee included, WIFI available and no smoking allowed "
-                        },
+                             Acco_Rules = "Free Cancellation for 48 hours (Full Refund included) After 3 Days a partial Refund will be included (50%) After 7 Days there is no Refunds. Parking fee included, WIFI available and no smoking allowed ",
+                              Acco_availability = true
+
+                         },
                         new AccomodationModel
                         {
                             Acco_Name = "Sunninghill Guest Lodges (Game Park)",
@@ -140,7 +149,9 @@ namespace MVCTravelBookingISE.Data
                             Acco_Type = 'G',
                             Acco_Price = 1499,
                             Acco_picture = "https://images.unsplash.com/photo-1618773928121-c32242e63f39?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
-                             Acco_Rules = "Free Cancellation for 48 hours (Full Refund included) After 3 Days a partial Refund will be included (50%) After 7 Days there is no Refunds. Parking fee included, WIFI available and no smoking allowed "
+                             Acco_Rules = "Free Cancellation for 48 hours (Full Refund included) After 3 Days a partial Refund will be included (50%) After 7 Days there is no Refunds. Parking fee included, WIFI available and no smoking allowed ",
+                             Acco_availability = true
+
                         },
                         new AccomodationModel
                         {
@@ -153,7 +164,9 @@ namespace MVCTravelBookingISE.Data
                             Acco_Type = 'S',
                             Acco_Price = 1299,
                             Acco_picture="https://images.unsplash.com/photo-1564501049412-61c2a3083791?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1332&q=80",
-                             Acco_Rules = "Free Cancellation for 48 hours (Full Refund included) After 3 Days a partial Refund will be included (50%) After 7 Days there is no Refunds. Free Parking included, WIFI available and smoking allowed adn complimentary Shuttle provided on arrival "
+                             Acco_Rules = "Free Cancellation for 48 hours (Full Refund included) After 3 Days a partial Refund will be included (50%) After 7 Days there is no Refunds. Free Parking included, WIFI available and smoking allowed adn complimentary Shuttle provided on arrival ",
+                              Acco_availability = true
+
                         },
                         new AccomodationModel()
                         {
@@ -167,6 +180,7 @@ namespace MVCTravelBookingISE.Data
                             Acco_picture ="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80",
                              Acco_Rules = "Free Cancellation for 48 hours (Full Refund included) After 3 Days a partial Refund will be included (50%) After 7 Days there is no Refunds. Free Parking included, WIFI available and no smoking allowed. Swimming pool included",
                             Acco_Price = 1299,
+                             Acco_availability = true
                         },
                          new AccomodationModel()
                         {
@@ -179,8 +193,9 @@ namespace MVCTravelBookingISE.Data
                             Acco_Type = 'G',
                             Acco_Price = 1999,
                             Acco_picture="https://images.unsplash.com/photo-1570129477492-45c003edd2be?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
-                            Acco_Rules = "Free Cancellation for 48 hours (Full Refund included) After 3 Days a partial Refund will be included (50%) After 7 Days there is no Refunds. Free Parking included, WIFI available and no smoking allowed "
-                        },
+                            Acco_Rules = "Free Cancellation for 48 hours (Full Refund included) After 3 Days a partial Refund will be included (50%) After 7 Days there is no Refunds. Free Parking included, WIFI available and no smoking allowed ",
+                             Acco_availability = true
+                         },
                           new AccomodationModel()
                         {
                             Acco_Name = "Point Waterfront Apartments (Holiday Apartment)",
@@ -192,8 +207,10 @@ namespace MVCTravelBookingISE.Data
                             Acco_Type = 'G',
                             Acco_Price = 2599,
                             Acco_picture = "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80",
-                            Acco_Rules = "Free Cancellation for 48 hours (Full Refund included) After 3 Days a partial Refund will be included (50%) After 7 Days there is no Refunds. Parking fee included, WIFI available and no smoking allowed "
-                        },
+                            Acco_Rules = "Free Cancellation for 48 hours (Full Refund included) After 3 Days a partial Refund will be included (50%) After 7 Days there is no Refunds. Parking fee included, WIFI available and no smoking allowed ",
+                             Acco_availability = true
+
+                          },
 
                     });
                     context.SaveChanges();
@@ -212,28 +229,40 @@ namespace MVCTravelBookingISE.Data
                                 Pick_Up_Point = "O.R Tambo Airport",
                                 Destination_point = "Sunninghill, Johannesburg" ,
                                 Transport_Type = 'S',
-                                Transport_ratings = 3
+                                Transport_ratings = 0,
+                                Transport_Status = "Available",
+                                Transport_FuelCard = false
+
                             },
                             new TransportModel
                             {
                                 Pick_Up_Point = "O.R Tambo Airport",
                                 Destination_point = "Sunninghill, Johannesburg" ,
-                                Transport_Type = 'C',
-                                Transport_ratings = 0
+                                Transport_Type = 'S',
+                                Transport_ratings = 0,
+                                Transport_Status = "Available",
+                                Transport_FuelCard = false
+
                             },
                             new TransportModel
                             {
                                 Pick_Up_Point = "Cape Town International Airport",
                                 Destination_point = "Milnerton, Capetown" ,
                                 Transport_Type = 'S',
-                                Transport_ratings = 3
+                                Transport_ratings = 0,
+                                Transport_Status = "Available",
+                                Transport_Price = 499,
+                                Transport_FuelCard = false
                             },
                             new TransportModel
                             {
                                 Pick_Up_Point = "Cape Town International Airport",
                                 Destination_point = "Sea Point , CapeTown" ,
                                 Transport_Type = 'S',
-                                Transport_ratings = 4
+                                Transport_ratings = 4,
+                                Transport_Status = "Available",
+                                Transport_Price = 599,
+                                Transport_FuelCard = false
                             },
                                new TransportModel
                             {
@@ -241,7 +270,9 @@ namespace MVCTravelBookingISE.Data
                                 Destination_point = "Bellville, CapeTown" ,
                                 Transport_Type = 'S',
                                 Transport_ratings = 0,
-                              
+                                Transport_Status = "Available",
+                                Transport_Price = 499,
+                                Transport_FuelCard = false
                             },
                                 new TransportModel
                             {
@@ -249,11 +280,130 @@ namespace MVCTravelBookingISE.Data
                                 Destination_point = "Stellenbosch, CapeTown" ,
                                 Transport_Type = 'S',
                                 Transport_ratings = 0,
+                                Transport_Status = "Available",
+                                Transport_Price = 350,
+                                Transport_FuelCard = false
+                            },
+                               new TransportModel
+                            {
+                                Pick_Up_Point = "Cape Town International Airport",
+                                Destination_point = " " ,
+                                Transport_Type = 'C',
+                                Transport_ratings = 0,
+                                Transport_Status = "Available",
+                                Transport_Price = 1599,
+                                Transport_FuelCard = true
+                            },
+                             new TransportModel
+                            {
+                                Pick_Up_Point = "Port Elizabeth International Airport",
+                                Destination_point = " " ,
+                                Transport_Type = 'C',
+                                Transport_ratings = 0,
+                                Transport_Status = "Available",
+                                Transport_Price = 1599,
+                                Transport_FuelCard = true
 
                             },
+                            new TransportModel
+                            {
+                                Pick_Up_Point = "Mosselbay International Airport",
+                                Destination_point = " " ,
+                                Transport_Type = 'C',
+                                Transport_ratings = 0,
+                                Transport_Status = " Available",
+                                Transport_Price = 1499,
+                                Transport_FuelCard = true
 
+                            },
+                            new TransportModel
+                            {
+                                Pick_Up_Point = "Mosselbay International Airport",
+                                Destination_point = "Knysna,CapeTown " ,
+                                Transport_Type = 'S',
+                                Transport_ratings = 0,
+                                Transport_Status = "Available",
+                                Transport_Price = 299,
+                                Transport_FuelCard = false
 
+                            },
+                            new TransportModel
+                            {
+                                Pick_Up_Point = "Mosselbay International Airport",
+                                Destination_point = " " ,
+                                Transport_Type = 'C',
+                                Transport_ratings = 0,
+                                Transport_Status = "Not Available",
+                                Transport_Price = 1599,
+                                Transport_FuelCard = true
 
+                            },
+                            new TransportModel
+                            {
+                                Pick_Up_Point = "George International Airport",
+                                Destination_point = " " ,
+                                Transport_Type = 'C',
+                                Transport_ratings = 0,
+                                Transport_Status = "Not Available",
+                                Transport_Price = 1599,
+                                Transport_FuelCard = true
+
+                            },
+                            new TransportModel
+                            {
+                                Pick_Up_Point = "George International Airport",
+                                Destination_point = "StellenBosch,CapeTown " ,
+                                Transport_Type = 'S',
+                                Transport_ratings = 0,
+                                Transport_Status = "Available",
+                                Transport_Price = 599,
+                                Transport_FuelCard = false
+
+                            },
+                             new TransportModel
+                            {
+                                Pick_Up_Point = "Stellenbosch International Airport",
+                                Destination_point = " " ,
+                                Transport_Type = 'C',
+                                Transport_ratings = 0,
+                                Transport_Status = "Available",
+                                Transport_Price = 1599,
+                                Transport_FuelCard = true
+
+                            },
+                              new TransportModel
+                            {
+                                Pick_Up_Point = "Stellenbosch International Airport",
+                                Destination_point = "Langebaan, CapeTown" ,
+                                Transport_Type = 'S',
+                                Transport_ratings = 0,
+                                Transport_Status = "Available",
+                                Transport_Price = 1299,
+                                  Transport_FuelCard = false
+
+                            },
+                            new TransportModel
+                            {
+                                Pick_Up_Point = "Port Alfred International Airport",
+                                Destination_point = "Bathurst, East London" ,
+                                Transport_Type = 'S',
+                                Transport_ratings = 0,
+                                Transport_Status = "Available",
+                                Transport_Price = 1599,
+                                Transport_FuelCard = false
+
+                            },
+                             new TransportModel
+                            {
+                                Pick_Up_Point = "Port Alfred International Airport",
+                                Destination_point = "Gonubie, East London" ,
+                                Transport_Type = 'S',
+                                Transport_ratings = 0,
+                                Transport_Status = "Available",
+                                Transport_Price = 1599,
+                                Transport_FuelCard = false
+
+                            },
                         });
                     context.SaveChanges();
 
@@ -364,7 +514,8 @@ namespace MVCTravelBookingISE.Data
 
                            Flight_Destination = "Johannesburg",
                            Flight_Departure = "CapeTown",
-                           Flight_Date =    DateTime.Now.AddDays(10),
+                           ToDate =    DateTime.Now.AddDays(10),
+                           FromDate =    DateTime.Now.AddDays(40),
                            Flight_Class = 'B',
                            Flight_Price = 4685,
                            FlightRules_Id = 1
@@ -379,7 +530,8 @@ namespace MVCTravelBookingISE.Data
 
                            Flight_Destination = "CapeTown",
                            Flight_Departure = "Johannesburg",
-                           Flight_Date =   DateTime.Now.AddDays(10),
+                           ToDate =   DateTime.Now.AddDays(10),
+                           FromDate =    DateTime.Now.AddDays(40),
                            Flight_Class = 'B',
                            Flight_Price = 4799,
                            FlightRules_Id = 3
@@ -391,7 +543,8 @@ namespace MVCTravelBookingISE.Data
 
                            Flight_Destination = "Johannesburg",
                            Flight_Departure = "Durban",
-                           Flight_Date =    DateTime.Now.AddDays(10),
+                           ToDate =    DateTime.Now.AddDays(10),
+                           FromDate =    DateTime.Now.AddDays(40),
                            Flight_Class = 'B',
                            Flight_Price = 4599,
                            FlightRules_Id = 2
@@ -402,7 +555,8 @@ namespace MVCTravelBookingISE.Data
 
                            Flight_Destination = "Durban",
                            Flight_Departure = "Cape Town",
-                           Flight_Date =    DateTime.Now.AddDays(10),
+                           ToDate =    DateTime.Now.AddDays(10),
+                           FromDate =    DateTime.Now.AddDays(40),
                            Flight_Class = 'B',
                            Flight_Price = 4599,
                            FlightRules_Id = 4
@@ -413,7 +567,8 @@ namespace MVCTravelBookingISE.Data
 
                            Flight_Destination = "Durban",
                            Flight_Departure = "Pretoria",
-                           Flight_Date =    DateTime.Now.AddDays(10),
+                           ToDate =    DateTime.Now.AddDays(10),
+                           FromDate =    DateTime.Now.AddDays(40),
                            Flight_Class = 'B',
                            Flight_Price = 4599,
                            FlightRules_Id= 5
@@ -424,7 +579,8 @@ namespace MVCTravelBookingISE.Data
 
                            Flight_Destination = "Hartbeesport",
                            Flight_Departure = "Durban",
-                           Flight_Date =    DateTime.Now.AddDays(15),
+                           ToDate =    DateTime.Now.AddDays(15),
+                           FromDate =    DateTime.Now.AddDays(40),
                            Flight_Class = 'F',
                            Flight_Price = 8599,
                            FlightRules_Id = 2
@@ -436,7 +592,8 @@ namespace MVCTravelBookingISE.Data
 
                            Flight_Destination = "Pretoria",
                            Flight_Departure = "CapeTown",
-                           Flight_Date =    DateTime.Now.AddDays(15),
+                           ToDate =    DateTime.Now.AddDays(15),
+                           FromDate =    DateTime.Now.AddDays(40),
                            Flight_Class = 'B',
                            Flight_Price = 4599,
                            FlightRules_Id = 1
@@ -448,7 +605,8 @@ namespace MVCTravelBookingISE.Data
 
                            Flight_Destination = "Pretoria",
                            Flight_Departure = "Durban",
-                           Flight_Date =    DateTime.Now.AddDays(15),
+                           ToDate =    DateTime.Now.AddDays(15),
+                           FromDate =    DateTime.Now.AddDays(40),
                            Flight_Class = 'B',
                            Flight_Price = 5599,
                            FlightRules_Id = 4
@@ -460,7 +618,8 @@ namespace MVCTravelBookingISE.Data
 
                            Flight_Destination = "Port Elizabeth",
                            Flight_Departure = "Johannesburg",
-                           Flight_Date =    DateTime.Now.AddDays(20),
+                           ToDate =    DateTime.Now.AddDays(20),
+                           FromDate =    DateTime.Now.AddDays(40),
                            Flight_Class = 'B',
                            Flight_Price = 5589,
                            FlightRules_Id = 4
@@ -471,7 +630,8 @@ namespace MVCTravelBookingISE.Data
 
                            Flight_Destination = "Port Elizabeth",
                            Flight_Departure = "Cape Town",
-                           Flight_Date =    DateTime.Now.AddDays(20),
+                           ToDate =    DateTime.Now.AddDays(20),
+                           FromDate =    DateTime.Now.AddDays(40),
                            Flight_Class = 'B',
                            Flight_Price = 4599,
                            FlightRules_Id= 4
@@ -483,7 +643,8 @@ namespace MVCTravelBookingISE.Data
 
                            Flight_Destination = "Port Elizabeth",
                            Flight_Departure = "Durban",
-                           Flight_Date =    DateTime.Now.AddDays(20),
+                           ToDate =   DateTime.Now.AddDays(20),
+                           FromDate =    DateTime.Now.AddDays(40),
                            Flight_Class = 'B',
                            Flight_Price = 4599,
                            FlightRules_Id = 2
@@ -494,7 +655,8 @@ namespace MVCTravelBookingISE.Data
                         {
                            Flight_Destination = "Cape Town",
                            Flight_Departure = "Queensland (Austraila)",
-                           Flight_Date =    DateTime.Now.AddDays(20),
+                           ToDate =    DateTime.Now.AddDays(20),
+                           FromDate =    DateTime.Now.AddDays(40),
                            Flight_Class = 'F',
                            Flight_Price = 8569,
                            FlightRules_Id = 2
@@ -504,7 +666,8 @@ namespace MVCTravelBookingISE.Data
                         {
                            Flight_Destination = "Cape Town",
                            Flight_Departure = "Queensland (Austraila)",
-                           Flight_Date =    DateTime.Now.AddDays(20),
+                           ToDate  =    DateTime.Now.AddDays(20),
+                           FromDate =    DateTime.Now.AddDays(40),
                            Flight_Class = 'B',
                            Flight_Price = 4599,
                            FlightRules_Id = 3
@@ -514,7 +677,8 @@ namespace MVCTravelBookingISE.Data
                         {
                            Flight_Destination = "Johannesburg",
                            Flight_Departure = "Queensland (Austraila)",
-                           Flight_Date =    DateTime.Now.AddDays(20),
+                            ToDate =   DateTime.Now.AddDays(20),
+                           FromDate =    DateTime.Now.AddDays(30),
                            Flight_Class = 'B',
                            Flight_Price = 4599,
                            FlightRules_Id = 2
@@ -524,7 +688,8 @@ namespace MVCTravelBookingISE.Data
                         {
                            Flight_Destination = "Johannesburg",
                            Flight_Departure = "Queensland (Austraila)",
-                           Flight_Date =    DateTime.Now.AddDays(20),
+                          ToDate =    DateTime.Now.AddDays(20),
+                          FromDate =    DateTime.Now.AddDays(30),
                            Flight_Class = 'E',
                            Flight_Price = 6899,
                            FlightRules_Id = 12
@@ -535,7 +700,7 @@ namespace MVCTravelBookingISE.Data
                         {
                            Flight_Destination = "Johannesburg",
                            Flight_Departure = "Queensland (Austraila)",
-                           Flight_Date =    DateTime.Now.AddDays(20),
+                         
                            Flight_Class = 'F',
                            Flight_Price = 8599,
                            FlightRules_Id = 8
@@ -545,7 +710,7 @@ namespace MVCTravelBookingISE.Data
                         {
                            Flight_Destination = "Port Elizabeth",
                            Flight_Departure = "Queensland (Austraila)",
-                           Flight_Date =    DateTime.Now.AddDays(20),
+                        
                            Flight_Class = 'B',
                            Flight_Price = 5599,
                            FlightRules_Id = 2
@@ -556,7 +721,7 @@ namespace MVCTravelBookingISE.Data
                         {
                            Flight_Destination = "Johannesburg",
                            Flight_Departure = "Hong Kong",
-                           Flight_Date =    DateTime.Now.AddDays(20),
+                          
                            Flight_Class = 'B',
                            Flight_Price = 5599,
                            FlightRules_Id = 1

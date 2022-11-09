@@ -133,9 +133,6 @@ namespace MVCTravelBookingISE.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(1)");
 
-                    b.Property<DateTime>("Flight_Date")
-                        .HasColumnType("datetime2");
-
                     b.Property<string>("Flight_Departure")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -146,6 +143,12 @@ namespace MVCTravelBookingISE.Migrations
 
                     b.Property<decimal>("Flight_Price")
                         .HasColumnType("decimal(10,2)");
+
+                    b.Property<DateTime>("FromDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("ToDate")
+                        .HasColumnType("datetime2");
 
                     b.HasKey("Flight_Id");
 
@@ -195,10 +198,6 @@ namespace MVCTravelBookingISE.Migrations
 
                     b.Property<int>("TripId")
                         .HasColumnType("int");
-
-                    b.Property<string>("UserId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("rating")
                         .HasColumnType("int");
@@ -252,6 +251,9 @@ namespace MVCTravelBookingISE.Migrations
 
                     b.Property<bool>("Transport_FuelCard")
                         .HasColumnType("bit");
+
+                    b.Property<decimal>("Transport_Price")
+                        .HasColumnType("decimal(18,2)");
 
                     b.Property<string>("Transport_Status")
                         .IsRequired()

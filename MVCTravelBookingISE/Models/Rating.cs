@@ -12,8 +12,7 @@ namespace MVCTravelBookingISE.Models
 
         public int rating { get; set; }
 
-       public string UserId { get; set; }
- 
+      
         public int TripId { get; set; }
         [ForeignKey("TripId")]
         public TripManagementModel tripManagement { get; set; }

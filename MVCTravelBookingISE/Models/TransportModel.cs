@@ -28,5 +28,7 @@ namespace MVCTravelBookingISE.Models
 
         public bool Transport_FuelCard { get; set; }
 
+        public decimal Transport_Price { get; set; }
+
     }
 }

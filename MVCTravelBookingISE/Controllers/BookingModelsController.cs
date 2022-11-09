@@ -69,7 +69,7 @@ namespace MVCTravelBookingISE.Controllers
         }
         public async Task<RedirectToActionResult> AddItemToBookingCart(int id)
         {
-            var item = await _accomodationService.GetAccomodationByIdAsync(id);
+            var item = await _accomodationService.GetByIdAsync(id);
             
             if (item != null)
             {
@@ -94,7 +94,7 @@ namespace MVCTravelBookingISE.Controllers
         }
         public async Task<IActionResult> RemoveItemFromCart(int id)
         {
-            var item = await _accomodationService.GetAccomodationByIdAsync(id);
+            var item = await _accomodationService.GetByIdAsync(id);
 
             if (item != null)
             {

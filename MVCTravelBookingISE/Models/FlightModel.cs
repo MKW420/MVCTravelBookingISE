@@ -20,7 +20,12 @@ namespace MVCTravelBookingISE.Models
 
         [Display(Name = "Flight Date and time")]
         [Required(ErrorMessage = "Date and time required")]
-        public DateTime Flight_Date { get; set; }
+        public DateTime FromDate { get; set; }
+
+
+        [Display(Name = "Flight Date and time")]
+        [Required(ErrorMessage = "Date and time required")]
+        public DateTime ToDate { get; set; }
 
         [Display(Name = "Flight Class")]
         [Required(ErrorMessage = "Flight class required")]

@@ -9,9 +9,13 @@
 
   <ItemGroup>
     <Compile Remove="Models\Account\**" />
+    <Compile Remove="Views\Main\**" />
     <Content Remove="Models\Account\**" />
+    <Content Remove="Views\Main\**" />
     <EmbeddedResource Remove="Models\Account\**" />
+    <EmbeddedResource Remove="Views\Main\**" />
     <None Remove="Models\Account\**" />
+    <None Remove="Views\Main\**" />
   </ItemGroup>
 
   <ItemGroup>

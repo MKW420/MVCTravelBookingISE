@@ -87,7 +87,8 @@ namespace MVCTravelBookingISE.Controllers
             {
                 Flight_Id = FlightDetails.Flight_Id,
                 Flight_Class = FlightDetails.Flight_Class,
-                Flight_Date = FlightDetails.Flight_Date,
+                ToDate = FlightDetails.ToDate,
+                FromDate = FlightDetails.FromDate,
                 Flight_Destination = FlightDetails.Flight_Destination,
                 Flight_Departure = FlightDetails.Flight_Departure,
                 Flight_Price = FlightDetails.Flight_Price,

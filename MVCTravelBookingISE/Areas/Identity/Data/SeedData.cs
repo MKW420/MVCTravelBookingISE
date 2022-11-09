@@ -109,6 +109,7 @@ namespace ContactManager.Data
                     if (!context.Roles.Any(r => r.Name == role))
                     {
                         await roleStore.CreateAsync(new IdentityRole(role));
+
                     }
 
                 }

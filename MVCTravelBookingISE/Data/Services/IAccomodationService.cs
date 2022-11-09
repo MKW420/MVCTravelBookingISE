@@ -8,9 +8,9 @@ namespace MVCTravelBookingISE.Data.Services
     {
       Task<AccomodationModel>GetAccomodationByIdAsync(int id);
 
-       // Task<Accomodation> AddNewAccomodationAsync(NewAccomdation data);
-        Task AddNewAccomodation(AccomodationModel data);
-        Task UpdateAccomodationAsync(AccomodationModel data);
+      // // Task<Accomodation> AddNewAccomodationAsync(NewAccomdation data);
+      //  Task AddNewAccomodation(AccomodationModel data);
+        //Task UpdateAccomodationAsync(AccomodationModel data);
     
     }
 

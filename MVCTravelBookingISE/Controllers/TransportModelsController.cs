@@ -23,8 +23,9 @@ namespace MVCTravelBookingISE.Controllers
             _service = service;
         }
 
-        
+
         // GET: TransportModels
+        [AllowAnonymous]
         public async Task<IActionResult> Index()
         {
             var allTranpsorts = await _service.GetAllAsync();

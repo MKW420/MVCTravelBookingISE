@@ -13,7 +13,7 @@ namespace MVCTravelBookingISE.Data.Reservations
         public AppDbContext _context { get; set; }
         public List<BookingAccoItem> AccoItems { get; set; }
 
-      //  public List<TransportBookingItem>  TransportItems { get; set; }
+        public List<TransportBookingItem>  TransportItems { get; set; }
 
         public List<FlightBookingItem> FlightBookingItems { get; set; }
 
@@ -121,7 +121,11 @@ namespace MVCTravelBookingISE.Data.Reservations
             return FlightBookingItems ?? (FlightBookingItems = _context.FlightBookingItem.Where(n => n.SessionId == SessionId).Include(n => n.Flight).ToList());
 
         }
-      
+        public List<TransportBookingItem> GetTransportBookingItems()
+        {
+            return TransportItems ?? (TransportItems = _context.TransportBookingItem.Where(n => n.SessionId == SessionId).Include(n => n.transport).ToList());
+
+        }
         public decimal GetBookingTotal() => _context.AccomodationBookingItem.Where(n => n.SessionId == SessionId).Select(n => n.Accomodation.Acco_Price).Sum();
 
 

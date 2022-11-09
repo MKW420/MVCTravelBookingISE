@@ -30,7 +30,7 @@ namespace MVCTravelBookingISE.Data.Services
                 dbFlight.Flight_Id = data.Flight_Id;
                 dbFlight.Flight_Departure = data.Flight_Departure;
                 dbFlight.Flight_Destination = data.Flight_Destination;
-                dbFlight.Flight_Date = data.Flight_Date;
+               
                 dbFlight.Flight_Class = data.Flight_Class;
                 dbFlight.Flight_Price = data.Flight_Price;
 
