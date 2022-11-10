@@ -22,6 +22,7 @@ namespace MVCTravelBookingISE.Controllers
         }
 
         // GET: FlightModels
+        [AllowAnonymous]
         public async Task<IActionResult> Index()
         {
             var data = await _service.GetAllAsync(n => n.FlightRule);
@@ -29,7 +30,8 @@ namespace MVCTravelBookingISE.Controllers
         }
 
         // GET: FlightModels/Details/5
-        
+
+        [AllowAnonymous]
         public async Task<IActionResult> Details(int id)
         {
             var FlightDetails = await _service.GetFlightsByIdAsync(id);
