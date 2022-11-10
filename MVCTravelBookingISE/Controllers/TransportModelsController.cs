@@ -45,6 +45,7 @@ namespace MVCTravelBookingISE.Controllers
         {
             return View();
         }
+        [AllowAnonymous]
         public async Task<IActionResult> Edit(int id)
         {
             var TransInfo = await _service.GetTransportByIdAsync(id);
@@ -65,7 +66,8 @@ namespace MVCTravelBookingISE.Controllers
 
         [HttpPost]
 
-        // GET: AccomodationModels/Edit/5
+        // GET: TransportModels/Edit/5
+        [AllowAnonymous]
         public async Task<IActionResult> Edit(int id, TransportModel transport)
         {
 
@@ -84,58 +86,59 @@ namespace MVCTravelBookingISE.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        
+
 
         // GET: TransportModels/Edit/5
-        public async Task<IActionResult> UpdateRating(int id)
-        {
-            var transportDetials = await _service.GetTransportByIdAsync(id);
-            if (transportDetials == null) return View("Not found");
+        //public async Task<IActionResult> UpdateRating(int id)
+        //{
+        //    var transportDetials = await _service.GetTransportByIdAsync(id);
+        //    if (transportDetials == null) return View("Not found");
 
-            var response = new TransportModel()
-            {
-                Transport_Id = transportDetials.Transport_Id,
-                Destination_point = transportDetials.Destination_point,
-                Pick_Up_Point = transportDetials.Pick_Up_Point,
-                Transport_ratings = transportDetials.Transport_ratings,
-                Transport_Status = transportDetials.Transport_Status,
-                Transport_Type = transportDetials.Transport_Type
-            };
+        //    var response = new TransportModel()
+        //    {
+        //        Transport_Id = transportDetials.Transport_Id,
+        //        Destination_point = transportDetials.Destination_point,
+        //        Pick_Up_Point = transportDetials.Pick_Up_Point,
+        //        Transport_ratings = transportDetials.Transport_ratings,
+        //        Transport_Status = transportDetials.Transport_Status,
+        //        Transport_Type = transportDetials.Transport_Type
+        //    };
 
-            
-            return View(response);
-        }
+
+        //    return View(response);
+        //}
 
         // POST: TransportModels/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> UpdateRating(int id, [Bind("Transport_Id,Pick_Up_Point,Delivery_point,Transport_Type")] TransportModel transportModel)
-        {
-           
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public async Task<IActionResult> UpdateRating(int id, [Bind("Transport_Id,Pick_Up_Point,Delivery_point,Transport_Type")] TransportModel transportModel)
+        //{
 
-            if (!ModelState.IsValid)
-            {
-                return View(transportModel);
-            }
-            await _service.UpdateAsync(id,transportModel);
-            return View(transportModel);
-        }
+
+        //    if (!ModelState.IsValid)
+        //    {
+        //        return View(transportModel);
+        //    }
+        //    await _service.UpdateAsync(id,transportModel);
+        //    return View(transportModel);
+        //}
 
         // GET: TransportModels/Delete/5
-       
+
         // POST: TransportModels/Delete/5
         //[HttpPost, ActionName("Delete")]
         //[ValidateAntiForgeryToken]
-       
-        public async Task<IActionResult> Filter(string searchPick, string DesSearch)
+
+        [AllowAnonymous]
+        public async Task<IActionResult> Filter(string str)
         {
             var allTransport = await _service.GetAllAsync();
 
-            if (searchPick != null && DesSearch != null)
+            if (str != null)
             {
-                var filterResult = allTransport.Where(n => n.Pick_Up_Point.Equals(searchPick) && n.Destination_point.Equals(DesSearch));
+                var filterResult = allTransport.Where(n => n.Pick_Up_Point.Equals(str));
                 return View("Index", filterResult);
 
             }

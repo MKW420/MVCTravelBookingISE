@@ -127,7 +127,7 @@ namespace MVCTravelBookingISE.Data.Reservations
 
         }
         public decimal GetBookingTotal() => _context.AccomodationBookingItem.Where(n => n.SessionId == SessionId).Select(n => n.Accomodation.Acco_Price).Sum();
-
+      //  public decimal GetBookingTotal() => _context.TransportBookingItem.Where(n => n.SessionId == SessionId).Select(n => n.transport.Transport_Price).Sum();
 
     }
 }

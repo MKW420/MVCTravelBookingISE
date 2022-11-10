@@ -5,7 +5,14 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <head>
-  
+
+    <title>Home Page</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/main.css" />
 </head>
 
 
@@ -16,25 +23,14 @@
             <div class="row">
                 <div class="col">
                     <div class="mb-2">                   
-                               <input type="text" class="form-control" list="origin-options" id="origin-input" placeholder="Pick up point" aria-describedby="origin-label" />
+                               <input type="text" class="form-control" list="origin-options" id="origin-input" placeholder="Search..." aria-describedby="origin-label" />
                             
                        
                     </div>
                 </div>
                                                                   
                
-                <div class="col">
-                    <div class="mb-2">
-                        <div class="input-group">
-
-                            <input type="text" class="form-control" list="origin-options" id="origin-input" placeholder="Destination point" aria-describedby="origin-label" />
-                            <datalist id="origin-options"></datalist>
-
-                        </div>
-
-                    </div>
-                   
-                </div>
+                
                 <div class="col">
                     <div class="mb-2 align-content-center">
                         <a class="btn btn-primary text-white " asp-controller="TransportModels" asp-action="Filter">
@@ -55,13 +51,16 @@
 </form>
 
 
-<div class="container z-depth-1 my-5 p-5">
+    <!-- Section -->
+    
+
+<div class="container">
 
     <!-- Section -->
     <section>
 
         <h1 class="font-weight-bold text-center dark-grey-text pb-2">A Few Easy Steps to Reserve a booking!</h1>
-        
+
         <p class="lead text-center text-muted pt-2 pb-3 mb-5">We are so proud of our product. It's really easy to create a landing page for your product.</p>
 
         <div class="row dark-grey-text">
@@ -69,7 +68,7 @@
             <div class="col-md-4 col-xl-4 mb-4">
                 <div class="media">
                     <div class="mr-4">
-                        <span class="text-primary">
+                        <span class="text-dark">
                             <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
                                 <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
                                 <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
@@ -87,7 +86,7 @@
             <div class="col-md-4 col-xl-4 mb-4">
                 <div class="media">
                     <div class="mr-4">
-                        <span class="text-danger">
+                        <span class="text-dark">
                             <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-check-circle" viewBox="0 0 16 16">
                                 <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
                                 <path d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05z" />
@@ -104,9 +103,11 @@
             <div class="col-md-4 col-xl-4 mb-4">
                 <div class="media">
                     <div class="mr-4">
-                        <span class="text-info"><svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-book-fill" viewBox="0 0 16 16">
-  <path d="M8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783z"/>
-</svg></span>
+                        <span class="text-dark">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-book-fill" viewBox="0 0 16 16">
+                                <path d="M8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783z" />
+                            </svg>
+                        </span>
                     </div>
                     <div class="media-body">
                         <h4 class="font-weight-bold">Step Three</h4>
@@ -115,98 +116,29 @@
                 </div>
             </div>
 
-            <div class="col-md-4 col-xl-4 mb-4">
-                <div class="media">
-                    <div class="mr-4">
-                        <span class="text-warning">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-airplane-fill" viewBox="0 0 16 16">
-                                <path d="M6.428 1.151C6.708.591 7.213 0 8 0s1.292.592 1.572 1.151C9.861 1.73 10 2.431 10 3v3.691l5.17 2.585a1.5 1.5 0 0 1 .83 1.342V12a.5.5 0 0 1-.582.493l-5.507-.918-.375 2.253 1.318 1.318A.5.5 0 0 1 10.5 16h-5a.5.5 0 0 1-.354-.854l1.319-1.318-.376-2.253-5.507.918A.5.5 0 0 1 0 12v-1.382a1.5 1.5 0 0 1 .83-1.342L6 6.691V3c0-.568.14-1.271.428-1.849Z" />
-                            </svg>>
-                        </span>
-                    </div>
-                    <div class="media-body">
-                        <h4 class="font-weight-bold">Step Four</h4>
-                        <p class="text-muted">Get ready to for your trip! Make sure your passport is with you and the your flight ticket has been sent to you in time!</p>
-                    </div>
-                </div>
-            </div>
 
-           
-            </div>
 
         </div>
 
+   </div>
     </section>
-    <!-- Section -->
+</div>  
 
-</div>
+    <div class="container">
+<div class="row ">
 
-
-<div class="container px-4 px-lg-5">
-
-    <!-- Heading Row-->
-    <div class="row gx-4 gx-lg-5 align-items-center my-5">
-        
-    </div>
-    <!-- Call to Action-->
-
-    <!-- Content Row-->
-    <div class="card-group">
-        <div class="card">
-            <img class="card-img-top" src="https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="Card image cap">
-            <div class="card-body">
-                <h5 class="card-title">Car Rentals</h5>
-                <p class="card-text">Free Cancellation available on most cars.</p>
-                <a href="#" class="btn btn-outline-primary">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-car-front-fill" viewBox="0 0 16 16">
-                        <path fill-rule="evenodd" d="M2.52 3.515A2.5 2.5 0 0 1 4.82 2h6.362c1 0 1.904.596 2.298 1.515l.792 1.848c.075.175.21.319.38.404.5.25.855.715.965 1.262l.335 1.679c.033.161.049.325.049.49v.413c0 .814-.39 1.543-1 1.997V13.5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-1.338c-1.292.048-2.745.088-4 .088s-2.708-.04-4-.088V13.5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-1.892c-.61-.454-1-1.183-1-1.997v-.413a2.5 2.5 0 0 1 .049-.49l.335-1.68c.11-.546.465-1.012.964-1.261a.807.807 0 0 0 .381-.404l.792-1.848ZM3 10a1 1 0 1 0 0-2 1 1 0 0 0 0 2Zm10 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2ZM6 8a1 1 0 0 0 0 2h4a1 1 0 1 0 0-2H6ZM2.906 5.189l.956-1.913A.5.5 0 0 1 4.309 3h7.382a.5.5 0 0 1 .447.276l.956 1.913a.51.51 0 0 1-.497.731c-.91-.073-3.35-.17-4.597-.17-1.247 0-3.688.097-4.597.17a.51.51 0 0 1-.497-.731Z" />
-                    </svg> Go somewhere
-                </a>
-            </div>
-        </div>
-        <div class="card">
-            <img class="card-img-top" src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80" alt="Card image cap">
-            <div class="card-body">
-                <h5 class="card-title">Shuttle services</h5>
-                <p class="card-text">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-headset" viewBox="0 0 16 16">
-                        <path d="M8 1a5 5 0 0 0-5 5v1h1a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a6 6 0 1 1 12 0v6a2.5 2.5 0 0 1-2.5 2.5H9.366a1 1 0 0 1-.866.5h-1a1 1 0 1 1 0-2h1a1 1 0 0 1 .866.5H11.5A1.5 1.5 0 0 0 13 12h-1a1 1 0 0 1-1-1V8a1 1 0 0 1 1-1h1V6a5 5 0 0 0-5-5z" />
-                    </svg>24/7 customer service.
-                </p>
-                <a href="#" class="btn btn-outline-primary"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-car-front-fill" viewBox="0 0 16 16">
-  <path fill-rule="evenodd" d="M2.52 3.515A2.5 2.5 0 0 1 4.82 2h6.362c1 0 1.904.596 2.298 1.515l.792 1.848c.075.175.21.319.38.404.5.25.855.715.965 1.262l.335 1.679c.033.161.049.325.049.49v.413c0 .814-.39 1.543-1 1.997V13.5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-1.338c-1.292.048-2.745.088-4 .088s-2.708-.04-4-.088V13.5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-1.892c-.61-.454-1-1.183-1-1.997v-.413a2.5 2.5 0 0 1 .049-.49l.335-1.68c.11-.546.465-1.012.964-1.261a.807.807 0 0 0 .381-.404l.792-1.848ZM3 10a1 1 0 1 0 0-2 1 1 0 0 0 0 2Zm10 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2ZM6 8a1 1 0 0 0 0 2h4a1 1 0 1 0 0-2H6ZM2.906 5.189l.956-1.913A.5.5 0 0 1 4.309 3h7.382a.5.5 0 0 1 .447.276l.956 1.913a.51.51 0 0 1-.497.731c-.91-.073-3.35-.17-4.597-.17-1.247 0-3.688.097-4.597.17a.51.51 0 0 1-.497-.731Z"/>
-</svg> Go somewhere</a>
-            </div>
-        </div>
-        <div class="card">
-            <img class="card-img-top" src="https://images.unsplash.com/photo-1615929362369-4af8423ebd68?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" alt="Card image cap">
-            <div class="card-body">
-                <h5 class="card-title">Other transport options</h5>
-                <p class="card-text">Other well known transport services available.</p>
-                <a href="#" class="btn btn-outline-primary">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-car-front-fill" viewBox="0 0 16 16">
-                        <path fill-rule="evenodd" d="M2.52 3.515A2.5 2.5 0 0 1 4.82 2h6.362c1 0 1.904.596 2.298 1.515l.792 1.848c.075.175.21.319.38.404.5.25.855.715.965 1.262l.335 1.679c.033.161.049.325.049.49v.413c0 .814-.39 1.543-1 1.997V13.5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-1.338c-1.292.048-2.745.088-4 .088s-2.708-.04-4-.088V13.5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-1.892c-.61-.454-1-1.183-1-1.997v-.413a2.5 2.5 0 0 1 .049-.49l.335-1.68c.11-.546.465-1.012.964-1.261a.807.807 0 0 0 .381-.404l.792-1.848ZM3 10a1 1 0 1 0 0-2 1 1 0 0 0 0 2Zm10 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2ZM6 8a1 1 0 0 0 0 2h4a1 1 0 1 0 0-2H6ZM2.906 5.189l.956-1.913A.5.5 0 0 1 4.309 3h7.382a.5.5 0 0 1 .447.276l.956 1.913a.51.51 0 0 1-.497.731c-.91-.073-3.35-.17-4.597-.17-1.247 0-3.688.097-4.597.17a.51.51 0 0 1-.497-.731Z" />
-                    </svg> Go somewhere
-                </a>
-            </div>
-        </div>
-    </div>
-
-    <div class="alert alert-primary" role="alert">
-        Get 10% off your next booking after rating your experience!  <a href="#" class="alert-link">Check available Rewards</a>
-    </div>
-  <div class="row" style="margin-top:30px;">
 @foreach (var item in Model) {
 
-
-                <div class="container ">
-                <div class="row ">
-                <div class=" col col-sm border-primary mb-3">
-                            <div class="card card-margin w-75">
-                       
-                            <div class="col-md-12 bg-transparent">
+    <div class="col-lg-6 mb-4 ">
+               
+          <div class="card-deck">
+            
+                 <div class="card bg-dark w-50">
+                              
+                            
+                           
                                 <div class="card-header no-border">
-                                    <h5 class="card-title text-black">
+                                    <h5 class="card-title text-white">
                                         <strong>
                                             <span class="widget-49-pro-title">
 
@@ -217,11 +149,12 @@
                                         </strong>
 
                            
-                          </h5>
-
-                   </div>
-                                 <div class="col-md-12">
-                                <div class="card-body pt-0">
+                                    </h5>
+                          
+                         
+                                </div>
+                               
+                                <div class="card-body text-white">
                                     <div class="widget-49">
                                         <div class="widget-49-title-wrapper">
                                            
@@ -244,7 +177,7 @@
                                                     }
                                             </div>
                                         
-                                        </div>
+                                      
                                 <p class="card-text">
                                     @if (item.Transport_ratings == 5)
                                     {
@@ -275,28 +208,31 @@
                                     {
                                     <span class="text-warning">Be the first one to rate!</span>
                                     }
-                                </p>
-                                     <div class="widget-49-meeting-info">
+                                  </p>
+                                   <div class="widget-49-meeting-info">
                                               <strong>
                                                         <span class="widget-49-pro-title">
                                                             To: @Html.DisplayFor(modelItem => item.Destination_point)
                                                         </span>
                                               </strong>  
 
-                                            </div>
+                                      </div>
                                         <div class="widget-49-meeting-action">
-                                            <a href="#" class="btn btn-sm btn-primary">More information</a>
+                                            <a  asp-action="Details"  asp-route-id="@item.Transport_Id" class="btn btn-sm btn-primary">More information</a>
                                              
                                         </div>
                                     </div>
+                                    </div>
                                 </div>
                                 </div>
-                            </div>
-                        </div>
-                     </div>
-                   </div>
+                  </div>
+          </div>
+                     
+                  
                     
-                </div>
-       
-}
-  </div>
+         
+      }
+ </div>
+ </div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>

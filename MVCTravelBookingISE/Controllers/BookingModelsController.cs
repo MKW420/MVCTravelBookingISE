@@ -45,19 +45,19 @@ namespace MVCTravelBookingISE.Controllers
             //_bookingService = bookingService;
 
         }
-
+        [AllowAnonymous]
         public IActionResult BookingCart()
         {
 
             var items = _bookingReserved.GetBookingAccoItem();
 
-           // var TransItems = _bookingReserved.GetTransportBookingItems();
+           var TransItems = _bookingReserved.GetTransportBookingItems();
 
             var FlightItems = _bookingReserved.GetFlightBookingItems();
 
 
             _bookingReserved.AccoItems = items;
-            //_bookingReserved.TransportItems = TransItems;
+            _bookingReserved.TransportItems = TransItems;
             _bookingReserved.FlightBookingItems = FlightItems;
 
             var rep = new BookingVModel()
@@ -68,9 +68,11 @@ namespace MVCTravelBookingISE.Controllers
 
             return View(rep);
         }
+
+        [AllowAnonymous]
         public async Task<RedirectToActionResult> AddItemToBookingCart(int id)
         {
-            var item = await _accomodationService.GetByIdAsync(id);
+            var item = await _accomodationService.GetAccomodationByIdAsync(id);
             
             if (item != null)
             {
@@ -80,6 +82,7 @@ namespace MVCTravelBookingISE.Controllers
             return RedirectToAction(nameof(BookingCart));
 
         }
+        [AllowAnonymous]
         public async Task<RedirectToActionResult> AddFlightItemToBookingCart(int id)
         {
             var item = await _flightService.GetFlightsByIdAsync(id);
@@ -108,6 +111,7 @@ namespace MVCTravelBookingISE.Controllers
             return RedirectToAction(nameof(BookingCart));
 
         }
+        [AllowAnonymous]
         public async Task<IActionResult> RemoveItemFromCart(int id)
         {
             var item = await _accomodationService.GetByIdAsync(id);

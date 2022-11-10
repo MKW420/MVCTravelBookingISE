@@ -142,20 +142,18 @@ namespace MVCTravelBookingISE.Controllers
             if (ModelState.IsValid)
             {
                 await _service.AddSync(accomodationModel);
-
-
                 return RedirectToAction(nameof(Index));
             }
             return View(accomodationModel);
         }
 
         [HttpGet]
-
+           [AllowAnonymous]
 
 
         public async Task<IActionResult> Edit(int id)
         {
-             var accoInformation = await _service.GetByIdAsync(id);
+             var accoInformation = await _service.GetAccomodationByIdAsync(id);
             if (accoInformation == null) return View("NotFound");
             return View(accoInformation);
         }
@@ -164,7 +162,7 @@ namespace MVCTravelBookingISE.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
 
         [HttpPost]
-
+        [AllowAnonymous]
         public async Task<IActionResult> Edit(int id, [Bind("Acco_Id,Acco_Name,Acco_Destination,Acco_Rooms,Acco_Bathrooms,Acco_Distance,Acco_Rate,Acco_Type,Acco_Price")] AccomodationModel accomodation)
         {
 
