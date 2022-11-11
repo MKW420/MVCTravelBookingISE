@@ -3,10 +3,19 @@
 @{
     ViewData["Title"] = "Details";
 }
+<style>
+    .detailed {
+        padding-top: 60px;
+    }
 
-<h1>Details</h1>
+    .btns{
+        padding-top: 30px;
+    }
+</style>
 
-<div class="card text-center w-75">
+<h1 class="detailed display-6">Flight Details</h1>
+
+<div class="card text-center border-2 w-75">
    
     <dl class="card-body">
        <h5 class="card-title"></h5>
@@ -34,7 +43,7 @@
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.FlightRule.Flight_Descrip)
         </dd>
-      
+
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Flight_Price)
         </dt>
@@ -45,8 +54,8 @@
     </dl>
 
 </div>
-<div>
-    <a class="btn btn-primary btn-md ml-0" data-toggle="popover"
+<div class="btns">
+    <a class="btn btn-dark btn-md ml-0" data-toggle="popover"
        asp-controller="BookingModels"
        asp-action="AddFlightItemToBookingCart"
        asp-route-id="@Model?.Flight_Id">
@@ -54,6 +63,6 @@
         Reserve
         (Price @Model?.Flight_Price.ToString("c")
     </a>
-    <a class="btn btn-dark"  asp-action="Edit" asp-route-id="@Model?.Flight_Id">Edit</a> |
+    <!--a class="btn btn-dark"  asp-action="Edit" asp-route-id="@Model?.Flight_Id">Edit</!--a--> |
     <a class="btn btn-primary" asp-action="Index">Back to List</a>
 </div>

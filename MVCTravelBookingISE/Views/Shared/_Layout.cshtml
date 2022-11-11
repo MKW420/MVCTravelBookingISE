@@ -8,13 +8,20 @@
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/MVCTravelBookingISE.styles.css" asp-append-version="true" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/flatly/bootstrap.min.css" integrity="sha384-zEpdAL7W11eTKeoBJK1g79kgl9qjP7g84KfK3AZsuonx38n8ad+f5ZgXtoSDxPOh" crossorigin="anonymous">
+
+
+    <style>
+        body {
+            margin: 0px;
+        }
+    </style>
 </head>
 <body>
   
         <!-- Navbar -->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark " >
             <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="FlightModels" asp-action="Index">
+                <a class="navbar-brand" href="">
                   <img src="~/img/A letter Logo design(4).png"  style=" width:75px"/> Unlimited Travels
                 </a>
                 <button class="navbar-toggler"
@@ -32,7 +39,7 @@
                     <ul class="navbar-nav me-auto">
 
                         <li class="nav-item ">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" href="">
                                
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house-door" viewBox="0 0 16 16">
                                     <path d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4.5a.5.5 0 0 0 .5-.5v-4h2v4a.5.5 0 0 0 .5.5H14a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146zM2.5 14V7.707l5.5-5.5 5.5 5.5V14H10v-4a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v4H2.5z" />
@@ -74,7 +81,7 @@
 
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" id="navbarDropdown" role="button" data-toggle="button" aria-haspopup="true" aria-expanded="false">
+                            <a class="nav-link" data-bs-toggle="dropdown" href="#" id="navbarDropdown" role="button" data-toggle="button" aria-haspopup="true" aria-expanded="false">
                                 
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-boxes" viewBox="0 0 16 16">
                                     <path d="M7.752.066a.5.5 0 0 1 .496 0l3.75 2.143a.5.5 0 0 1 .252.434v3.995l3.498 2A.5.5 0 0 1 16 9.07v4.286a.5.5 0 0 1-.252.434l-3.75 2.143a.5.5 0 0 1-.496 0l-3.502-2-3.502 2.001a.5.5 0 0 1-.496 0l-3.75-2.143A.5.5 0 0 1 0 13.357V9.071a.5.5 0 0 1 .252-.434L3.75 6.638V2.643a.5.5 0 0 1 .252-.434L7.752.066ZM4.25 7.504 1.508 9.071l2.742 1.567 2.742-1.567L4.25 7.504ZM7.5 9.933l-2.75 1.571v3.134l2.75-1.571V9.933Zm1 3.134 2.75 1.571v-3.134L8.5 9.933v3.134Zm.508-3.996 2.742 1.567 2.742-1.567-2.742-1.567-2.742 1.567Zm2.242-2.433V3.504L8.5 5.076V8.21l2.75-1.572ZM7.5 8.21V5.076L4.75 3.504v3.134L7.5 8.21ZM5.258 2.643 8 4.21l2.742-1.567L8 1.076 5.258 2.643ZM15 9.933l-2.75 1.571v3.134L15 13.067V9.933ZM3.75 14.638v-3.134L1 9.933v3.134l2.75 1.571Z" />
@@ -84,7 +91,7 @@
                             <div class="dropdown-menu" aria-labelledby="navbarDropDown">
                                 <a class="dropdown-item" asp-controller="FlightModels" asp-action="Index">Flights</a>
                                 <a class="dropdown-item" asp-controller="AccomodationModels" asp-action="Index">Accomodation</a>
-                                <a class="dropdown-item" asp-controller="BookingModels" asp-action="Index">Booking</a>
+                                <a class="dropdown-item" asp-controller="BookingAccoItem" asp-action="Index">Booking</a>
                                 <a class="dropdown-item" asp-controller="TransportModels" asp-action="Index">Transportation</a>
 
                                 <div class="dropdown-divider"></div>
@@ -108,10 +115,9 @@
                       
 
                     </ul>
-                <ul class="navbar-nav">
-                    @await Component.InvokeAsync("BookingReservedCartSummary")
+                    
 
-                </ul>
+            
 
                 <!--
                 <form class="d-flex" asp-controller="AccomodationModels" asp-action="Filter">
@@ -201,16 +207,16 @@
                             Booking Options
                         </h6>
                         <p>
-                            <a href="#!" class="text-reset">Accomodation</a>
+                            <a asp-controller="AccomodationModels" asp-action="Index" class="text-reset text-decoration-none">Accomodation</a>
                         </p>
                         <p>
-                            <a href="#!" class="text-reset">Transport</a>
+                            <a class="text-reset text-decoration-none" asp-controller="TransportModels" asp-action="Index">Transport</a>
                         </p>
                         <p>
-                            <a href="#" class="text-reset">Flights</a>
+                            <a class="text-reset text-decoration-none" asp-controller="FlightModel" asp-action="Index">Flights</a>
                         </p>
                         <p>
-                            <a href="#!" class="text-reset">Dashboard</a>
+                            <a  class="text-reset text-decoration-none" asp-controller="DashboardModels" asp-action="Index">Dashboard</a>
                         </p>
                     </div>
                     <!-- Grid column -->
@@ -221,16 +227,16 @@
                             Useful links
                         </h6>
                         <p>
-                            <a href="#!" class="text-reset">Pricing</a>
+                            <a href="#!" class="text-reset text-decoration-none">Pricing</a>
                         </p>
                         <p>
-                            <a href="#!" class="text-reset">Settings</a>
+                            <a href="#!" class="text-reset text-decoration-none">Settings</a>
                         </p>
                         <p>
-                            <a href="#!" class="text-reset">Orders</a>
+                            <a href="#!" class="text-reset text-decoration-none">Orders</a>
                         </p>
                         <p>
-                            <a href="#!" class="text-reset">Help</a>
+                            <a href="#!" class="text-reset text-decoration-none">Help</a>
                         </p>
                     </div>
                     <!-- Grid column -->
@@ -241,7 +247,7 @@
                         <p><i class="fas fa-home me-3"></i> Vanderbijlpark, GP 2100, RSA</p>
                         <p>
                             <i class="fas fa-envelope me-3"></i>
-                            info@example.com
+                            info@unlimitedtravels.net
                         </p>
                         <p><i class="fas fa-phone me-3"></i> + 27 761 6847 25</p>
                         <p><i class="fas fa-print me-3"></i> + 27 722 8033 14</p>

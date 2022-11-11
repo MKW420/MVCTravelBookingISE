@@ -5,6 +5,14 @@
 }
 <head>
 
+    <!--link rel="stylesheet" href="~/css/main.css"/-->
+
+    <style>
+        .alert{
+            padding: 30px;
+        }
+    </style>
+
 </head>
 
 
@@ -29,7 +37,7 @@
 </section>*@
 
 
-    <div class="alert alert-dismissible alert-info">
+    <div class="alert alert-dismissible alert-info py-3">
         <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
         <strong>Cheap and affordable Flights</strong> and check out the Flight Rules<a href="FlightRulesModels/Index" class="alert-link"> Check Now!</a>.
     </div>
@@ -50,28 +58,21 @@
                     <strong><label class="form-check-label">Multi-City</label></strong>
                     <input type="radio" class="form-check-input" />
                 </div>
-                
-                
-
-                <div class="col">
-                    <div class="mb-2">
-                   
-                       <select class="form-select"
-                        id="travel-class-select"
-                        aria-describedby="travel-class-label">
-                        <option value="ECONOMY">Economy</option>
-                        <option value="PREMIUM_ECONOMY">Premium Economy</option>
-                        <option value="BUSINESS">Business</option>
-                        <option value="FIRST">First</option>
-                       </select>
-                    </div>
-                </div>
-                
-             </div>
-         </div>
       
+
+
             </div>
+        </div>
        
+    </div>
+
+
+
+
+
+
+
+
     <div class="card border-2  ">
         <div class="card-body ">
 
@@ -105,13 +106,28 @@
                     </div>
                    
                 </div>
+
+                <div class="col">
+                    <div class="mb-2">
+
+                        <select class="form-select"
+                                id="travel-class-select"
+                                aria-describedby="travel-class-label">
+                            <option value="ECONOMY">Economy</option>
+                            <option value="PREMIUM_ECONOMY">Premium Economy</option>
+                            <option value="BUSINESS">Business</option>
+                            <option value="FIRST">First</option>
+                        </select>
+                    </div>
+                </div>
+
                 <div class="col-sm">
                  
 
                    
                     <div class="mb-2">
                         <div class="input-group">
-                            <label for="adults-input" class="input-group-text">Date</label>
+                            <label for="adults-input" class="input-group-text">Flight Date</label>
                             <input type="date"
                                    min="0"
                                    class="form-control"
