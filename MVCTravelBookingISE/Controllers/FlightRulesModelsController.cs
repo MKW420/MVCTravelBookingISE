@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -22,13 +23,14 @@ namespace MVCTravelBookingISE.Controllers
         }
 
         // GET: FlightRulesModels
+        [AllowAnonymous]
         public async Task<IActionResult> Index()
         {
             var data = await _service.GetAllAsync();
             return View(data);
 
         }
-
+        [AllowAnonymous]
         // GET: FlightRulesModels/Details/5
         public async Task<IActionResult> Details(int id)
         {
@@ -42,7 +44,7 @@ namespace MVCTravelBookingISE.Controllers
 
             return View(FlightRulesDetails);
         }
-        
+        [AllowAnonymous]
 
         // GET: FlightRulesModels/Create
         public IActionResult Create()
@@ -55,6 +57,7 @@ namespace MVCTravelBookingISE.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [AllowAnonymous]
         public async Task<IActionResult> Create([Bind("FlightRules_Id,Flight_Descrip,Flight_Name")] FlightRulesModel flightRulesModel)
         {
             if (ModelState.IsValid)
@@ -66,7 +69,7 @@ namespace MVCTravelBookingISE.Controllers
             }
             return View(flightRulesModel);
         }
-
+        [AllowAnonymous]
         // GET: FlightRulesModels/Edit/5
         public async Task<IActionResult> Edit(int id)
         {
@@ -90,6 +93,7 @@ namespace MVCTravelBookingISE.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [AllowAnonymous]
         public async Task<IActionResult> Edit(int id, [Bind("FlightRules_Id,Flight_Descrip,Flight_Name")] FlightRulesModel flightRulesModel)
         {
             if (id != flightRulesModel.FlightRules_Id) return View("Not found");

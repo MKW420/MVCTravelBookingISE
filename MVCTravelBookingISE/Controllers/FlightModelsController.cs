@@ -44,6 +44,7 @@ namespace MVCTravelBookingISE.Controllers
 
             return View(FlightDetails);
         }
+        [AllowAnonymous]
         public async Task<IActionResult> Filter(string searchDes, string searchDep, DateTime dateflight)
         {
             var allTransport = await _service.GetAllAsync();
@@ -57,6 +58,7 @@ namespace MVCTravelBookingISE.Controllers
             return View("Index", allTransport);
         }
         // GET: FlightModels/Create
+        [AllowAnonymous]
         public IActionResult Create()
         {
 
@@ -68,6 +70,7 @@ namespace MVCTravelBookingISE.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [AllowAnonymous]
         public async Task<IActionResult> Create([Bind("Flight_Id,Flight_Destination,Flight_Departure,Flight_Date,Flight_Class,Flight_Rules_Id")] FlightModel flightModel)
         {
             if (ModelState.IsValid)
@@ -81,6 +84,7 @@ namespace MVCTravelBookingISE.Controllers
         }
 
         // GET: FlightModels/Edit/5
+        [AllowAnonymous]
         public async Task<IActionResult> Edit(int id)
         {
             var FlightDetails = await _service.GetFlightsByIdAsync(id);
@@ -103,7 +107,7 @@ namespace MVCTravelBookingISE.Controllers
         }
 
         [HttpPost]
-
+        [AllowAnonymous]
         // GET: AccomodationModels/Edit/5
         public async Task<IActionResult> Edit(int id, FlightModel flight)
         {
@@ -121,6 +125,7 @@ namespace MVCTravelBookingISE.Controllers
 
 
         // GET: FlightModels/Delete/5
+        [AllowAnonymous]
         public async Task<IActionResult> Delete(int id)
         {
             var flightModel = await _service.GetFlightsByIdAsync(id);
@@ -136,6 +141,7 @@ namespace MVCTravelBookingISE.Controllers
         // POST: FlightModels/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [AllowAnonymous]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var flightModel = await _service.GetFlightsByIdAsync(id);

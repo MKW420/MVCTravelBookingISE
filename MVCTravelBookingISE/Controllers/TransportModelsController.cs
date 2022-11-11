@@ -16,7 +16,7 @@ namespace MVCTravelBookingISE.Controllers
     public class TransportModelsController : Controller
     {
         private readonly ITransportService _service;
-     
+        
         public TransportModelsController( ITransportService service)
         {
            
@@ -41,6 +41,7 @@ namespace MVCTravelBookingISE.Controllers
         }
 
         // GET: TransportModels/Create
+        [AllowAnonymous]
         public IActionResult Create()
         {
             return View();
@@ -65,6 +66,7 @@ namespace MVCTravelBookingISE.Controllers
         }
 
         [HttpPost]
+
 
         // GET: TransportModels/Edit/5
         [AllowAnonymous]
@@ -144,6 +146,7 @@ namespace MVCTravelBookingISE.Controllers
             }
             return View("Index", allTransport);
         }
+        [AllowAnonymous]
         public async Task<IActionResult> FilterShuttle()
         {
             var allTransport = await _service.GetAllAsync();
@@ -156,6 +159,7 @@ namespace MVCTravelBookingISE.Controllers
             }
             return View("Index", allTransport);
         }
+        [AllowAnonymous]
         public async Task<IActionResult> FilterRental()
         {
             var allTransport = await _service.GetAllAsync();

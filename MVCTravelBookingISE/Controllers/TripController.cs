@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using MVCTravelBookingISE.Data;
 using MVCTravelBookingISE.Data.Services;
@@ -16,6 +17,7 @@ namespace MVCTravelBookingISE.Controllers
         {
           _service = service;
         }
+        [AllowAnonymous]
         public async Task<IActionResult> Index()
         {
         //   var id = User.Identity.Get
@@ -24,15 +26,15 @@ namespace MVCTravelBookingISE.Controllers
         }
 
         //GET: Trip Info
-
+        [AllowAnonymous]
         public async Task<IActionResult> Details(int id)
         {
             var TripDetails = await _service.GetTripByIdAsync(id);
             return View(TripDetails);
         }
 
-        
-       public async Task<IActionResult> Create(TripVM trip)
+        [AllowAnonymous]
+        public async Task<IActionResult> Create(TripVM trip)
         {
             if (!ModelState.IsValid)
             {

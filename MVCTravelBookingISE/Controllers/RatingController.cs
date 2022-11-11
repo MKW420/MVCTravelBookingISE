@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Identity;
 
 namespace MVCTravelBookingISE.Controllers
 {
+
     public class RatingController : Controller
     {
         //public IActionResult SetRating(int item, int rating)

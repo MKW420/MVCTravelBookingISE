@@ -40,6 +40,7 @@ namespace MVCTravelBookingISE.Controllers
 
             return View(data);
         }
+        [AllowAnonymous]
         public async Task<IActionResult> Filter(string searchstring)
         {
             var allAccomodation = await _service.GetAllAsync();
@@ -52,6 +53,7 @@ namespace MVCTravelBookingISE.Controllers
             }
             return View("Index", allAccomodation);
         }
+        [AllowAnonymous]
         public async Task<IActionResult> FilterResort()
         {
             var allAccomodation = await _service.GetAllAsync();
@@ -64,6 +66,7 @@ namespace MVCTravelBookingISE.Controllers
             }
             return View("Index", allAccomodation);
         }
+        [AllowAnonymous]
         public async Task<IActionResult> FilterHotel()
         {
             var allAccomodation = await _service.GetAllAsync();
@@ -76,6 +79,7 @@ namespace MVCTravelBookingISE.Controllers
             }
             return View("Index", allAccomodation);
         }
+        [AllowAnonymous]
         public async Task<IActionResult> FilterVilla()
         {
             var allAccomodation = await _service.GetAllAsync();
@@ -88,6 +92,7 @@ namespace MVCTravelBookingISE.Controllers
             }
             return View("Index", allAccomodation);
         }
+        [AllowAnonymous]
         public async Task<IActionResult> FilterApartment()
         {
             var allAccomodation = await _service.GetAllAsync();
@@ -100,6 +105,7 @@ namespace MVCTravelBookingISE.Controllers
             }
             return View("Index", allAccomodation);
         }
+        [AllowAnonymous]
         public async Task<IActionResult> PricesEqaulToOneThousand()
         {
             var allAccomodation = await _service.GetAllAsync();
@@ -115,7 +121,7 @@ namespace MVCTravelBookingISE.Controllers
         // GET: Acco
         // GET: AccomodationModels/Details/5
         // [AllowAnonymous]
-
+        [AllowAnonymous]
         public async Task<IActionResult> Details(int id)
         {
 
@@ -125,6 +131,7 @@ namespace MVCTravelBookingISE.Controllers
 
            
         }
+        [AllowAnonymous]
 
         // GET: AccomodationModels/Create
         public IActionResult Create()
@@ -137,6 +144,7 @@ namespace MVCTravelBookingISE.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [AllowAnonymous]
         public async Task<IActionResult> Create([Bind("Acco_Id,Acco_Name,Acco_Destination,Acco_Rooms,Acco_Bathrooms,Acco_Distance,Acco_Rate,Acco_Type,Acco_Price")] AccomodationModel accomodationModel)
         {
             if (ModelState.IsValid)
@@ -181,7 +189,7 @@ namespace MVCTravelBookingISE.Controllers
 
         [HttpPost]
 
-       
+        [AllowAnonymous]
 
         // GET: AccomodationModels/Delete/5
         public async Task<IActionResult> Delete(int id)
@@ -197,6 +205,7 @@ namespace MVCTravelBookingISE.Controllers
         // POST: AccomodationModels/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [AllowAnonymous]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var accomodationDetails = await _service.GetByIdAsync(id);
