@@ -3,82 +3,76 @@
 @{
     ViewData["Title"] = "Details";
 }
+<head>
 
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/main.css" />
+</head>
 
 <div class="container my-5">
 
 
     <!--Section: Content-->
-    <section class="px-md-5 mx-md-5 text-center text-lg-left dark-grey-text">
+    <div class="card text-center bg-dark">
+        <div class="card-header">
 
-        <!--Grid row-->
-        <div class="row">
-
-            <!--Grid column-->
-            <div class="col-md-4 mb-4 mb-md-0">
-
-                <!--Image-->
-                <div class="view overlay z-depth-1-half">
-                    <img class="img-thumbnail" src="@Html.DisplayFor(model => model.Acco_picture)" class="img-fluid" alt="">
-                    <a href="#">
-                        <div class="mask rgba-white-light"></div>
-                    </a>
-                </div>
-
-            </div>
-            <!--Grid column-->
-            <!--Grid column-->
-            <div class="col-md-8 mb-4 mb-md-0">
-
-                <h3 class="font-weight-bold">@Html.DisplayFor(model => model.Acco_Name)</h3>
-
-                <p class="text-muted">
-                    This accomodation is
-                    @if(Model.Acco_Type == 'G'){
-                        <span>meant for group of people</span>
-                    }
-                    else{
-                        <span>meant for single or indivivual</span>
-                    }
-                </p>
-                <p class="card-text"> @Html.DisplayFor(model => model.Acco_Rules)</p>
-                <a class="btn btn-dark btn-md ml-0" data-toggle="popover"
-                   
-      
-                    asp-controller="BookingModels"
-                    asp-action="AddItemToBookingCart"
-                    asp-route-id="@Model?.Acco_Id">
-                    <!-- Full screen modal -->
-                    Reserve
-                   (Price @Model?.Acco_Price.ToString("c")
-                </a>
-
-            </div>
-            <!--Grid column-->
-
+            <h3 class="font-weight-bold text-white">@Html.DisplayFor(model => model.Acco_Name)</h3>
         </div>
-        <!--Grid row-->
-
-
-    </section>
+        <div class="card-body text-white">
+            <img class="img-thumbnail" style="height:400px; width:600px;" src="@Html.DisplayFor(model => model.Acco_picture)" class="img-fluid" alt="">
+            <strong><h5 class="card-title text-white">
+                This accomodation is
+                @if (Model.Acco_Type == 'G')
+                {
+                    <span>meant for group of people</span>
+                }
+                else
+                {
+                    <span>meant for single or indivivual</span>
+                }
+                </h5>
+            </strong>
+            <p class="card-text text-danger ">
+                This accomodation is
+                @if (Model.Acco_availability == true)
+                {
+                    <span>available</span>
+                }
+                else
+                {
+                    <span>No longer available</span>
+                }
+            </p>
+            <p class="card-text">
+                @Html.DisplayFor(model => model.Acco_Rules)
+            </p>
+            <p class="card-text">
+              Bathrooms available: @Html.DisplayFor(model => model.Acco_Bathrooms)
+            </p>
+            <p class="card-text">
+                Rooms available: @Html.DisplayFor(model => model.Acco_Rooms)
+            </p>
+            <a class="btn btn-success" asp-action="Index">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-return-left" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M14.5 1.5a.5.5 0 0 1 .5.5v4.8a2.5 2.5 0 0 1-2.5 2.5H2.707l3.347 3.346a.5.5 0 0 1-.708.708l-4.2-4.2a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 8.3H12.5A1.5 1.5 0 0 0 14 6.8V2a.5.5 0 0 1 .5-.5z" />
+                </svg> Back
+            </a>
+            <a class="btn btn-primary btn-md ml-0" data-toggle="popover"
+               asp-controller="BookingModels"
+               asp-action="AddItemToBookingCart"
+               asp-route-id="@Model?.Acco_Id">
+                <!-- Full screen modal -->
+                Reserve
+                (Price @Model?.Acco_Price.ToString("c")
+            </a>
+        </div>
+       
+    </div>
+    
     <!--Section: Content-->
 
          
-<div>
-    <!--
-        <a class="btn btn-danger" asp-action="Edit" asp-route-id="@Model?.Acco_Id">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
-                <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
-                <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z" />
-            </svg>
-            </a>-->
-        <a class="btn btn-outline-dark" asp-action="Index">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-return-left" viewBox="0 0 16 16">
-                <path fill-rule="evenodd" d="M14.5 1.5a.5.5 0 0 1 .5.5v4.8a2.5 2.5 0 0 1-2.5 2.5H2.707l3.347 3.346a.5.5 0 0 1-.708.708l-4.2-4.2a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 8.3H12.5A1.5 1.5 0 0 0 14 6.8V2a.5.5 0 0 1 .5-.5z" />
-            </svg> Back
-        </a>
-   
-</div>
+
 
 </div>
       

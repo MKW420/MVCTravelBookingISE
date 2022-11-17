@@ -32,9 +32,7 @@ namespace MVCTravelBookingISE.Data.Services
             var newTrip = new TripManagementModel()
             {
                 BookingAccoId = data.Acco_Id,
-                BookingTransportId = data.Transport_Id,
-                BookingFlightId = data.Flight_Id,
-                
+            
 
             };
 
@@ -49,8 +47,8 @@ namespace MVCTravelBookingISE.Data.Services
             
             var TripDetails = _context.TripManagement
                     .Include(a => a.bookedAccoItem)
-                    .Include(t => t.bookedtransportItem)
-                    .Include(f => f.bookedflightItem)
+                
+                   
                     .FirstOrDefaultAsync(n => n.TripId == id);
 
             return await TripDetails;

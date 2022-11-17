@@ -11,6 +11,7 @@ using MVCTravelBookingISE.Data;
 using MVCTravelBookingISE.Data.Services;
 using MVCTravelBookingISE.Data.ViewModels;
 using MVCTravelBookingISE.Models;
+using RestSharp;
 
 namespace MVCTravelBookingISE.Controllers
 {
@@ -30,94 +31,29 @@ namespace MVCTravelBookingISE.Controllers
         [AllowAnonymous]
         public async Task<IActionResult> Index()
         {
-
-            var model = new AccomodationVM()
-            {
-                IsBlogActive = false
-            };
+          
 
             var data = await _service.GetAllAsync();
 
             return View(data);
         }
-        [AllowAnonymous]
+
+  
+            [AllowAnonymous]
         public async Task<IActionResult> Filter(string searchstring)
         {
             var allAccomodation = await _service.GetAllAsync();
 
             if (!string.IsNullOrEmpty(searchstring))
             {
-                var filterResult = allAccomodation.Where(n => n.Acco_Destination.Contains(searchstring) || n.Acco_Destination.Contains(searchstring)).ToList();
+                var filterResult = allAccomodation.Where(n => n.Acco_Destination.Contains(searchstring)).ToList();
                 return View("Index", filterResult);
 
             }
             return View("Index", allAccomodation);
         }
-        [AllowAnonymous]
-        public async Task<IActionResult> FilterResort()
-        {
-            var allAccomodation = await _service.GetAllAsync();
-
-            if (allAccomodation != null)
-            {
-                var filterResult = allAccomodation.Where(n => n.Acco_Name.Equals("Resort") || n.Acco_Type.Equals("resort")).ToList();
-                return View("Index", filterResult);
-
-            }
-            return View("Index", allAccomodation);
-        }
-        [AllowAnonymous]
-        public async Task<IActionResult> FilterHotel()
-        {
-            var allAccomodation = await _service.GetAllAsync();
-
-            if (allAccomodation != null)
-            {
-                var filterResult = allAccomodation.Where(n => n.Acco_Name.Equals("Hotel") || n.Acco_Type.Equals("hotel")).ToList();
-                return View("Index", filterResult);
-
-            }
-            return View("Index", allAccomodation);
-        }
-        [AllowAnonymous]
-        public async Task<IActionResult> FilterVilla()
-        {
-            var allAccomodation = await _service.GetAllAsync();
-
-            if (allAccomodation != null)
-            {
-                var filterResult = allAccomodation.Where(n => n.Acco_Name.Equals("Villa") || n.Acco_Type.Equals("villa")).ToList();
-                return View("Index", filterResult);
-
-            }
-            return View("Index", allAccomodation);
-        }
-        [AllowAnonymous]
-        public async Task<IActionResult> FilterApartment()
-        {
-            var allAccomodation = await _service.GetAllAsync();
-
-            if (allAccomodation != null)
-            {
-                var filterResult = allAccomodation.Where(n => n.Acco_Name.Equals("Apartment") || n.Acco_Type.Equals("apartment")).ToList();
-                return View("Index", filterResult);
-
-            }
-            return View("Index", allAccomodation);
-        }
-        [AllowAnonymous]
-        public async Task<IActionResult> PricesEqaulToOneThousand()
-        {
-            var allAccomodation = await _service.GetAllAsync();
-
-            if(allAccomodation != null)
-            {
-                var filterResult = allAccomodation.Where(n => n.Acco_Price > 1500 || n.Acco_Price > 1500).ToList();
-                return View("Index", filterResult);
-
-            }
-            return View("Index", allAccomodation);
-        }
+    
+       
         // GET: Acco
         // GET: AccomodationModels/Details/5
         // [AllowAnonymous]
@@ -145,14 +81,16 @@ namespace MVCTravelBookingISE.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [AllowAnonymous]
-        public async Task<IActionResult> Create([Bind("Acco_Id,Acco_Name,Acco_Destination,Acco_Rooms,Acco_Bathrooms,Acco_Distance,Acco_Rate,Acco_Type,Acco_Price")] AccomodationModel accomodationModel)
+        public async Task<IActionResult> Create([Bind("Acco_Id,Acco_Name,Acco_Destination,Acco_picture, Acco_Rooms,Acco_Bathrooms,Acco_Distance, Acco_Rules,Acco_Rate,Acco_Type,Acco_Price")] AccomodationModel accomodationModel)
         {
             if (ModelState.IsValid)
             {
-                await _service.AddSync(accomodationModel);
-                return RedirectToAction(nameof(Index));
+
+                return View(accomodationModel);
             }
-            return View(accomodationModel);
+            await _service.AddSync(accomodationModel);
+            return RedirectToAction(nameof(Index));
+          
         }
 
         [HttpGet]
@@ -161,7 +99,7 @@ namespace MVCTravelBookingISE.Controllers
 
         public async Task<IActionResult> Edit(int id)
         {
-             var accoInformation = await _service.GetAccomodationByIdAsync(id);
+             var accoInformation = await _service.GetByIdAsync(id);
             if (accoInformation == null) return View("NotFound");
             return View(accoInformation);
         }
@@ -171,7 +109,7 @@ namespace MVCTravelBookingISE.Controllers
 
         [HttpPost]
         [AllowAnonymous]
-        public async Task<IActionResult> Edit(int id, [Bind("Acco_Id,Acco_Name,Acco_Destination,Acco_Rooms,Acco_Bathrooms,Acco_Distance,Acco_Rate,Acco_Type,Acco_Price")] AccomodationModel accomodation)
+        public async Task<IActionResult> Edit(int id, [Bind("Acco_Id,Acco_Name,Acco_picture,Acco_Rules, Acco_Destination,Acco_Rooms,Acco_Bathrooms,Acco_Distance,Acco_Rate,Acco_Type,Acco_Price")] AccomodationModel accomodation)
         {
 
             if (!ModelState.IsValid)

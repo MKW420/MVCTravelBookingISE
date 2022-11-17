@@ -26,21 +26,18 @@ namespace MVCTravelBookingISE.Controllers
 
         private readonly IAccomodationService _accomodationService;
 
-        private readonly IFlightService _flightService;
-
-      private readonly ITransportService _transportService;
+   
 
         // private readonly IBookingService _bookingService;
 
         private readonly BookingReserved _bookingReserved;
 
 
-        public BookingModelsController(IAccomodationService accomodationService, IFlightService  flightService , ITransportService transportService, BookingReserved bookingReserved)
+        public BookingModelsController(IAccomodationService accomodationService, BookingReserved bookingReserved)
         {
 
             _accomodationService = accomodationService;
-            _flightService = flightService;
-            _transportService = transportService;
+          
             _bookingReserved = bookingReserved;
             //_bookingService = bookingService;
 
@@ -51,14 +48,11 @@ namespace MVCTravelBookingISE.Controllers
 
             var items = _bookingReserved.GetBookingAccoItem();
 
-           var TransItems = _bookingReserved.GetTransportBookingItems();
-
-            var FlightItems = _bookingReserved.GetFlightBookingItems();
+         
 
 
             _bookingReserved.AccoItems = items;
-            _bookingReserved.TransportItems = TransItems;
-            _bookingReserved.FlightBookingItems = FlightItems;
+          
 
             var rep = new BookingVModel()
             {
@@ -82,35 +76,7 @@ namespace MVCTravelBookingISE.Controllers
             return RedirectToAction(nameof(BookingCart));
 
         }
-        [AllowAnonymous]
-        public async Task<RedirectToActionResult> AddFlightItemToBookingCart(int id)
-        {
-            var item = await _flightService.GetFlightsByIdAsync(id);
-
-            if (item != null)
-            {
-
-                _bookingReserved.AddFlightItemToBooking(item);
-            }
-
-            return RedirectToAction(nameof(BookingCart));
-
-        }
-
-        [AllowAnonymous]
-        public async Task<RedirectToActionResult> AddTransportItemToBookingCart(int id)
-        {
-            var item = await _transportService.GetTransportByIdAsync(id);
-
-            if (item != null)
-            {
-
-                _bookingReserved.AddTransportItemToBooking(item);
-            }
-
-            return RedirectToAction(nameof(BookingCart));
-
-        }
+       
         [AllowAnonymous]
         public async Task<IActionResult> RemoveItemFromCart(int id)
         {

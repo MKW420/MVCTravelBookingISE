@@ -3,14 +3,8 @@ using MVCTravelBookingISE.Models;
 
 namespace MVCTravelBookingISE.Data.Services
 {
-    public interface ITransportService:IEntityBaseRepository<TransportModel>
+    public interface ITransportService : IEntityBaseRepository<TransportModel>
     {
-
-
-        Task AddNewTransport(TransportModel transport);
-       
         Task<TransportModel> GetTransportByIdAsync(int id);
-
-        Task UpdateTransportAsync(TransportModel data);
     }
 }

@@ -16,8 +16,6 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddScoped<IAccomodationService, AccomodationService>();
 builder.Services.AddScoped<ITransportService, TransportService>();
-builder.Services.AddScoped<IFlightService, FlightService>();
-builder.Services.AddScoped<IFlightRulesService, FlightRulesService>();
 builder.Services.AddScoped<ITripService, TripService>();
 
 //Configure HTTP

@@ -12,10 +12,8 @@ namespace MVCTravelBookingISE.Data.Reservations
         public string SessionId { get; set; }
         public AppDbContext _context { get; set; }
         public List<BookingAccoItem> AccoItems { get; set; }
+        public List<TransportBookingItem> TransportItems { get; set; }
 
-        public List<TransportBookingItem>  TransportItems { get; set; }
-
-        public List<FlightBookingItem> FlightBookingItems { get; set; }
 
         public BookingReserved(AppDbContext context)
         {
@@ -57,28 +55,10 @@ namespace MVCTravelBookingISE.Data.Reservations
             _context.SaveChanges();
 
         }
-        public void AddFlightItemToBooking(FlightModel flight)
-        {
-            var bookingFlightItem = _context.FlightBookingItem.FirstOrDefault(n => n.Flight.Flight_Id == flight.Flight_Id&& n.SessionId == SessionId);
-          
-            if (bookingFlightItem == null)
-            {
-                bookingFlightItem = new FlightBookingItem()
-                {
-                    Flight = flight,
-                    SessionId = SessionId
 
-                };
-
-                _context.FlightBookingItem.Add(bookingFlightItem);
-            }
-
-            _context.SaveChanges();
-
-        }
         public void AddTransportItemToBooking(TransportModel transport)
         {
-            var bookingTransItem = _context.TransportBookingItem.FirstOrDefault(n => n.transport.Transport_Id == transport.Transport_Id && n.SessionId == SessionId);
+            var bookingTransItem = _context.transportBookingItems.FirstOrDefault(n => n.transport.Transport_Id == transport.Transport_Id && n.SessionId == SessionId);
 
             if (bookingTransItem == null)
             {
@@ -89,10 +69,15 @@ namespace MVCTravelBookingISE.Data.Reservations
 
                 };
 
-                _context.TransportBookingItem.Add(bookingTransItem);
+                _context.transportBookingItems.Add(bookingTransItem);
             }
 
             _context.SaveChanges();
+
+        }
+        public List<TransportBookingItem> GetTransportBookingItems()
+        {
+            return TransportItems ?? (TransportItems = _context.transportBookingItems.Where(n => n.SessionId == SessionId).Include(n => n.transport).ToList());
 
         }
         public void RemoveItemFromBooking(AccomodationModel accomodation)
@@ -117,15 +102,7 @@ namespace MVCTravelBookingISE.Data.Reservations
 
         }
 
-        public List<FlightBookingItem> GetFlightBookingItems() {
-            return FlightBookingItems ?? (FlightBookingItems = _context.FlightBookingItem.Where(n => n.SessionId == SessionId).Include(n => n.Flight).ToList());
-
-        }
-        public List<TransportBookingItem> GetTransportBookingItems()
-        {
-            return TransportItems ?? (TransportItems = _context.TransportBookingItem.Where(n => n.SessionId == SessionId).Include(n => n.transport).ToList());
-
-        }
+      
         public decimal GetBookingTotal() => _context.AccomodationBookingItem.Where(n => n.SessionId == SessionId).Select(n => n.Accomodation.Acco_Price).Sum();
       //  public decimal GetBookingTotal() => _context.TransportBookingItem.Where(n => n.SessionId == SessionId).Select(n => n.transport.Transport_Price).Sum();
 

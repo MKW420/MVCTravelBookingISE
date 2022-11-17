@@ -19,13 +19,7 @@ namespace MVCTravelBookingISE.Models
         [ForeignKey("BookingAccoId")]
         public BookingAccoItem bookedAccoItem { get; set; }
 
-        public int BookingTransportId { get; set; }
-        [ForeignKey("BookingTransportId")]
-        public TransportBookingItem bookedtransportItem { get; set; }
-
-        public int BookingFlightId { get; set; }
-        [ForeignKey("BookingFlightId")]
-        public FlightBookingItem bookedflightItem { get; set; }
+       
 
     }
 }

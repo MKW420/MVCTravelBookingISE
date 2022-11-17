@@ -1,0 +1,281 @@
+﻿@model IEnumerable<MVCTravelBookingISE.Models.TransportModel>
+
+@{
+    ViewData["Title"] = "Transport";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<head>
+
+    <title>Home Page</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/main.css" />
+</head>
+
+
+<form>
+    <div class="card w-100 border-2 bg-dark ">
+        <div class="card-body ">
+
+            <div class="row">
+                <div class="col">
+                    <div class="mb-2">
+                        <input type="text" class="form-control" list="origin-options" id="origin-input" placeholder="Search..." aria-describedby="origin-label" />
+
+
+                    </div>
+                </div>
+
+
+
+                <div class="col">
+                    <div class="mb-2 align-content-center">
+                        <a class="btn btn-primary text-white " asp-controller="TransportModels" asp-action="Filter">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                            </svg> Search
+                        </a>
+
+                    </div>
+
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+    </div>
+</form>
+
+<!-- Section -->
+
+<div class="alert alert-warning" role="alert">
+    A simple warning alert—check it out!
+</div>
+
+<div class="container">
+
+    <!-- Section -->
+    <section>
+
+        <h1 class="font-weight-bold text-center dark-grey-text pb-2">A Few Easy Steps to Reserve a car rental or shuttle booking</h1>
+
+        <p class="lead text-center text-muted pt-2 pb-3 mb-5">We are so proud of our product. It's really easy to create a landing page for your product.</p>
+
+        <div class="row dark-grey-text">
+
+            <div class="col-md-4 col-xl-4 mb-4">
+                <div class="media">
+                    <div class="mr-4">
+                        <span class="text-dark">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+                                <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
+                            </svg>
+                        </span>
+                    </div>
+                    <div class="media-body">
+
+                        <h4 class="font-weight-bold">Step One</h4>
+                        <p class="text-muted">Make sure the correct supporting documents are attached when sdubmitting the booking.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-xl-4 mb-4">
+                <div class="media">
+                    <div class="mr-4">
+                        <span class="text-dark">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-check-circle" viewBox="0 0 16 16">
+                                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                                <path d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05z" />
+                            </svg>
+                        </span>
+                    </div>
+                    <div class="media-body">
+                        <h4 class="font-weight-bold">Step Two</h4>
+                        <p class="text-muted">A message and email of approval will be sent 24 hours after submitting booking. Ensure that this is recieved</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-xl-4 mb-4">
+                <div class="media">
+                    <div class="mr-4">
+                        <span class="text-dark">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-book-fill" viewBox="0 0 16 16">
+                                <path d="M8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783z" />
+                            </svg>
+                        </span>
+                    </div>
+                    <div class="media-body">
+                        <h4 class="font-weight-bold ">Step Three</h4>
+                        <p class="text-muted">Make sure the rules and regulations have been read, as well as the term and conditions before approval is sent.</p>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+
+</div>
+
+
+<div class="container">
+    <div class="row ">
+
+        @foreach (var item in Model)
+        {
+
+            <div class="col-lg-6 mb-4 ">
+
+                <div class="card-deck">
+
+                    <div class="card bg-dark w-50">
+
+
+
+                        <div class="card-header no-border">
+                            <h5 class="card-title text-white">
+                                <strong>
+                                    <span class="widget-49-pro-title">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-car-front" viewBox="0 0 16 16">
+                                            <path d="M4 9a1 1 0 1 1-2 0 1 1 0 0 1 2 0Zm10 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0ZM6 8a1 1 0 0 0 0 2h4a1 1 0 1 0 0-2H6ZM4.862 4.276 3.906 6.19a.51.51 0 0 0 .497.731c.91-.073 2.35-.17 3.597-.17 1.247 0 2.688.097 3.597.17a.51.51 0 0 0 .497-.731l-.956-1.913A.5.5 0 0 0 10.691 4H5.309a.5.5 0 0 0-.447.276Z" />
+                                            <path d="M2.52 3.515A2.5 2.5 0 0 1 4.82 2h6.362c1 0 1.904.596 2.298 1.515l.792 1.848c.075.175.21.319.38.404.5.25.855.715.965 1.262l.335 1.679c.033.161.049.325.049.49v.413c0 .814-.39 1.543-1 1.997V13.5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-1.338c-1.292.048-2.745.088-4 .088s-2.708-.04-4-.088V13.5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-1.892c-.61-.454-1-1.183-1-1.997v-.413a2.5 2.5 0 0 1 .049-.49l.335-1.68c.11-.546.465-1.012.964-1.261a.807.807 0 0 0 .381-.404l.792-1.848ZM4.82 3a1.5 1.5 0 0 0-1.379.91l-.792 1.847a1.8 1.8 0 0 1-.853.904.807.807 0 0 0-.43.564L1.03 8.904a1.5 1.5 0 0 0-.03.294v.413c0 .796.62 1.448 1.408 1.484 1.555.07 3.786.155 5.592.155 1.806 0 4.037-.084 5.592-.155A1.479 1.479 0 0 0 15 9.611v-.413c0-.099-.01-.197-.03-.294l-.335-1.68a.807.807 0 0 0-.43-.563 1.807 1.807 0 0 1-.853-.904l-.792-1.848A1.5 1.5 0 0 0 11.18 3H4.82Z" />
+                                        </svg>
+                                        From: @Html.DisplayFor(modelItem => item.Pick_Up_Point)
+                                     
+                                    </span>
+
+
+                                </strong>
+
+
+                            </h5>
+
+
+                        </div>
+
+                        <div class="card-body text-white">
+                            <div class="widget-49">
+                                <div class="widget-49-title-wrapper">
+
+                                    <div class="widget-49-meeting-info">
+
+
+                                        @if (item.Transport_Type == 'S')
+                                        {
+                                            <span class="text-success">
+                                                Shuttle from airport to destination is a available for a group of travellers or single.
+                                            </span>
+                                        }
+                                        else if (item.Transport_Type == 'C')
+                                        {
+                                            <span class="text-success">Car rentals are available for group settings for both singles and groups.</span>
+                                        }
+                                        else
+                                        {
+                                            <span class="">Rental</span>
+                                        }
+                                    </div>
+
+
+                                    <p class="card-text">
+                                        @if (item.Transport_ratings == 5)
+                                        {
+                                            <span class="text-warning">
+                                                &#9733;&#9733;&#9733;&#9733;&#9733;<span class="text-secondary"> Superhost</span>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-hand-thumbs-up-fill" viewBox="0 0 16 16">
+                                                    <path d="M6.956 1.745C7.021.81 7.908.087 8.864.325l.261.066c.463.116.874.456 1.012.965.22.816.533 2.511.062 4.51a9.84 9.84 0 0 1 .443-.051c.713-.065 1.669-.072 2.516.21.518.173.994.681 1.2 1.273.184.532.16 1.162-.234 1.733.058.119.103.242.138.363.077.27.113.567.113.856 0 .289-.036.586-.113.856-.039.135-.09.273-.16.404.169.387.107.819-.003 1.148a3.163 3.163 0 0 1-.488.901c.054.152.076.312.076.465 0 .305-.089.625-.253.912C13.1 15.522 12.437 16 11.5 16H8c-.605 0-1.07-.081-1.466-.218a4.82 4.82 0 0 1-.97-.484l-.048-.03c-.504-.307-.999-.609-2.068-.722C2.682 14.464 2 13.846 2 13V9c0-.85.685-1.432 1.357-1.615.849-.232 1.574-.787 2.132-1.41.56-.627.914-1.28 1.039-1.639.199-.575.356-1.539.428-2.59z" />
+                                                </svg>
+                                            </span>
+                                        }
+                                        else if (item.Transport_ratings == 4)
+                                        {
+                                            <span class="text-warning">&#9733;&#9733;&#9733;&#9733;</span>
+                                        }
+                                        else if (item.Transport_ratings == 3)
+                                        {
+                                            <span class="text-warning">&#9733;&#9733;&#9733;</span>
+                                        }
+                                        else if (item.Transport_ratings == 2)
+                                        {
+                                            <span class="text-warning">&#9733;&#9733;</span>
+                                        }
+                                        else if (item.Transport_ratings == 1)
+                                        {
+                                        <p class="text-warning">&#9733;</p>
+                                        }
+                                        else
+                                        {
+                                        <span class="text-warning">Be the first one to rate!</span>
+                                        }
+                                    </p>
+                                    <div class="widget-49-meeting-info">
+                                        <strong>
+                                            <span class="widget-49-pro-title">
+                                                To: @Html.DisplayFor(modelItem => item.Destination_point)
+                                            </span>
+                                        </strong>
+
+                                    </div>
+                                    <div class="widget-49-meeting-action">
+                                        <a asp-action="Details" asp-route-id="@item.Transport_Id" class="btn btn-sm btn-primary">
+                                            More information
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle" viewBox="0 0 16 16">
+                                                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                                                <path d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05z" />
+                                            </svg>
+                                        </a>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+        }
+    </div>
+</div>
+
+<h1 class="font-weight-bold text-center dark-grey-text pb-2">Use local known transport, start booking!</h1>
+
+<p class="lead text-center text-muted pt-2 pb-3 mb-5">We are so proud of our product. It's really easy to create a landing page for your product.</p>
+<div class="container">
+    <div class="card-group">
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1615929361868-2e41ea1befaf?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8VWJlcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=600&q=60" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Uber</h5>
+                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="https://th.bing.com/th/id/R.7d16f7986605c62618365e02ebffdb53?rik=1hbPxfELH1FxDw&pid=ImgRaw&r=0" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Bolt</h5>
+                <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="https://yt3.ggpht.com/a/AGF-l7-T-7ipjq8Dry1u_OLOryKsCWC9K6Y8tas5Jg=s900-mo-c-c0xffffffff-rj-k-no" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">DiDi</h5>
+                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>

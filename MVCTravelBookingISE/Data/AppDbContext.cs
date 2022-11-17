@@ -22,20 +22,12 @@ namespace MVCTravelBookingISE.Data
         }
 
 
-        public DbSet<FlightModel> Flight { get; set; }
-
-        public DbSet<FlightRulesModel> FlightRule { get; set; }
+       
 
         public DbSet<AccomodationModel> Accomodation { get; set; }
       
+         public DbSet<TransportBookingItem> transportBookingItems { get; set; }
         public DbSet<TransportModel> Transport { get; set; }
-
-        
-        
-        public DbSet<FlightBookingItem> FlightBookingItem { get; set; }
-
-        public DbSet<TransportBookingItem> TransportBookingItem { get; set; }
-
         public DbSet<BookingAccoItem> AccomodationBookingItem { get; set; }
 
         public DbSet<TripManagementModel> TripManagement { get; set; }

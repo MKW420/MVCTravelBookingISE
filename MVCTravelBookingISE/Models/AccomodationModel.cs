@@ -57,7 +57,6 @@ namespace MVCTravelBookingISE.Models
 
         public List<BookingAccoItem> Bookingitem { get; set; }
 
-        public List<Rating> Ratings { get; set; }
    
     }
 }

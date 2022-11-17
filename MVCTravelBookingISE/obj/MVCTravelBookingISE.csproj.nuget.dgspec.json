@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\keitu\\Source\\Repos\\MVCTravelBookingISE23\\MVCTravelBookingISE\\MVCTravelBookingISE.csproj": {}
+    "C:\\Users\\keitu\\source\\repos\\MVCTravelBookingISE23\\MVCTravelBookingISE\\MVCTravelBookingISE.csproj": {}
   },
   "projects": {
-    "C:\\Users\\keitu\\Source\\Repos\\MVCTravelBookingISE23\\MVCTravelBookingISE\\MVCTravelBookingISE.csproj": {
+    "C:\\Users\\keitu\\source\\repos\\MVCTravelBookingISE23\\MVCTravelBookingISE\\MVCTravelBookingISE.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\keitu\\Source\\Repos\\MVCTravelBookingISE23\\MVCTravelBookingISE\\MVCTravelBookingISE.csproj",
+        "projectUniqueName": "C:\\Users\\keitu\\source\\repos\\MVCTravelBookingISE23\\MVCTravelBookingISE\\MVCTravelBookingISE.csproj",
         "projectName": "MVCTravelBookingISE",
-        "projectPath": "C:\\Users\\keitu\\Source\\Repos\\MVCTravelBookingISE23\\MVCTravelBookingISE\\MVCTravelBookingISE.csproj",
+        "projectPath": "C:\\Users\\keitu\\source\\repos\\MVCTravelBookingISE23\\MVCTravelBookingISE\\MVCTravelBookingISE.csproj",
         "packagesPath": "C:\\Users\\keitu\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\keitu\\Source\\Repos\\MVCTravelBookingISE23\\MVCTravelBookingISE\\obj\\",
+        "outputPath": "C:\\Users\\keitu\\source\\repos\\MVCTravelBookingISE23\\MVCTravelBookingISE\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -89,6 +89,10 @@
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
               "version": "[6.0.10, )"
+            },
+            "RestSharp": {
+              "target": "Package",
+              "version": "[108.0.2, )"
             },
             "SendGrid": {
               "target": "Package",

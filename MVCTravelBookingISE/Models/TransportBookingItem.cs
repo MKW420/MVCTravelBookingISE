@@ -7,16 +7,17 @@ namespace MVCTravelBookingISE.Models
     {
 
 
-        [Key]
-        public int BookingId { get; set; }
+            [Key]
+            public int BookingId { get; set; }
 
-        //Foreign key of Transport_ID
-        public int Transport_Id { get; set; }
-        [ForeignKey("Transport_Id")]
-        public TransportModel transport { get; set; }
+            //Foreign key of Transport_ID
+            public int Transport_Id { get; set; }
+            [ForeignKey("Transport_Id")]
+            public TransportModel transport { get; set; }
 
-        public string SessionId { get; set; }
+            public string SessionId { get; set; }
 
-        public List<TripManagementModel> Tripitem { get; set; }
+            public List<TripManagementModel> Tripitem { get; set; }
+        
     }
 }

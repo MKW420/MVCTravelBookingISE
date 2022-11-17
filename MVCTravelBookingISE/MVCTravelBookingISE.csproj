@@ -8,12 +8,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Data\Enums\**" />
     <Compile Remove="Models\Account\**" />
     <Compile Remove="Views\Main\**" />
+    <Content Remove="Data\Enums\**" />
     <Content Remove="Models\Account\**" />
     <Content Remove="Views\Main\**" />
+    <EmbeddedResource Remove="Data\Enums\**" />
     <EmbeddedResource Remove="Models\Account\**" />
     <EmbeddedResource Remove="Views\Main\**" />
+    <None Remove="Data\Enums\**" />
     <None Remove="Models\Account\**" />
     <None Remove="Views\Main\**" />
   </ItemGroup>
@@ -34,11 +38,8 @@
     </PackageReference>
     <PackageReference Include="Microsoft.Owin" Version="4.2.2" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.10" />
+    <PackageReference Include="RestSharp" Version="108.0.2" />
     <PackageReference Include="SendGrid" Version="9.28.1" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Data\Enums\" />
   </ItemGroup>
 
 </Project>

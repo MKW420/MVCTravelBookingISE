@@ -3,7 +3,12 @@
 @{
     ViewData["Title"] = "Register confirmation";
 }
+<head>
 
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/main.css" />
+
+</head>
 <!--h1>@ViewData//["Title"]</!--h1-->
 
 @{
@@ -16,7 +21,8 @@
             padding-top:30px;
         }
     </style>
-    <h3 class="display-6 py-5">Account Registerd</h3>
+    <h3 class="display-6 py-5">Account Registered successfully! You are good to go!</h3>
+  
     <p class="navbar-text">
         This app does not currently have a real email sender registered, see <a href="https://aka.ms/aspaccountconf">these docs</a> for how to configure a real email sender.
         Normally this would be emailed: <a id="confirm-link" href="@Model.EmailConfirmationUrl">Click here to confirm your account, and login</a>
@@ -29,8 +35,7 @@
     </p>
     }
 }
-
-//<!--
+<!--
 
     if (@Model.DisplayConfirmAccountLink)
     {
