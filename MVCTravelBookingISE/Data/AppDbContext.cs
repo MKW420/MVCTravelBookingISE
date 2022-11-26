@@ -23,7 +23,7 @@ namespace MVCTravelBookingISE.Data
 
 
        
-
+        public DbSet<Flights> flights { get; set; }
         public DbSet<AccomodationModel> Accomodation { get; set; }
       
          public DbSet<TransportBookingItem> transportBookingItems { get; set; }

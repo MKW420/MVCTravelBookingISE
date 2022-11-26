@@ -41,21 +41,25 @@
       
 
     <header class="py-5 ">
-    <div class="card border-2 ">
+    <div class="card border-3 border-warning ">
         <div class="card-body ">
-
+               
             <div class="row">
+
                 <div class="col">
                     <div class="mb-2">
-
+                         
                         <div class="input-group">
                             <span class="input-group-text">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-airplane-fill" viewBox="0 0 16 16">
                                     <path d="M6.428 1.151C6.708.591 7.213 0 8 0s1.292.592 1.572 1.151C9.861 1.73 10 2.431 10 3v3.691l5.17 2.585a1.5 1.5 0 0 1 .83 1.342V12a.5.5 0 0 1-.582.493l-5.507-.918-.375 2.253 1.318 1.318A.5.5 0 0 1 10.5 16h-5a.5.5 0 0 1-.354-.854l1.319-1.318-.376-2.253-5.507.918A.5.5 0 0 1 0 12v-1.382a1.5 1.5 0 0 1 .83-1.342L6 6.691V3c0-.568.14-1.271.428-1.849Z" />
                                 </svg>
                             </span>
-                            <input type="text" class="form-control" list="origin-options" id="origin-input" placeholder="Destination" aria-describedby="origin-label" />
-                            <datalist id="origin-options"></datalist>
+                                <form class="form-inline my-2 my-lg-0" asp-controller="AccomodationModels" asp-action="Filter" style="padding-right: 25px;">
+                                   <input type="text" class="form-control"  placeholder="Destination" />
+                         
+                                    <button class="btn btn-dark text-white my-2 my-sm-0" type="submit">Search Accommodation!</button>
+                                </form>
 
                         </div>
 
@@ -68,17 +72,14 @@
 
            
 
-                <div class="col">
-                    <div class="mb-2">
-                        <a class="btn btn-dark text-white" asp-controller="AccomodationModels" asp-action="Filter" asp-action="Create">Search Accommodation!</a>
-
-
-                    </div>
+               
 
                 </div>
 
             </div>
+              
         </div>
+
     </div>
     </header>
 
@@ -182,7 +183,24 @@
             <div class="table-responsive">
               <table class="table table-hover">
                 <tbody><tr>
-                  <td class="number text-center">1</td>
+                  <td class="number text-center">
+                                                        @if (item.Acco_availability == true)
+                                                        {
+                                                            <div class="text-success">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+                                                                    <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
+                                                                </svg>
+                                                            </div>
+                                                        }
+                                                        else
+                                                        {
+                                                            <div class="text-danger">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-circle-fill" viewBox="0 0 16 16">
+                                                                    <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z" />
+                                                                </svg>
+                                                            </div>
+                                                        }
+                                                    </td>
                   <td class="image"><img src="@item.Acco_picture" alt=""></td>
                    <td class="product text">
                    <strong><h5>@item.Acco_Name</h5><span class=" text-black">@item.Acco_Destination</span>
@@ -209,9 +227,8 @@
                                 <span class="text-warning">No Ratings</span>
                             }
                        </strong><br><span class="text-success">@item.Acco_Rules</span>
-                         <br> <span class="text-muted">Number of bathrooms: @item.Acco_Rooms</span>
-                        <br> <span class="text-muted">Number of bathrooms: @item.Acco_Bathrooms</span>
-                                                       
+                       
+                                            
                                                         <br>  <a class="btn btn-sm btn-success float-right" asp-action="Details" asp-route-id="@item.Acco_Id">
                                                             Check Availability
                                                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">

@@ -11,12 +11,23 @@ using MVCTravelBookingISE.Data.Reservations;
 using Microsoft.AspNetCore.Authorization;
 using MVCTravelBookingISE.Authorization;
 using ContactManager.Data;
+using MVCTravelBookingISE.Data.FlightAPI;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddScoped<IAccomodationService, AccomodationService>();
 builder.Services.AddScoped<ITransportService, TransportService>();
 builder.Services.AddScoped<ITripService, TripService>();
+builder.Services.AddScoped<IFlightsService, FlightsService>();
+
+//CONFIGURE api
+
+builder.Services.AddHttpClient("TravelAPIs", client =>
+{
+    client.BaseAddress = new Uri("https://test.api.amadeus.com");
+
+});
+builder.Services.AddScoped<TravelAPIs>();
 
 //Configure HTTP
 builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor > ();

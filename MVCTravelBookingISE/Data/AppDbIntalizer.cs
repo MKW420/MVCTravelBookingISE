@@ -231,7 +231,7 @@ namespace MVCTravelBookingISE.Data
                                 Transport_FuelCard = false
 
                             },
-                            
+
                             new TransportModel
                             {
                                 Pick_Up_Point = "Cape Town International Airport",
@@ -397,10 +397,216 @@ namespace MVCTravelBookingISE.Data
 
                 }
 
+                if (!context.flights.Any())
+                {
+
+                    context.flights.AddRange(new List<Flights>()
+                     {
+                            new Flights
+                            {
+                                Airline = "FlySafair",
+                                Flight_Destination = "DBN",
+                                Flight_Departure = "JNB",
+                                Flight_Date =DateTime.Now.AddDays(20),
+                                seats = 58,
+                                Flight_Class = 'E',
+                                Flight_Price = 4685
 
 
+                            },
+
+                            new Flights
+                            {
+                                Airline = "SA Express Airways",
+                                Flight_Destination = "CT",
+                                Flight_Departure = "JNB",
+                                Flight_Date =DateTime.Now.AddDays(10),
+
+                                seats = 58,
+                                Flight_Class = 'E',
+                                Flight_Price = 4685
+
+
+                            },
+
+                            new Flights
+                            {
+                                Airline = "FlySafair",
+                                Flight_Destination = "PZB",
+                                Flight_Departure = "JNB",
+                                Flight_Date =DateTime.Now.AddDays(20),
+                                seats = 58,
+                                Flight_Class = 'B',
+                                Flight_Price = 4685
+
+
+                            },
+
+                            new Flights
+                            {
+                                Airline = "Airlink",
+                                Flight_Destination = "ELS",
+                                Flight_Departure = "CT",
+                                Flight_Date = DateTime.Now.AddDays(40),
+
+                                seats = 58,
+                                Flight_Class = 'F',
+                                Flight_Price = 4685
+
+
+                            },
+                             new Flights
+                            {
+                                Airline = "Southern African Airways (SAA)",
+                                Flight_Destination = "PLZ",
+                                Flight_Departure = "CT",
+                                Flight_Date =DateTime.Now.AddDays(30),
+
+                                seats = 58,
+                                Flight_Class = 'F',
+                                Flight_Price = 2563
+
+
+                            },
+                              new Flights
+                            {
+                                Airline = "Kulula Airways (KA)",
+                                Flight_Destination = "ELS",
+                                Flight_Departure = "CT",
+                                Flight_Date =DateTime.Now.AddDays(20),
+
+                                seats = 58,
+                                Flight_Class = 'B',
+                                Flight_Price = 5869
+
+
+                            },
+                               new Flights
+                            {
+                                Airline = "Mango Airways (JE)",
+                                Flight_Destination = "ELS",
+                                Flight_Departure = "DBN",
+                                Flight_Date =DateTime.Now.AddDays(20),
+
+                                seats = 58,
+                                Flight_Class = 'F',
+                                Flight_Price = 7859
+
+
+                            },
+                             new Flights
+                            {
+                                Airline = "Mango Airways (JE)",
+                                Flight_Destination = "ELS",
+                                Flight_Departure = "DBN",
+                                Flight_Date =DateTime.Now.AddDays(20),
+
+                                seats = 58,
+                                Flight_Class = 'F',
+                                Flight_Price = 6995
+
+
+                            },
+                                new Flights
+                            {
+                                Airline = "Mango Airways (JE)",
+                                Flight_Destination = "ELS",
+                                Flight_Departure = "DBN",
+                                Flight_Date =DateTime.Now.AddDays(20),
+
+                                seats = 58,
+                                Flight_Class = 'F',
+                                Flight_Price = 6995
+
+
+                            },
+                             new Flights
+                            {
+                                Airline = "Mango Airways (JE)",
+                                Flight_Destination = "KIM",
+                                Flight_Departure = "DBN",
+                                Flight_Date =DateTime.Now.AddDays(20),
+
+                                seats = 58,
+                                Flight_Class = 'F',
+                                Flight_Price = 6995
+
+
+                            },
+                               new Flights
+                            {
+                                Airline = "Mango Airways (JE)",
+                                Flight_Destination = "KIM",
+                                Flight_Departure = "DBN",
+                                Flight_Date =DateTime.Now.AddDays(20),
+
+                                seats = 58,
+                                Flight_Class = 'B',
+                                Flight_Price = 6995
+
+
+                            },
+                               new Flights
+                            {
+                                Airline = "Mango Airways (JE)",
+                                Flight_Destination = "JNB",
+                                Flight_Departure = "DBN",
+                                Flight_Date =DateTime.Now.AddDays(30),
+
+                                seats = 58,
+                                Flight_Class = 'B',
+                                Flight_Price = 6585
+
+
+                            },
+                            new Flights
+                            {
+                                Airline = "Mango Airways (JE)",
+                                Flight_Destination = "PE",
+                                Flight_Departure = "JNB",
+                                Flight_Date =DateTime.Now.AddDays(30),
+
+                                seats = 58,
+                                Flight_Class = 'B',
+                                Flight_Price = 6995
+
+
+                            },
+                              new Flights
+                            {
+                                Airline = "AirLink",
+                                Flight_Destination = "PE",
+                                Flight_Departure = "JNB",
+                                Flight_Date =DateTime.Now.AddDays(30),
+
+                                seats = 58,
+                                Flight_Class = 'F',
+                                Flight_Price = 8999
+
+
+                            },
+                               new Flights
+                            {
+                                Airline = "AirLink",
+                                Flight_Destination = "PE",
+                                Flight_Departure = "KIM",
+                                Flight_Date =DateTime.Now.AddDays(30),
+
+                                seats = 58,
+                                Flight_Class = 'F',
+                                Flight_Price = 15099
+
+
+
+                                },
+                        });
+                    context.SaveChanges();
+                }
             }
-
         }
     }
 }
+
+
+
+

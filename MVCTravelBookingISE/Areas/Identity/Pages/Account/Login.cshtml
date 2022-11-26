@@ -41,8 +41,14 @@
                        @*<p class="small mb-5 pb-lg-2">
                           <a class="text-white-50" id="forgot-password" style="text-decoration:none" asp-page="./ForgotPassword">Forgot your password?</a>
                        </p> *@
-                                <!-- Checkbox -->
 
+                                <!-- Checkbox -->
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                        <label class="form-check-label" for="flexCheckDefault">
+                                           IsAdmin
+                                        </label>
+                                    </div>
                                 <div class="form-check">
                                     <label asp-for="Input.RememberMe" class="form-label">
                                         <input class="form-check-input" asp-for="Input.RememberMe" />

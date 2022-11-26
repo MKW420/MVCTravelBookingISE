@@ -38,7 +38,7 @@ namespace MVCTravelBookingISE.Controllers
             return View(data);
         }
 
-  
+     
             [AllowAnonymous]
         public async Task<IActionResult> Filter(string searchstring)
         {
@@ -46,7 +46,7 @@ namespace MVCTravelBookingISE.Controllers
 
             if (!string.IsNullOrEmpty(searchstring))
             {
-                var filterResult = allAccomodation.Where(n => n.Acco_Destination.Contains(searchstring)).ToList();
+                var filterResult = allAccomodation.Where(n => string.Equals(n.Acco_Destination,searchstring, StringComparison.CurrentCultureIgnoreCase ) || string.Equals(n.Acco_Name, searchstring,StringComparison.CurrentCultureIgnoreCase)).ToList();
                 return View("Index", filterResult);
 
             }

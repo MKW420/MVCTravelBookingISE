@@ -32,7 +32,6 @@ namespace MVCTravelBookingISE.Controllers
 
         private readonly BookingReserved _bookingReserved;
 
-
         public BookingModelsController(IAccomodationService accomodationService, BookingReserved bookingReserved)
         {
 
@@ -41,6 +40,11 @@ namespace MVCTravelBookingISE.Controllers
             _bookingReserved = bookingReserved;
             //_bookingService = bookingService;
 
+        }
+        [AllowAnonymous]
+        public IActionResult SuccessPage()
+        {
+            return View();
         }
         [AllowAnonymous]
         public IActionResult BookingCart()
