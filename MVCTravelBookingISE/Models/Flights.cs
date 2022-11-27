@@ -13,7 +13,6 @@ namespace MVCTravelBookingISE.Models
         public int Id { get; set; }
         public string Airline { get; set; }
 
-
         public string Flight_Destination { get; set; }
         public string Flight_Departure { get; set; }
         public DateTime Flight_Date { get; set; }

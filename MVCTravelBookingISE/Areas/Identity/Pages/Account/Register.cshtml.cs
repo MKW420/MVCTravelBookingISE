@@ -19,7 +19,6 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.Extensions.Logging;
 using MVCTravelBookingISE.Areas.Identity.Data;
-using MVCTravelBookingISE.Utilities;
 
 namespace MVCTravelBookingISE.Areas.Identity.Pages.Account
 {
@@ -31,7 +30,6 @@ namespace MVCTravelBookingISE.Areas.Identity.Pages.Account
         private readonly IUserStore<ApplicationUser> _userStore;
         private readonly IUserEmailStore<ApplicationUser> _emailStore;
         private readonly ILogger<RegisterModel> _logger;
-        private readonly ILogger<EmailSender> _loggerE;
         private readonly IEmailSender _emailSender;
 
         public RegisterModel(
@@ -39,7 +37,6 @@ namespace MVCTravelBookingISE.Areas.Identity.Pages.Account
             IUserStore<ApplicationUser> userStore,
             SignInManager<ApplicationUser> signInManager,
             ILogger<RegisterModel> logger,
-            ILogger<EmailSender> loggerE,
             IEmailSender emailSender)
         {
             _userManager = userManager;
@@ -47,7 +44,6 @@ namespace MVCTravelBookingISE.Areas.Identity.Pages.Account
             _emailStore = GetEmailStore();
             _signInManager = signInManager;
             _logger = logger;
-            _loggerE = loggerE;
             _emailSender = emailSender;
         }
 
@@ -121,9 +117,9 @@ namespace MVCTravelBookingISE.Areas.Identity.Pages.Account
             if (ModelState.IsValid)
             {
                 var user = CreateUser();
-
+                
                 user.FirstName = String.Empty;
-                user.LastName = String.Empty;
+                user.LastName = String.Empty;   
                 await _userStore.SetUserNameAsync(user, Input.Email, CancellationToken.None);
                 await _emailStore.SetEmailAsync(user, Input.Email, CancellationToken.None);
                 var result = await _userManager.CreateAsync(user, Input.Password);
@@ -140,11 +136,7 @@ namespace MVCTravelBookingISE.Areas.Identity.Pages.Account
                         pageHandler: null,
                         values: new { area = "Identity", userId = userId, code = code, returnUrl = returnUrl },
                         protocol: Request.Scheme);
-                    IConfiguration configuration = new ConfigurationBuilder()
-                        .SetBasePath(Directory.GetCurrentDirectory())
-                        .AddJsonFile("appsettings.json")
-                        .Build();
-                    EmailSender emailSender = new EmailSender(_loggerE,configuration);
+
                     await _emailSender.SendEmailAsync(Input.Email, "Confirm your email",
                         $"Please confirm your account by <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>clicking here</a>.");
 

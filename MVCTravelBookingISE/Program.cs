@@ -49,7 +49,7 @@ builder.Services.AddDbContext<AuthDbContext>( options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("AuthDbContextConnection")));
 
 
-builder.Services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = false)
+builder.Services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = true)
     .AddRoles<IdentityRole>()
     .AddEntityFrameworkStores<AuthDbContext>()
     .AddDefaultTokenProviders();

@@ -55,7 +55,7 @@ namespace MVCTravelBookingISE.Data.Reservations
             _context.SaveChanges();
 
         }
-
+        [AllowAnonymous]
         public void AddTransportItemToBooking(TransportModel transport)
         {
             var bookingTransItem = _context.transportBookingItems.FirstOrDefault(n => n.transport.Transport_Id == transport.Transport_Id && n.SessionId == SessionId);
@@ -75,6 +75,7 @@ namespace MVCTravelBookingISE.Data.Reservations
             _context.SaveChanges();
 
         }
+        [AllowAnonymous]
         public List<TransportBookingItem> GetTransportBookingItems()
         {
             return TransportItems ?? (TransportItems = _context.transportBookingItems.Where(n => n.SessionId == SessionId).Include(n => n.transport).ToList());
@@ -94,7 +95,7 @@ namespace MVCTravelBookingISE.Data.Reservations
 
 
         // GET: BookingModels/Details/5
-
+        [AllowAnonymous]
         public List<BookingAccoItem> GetBookingAccoItem()
         {
 

@@ -24,51 +24,57 @@
 
     <body>
 <!-- Jumbotron -->
-  <div class="p-5 text-center bg-dark text-white" style="margin-top: 0px;">
+
+    <div class="text-center">
+
+       <h1 class=" text-black" style="margin-top:5px;">Welcome to the dashboard</h1>
+        <img class=" text-center" style="height:500px; width:500px;" src="https://img.freepik.com/free-vector/online-world-concept-illustration_114360-1092.jpg?w=740&t=st=1669578571~exp=1669579171~hmac=085eead148c8bcb307e772aa5e9f2b56f5545ae0f8815c87e7ce2efc591d28fe" />
        
-        <strong><h1 class="mb-3  text-white">Welcome to the dashboard</h1></strong>
-        <h4 class="mb-3  text-white">Here you can view all the information about your travels...</h4>
-    <a class="btn btn-primary" href="" role="button">Start exploring...</a>
-  </div>
+    </div>
+    <div class="alert alert-warning" role="alert">
+
+        View all personalised data according to your activity!
+    </div>
+
   <!-- Jumbotron -->
-   <div class="row " style="margin-top:50px;">
-  <div class="col-sm-6">
-            <div class="card text-white bg-success">
+  
+
+    <div class="container" style="margin-top:50px;">
+             <div class="card text-white bg-dark">
       <div class="card-body">
                     <h5 class="card-title text-white">Number of Kilometeres travelelled this year</h5>
         <p class="card-text text-primary">User can use this to view all the updated information about the number Km travelled</p>
       
       </div>
-    </div>
-  </div>
-  <div class="col-sm-6">
-            <div class="card text-white bg-success">
-      <div class="card-body">
-                    <h5 class="card-title text-white">Special title treatment</h5>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-    
-      </div>
-    </div>
-  </div>
-</div>
+        <div class="row text-center">
 
-    <div class="container" style="margin-top:50px;">
-        <div class="row">
-            <div class="col">
-                <canvas id="myChart" style="width:100%;max-width:800px"></canvas>
+            <div class="col text-center">
+                <canvas id="myCharts" style="width:100%;max-width:1500px"></canvas>
 
             </div>
-          <div class="col">
-                <canvas id="myCharts" style="width:100%;max-width:800px"></canvas>
 
-            </div>
-          
 
         </div>
-       
 
+        </div>
 
+    </div>
+ <div class="container" style="margin-top:50px;">
+          <div class="card text-white bg-white">
+      <div class="card-body text-black">
+                    <h5 class="card-title text-black">Most popular Locations searched this month</h5>
+        <p class="card-text text-primary">User can use this to view all the updated information about the locations viewed by other users</p>
+      
+      </div>
+        <div class="row text-black">
+    <div class="col text-white ">
+        <canvas id="myChart" style="width:100%;max-width:1500px" ></canvas>
+        
 </div>
+</div>
+
+    </div>
+  
 
 
    
