@@ -15,6 +15,7 @@ using MVCTravelBookingISE.Areas.Identity.Data;
 
 namespace MVCTravelBookingISE.Areas.Identity.Pages.Account
 {
+    [AllowAnonymous]
     public class ConfirmEmailModel : PageModel
     {
         private readonly UserManager<ApplicationUser> _userManager;
