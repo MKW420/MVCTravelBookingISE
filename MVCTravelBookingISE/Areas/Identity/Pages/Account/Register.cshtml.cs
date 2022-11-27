@@ -140,8 +140,12 @@ namespace MVCTravelBookingISE.Areas.Identity.Pages.Account
                         pageHandler: null,
                         values: new { area = "Identity", userId = userId, code = code, returnUrl = returnUrl },
                         protocol: Request.Scheme);
-                    EmailSender emailSender = new EmailSender(_loggerE);
-                    await emailSender.SendEmailAsync(Input.Email, "Confirm your email",
+                    IConfiguration configuration = new ConfigurationBuilder()
+                        .SetBasePath(Directory.GetCurrentDirectory())
+                        .AddJsonFile("appsettings.json")
+                        .Build();
+                    EmailSender emailSender = new EmailSender(_loggerE,configuration);
+                    await _emailSender.SendEmailAsync(Input.Email, "Confirm your email",
                         $"Please confirm your account by <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>clicking here</a>.");
 
                     if (_userManager.Options.SignIn.RequireConfirmedAccount)

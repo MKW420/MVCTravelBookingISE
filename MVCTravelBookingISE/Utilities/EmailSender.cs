@@ -31,7 +31,7 @@ namespace MVCTravelBookingISE.Utilities
             var client = new SendGridClient(apiKey);
             var msg = new SendGridMessage()
             {
-                From = new EmailAddress("malepanem@legalinteract.com", "Booking system"),
+                From = new EmailAddress("robertt@legalinteract.co.za", "Booking system"),
                 Subject = subject,
                 PlainTextContent = message,
                 HtmlContent = message
